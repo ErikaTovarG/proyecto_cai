@@ -1,0 +1,12 @@
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\bin\Debug\net6.0\negocio.deps.json
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\bin\Debug\net6.0\negocio.dll
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\bin\Debug\net6.0\negocio.pdb
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.csproj.AssemblyReference.cache
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.AssemblyInfoInputs.cache
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.AssemblyInfo.cs
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.dll
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\refint\negocio.dll
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.pdb
+C:\Users\Erika\Desktop\proyecto\proyectoIntegrador\negocio\obj\Debug\net6.0\ref\negocio.dll
