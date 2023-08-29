@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\modelo\\modelo.csproj": {}
+    "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\modelo\\modelo.csproj": {
+    "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\modelo\\modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj",
         "projectName": "modelo",
-        "projectPath": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\modelo\\modelo.csproj",
-        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\modelo\\obj\\",
+        "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj",
+        "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erika\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\negocio.csproj": {
-                "projectPath": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\negocio.csproj"
+              "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj": {
+                "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj"
               }
             }
           }
@@ -49,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,21 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\negocio.csproj": {
+    "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\negocio.csproj",
+        "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj",
         "projectName": "negocio",
-        "projectPath": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\negocio.csproj",
-        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\Desktop\\Facu\\proyecto\\proyecto_cai\\negocio\\obj\\",
+        "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj",
+        "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erika\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,8 +103,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -114,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

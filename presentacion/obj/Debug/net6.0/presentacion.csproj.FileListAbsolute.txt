@@ -34,3 +34,21 @@ C:\Users\Administrador\Desktop\Facu\proyecto\proyecto_cai\presentacion\obj\Debug
 C:\Users\Administrador\Desktop\Facu\proyecto\proyecto_cai\presentacion\obj\Debug\net6.0\presentacion.pdb
 C:\Users\Administrador\Desktop\Facu\proyecto\proyecto_cai\presentacion\obj\Debug\net6.0\presentacion.genruntimeconfig.cache
 C:\Users\Administrador\Desktop\Facu\proyecto\proyecto_cai\presentacion\obj\Debug\net6.0\ref\presentacion.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\presentacion.exe
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\presentacion.deps.json
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\presentacion.runtimeconfig.json
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\presentacion.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\presentacion.pdb
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\negocio.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\bin\Debug\net6.0\negocio.pdb
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.csproj.AssemblyReference.cache
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.AssemblyInfoInputs.cache
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.AssemblyInfo.cs
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.csproj.CopyComplete
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\refint\presentacion.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.pdb
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\presentacion.genruntimeconfig.cache
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\presentacion\obj\Debug\net6.0\ref\presentacion.dll
