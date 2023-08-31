@@ -34,3 +34,6 @@ C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\obj\Deb
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\obj\Debug\net6.0\refint\negocio.dll
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.pdb
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\obj\Debug\net6.0\ref\negocio.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\bin\Debug\net6.0\modelo.dll
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\bin\Debug\net6.0\modelo.pdb
+C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\negocio\obj\Debug\net6.0\negocio.csproj.CopyComplete

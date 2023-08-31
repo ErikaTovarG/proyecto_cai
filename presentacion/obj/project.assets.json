@@ -2,28 +2,46 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "negocio/1.0.0": {
+      "Modelo/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/negocio.dll": {}
+          "bin/placeholder/Modelo.dll": {}
         },
         "runtime": {
-          "bin/placeholder/negocio.dll": {}
+          "bin/placeholder/Modelo.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Modelo": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Negocio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Negocio.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "negocio/1.0.0": {
+    "Modelo/1.0.0": {
       "type": "project",
-      "path": "../negocio/negocio.csproj",
-      "msbuildProject": "../negocio/negocio.csproj"
+      "path": "../modelo/Modelo.csproj",
+      "msbuildProject": "../modelo/Modelo.csproj"
+    },
+    "Negocio/1.0.0": {
+      "type": "project",
+      "path": "../negocio/Negocio.csproj",
+      "msbuildProject": "../negocio/Negocio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "negocio >= 1.0.0"
+      "Negocio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,9 +50,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\presentacion\\presentacion.csproj",
-      "projectName": "presentacion",
-      "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\presentacion\\presentacion.csproj",
+      "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\presentacion\\Presentacion.csproj",
+      "projectName": "Presentacion",
+      "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\presentacion\\Presentacion.csproj",
       "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\presentacion\\obj\\",
       "projectStyle": "PackageReference",
@@ -53,8 +71,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj": {
-              "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj"
+            "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\Negocio.csproj"
             }
           }
         }

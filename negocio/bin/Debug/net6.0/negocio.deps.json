@@ -6,15 +6,28 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "negocio/1.0.0": {
+      "Negocio/1.0.0": {
+        "dependencies": {
+          "Modelo": "1.0.0"
+        },
         "runtime": {
-          "negocio.dll": {}
+          "Negocio.dll": {}
+        }
+      },
+      "Modelo/1.0.0": {
+        "runtime": {
+          "Modelo.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "negocio/1.0.0": {
+    "Negocio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Modelo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

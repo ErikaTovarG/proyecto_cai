@@ -1,8 +1,8 @@
-﻿namespace modelo
+﻿namespace Modelo.Usuarios
 {
     public class Usuario
     {
-        //propiedades
+        #region Variables publicas
         public Guid id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
@@ -16,8 +16,10 @@
         public int host { get; set; }
         public int dni { get; set; }
         public string contrasenia { get; set; }
+        #endregion
 
-        //contructores 
+
+        #region Contructores
         public Usuario()
         {
 
@@ -41,5 +43,10 @@
             this.fechaNacimiento = fechaNacimiento;
             this.contrasenia = contrasenia;
         }
+
+        #endregion
+
+
+
     }
 }

@@ -6,15 +6,23 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "presentacion/1.0.0": {
+      "Presentacion/1.0.0": {
         "dependencies": {
-          "negocio": "1.0.0"
+          "Negocio": "1.0.0"
         },
         "runtime": {
-          "presentacion.dll": {}
+          "Presentacion.dll": {}
         }
       },
-      "negocio/1.0.0": {
+      "Modelo/1.0.0": {
+        "runtime": {
+          "modelo.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "dependencies": {
+          "Modelo": "1.0.0"
+        },
         "runtime": {
           "negocio.dll": {}
         }
@@ -22,12 +30,17 @@
     }
   },
   "libraries": {
-    "presentacion/1.0.0": {
+    "Presentacion/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "negocio/1.0.0": {
+    "Modelo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Negocio/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

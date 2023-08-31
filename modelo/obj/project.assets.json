@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "negocio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/negocio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/negocio.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "negocio/1.0.0": {
-      "type": "project",
-      "path": "../negocio/negocio.csproj",
-      "msbuildProject": "../negocio/negocio.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "negocio >= 1.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
     "C:\\Users\\Erika\\.nuget\\packages\\": {}
@@ -52,11 +33,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj": {
-              "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\negocio\\negocio.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
