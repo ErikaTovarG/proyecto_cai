@@ -1,14 +1,18 @@
 ﻿//Llamo al proyecto para poder traerme todos los namespace con sus repectivas clases.
-using Modelo.Usuarios;
+using Modelo.Usuario;
 
 namespace Negocio.UsuarioLogNegocio
 {
     public class AltaUsuario
     {
-        public Supervisor nuevo1 = new Supervisor();
-        Administrador nuevo2 = new Administrador();
-        Vendedor nuevo3 = new Vendedor();
-        public Usuario usuario1 = new Usuario();
+        public void CrearUsuarios()
+        {
+            Supervisor nuevo1 = new Supervisor();
+            nuevo1.nombre = "Juan";
+
+            Usuario usuario1 = new Usuario();
+            usuario1.nombre = "Juancito";
+        }
 
     }
 

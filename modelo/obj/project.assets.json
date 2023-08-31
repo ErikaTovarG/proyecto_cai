@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj",
-      "projectName": "modelo",
-      "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\modelo.csproj",
+      "projectUniqueName": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\Modelo.csproj",
+      "projectName": "Modelo",
+      "projectPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\Modelo.csproj",
       "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Erika\\Desktop\\Materias-022023\\TP CAI\\proyectoIntegrador\\modelo\\obj\\",
       "projectStyle": "PackageReference",
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

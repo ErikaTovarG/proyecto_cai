@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modelo.Usuarios
+﻿
+namespace Modelo.Usuario
 {
     public class Supervisor : Usuario
     {
+        public Supervisor()
+        {
+
+        }
     }
 }

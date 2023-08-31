@@ -1,4 +1,4 @@
-﻿namespace Modelo.Usuarios
+﻿namespace Modelo.Usuario
 {
     public class Usuario
     {
@@ -46,7 +46,10 @@
 
         #endregion
 
-
+        public Usuario(string nombre)
+        {
+            this.nombre =nombre;   
+        }
 
     }
 }

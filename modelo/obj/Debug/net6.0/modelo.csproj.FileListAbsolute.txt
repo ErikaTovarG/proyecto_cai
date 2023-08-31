@@ -1,7 +1,6 @@
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\bin\Debug\net6.0\modelo.deps.json
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\bin\Debug\net6.0\modelo.dll
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\bin\Debug\net6.0\modelo.pdb
-C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\obj\Debug\net6.0\modelo.csproj.AssemblyReference.cache
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\obj\Debug\net6.0\modelo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\obj\Debug\net6.0\modelo.AssemblyInfoInputs.cache
 C:\Users\Erika\Desktop\Materias-022023\TP CAI\proyectoIntegrador\modelo\obj\Debug\net6.0\modelo.AssemblyInfo.cs
