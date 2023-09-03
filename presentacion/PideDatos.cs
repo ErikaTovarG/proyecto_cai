@@ -88,6 +88,7 @@ namespace Presentacion
                 esValido = Validaciones.ValidaFecha(usu, ref fechaNacimiento);
             } while (!esValido);
 
+           
 
         }
     }

@@ -31,7 +31,7 @@ namespace Presentacion
                     //probando el metodo de validacion de nombre de usuario
                     //UsuarioModelo test = new UsuarioModelo();
                     //test.validarNombre("juan", "perez", "diegoperez");
-
+                    // comentario prueba
 
                 break;
                 default:
