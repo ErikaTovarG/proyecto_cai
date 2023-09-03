@@ -54,5 +54,35 @@
             return string.Format($"");
         }
 
+        public bool validarNombre( string nombre, string apellido, string nombreUsuario )
+        {
+            nombre.ToLower();
+            apellido.ToLower();
+            nombreUsuario.ToLower();
+
+            
+            Console.WriteLine(nombreUsuario.Length);
+            
+            if(nombreUsuario.Length >= 8 && nombreUsuario.Length <= 15 )
+            {
+                if(!nombreUsuario.Contains(nombre) && !nombreUsuario.Contains(apellido))
+                {
+                    Console.WriteLine("Nombre de usuario correcto");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("El nombre o el apellido no pueden estar contenidos en el nombre de usuario");
+                    return false;
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("El nombre de usuario debe tener entre 8 y 15 caracteres");
+                return false;
+            }
+        }
+
     }
 }

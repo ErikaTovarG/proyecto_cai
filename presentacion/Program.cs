@@ -1,4 +1,5 @@
-﻿using Negocio.UsuarioLogNegocio;
+﻿using Modelo.UsuarioModelo;
+using Negocio.UsuarioLogNegocio;
 
 namespace Presentacion
 {
@@ -22,6 +23,12 @@ namespace Presentacion
                 case 2:
                     ClsUsuario.CrearUsuarios();
                     Console.WriteLine("Usuario creado con exito.");
+
+                    //probando el metodo de validacion de nombre de usuario
+                    UsuarioModelo test = new UsuarioModelo();
+                    test.validarNombre("juan", "perez", "diegoperez");
+
+
                 break;
                 default:
                     Environment.Exit(0);
