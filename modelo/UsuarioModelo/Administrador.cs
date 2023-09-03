@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo.Usuario
+namespace Modelo.UsuarioModelo
 {
-    public class Administrador : Usuario
+    public class Administrador : UsuarioModelo
     {
     }
 }

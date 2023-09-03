@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Modelo.UsuarioModelo;
 
-namespace Modelo.Usuario
+namespace Modelo.UsuarioModelo
 {
-    public class Vendedor : Usuario
+    public class Vendedor : UsuarioModelo
     {
     }
 }
