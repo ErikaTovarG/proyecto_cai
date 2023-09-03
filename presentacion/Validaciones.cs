@@ -3,7 +3,7 @@ namespace Presentacion
 {
     public static class Validaciones
     {
-        public static bool validaEntero(string num, ref int salida)
+        public static bool ValidaEntero(string num, ref int salida)
         {
             bool flag = false;
             if (!int.TryParse(num, out salida) || salida < 0) Console.WriteLine("El dato ingresado debe ser númerico y positivo.");
@@ -12,7 +12,7 @@ namespace Presentacion
             return flag;
         }
 
-        public static bool validaFecha(string fecha, ref DateTime salida)
+        public static bool ValidaFecha(string fecha, ref DateTime salida)
         {
             bool flag = false;
             if(!DateTime.TryParse(fecha, out salida)) Console.WriteLine("El dato ingresado como fecha no es un dato valido.");
@@ -21,12 +21,13 @@ namespace Presentacion
             return flag;
         }
 
-        public static bool validaVacio(string dato, string campo)
+        public static bool ValidaVacio(string dato, ref string campo)
         {
             bool flag = false;
             if (string.IsNullOrEmpty(dato)) Console.WriteLine($"El campo {campo} no puede estar vacio.");
             else flag = true;
             return flag;
         }
+
     }
 }

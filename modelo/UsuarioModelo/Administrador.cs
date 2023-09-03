@@ -8,5 +8,9 @@ namespace Modelo.UsuarioModelo
 {
     public class Administrador : UsuarioModelo
     {
+        public void CrearSupervisor()
+        {
+
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Modelo.UsuarioModelo;
-using Negocio.UsuarioLogNegocio;
 
 namespace Presentacion
 {
@@ -21,12 +20,17 @@ namespace Presentacion
                     Console.WriteLine("Verificar Login");
                 break;
                 case 2:
-                    ClsUsuario.CrearUsuarios();
+                    Console.Clear();
+                    PideDatos i = new PideDatos();
+                    i.PedirUsuario();
+                    
+
+                    UsuarioModelo.CrearUsuarios();
                     Console.WriteLine("Usuario creado con exito.");
 
                     //probando el metodo de validacion de nombre de usuario
-                    UsuarioModelo test = new UsuarioModelo();
-                    test.validarNombre("juan", "perez", "diegoperez");
+                    //UsuarioModelo test = new UsuarioModelo();
+                    //test.validarNombre("juan", "perez", "diegoperez");
 
 
                 break;
@@ -41,16 +45,15 @@ namespace Presentacion
 
         private void Opciones()
         {
-            ImprimeLineaMarcada();
+
+            Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-            ImprimeLineaMarcada();
-            Console.WriteLine("¡Bienvenidos a ElectroHogar S.A.!");
-            ImprimeLineaMarcada();
+            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A.!\n");
             Console.WriteLine("| Opcion      | Marcar |");
             Console.WriteLine("|-------------|--------|");
-            Console.WriteLine("| Ingresar    |    1   | ");
-            Console.WriteLine("| Registrarse |    2   | ");
-            Console.WriteLine("| Salir       |    3   | \n");
+            Console.WriteLine("| Ingresar    |    1   |");
+            Console.WriteLine("| Registrarse |    2   |");
+            Console.WriteLine("| Salir       |    3   |\n");
         }
            
         private int SeleccionarOpcion()
@@ -61,7 +64,7 @@ namespace Presentacion
             {
                 Console.Write("Indique la opción con la cual desea continuar: ");
                 string res = Console.ReadLine();
-                flag = Validaciones.validaEntero(res, ref salida);
+                flag = Validaciones.ValidaEntero(res, ref salida);
             } while (!flag);
 
             return salida;
