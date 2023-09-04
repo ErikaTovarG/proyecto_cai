@@ -13,11 +13,12 @@ namespace Presentacion
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
+
             Vistas.MenuInicial();
             int opcion = SeleccionarOpcion(4);
             SeleccionarModulo(opcion, ref datos);
+
         }
-           
         private int SeleccionarOpcion(int cant)
         {
             bool flag;

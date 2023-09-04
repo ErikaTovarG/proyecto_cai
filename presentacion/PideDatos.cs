@@ -80,10 +80,14 @@ namespace Presentacion
                 esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
             } while (!esValido);
 
+
             usuarioModelo.FechaAlta = DateTime.Now;
             usuarioModelo.Id = Guid.NewGuid();
 
             Administrador.CrearSupervisor(usuarioModelo, ref datos);
+
+           
+
 
         }
     }
