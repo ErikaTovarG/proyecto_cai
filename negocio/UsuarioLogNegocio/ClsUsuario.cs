@@ -6,7 +6,7 @@ namespace Negocio.UsuarioLogNegocio
 {
     public static class ClsUsuario
     {
-        // validación contraseña
+        //-> Validación contraseña
         public static bool ValidarContrasenia(string campo, string valor)
         {
             bool flag = false;
@@ -40,6 +40,31 @@ namespace Negocio.UsuarioLogNegocio
                 Console.WriteLine("La constraseña se guardó correctamente.");
                 flag = true;
             }
+            return flag;
+        }
+
+        //-> Método para cambiar de contraseña, validando que no sea igual a la anterior.
+        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) // Acá como primer argumento el usuario instanciado.
+        {
+            bool flag = false;
+            bool validaciones = ValidarContrasenia("Contraseña", nuevaContrasenia);
+
+            //Si se cumplen todas las validaciones de la contraseña, valido que la nueva contraseña no sea igual a la anterior.
+            if (validaciones)
+            {
+                if (usuario.Contrasenia == nuevaContrasenia)
+                {
+                    Console.WriteLine("ERROR: La contraseña nueva no debe ser igual a la contraseña anterior. Por favor, inténtelo nuevamente.");
+                }
+                else
+                {
+                    Console.WriteLine("La contraseña se actualizó correctamente.");
+                    flag = true;
+                    //Actualizo la fecha actual.
+                    usuario.FechaAlta = DateTime.Now;
+                }
+            }
+
             return flag;
         }
 
