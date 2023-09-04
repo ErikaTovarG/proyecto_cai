@@ -1,93 +1,89 @@
-﻿
+﻿using Modelo.UsuarioModelo;
+
 namespace Presentacion
 {
-    public class PideDatos
+    public static class PideDatos
     {
-        public void PedirUsuario()
+        public static void PedirUsuario(ref Datos datos)
         {
-            string nombre,apellido, direccion, telefono, email, contrasenia, usuario;
-            DateTime fechaAlta, fechaNacimiento, fechaBaja;
+            UsuarioModelo usuarioModelo = new UsuarioModelo();
+
             bool esValido;
             do
             {
                 esValido = false;
                 Console.Write("Nombre: ");
-                nombre = Console.ReadLine();
+                usuarioModelo.Nombre = Console.ReadLine();
                 string campo = "Nombre";
-                esValido = Validaciones.ValidaVacio(nombre, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Nombre, ref campo);
             } while (!esValido);
             do
             {
                 esValido = false;
                 Console.Write("Apellido: ");
-                apellido = Console.ReadLine();
+                usuarioModelo.Apellido = Console.ReadLine();
                 string campo = "Apellido";
-                esValido = Validaciones.ValidaVacio(apellido, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Apellido, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Dirección: ");
-                direccion = Console.ReadLine();
+                usuarioModelo.Direccion = Console.ReadLine();
                 string campo = "Dirección";
-                esValido = Validaciones.ValidaVacio(direccion, ref campo);
-            } while (!esValido);
-
-            do
-            {
-                esValido = false;
-                Console.Write("Dirección: ");
-                direccion = Console.ReadLine();
-                string campo = "Dirección";
-                esValido = Validaciones.ValidaVacio(direccion, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Direccion, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Telefono: ");
-                telefono = Console.ReadLine();
+                usuarioModelo.Telefono = Console.ReadLine();
                 string campo = "Telefono";
-                esValido = Validaciones.ValidaVacio(telefono, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Telefono, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Email: ");
-                email = Console.ReadLine();
+                usuarioModelo.Email = Console.ReadLine();
                 string campo = "Email";
-                esValido = Validaciones.ValidaVacio(email, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Email, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Contraseña: ");
-                contrasenia = Console.ReadLine();
+                usuarioModelo.Contrasenia = Console.ReadLine();
                 string campo = "Contraseña";
-                esValido = Validaciones.ValidaVacio(contrasenia, ref campo);
+                esValido = Validaciones.ValidaVacio(usuarioModelo.Contrasenia, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Usuario: ");
-                usuario = Console.ReadLine();
-                string campo = "Usuario";
-                esValido = Validaciones.ValidaVacio(usuario, ref campo);
+                usuarioModelo.Usuario = Console.ReadLine();       
+                esValido = UsuarioModelo.ValidarNombre(usuarioModelo.Nombre, usuarioModelo.Apellido, usuarioModelo.Usuario);
             } while (!esValido);
 
             do
             {
                 esValido = false;
-                Console.Write("Usuario: ");
-                string usu = Console.ReadLine();
-                fechaNacimiento = DateTime.Now;
-                esValido = Validaciones.ValidaFecha(usu, ref fechaNacimiento);
+                Console.Write("Fecha de Nacimiento: ");
+                string datoFecha = Console.ReadLine();
+                DateTime salida = DateTime.Now;
+                usuarioModelo.FechaNacimiento = salida;
+                esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
             } while (!esValido);
 
+            usuarioModelo.FechaAlta = DateTime.Now;
+            usuarioModelo.Id = Guid.NewGuid();
+
+            Administrador.CrearSupervisor(usuarioModelo, ref datos);
 
         }
     }

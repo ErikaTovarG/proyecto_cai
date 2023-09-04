@@ -3,11 +3,11 @@ namespace Presentacion
 {
     public static class Validaciones
     {
-        public static bool ValidaEntero(string num, ref int salida)
+        public static bool ValidaEntero(string num, int cant, ref int salida)
         {
             bool flag = false;
             if (!int.TryParse(num, out salida) || salida < 0) Console.WriteLine("El dato ingresado debe ser númerico y positivo.");
-            else if (salida != 1 && salida != 2 && salida !=3) Console.WriteLine("La opción ingresada debe encontrarse en la tabla de opciones.");
+            else if (salida < 1 || salida > cant) Console.WriteLine("La opción ingresada debe encontrarse en la tabla de opciones.");
             else flag = true;
             return flag;
         }

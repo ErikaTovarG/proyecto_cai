@@ -6,57 +6,19 @@ namespace Presentacion
     {
         public static void Main(string[] args)
         {   Program programa = new Program();
-            programa.Inicia();
+            Datos datos = new Datos();  
+            programa.Inicia(ref datos);
         }
-        public void Inicia()
+        public void Inicia(ref Datos datos)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
-            Opciones();
-            int opcion = SeleccionarOpcion(); 
-            switch (opcion)
-            {
-                case 1:
-                    Console.WriteLine("Verificar Login");
-                break;
-                case 2:
-                    Console.Clear();
-                    PideDatos i = new PideDatos();
-                    i.PedirUsuario();
-                    
-
-                    UsuarioModelo.CrearUsuarios();
-                    Console.WriteLine("Usuario creado con exito.");
-
-                    //probando el metodo de validacion de nombre de usuario
-                    //UsuarioModelo test = new UsuarioModelo();
-                    //test.validarNombre("juan", "perez", "diegoperez");
-
-
-                break;
-                default:
-                    Environment.Exit(0);
-                    break;
-            }
-            Console.WriteLine($"\nIngresó la opción:  {opcion}    ");
-        }
-
-        private void ImprimeLineaMarcada() => Console.WriteLine(("").PadRight(120, '='));
-
-        private void Opciones()
-        {
-
-            Console.WriteLine("\n");
-            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A.!\n");
-            Console.WriteLine("| Opcion      | Marcar |");
-            Console.WriteLine("|-------------|--------|");
-            Console.WriteLine("| Ingresar    |    1   |");
-            Console.WriteLine("| Registrarse |    2   |");
-            Console.WriteLine("| Salir       |    3   |\n");
+            Vistas.MenuInicial();
+            int opcion = SeleccionarOpcion(4);
+            SeleccionarModulo(opcion, ref datos);
         }
            
-        private int SeleccionarOpcion()
+        private int SeleccionarOpcion(int cant)
         {
             bool flag;
             int salida = 0;
@@ -64,12 +26,72 @@ namespace Presentacion
             {
                 Console.Write("Indique la opción con la cual desea continuar: ");
                 string res = Console.ReadLine();
-                flag = Validaciones.ValidaEntero(res, ref salida);
+                flag = Validaciones.ValidaEntero(res, cant, ref salida);
             } while (!flag);
 
             return salida;
         }
+        private void SeleccionarModulo(int opcion, ref Datos datos)
+        {
+            switch (opcion)
+            {
+                case 1:
+                    Console.Clear();
+                    Vistas.MenuAdministrador();
+                    int opcion2 = SeleccionarOpcion(7);
+                    SeleccionarOpcionesAdministrador(opcion2, ref datos);
 
+                    break;
 
+                case 2:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 3:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                default:
+                    Environment.Exit(0);
+                    break;
+            }
+        }
+        private void SeleccionarOpcionesAdministrador(int opcion, ref Datos datos)
+        {
+            switch (opcion)
+            {
+                case 1:
+
+                    PideDatos.PedirUsuario(ref datos);
+                    foreach (var fila in datos.getUsuarios())
+                    {
+                        Console.WriteLine($"{fila.ToString()}");
+                    }
+
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n\tUsuario creado con exito.");
+                    break;
+                case 2:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 3:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 4:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 5:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 6:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 7:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                default:
+                    Environment.Exit(0);
+                    break;
+
+            }
+        }
     }
 }
