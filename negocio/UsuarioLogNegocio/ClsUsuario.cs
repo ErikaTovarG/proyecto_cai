@@ -10,6 +10,7 @@ namespace Negocio.UsuarioLogNegocio
         public static bool ValidarContrasenia(string campo, string valor)
         {
             bool flag = false;
+
             // Any determina si algún elemento de una secuencia satisface una condición
             bool contieneNumero = valor.Any(char.IsDigit);
             bool contieneMayuscula = valor.Any(char.IsUpper);
