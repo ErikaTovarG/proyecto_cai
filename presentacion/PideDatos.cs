@@ -1,12 +1,15 @@
 ﻿using Modelo.UsuarioModelo;
+using Negocio.UsuarioLogNegocio;
 
 namespace Presentacion
 {
+    /*
     public static class PideDatos
     {
-        public static void PedirUsuario(ref Datos datos)
+        public static UsuarioModelo PedirUsuario(ref Datos datos)
         {
-            UsuarioModelo usuarioModelo = new UsuarioModelo();
+            
+            
 
             bool esValido;
             do
@@ -84,11 +87,26 @@ namespace Presentacion
             usuarioModelo.FechaAlta = DateTime.Now;
             usuarioModelo.Id = Guid.NewGuid();
 
-            Administrador.CrearSupervisor(usuarioModelo, ref datos);
+
+            //if elegio Vendedor
+            UsuarioModelo usuario = null;
+
+            if ()
+            {
+                usuario = new Vendedor();
+            }
+            else
+            {
+                usuario = new Supervisor();
+            }
+
+            return usuario;
+
+            //ClsUsuario.CrearSupervisor(usuarioModelo, ref datos);
 
            
 
 
         }
-    }
+    }*/
 }

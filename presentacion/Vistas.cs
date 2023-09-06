@@ -8,7 +8,7 @@ namespace Presentacion
 {
     public class Vistas
     {
-        public static void MenuInicial()
+        public static void MenuInicia()
         {
             Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
@@ -20,6 +20,18 @@ namespace Presentacion
             Console.WriteLine("[4]. Salir.\n\n");
         }
 
+        public static void MenuInicial()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
+            Console.WriteLine("| Opcion         | Marcar |" );
+            Console.WriteLine("| Login          |    1   |");
+            Console.WriteLine("| Registrarse    |    2   |");
+            Console.WriteLine("| Salir          |    3   |\n");
+            //Console.WriteLine("[3]. Modulo Vendedor.\n");
+        }
+
         public static void MenuAdministrador() 
         {
             Console.WriteLine("\n");
@@ -27,13 +39,13 @@ namespace Presentacion
             Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A.!\n");
             Console.WriteLine("| Opcion                     | Marcar |");
             Console.WriteLine("|----------------------------|--------|");
-            Console.WriteLine("| Registrar Administrador    |    1   |");
-            Console.WriteLine("| Baja Administrador         |    2   |");
-            Console.WriteLine("| Registrar Supervisor       |    3   |");
-            Console.WriteLine("| Baja Supervisor            |    4   |");
-            Console.WriteLine("| Registrar Vendedor         |    5   |");
-            Console.WriteLine("| Baja Vendedor              |    6   |");
-            Console.WriteLine("| Salir                      |    7   |\n");
+            Console.WriteLine("| Registrar Supervisor       |    1   |");
+            Console.WriteLine("| Baja Supervisor            |    2   |");
+            Console.WriteLine("| Registrar Vendedor         |    3   |");
+            Console.WriteLine("| Baja Vendedor              |    4   |");
+            Console.WriteLine("| Salir                      |    5   |\n");
         }
+
+        
     }
 }

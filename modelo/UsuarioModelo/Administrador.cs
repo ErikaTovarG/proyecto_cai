@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Modelo.UsuarioModelo
 {
     public class Administrador : UsuarioModelo
     {
-        public static void CrearAdministrador(UsuarioModelo usuario, ref Datos datos)
+        #region Constructor 
+        public Administrador(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni)
         {
-            usuario.Host = 1;
-            datos.agregarUsuario(usuario);
+            Id = id;
+            Nombre = nombre;
+            Apellido = apellido;
+            Direccion = direccion;
+            Telefono = telefono;
+            Email = email;
+            Contrasenia = contrasenia;
+            Usuario = usuario;
+            FechaAlta = fechaAlta;
+            FechaNacimiento = fechaNacimiento;
+            FechaBaja = fechaBaja;
+            Host = host;
+            Dni = dni;
         }
-        public static void CrearSupervisor(UsuarioModelo usuario, ref Datos datos)
-        {
-            usuario.Host = 2;
-            datos.agregarUsuario(usuario);
-        }
-
-        public static void CrearVendedor(UsuarioModelo usuario, ref Datos datos)
-        {
-            usuario.Host = 3;
-            datos.agregarUsuario(usuario);
-        }
+        #endregion
     }
 }

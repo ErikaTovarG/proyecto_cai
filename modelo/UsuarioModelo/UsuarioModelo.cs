@@ -1,11 +1,11 @@
 ﻿namespace Modelo.UsuarioModelo
 {
-    public class UsuarioModelo
+    public abstract class UsuarioModelo
     {
         #region Variables Privadas
         private Guid _id;
         private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario;
-        private DateTime _fechaAlta, _fechaNacimiento, _fechaBaja;
+        private DateTime _fechaAlta, _fechaNacimiento;
         private int _host, _dni;
 
         #endregion
@@ -21,7 +21,7 @@
         public string Usuario { get => _usuario; set => _usuario = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
-        public DateTime FechaBaja { get => _fechaBaja; set => _fechaBaja = value; }
+        public DateTime? FechaBaja { get ; set ; }
         public int Host { get => _host; set => _host = value; }
         public int Dni { get => _dni; set => _dni = value; }
         #endregion

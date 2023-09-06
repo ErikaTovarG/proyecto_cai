@@ -1,6 +1,5 @@
-﻿//Llamo al proyecto para poder traerme todos los namespace con sus repectivas clases.
-using Modelo.UsuarioModelo;
-using System.Net.NetworkInformation;
+﻿using Modelo.UsuarioModelo;
+
 
 namespace Negocio.UsuarioLogNegocio
 {
@@ -42,9 +41,27 @@ namespace Negocio.UsuarioLogNegocio
             }
             return flag;
         }
+
+        public static void CrearAdministrador(UsuarioModelo usuario, ref Datos datos)
+        {
+            usuario.Host = 1;
+            datos.agregarUsuario(usuario);
+        }
+        public static void CrearSupervisor(UsuarioModelo usuario, ref Datos datos)
+        {
+            usuario.Host = 2;
+            datos.agregarUsuario(usuario);
+        }
+
+        public static void CrearVendedor(UsuarioModelo usuario, ref Datos datos)
+        {
+            usuario.Host = 3;
+            datos.agregarUsuario(usuario);
+        }
+
     }
 
-        
+
 }
 
 
