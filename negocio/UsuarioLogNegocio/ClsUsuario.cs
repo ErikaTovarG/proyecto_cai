@@ -5,7 +5,7 @@ namespace Negocio.UsuarioLogNegocio
 {
     public static class ClsUsuario
     {
-        // validación contraseña
+        //-> Validación contraseña
         public static bool ValidarContrasenia(string campo, string valor)
         {
             bool flag = false;
@@ -42,6 +42,7 @@ namespace Negocio.UsuarioLogNegocio
             return flag;
         }
 
+
         public static void CrearAdministrador(UsuarioModelo usuario, ref Datos datos)
         {
             usuario.Host = 1;
@@ -58,6 +59,68 @@ namespace Negocio.UsuarioLogNegocio
             usuario.Host = 3;
             datos.agregarUsuario(usuario);
         }
+
+
+        //-> Método para cambiar de contraseña, validando que no sea igual a la anterior.
+        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) // Acá como primer argumento el usuario instanciado.
+        {
+            bool flag = false;
+            bool validaciones = ValidarContrasenia("Contraseña", nuevaContrasenia);
+
+            //Si se cumplen todas las validaciones de la contraseña, valido que la nueva contraseña no sea igual a la anterior.
+            if (validaciones)
+            {
+                if (usuario.Contrasenia == nuevaContrasenia)
+                {
+                    Console.WriteLine("ERROR: La contraseña nueva no debe ser igual a la contraseña anterior. Por favor, inténtelo nuevamente.");
+                }
+                else
+                {
+                    Console.WriteLine("La contraseña se actualizó correctamente.");
+                    flag = true;
+                    //Actualizo la fecha actual.
+                    usuario.FechaAlta = DateTime.Now;
+                }
+            }
+
+            return flag;
+        }
+
+
+        public static bool ValidarNombre(string nombre, string apellido, string nombreUsuario)
+        {
+            nombre.ToLower();
+            apellido.ToLower();
+            nombreUsuario.ToLower();
+
+            //Console.WriteLine(nombreUsuario.Length);
+
+            if (nombreUsuario.Length >= 8 && nombreUsuario.Length <= 15)
+            {
+                if (!nombreUsuario.Contains(nombre) && !nombreUsuario.Contains(apellido))
+                {
+                    //Console.WriteLine("Nombre de usuario correcto");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("El nombre o el apellido no pueden estar contenidos en el nombre de usuario");
+                    return false;
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("El nombre de usuario debe tener entre 8 y 15 caracteres");
+                return false;
+            }
+        }
+
+
+
+
+
+
 
     }
 
