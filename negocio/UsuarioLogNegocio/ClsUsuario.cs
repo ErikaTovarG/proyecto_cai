@@ -118,7 +118,21 @@ namespace Negocio.UsuarioLogNegocio
 
 
 
+        public static bool ValidarExpiracion(UsuarioModelo usuario)
+        {
+            DateTime fechaActual = DateTime.Now;
+            DateTime fechaRenovacion = usuario.FechaAlta;
+            TimeSpan diferencia = fechaActual - fechaRenovacion; // Timespan se usa para obtener valores derivados de una fecha.
 
+            if (diferencia.TotalDays >= 30)
+            {
+                return true; // La fecha de renovación es igual o mayor a 30 días --> para pedir cambio
+            }
+            else
+            {
+                return false; // La fecha de renovación es menor a 30 días --> sigue con la misma
+            }
+        }
 
 
 
