@@ -1,6 +1,5 @@
 ﻿using Modelo.UsuarioModelo;
 
-
 namespace Negocio.UsuarioLogNegocio
 {
     public static class ClsUsuario

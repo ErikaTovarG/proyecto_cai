@@ -3,110 +3,113 @@ using Negocio.UsuarioLogNegocio;
 
 namespace Presentacion
 {
-    /*
+    
     public static class PideDatos
     {
-        public static UsuarioModelo PedirUsuario(ref Datos datos)
+        public static void PedirUsuario()
         {
-            
-            
-
+            Guid id;
+            string nombre, apellido, direccion, telefono, email, usuario, contrasenia;
+            DateTime fechaNacimiento, fechaAlta;
             bool esValido;
             do
             {
                 esValido = false;
                 Console.Write("Nombre: ");
-                usuarioModelo.Nombre = Console.ReadLine();
+                nombre = Console.ReadLine();
                 string campo = "Nombre";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Nombre, ref campo);
+                esValido = Validaciones.ValidaVacio( nombre, ref campo);
             } while (!esValido);
             do
             {
                 esValido = false;
                 Console.Write("Apellido: ");
-                usuarioModelo.Apellido = Console.ReadLine();
+                apellido = Console.ReadLine();
                 string campo = "Apellido";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Apellido, ref campo);
+                esValido = Validaciones.ValidaVacio(apellido, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Dirección: ");
-                usuarioModelo.Direccion = Console.ReadLine();
+                direccion = Console.ReadLine();
                 string campo = "Dirección";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Direccion, ref campo);
+                esValido = Validaciones.ValidaVacio(direccion, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Telefono: ");
-                usuarioModelo.Telefono = Console.ReadLine();
+                telefono = Console.ReadLine();
                 string campo = "Telefono";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Telefono, ref campo);
+                esValido = Validaciones.ValidaVacio(telefono, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Email: ");
-                usuarioModelo.Email = Console.ReadLine();
+                email = Console.ReadLine();
                 string campo = "Email";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Email, ref campo);
+                esValido = Validaciones.ValidaVacio(email, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Contraseña: ");
-                usuarioModelo.Contrasenia = Console.ReadLine();
+                contrasenia = Console.ReadLine();
                 string campo = "Contraseña";
-                esValido = Validaciones.ValidaVacio(usuarioModelo.Contrasenia, ref campo);
+                esValido = Validaciones.ValidaVacio(contrasenia, ref campo);
             } while (!esValido);
 
             do
             {
                 esValido = false;
                 Console.Write("Usuario: ");
-                usuarioModelo.Usuario = Console.ReadLine();       
-                esValido = UsuarioModelo.ValidarNombre(usuarioModelo.Nombre, usuarioModelo.Apellido, usuarioModelo.Usuario);
+                usuario = Console.ReadLine();       
+                esValido = UsuarioModelo.ValidarNombre(nombre, apellido,usuario);
             } while (!esValido);
 
             do
             {
                 esValido = false;
-                Console.Write("Fecha de Nacimiento: ");
+                Console.Write("Fecha de Nacimiento: (en formato dd/mm/aaaa ");
                 string datoFecha = Console.ReadLine();
                 DateTime salida = DateTime.Now;
-                usuarioModelo.FechaNacimiento = salida;
+                fechaNacimiento = salida;
                 esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
             } while (!esValido);
 
 
-            usuarioModelo.FechaAlta = DateTime.Now;
-            usuarioModelo.Id = Guid.NewGuid();
-
-
-            //if elegio Vendedor
-            UsuarioModelo usuario = null;
-
-            if ()
-            {
-                usuario = new Vendedor();
-            }
-            else
-            {
-                usuario = new Supervisor();
-            }
-
-            return usuario;
-
-            //ClsUsuario.CrearSupervisor(usuarioModelo, ref datos);
-
-           
-
+            fechaAlta = DateTime.Now;
+            id = Guid.NewGuid();
 
         }
-    }*/
+    }
 }
+
+/* Codigo del profe
+ * 
+ * //if elegio Vendedor
+UsuarioModelo usuario = null;
+
+if ()
+{
+    usuario = new Vendedor();
+}
+else
+{
+    usuario = new Supervisor();
+}
+
+return usuario;
+
+//ClsUsuario.CrearSupervisor(usuarioModelo, ref datos);
+
+*/
+
+
+
