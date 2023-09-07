@@ -29,5 +29,14 @@ namespace Presentacion
             return flag;
         }
 
+        public static bool ValidaHost(string host, ref int salida)
+        {
+            bool flag = false;
+            if (!int.TryParse(host, out salida) || salida < 0) Console.WriteLine("El dato ingresado debe ser númerico y positivo.");
+            else flag = true;
+            return flag;
+        }
+
+
     }
 }

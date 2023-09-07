@@ -136,9 +136,11 @@ namespace Presentacion
              switch (opcion)
              {
                  case 1:
-                     UsuarioModelo usuario = PideDatos.PedirUsuario();
-                     //listadoUsuarios.add(usuario);
 
+                    UsuarioModelo usuario = new PideDatos.PedirUsuario();
+       
+                    //listadoUsuarios.add(usuario);
+                     Datos datos = new Datos();
                      foreach (var fila in datos.getUsuarios())
                      {
                          Console.WriteLine($"{fila.ToString()}");
