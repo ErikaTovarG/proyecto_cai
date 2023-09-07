@@ -23,7 +23,7 @@
         public static bool ValidaVacio(string dato, ref string campo)
         {
             bool flag = false;
-            if (string.IsNullOrEmpty(dato)) Console.WriteLine($"El campo {campo} no puede estar vacio.");
+            if (string.IsNullOrEmpty(dato.Trim())) Console.WriteLine($"El campo {campo} no puede estar vacio.");
             else flag = true;
             return flag;
         }

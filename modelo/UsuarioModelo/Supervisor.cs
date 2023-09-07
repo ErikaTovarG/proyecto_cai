@@ -21,6 +21,24 @@
             Dni = dni;
         }
         #endregion
+
+
+        //public override string ToString()
+        //{
+        //    return $"ID: {Id}, " +
+        //           $"Nombre: {Nombre}, " +
+        //           $"Apellido: {Apellido}, " +
+        //           $"Dirección: {Direccion}, " +
+        //           $"Teléfono: {Telefono}, " +
+        //           $"Email: {Email}, " +
+        //           $"Contraseña: {Contrasenia}, " +
+        //           $"Usuario: {Usuario}, " +
+        //           $"Fecha de Alta: {FechaAlta}, " +
+        //           $"Fecha de Nacimiento: {FechaNacimiento}, " +
+        //           $"Fecha de Baja: {FechaBaja}, " +
+        //           $"Host Seleccionado: {Host}, " +
+        //           $"Salida DNI: {Dni}";
+        //}
     }
 
 }

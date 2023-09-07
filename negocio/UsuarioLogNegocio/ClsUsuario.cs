@@ -113,7 +113,17 @@ namespace Negocio.UsuarioLogNegocio
             }
         }
 
+        //private static int ObtenerNuevoId(List<UsuarioModelo> usuarios)
+        //{
+        //    int nuevoId = 1; // Valor predeterminado si la lista está vacía
 
+        //    if (usuarios.Count > 0)
+        //    {
+        //        nuevoId = usuarios.Max(u => u.Id)+1;
+        //    }
+
+        //    return nuevoId;
+        //}
 
         public static bool ValidarExpiracion(UsuarioModelo usuario)
         {

@@ -6,7 +6,7 @@ namespace Presentacion
 
     public static class PideDatos
     {
-        public static UsuarioModelo PedirUsuario()
+        public static UsuarioModelo PedirUsuario(int hostSeleccionado)
         {
             Guid id;
             string nombre, apellido, direccion, telefono, email, usuario, contrasenia;
@@ -63,7 +63,7 @@ namespace Presentacion
                 Console.Write("Contraseña: ");
                 contrasenia = Console.ReadLine();
                 string campo = "Contraseña";
-                esValido = Validaciones.ValidaVacio(contrasenia, ref campo);
+                esValido = ClsUsuario.ValidarContrasenia(campo,  contrasenia) ;
             } while (!esValido);
 
             do
@@ -84,19 +84,12 @@ namespace Presentacion
                 esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
             } while (!esValido);
 
+            Console.WriteLine("Host Seleccionado: " + hostSeleccionado);
+            Console.Write("");
             do
             {
                 esValido = false;
-                Console.Write("Host: ");
-                string datoIngresado = Console.ReadLine();
-                salidaHost = 0;
-                esValido = Validaciones.ValidaEntero(datoIngresado, 3, ref salidaHost);
-            } while (!esValido);
-
-            do
-            {
-                esValido = false;
-                Console.Write("Host: ");
+                Console.Write("DNI:" );
                 string datoIngresado = Console.ReadLine();
                 salidaDni = 0;
                 esValido = Validaciones.ValidaNumerico(datoIngresado, ref salidaDni);
@@ -104,20 +97,22 @@ namespace Presentacion
 
 
             fechaAlta = DateTime.Now;
+            //int nuevoId = ObtenerNuevoId(usuarios);
+
             id = Guid.NewGuid();
 
             UsuarioModelo usuarioaAgregar = null;
 
-            switch (usuarioaAgregar.Host)
+            switch (hostSeleccionado)
             {
                 case 1:
-                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, salidaHost, salidaDni);
+                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
                     break;
                 case 2:
-                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, salidaHost, salidaDni);
+                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
                     break;
                 case 3:
-                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, salidaHost, salidaDni);
+                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
                     break;
                 default:
                     usuarioaAgregar = null;

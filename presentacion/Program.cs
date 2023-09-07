@@ -44,6 +44,7 @@ namespace Presentacion
                 case 1:
                     Console.Clear();
                     UsuarioModelo usuLogueado = MenuLogin(usuarios);
+
                     if (usuLogueado != null)
                     {
                         switch (usuLogueado.Host)
@@ -65,8 +66,6 @@ namespace Presentacion
                         }
 
                     }
-
-
                     break;
 
                 case 2:
@@ -79,17 +78,29 @@ namespace Presentacion
         }
 
 
+        public bool Preguntar()
+        {
+            string res;
+            bool flag = false;
+            do
+            {
+                Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
+                res = Console.ReadLine().ToUpper();
+                if (res == "S" || res == "N") { flag = true; }
+            } while (!flag);
+
+            if (res == "N") { Environment.Exit(0); }
+            return res == "S";
+        }
+
         public UsuarioModelo MenuLogin(List<UsuarioModelo> usuarios)
         {
-            string usuarioIngresado, contrasenaIngresada, res;
+            string usuarioIngresado, contrasenaIngresada;
             Console.WriteLine("\n");
-            //Solicita nombre usuario
             Console.Write("\t Usuario: ");
             usuarioIngresado = Console.ReadLine().Trim();
-            //Solicita contraseña del usuario
             Console.Write("\t Contraseña: ");
             contrasenaIngresada = Console.ReadLine().Trim();
-
 
             bool inicioSesionExitoso = false;
             UsuarioModelo usu2 = null;
@@ -112,24 +123,15 @@ namespace Presentacion
             else
             {
                 Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");
-                Preguntar(usuarios);
-                return null;
+                if (Preguntar())
+                {
+                    return MenuLogin(usuarios);
+                }
+                else
+                {
+                    return null; 
+                }
             }
-
-        }
-        public void Preguntar(List<UsuarioModelo> usuarios)
-        {
-            string res;
-            bool flag = false;
-            do
-            {
-                Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
-                res = Console.ReadLine().ToUpper();
-                if (res == "S" || res == "N") { flag = true; }
-            } while (!flag);
-
-            if (res == "N") { Environment.Exit(0); }
-            else MenuLogin(usuarios);
         }
 
         private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
@@ -137,28 +139,32 @@ namespace Presentacion
             switch (opcion)
             {
                 case 1:
-                    UsuarioModelo usuarioSup = PideDatos.PedirUsuario();
+                    UsuarioModelo usuarioSup = PideDatos.PedirUsuario(2);
                     usuarios.Add(usuarioSup);
-
+                   
                     foreach (var fila in usuarios)
                     {
+                        Console.WriteLine("******************************");
                         Console.WriteLine($"{fila.ToString()}");
                     }
                     Console.WriteLine("\n");
+                    Console.WriteLine("******************************");
                     Console.WriteLine("\n\tUsuario creado con exito.");
                     break;
                 case 2:
                     Console.WriteLine("\nProximamente...");
                     break;
                 case 3:
-                    UsuarioModelo usuarioVen = PideDatos.PedirUsuario();
+                    UsuarioModelo usuarioVen = PideDatos.PedirUsuario(3);
                     usuarios.Add(usuarioVen);
 
                     foreach (var fila in usuarios)
                     {
+                        Console.WriteLine("******************************");
                         Console.WriteLine($"{fila.ToString()}");
                     }
                     Console.WriteLine("\n");
+                    Console.WriteLine("******************************");
                     Console.WriteLine("\n\tUsuario creado con exito.");
                     break;
                 case 4:
@@ -168,8 +174,9 @@ namespace Presentacion
                     Environment.Exit(0);
                     break;
             }
+          
         }
-
+       
 
     }
 }
