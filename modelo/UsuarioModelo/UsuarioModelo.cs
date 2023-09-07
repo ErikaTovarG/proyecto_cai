@@ -51,7 +51,8 @@
 
         public string ToString()
         {
-            return $"{Id} \n {Nombre} \n {Apellido} \n {Direccion} \n {Usuario} \n {Host} ";
+            return $"Nombre: {Nombre} \nApellido: {Apellido} \nDireccion: {Direccion} \nUsuario: {Usuario} \nHost: {Host} \nFecha Nacimiento" +
+                $"{FechaNacimiento} \nFecha Alta: {FechaAlta} \nDni: {Dni} \nEmail: {Email} \nTelefono: {Telefono}";
         }
 
         //public override string ToString()

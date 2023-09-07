@@ -1,4 +1,5 @@
 ﻿using Modelo.UsuarioModelo;
+using Negocio.UsuarioLogNegocio;
 using System.Threading.Channels;
 
 namespace Presentacion
@@ -10,7 +11,7 @@ namespace Presentacion
             Program programa = new Program();
             //Datos datos = new Datos();
             List<UsuarioModelo> usuarios = new List<UsuarioModelo>();
-            UsuarioModelo hola = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI", "etovar", DateTime.Now, Convert.ToDateTime("18/10/1991"), null, 1, 44665522);
+            UsuarioModelo hola = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522);
             usuarios.Add(hola);
             programa.Inicia(usuarios);
             //programa.Inicia(ref datos);
@@ -21,7 +22,7 @@ namespace Presentacion
             Console.Clear();
 
             Vistas.MenuInicial();
-            int opcion = SeleccionarOpcion(3);
+            int opcion = SeleccionarOpcion(2);
             SeleccionarModulo(opcion, usuarios);
         }
         private int SeleccionarOpcion(int cant)
@@ -50,6 +51,7 @@ namespace Presentacion
                         switch (usuLogueado.Host)
                         {
                             case 1:
+                                Console.Clear();
                                 Vistas.MenuAdministrador();
                                 int opcion2 = SeleccionarOpcion(5);
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
@@ -117,6 +119,7 @@ namespace Presentacion
 
             if (inicioSesionExitoso)
             {
+                ClsUsuario.validarDias(usu2);
                 Console.WriteLine("\t\nInicio de sesión exitoso. ¡Bienvenido!\n");
                 return usu2;
             }
@@ -138,17 +141,19 @@ namespace Presentacion
         {
             switch (opcion)
             {
+      
                 case 1:
+                    
                     UsuarioModelo usuarioSup = PideDatos.PedirUsuario(2);
                     usuarios.Add(usuarioSup);
                    
                     foreach (var fila in usuarios)
                     {
-                        Console.WriteLine("******************************");
+                        Console.WriteLine((" ").PadRight(48, '*'));
                         Console.WriteLine($"{fila.ToString()}");
                     }
                     Console.WriteLine("\n");
-                    Console.WriteLine("******************************");
+                    Console.WriteLine((" ").PadRight(48, '*'));
                     Console.WriteLine("\n\tUsuario creado con exito.");
                     break;
                 case 2:
@@ -160,11 +165,11 @@ namespace Presentacion
 
                     foreach (var fila in usuarios)
                     {
-                        Console.WriteLine("******************************");
+                        Console.WriteLine((" ").PadRight(48, '*'));
                         Console.WriteLine($"{fila.ToString()}");
                     }
                     Console.WriteLine("\n");
-                    Console.WriteLine("******************************");
+                    Console.WriteLine((" ").PadRight(48, '*'));
                     Console.WriteLine("\n\tUsuario creado con exito.");
                     break;
                 case 4:

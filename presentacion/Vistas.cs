@@ -15,8 +15,8 @@ namespace Presentacion
             Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
             Console.WriteLine("| Opcion         | Marcar |");
             Console.WriteLine("| Login          |    1   |");
-            Console.WriteLine("| Registrarse    |    2   |");
-            Console.WriteLine("| Salir          |    3   |\n");
+            //Console.WriteLine("| Registrarse    |    2   |");
+            Console.WriteLine("| Salir          |    2   |\n");
         }
 
         public static void MenuAdministrador()

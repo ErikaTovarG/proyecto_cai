@@ -35,7 +35,6 @@ namespace Negocio.UsuarioLogNegocio
             }
             else
             {
-                Console.WriteLine("La constraseña se guardó correctamente.");
                 flag = true;
             }
             return flag;
@@ -60,7 +59,28 @@ namespace Negocio.UsuarioLogNegocio
         }
 
 
-        //-> Método para cambiar de contraseña, validando que no sea igual a la anterior.
+        public static void validarDias(UsuarioModelo usuario)
+        {
+            bool flag;
+            bool fechaExpiracion = ValidarExpiracion(usuario);
+            string nuevaContrasenia;
+
+            if (fechaExpiracion)
+            {
+                Console.WriteLine("Su contraseña ha expirado.");
+
+                do
+                {
+                    Console.Write("Por favor, ingrese una nueva contraseña: ");
+                    nuevaContrasenia = Console.ReadLine();
+                    flag = CambiarContrasenia(usuario, nuevaContrasenia);
+                } while (!flag);
+              
+            }
+        
+        }
+
+
         public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) // Acá como primer argumento el usuario instanciado.
         {
             bool flag = false;
@@ -71,17 +91,18 @@ namespace Negocio.UsuarioLogNegocio
             {
                 if (usuario.Contrasenia == nuevaContrasenia)
                 {
-                    Console.WriteLine("ERROR: La contraseña nueva no debe ser igual a la contraseña anterior. Por favor, inténtelo nuevamente.");
+                    Console.WriteLine("ERROR: La contraseña nueva no debe ser igual a la contraseña anterior.");
                 }
                 else
                 {
-                    Console.WriteLine("La contraseña se actualizó correctamente.");
-                    flag = true;
                     //Actualizo la fecha actual.
                     usuario.FechaAlta = DateTime.Now;
+                    usuario.Contrasenia = nuevaContrasenia;
+                    Console.WriteLine("\n \tLa contraseña se actualizó correctamente." );
+                    flag = true;
+
                 }
             }
-
             return flag;
         }
 
@@ -96,7 +117,6 @@ namespace Negocio.UsuarioLogNegocio
             {
                 if (!nombreUsuario.Contains(nombre) && !nombreUsuario.Contains(apellido))
                 {
-                    //Console.WriteLine("Nombre de usuario correcto");
                     return true;
                 }
                 else
