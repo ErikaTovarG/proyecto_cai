@@ -130,31 +130,7 @@ namespace Negocio.UsuarioLogNegocio
                 return false; // La fecha de renovación es menor a 30 días --> sigue con la misma
             }
         }
-
-        //  Validación de la fecha
-
-        public static bool ValidarFecha(string fecha, ref DateTime fechaSalida)
-        {
-            bool flag = false;
-            if (!DateTime.TryParse(fecha, out fechaSalida))
-            {
-                Console.WriteLine("El valor ingresado no es una fecha válida");
-            }
-            else if (fechaSalida > DateTime.Now)
-            {
-                Console.WriteLine("La fecha no puede ser mayor a hoy.");
-            }
-            else
-            {
-                flag = true;
-            }
-            return flag;
-        }
-
-
     }
-
-
 }
 
 

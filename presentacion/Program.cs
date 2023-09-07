@@ -44,14 +44,14 @@ namespace Presentacion
                 case 1:
                     Console.Clear();
                     UsuarioModelo usuLogueado = MenuLogin(usuarios);
-                    if(usuLogueado != null)
+                    if (usuLogueado != null)
                     {
                         switch (usuLogueado.Host)
                         {
                             case 1:
                                 Vistas.MenuAdministrador();
                                 int opcion2 = SeleccionarOpcion(5);
-                                SeleccionarOpcionesAdministrador(opcion2);
+                                SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 break;
                             case 2:
                                 Console.WriteLine("aca ira la vista de Supervisor");
@@ -59,10 +59,11 @@ namespace Presentacion
                             case 3:
                                 Console.WriteLine("aca ira la vista de Vendedor");
                                 break;
-                            default: Console.WriteLine("No se encontro");
+                            default:
+                                Console.WriteLine("No se encontro");
                                 break;
                         }
-                     
+
                     }
 
 
@@ -80,7 +81,7 @@ namespace Presentacion
 
         public UsuarioModelo MenuLogin(List<UsuarioModelo> usuarios)
         {
-            string usuarioIngresado, contrasenaIngresada,res;
+            string usuarioIngresado, contrasenaIngresada, res;
             Console.WriteLine("\n");
             //Solicita nombre usuario
             Console.Write("\t Usuario: ");
@@ -99,10 +100,10 @@ namespace Presentacion
                 {
                     inicioSesionExitoso = true;
                     usu2 = usu;
-                    break; 
+                    break;
                 }
             }
-          
+
             if (inicioSesionExitoso)
             {
                 Console.WriteLine("\t\nInicio de sesión exitoso. ¡Bienvenido!\n");
@@ -124,54 +125,51 @@ namespace Presentacion
             {
                 Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
                 res = Console.ReadLine().ToUpper();
-                if (res == "S" || res == "N") {flag = true; }            
+                if (res == "S" || res == "N") { flag = true; }
             } while (!flag);
 
             if (res == "N") { Environment.Exit(0); }
-            else MenuLogin(usuarios); 
+            else MenuLogin(usuarios);
         }
 
-         private void SeleccionarOpcionesAdministrador(int opcion)
-         {
-             switch (opcion)
-             {
-                 case 1:
-                     UsuarioModelo usuario = PideDatos.PedirUsuario();
-                     //listadoUsuarios.add(usuario);
+        private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
+        {
+            switch (opcion)
+            {
+                case 1:
+                    UsuarioModelo usuarioSup = PideDatos.PedirUsuario();
+                    usuarios.Add(usuarioSup);
 
-                     foreach (var fila in datos.getUsuarios())
-                     {
-                         Console.WriteLine($"{fila.ToString()}");
-                     }
+                    foreach (var fila in usuarios)
+                    {
+                        Console.WriteLine($"{fila.ToString()}");
+                    }
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n\tUsuario creado con exito.");
+                    break;
+                case 2:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                case 3:
+                    UsuarioModelo usuarioVen = PideDatos.PedirUsuario();
+                    usuarios.Add(usuarioVen);
 
-                     Console.WriteLine("\n");
-                     Console.WriteLine("\n\tUsuario creado con exito.");
-                     break;
-                 case 2:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 case 3:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 case 4:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 case 5:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 case 6:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 case 7:
-                     Console.WriteLine("\nProximamente...");
-                     break;
-                 default:
-                     Environment.Exit(0);
-                     break;
+                    foreach (var fila in usuarios)
+                    {
+                        Console.WriteLine($"{fila.ToString()}");
+                    }
+                    Console.WriteLine("\n");
+                    Console.WriteLine("\n\tUsuario creado con exito.");
+                    break;
+                case 4:
+                    Console.WriteLine("\nProximamente...");
+                    break;
+                default:
+                    Environment.Exit(0);
+                    break;
+            }
+        }
 
-             }
-         }
-        
 
     }
 }
