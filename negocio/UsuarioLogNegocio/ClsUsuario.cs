@@ -86,7 +86,7 @@ namespace Negocio.UsuarioLogNegocio
         }
 
 
-        public static bool ValidarNombre(string nombre, string apellido, string nombreUsuario)
+        public static bool ValidarNombre(string nombre, string apellido, ref string nombreUsuario)
         {
             nombre.ToLower();
             apellido.ToLower();
