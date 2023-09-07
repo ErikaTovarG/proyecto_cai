@@ -9,12 +9,20 @@ namespace Presentacion
         public static void Main(string[] args)
         {
             Program programa = new Program();
-            //Datos datos = new Datos();
+
+          
             List<UsuarioModelo> usuarios = new List<UsuarioModelo>();
-            UsuarioModelo hola = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522);
-            usuarios.Add(hola);
+            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522);   
+            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 44665522);
+            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 44665522);
+
+            
+            usuarios.Add(admin1);
+            usuarios.Add(sup1);
+            usuarios.Add(vend1);
+
             programa.Inicia(usuarios);
-            //programa.Inicia(ref datos);
+     
         }
         public void Inicia(List<UsuarioModelo> usuarios)
         {
