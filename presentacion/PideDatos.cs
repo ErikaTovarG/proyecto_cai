@@ -70,7 +70,7 @@ namespace Presentacion
                 esValido = false;
                 Console.Write("Usuario: ");
                 usuario = Console.ReadLine();       
-                esValido = UsuarioModelo.ValidarNombre(nombre, apellido,usuario);
+                esValido = ClsUsuario.ValidarNombre(nombre, apellido,usuario);
             } while (!esValido);
 
             do

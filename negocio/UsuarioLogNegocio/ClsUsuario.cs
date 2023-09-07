@@ -92,8 +92,6 @@ namespace Negocio.UsuarioLogNegocio
             apellido.ToLower();
             nombreUsuario.ToLower();
 
-            //Console.WriteLine(nombreUsuario.Length);
-
             if (nombreUsuario.Length >= 8 && nombreUsuario.Length <= 15)
             {
                 if (!nombreUsuario.Contains(nombre) && !nombreUsuario.Contains(apellido))
