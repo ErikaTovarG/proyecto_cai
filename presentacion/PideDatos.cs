@@ -84,8 +84,6 @@ namespace Presentacion
                 esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
             } while (!esValido);
 
-            Console.WriteLine("Host Seleccionado: " + hostSeleccionado);
-            Console.Write("");
             do
             {
                 esValido = false;
@@ -97,8 +95,6 @@ namespace Presentacion
 
 
             fechaAlta = DateTime.Now;
-            //int nuevoId = ObtenerNuevoId(usuarios);
-
             id = Guid.NewGuid();
 
             UsuarioModelo usuarioaAgregar = null;

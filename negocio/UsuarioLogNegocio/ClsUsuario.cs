@@ -4,7 +4,6 @@ namespace Negocio.UsuarioLogNegocio
 {
     public static class ClsUsuario
     {
-        //-> Validación contraseña
         public static bool ValidarContrasenia(string campo, string valor)
         {
             bool flag = false;
@@ -16,22 +15,22 @@ namespace Negocio.UsuarioLogNegocio
             //valido que no esté vacía
             if (string.IsNullOrEmpty(valor))
             {
-                Console.WriteLine("ERROR: El campo {0}, no puede estar vacío.", campo);
+                Console.WriteLine("\nERROR: El campo {0}, no puede estar vacío.\n", campo);
             }
             //valido que tenga entre 8 y 15 caracteres
             else if (valor.Length < 8 || valor.Length > 15)
             {
-                Console.WriteLine("ERROR: La constraseña debe tener entre 8 y 15 caracteres.");
+                Console.WriteLine("\nERROR: La constraseña debe tener entre 8 y 15 caracteres.\n");
             }
             //valido que contenga al menos un número.
             else if (!contieneNumero)
             {
-                Console.WriteLine("ERROR: La constraseña debe tener al menos un valor numérico.");
+                Console.WriteLine("\nERROR: La constraseña debe tener al menos un valor numérico.\n");
             }
             //valido que contenga al menos una mayúscula.
             else if (!contieneMayuscula)
             {
-                Console.WriteLine("ERROR: La constraseña debe tener al menos un caracter en mayúscula.");
+                Console.WriteLine("\nERROR: La constraseña debe tener al menos un caracter en mayúscula.\n");
             }
             else
             {
@@ -39,26 +38,6 @@ namespace Negocio.UsuarioLogNegocio
             }
             return flag;
         }
-
-
-        public static void CrearAdministrador(UsuarioModelo usuario, ref Datos datos)
-        {
-            usuario.Host = 1;
-            datos.agregarUsuario(usuario);
-        }
-        public static void CrearSupervisor(UsuarioModelo usuario, ref Datos datos)
-        {
-            usuario.Host = 2;
-            datos.agregarUsuario(usuario);
-        }
-
-        public static void CrearVendedor(UsuarioModelo usuario, ref Datos datos)
-        {
-            usuario.Host = 3;
-            datos.agregarUsuario(usuario);
-        }
-
-
         public static void validarDias(UsuarioModelo usuario)
         {
             bool flag;
@@ -67,11 +46,11 @@ namespace Negocio.UsuarioLogNegocio
 
             if (fechaExpiracion)
             {
-                Console.WriteLine("Su contraseña ha expirado.");
+                Console.WriteLine("\n\tSu contraseña ha expirado.");
 
                 do
                 {
-                    Console.Write("Por favor, ingrese una nueva contraseña: ");
+                    Console.Write("\nPor favor, ingrese una nueva contraseña: ");
                     nuevaContrasenia = Console.ReadLine();
                     flag = CambiarContrasenia(usuario, nuevaContrasenia);
                 } while (!flag);
@@ -79,9 +58,7 @@ namespace Negocio.UsuarioLogNegocio
             }
         
         }
-
-
-        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) // Acá como primer argumento el usuario instanciado.
+        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) 
         {
             bool flag = false;
             bool validaciones = ValidarContrasenia("Contraseña", nuevaContrasenia);
@@ -91,7 +68,7 @@ namespace Negocio.UsuarioLogNegocio
             {
                 if (usuario.Contrasenia == nuevaContrasenia)
                 {
-                    Console.WriteLine("ERROR: La contraseña nueva no debe ser igual a la contraseña anterior.");
+                    Console.WriteLine("\nERROR: La contraseña nueva no debe ser igual a la contraseña anterior.\n");
                 }
                 else
                 {
@@ -100,13 +77,10 @@ namespace Negocio.UsuarioLogNegocio
                     usuario.Contrasenia = nuevaContrasenia;
                     Console.WriteLine("\n \tLa contraseña se actualizó correctamente." );
                     flag = true;
-
                 }
             }
             return flag;
         }
-
-
         public static bool ValidarNombre(string nombre, string apellido, ref string nombreUsuario)
         {
             nombre.ToLower();
@@ -121,30 +95,17 @@ namespace Negocio.UsuarioLogNegocio
                 }
                 else
                 {
-                    Console.WriteLine("El nombre o el apellido no pueden estar contenidos en el nombre de usuario");
+                    Console.WriteLine("\nERROR: El nombre o el apellido no pueden estar contenidos en el nombre de usuario");
                     return false;
                 }
 
             }
             else
             {
-                Console.WriteLine("El nombre de usuario debe tener entre 8 y 15 caracteres");
+                Console.WriteLine("\nERROR: El nombre de usuario debe tener entre 8 y 15 caracteres");
                 return false;
             }
         }
-
-        //private static int ObtenerNuevoId(List<UsuarioModelo> usuarios)
-        //{
-        //    int nuevoId = 1; // Valor predeterminado si la lista está vacía
-
-        //    if (usuarios.Count > 0)
-        //    {
-        //        nuevoId = usuarios.Max(u => u.Id)+1;
-        //    }
-
-        //    return nuevoId;
-        //}
-
         public static bool ValidarExpiracion(UsuarioModelo usuario)
         {
             DateTime fechaActual = DateTime.Now;

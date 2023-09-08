@@ -51,7 +51,7 @@
 
         public string ToString()
         {
-            return $"Nombre: {Nombre} \nApellido: {Apellido} \nDireccion: {Direccion} \nUsuario: {Usuario} \nHost: {Host} \nFecha Nacimiento" +
+            return $"Nombre: {Nombre} \nApellido: {Apellido} \nDireccion: {Direccion} \nUsuario: {Usuario} \nHost: {Host} \nFecha Nacimiento: " +
                 $"{FechaNacimiento} \nFecha Alta: {FechaAlta} \nDni: {Dni} \nEmail: {Email} \nTelefono: {Telefono}";
         }
 

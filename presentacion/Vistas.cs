@@ -33,6 +33,15 @@ namespace Presentacion
             Console.WriteLine("| Salir                      |    5   |\n");
         }
 
-
+        public static void OpcionesContinuar()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("| Opcion                     |          Marcar          |");
+            Console.WriteLine("|----------------------------|--------------------------|");
+            Console.WriteLine("| Volver al menu anterior    |            1             |");
+            Console.WriteLine("| Ver usuarios registrados   |            2             |");
+            Console.WriteLine("| Salir                      |     3 o cualquier tecla. |\n");
+        }
     }
 }
