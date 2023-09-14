@@ -1,4 +1,6 @@
-﻿namespace Presentacion
+﻿using System.Diagnostics.Metrics;
+
+namespace Presentacion
 {
     public static class Validaciones
     {
@@ -47,5 +49,40 @@
 
             return flag;
         }
+       
+        public static bool ValidaEmail(string email)
+        {
+            email = email.Trim();
+            if (string.IsNullOrEmpty(email))
+            {
+                Console.WriteLine("\nERROR: El campo email no puede estar vacío.\n");
+                return false;
+            }
+
+            // Divide el email en partes antes y después del símbolo '@'
+            string[] partes = email.Split('@');
+
+            // Verifica que haya exactamente una '@' en el email
+            if (partes.Length != 2)
+            {
+                Console.WriteLine("\nERROR: El dato ingresado debe ser un email válido.\n");
+                return false;
+            }
+            if (string.IsNullOrEmpty(partes[0]) || string.IsNullOrEmpty(partes[1]))
+            {
+                Console.WriteLine("\nERROR: El dato ingresado debe ser un email válido.\n");
+                return false;
+            }
+
+            // Verifica que la parte después del '@' contenga al menos un punto '.'
+            if (!partes[1].Contains("."))
+            {
+                Console.WriteLine("\nERROR: El dato ingresado debe ser un email válido.\n");
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

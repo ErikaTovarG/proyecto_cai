@@ -53,8 +53,7 @@ namespace Presentacion
                 esValido = false;
                 Console.Write("Email: ");
                 email = Console.ReadLine();
-                string campo = "Email";
-                esValido = Validaciones.ValidaVacio(email, ref campo);
+                esValido = Validaciones.ValidaEmail(email);
             } while (!esValido);
 
             do
