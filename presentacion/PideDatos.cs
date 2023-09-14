@@ -81,7 +81,7 @@ namespace Presentacion
                 string datoFecha = Console.ReadLine();
                 DateTime salida = DateTime.Now;
                 fechaNacimiento = salida;
-                esValido = Validaciones.ValidaFecha(datoFecha, ref salida);
+                esValido = Validaciones.ValidaFechaNacimiento(datoFecha, ref salida);
             } while (!esValido);
 
             do
