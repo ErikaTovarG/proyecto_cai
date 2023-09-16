@@ -4,7 +4,7 @@
     {
         #region Variables Privadas
         private Guid _id;
-        private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario;
+        private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario, _estado;
         private DateTime _fechaAlta, _fechaNacimiento;
         private int _host, _dni;
 
@@ -24,6 +24,7 @@
         public DateTime? FechaBaja { get ; set ; }
         public int Host { get => _host; set => _host = value; }
         public int Dni { get => _dni; set => _dni = value; }
+        public string Estado { get => _estado; set => _estado = value; }
         #endregion
 
         #region Contructores 
@@ -31,7 +32,7 @@
         {
 
         }
-        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni)
+        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni, string estado)
         {
             Id = id;
             Nombre = nombre;
@@ -46,6 +47,7 @@
             FechaBaja = fechaBaja;
             Host = host;
             Dni = dni;
+            Estado = estado;
         }
         #endregion
 

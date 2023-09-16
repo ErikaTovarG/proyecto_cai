@@ -4,7 +4,7 @@ namespace Modelo.UsuarioModelo
     public class Administrador : UsuarioModelo
     {
         #region Constructor 
-        public Administrador(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni)
+        public Administrador(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni, string estado)
         {
             Id = id;
             Nombre = nombre;
@@ -19,6 +19,7 @@ namespace Modelo.UsuarioModelo
             FechaBaja = fechaBaja;
             Host = host;
             Dni = dni;
+            Estado = estado;
         }
         #endregion
         //public override string ToString()
