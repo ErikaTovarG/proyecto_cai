@@ -118,9 +118,48 @@ namespace Presentacion
                     usu2 = usu;
                     break;
                 }
+
+            }
+            //Pruebas si es false
+            
+            if (!inicioSesionExitoso)
+            {
+                int contador = 0;
+                contador++;
+                Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");  
+                if (contador <= 3)
+                {
+                    Console.WriteLine("Ha excedido la cantidad de intentos permitidos para validar las credenciales.");
+                    //usu2.Estado = inactivo. 
+                }
+                else
+                {
+                    if (Preguntar())
+                    {
+                        Limpia();
+                        return MenuLogin(usuarios);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+
+               
+            }
+            else
+            {
+                ClsUsuario.validarDias(usu2);
+                Console.WriteLine("\t\n Inicio de sesión exitoso. ¡Bienvenido!\n");
+                Limpia();
+                return usu2;
             }
 
-            if (inicioSesionExitoso)
+
+
+
+
+            /* if (inicioSesionExitoso)
             {
                 ClsUsuario.validarDias(usu2);
                 usu2.Estado = "Activo";
@@ -141,6 +180,9 @@ namespace Presentacion
                     return null; 
                 }
             }
+            */
+
+
         }
         private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
         {
