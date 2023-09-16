@@ -9,7 +9,7 @@ namespace Presentacion
         public static UsuarioModelo PedirUsuario(int hostSeleccionado)
         {
             Guid id;
-            string nombre, apellido, direccion, telefono, email, usuario, contrasenia;
+            string nombre, apellido, direccion, telefono, email, usuario, contrasenia, estado;
             DateTime fechaNacimiento, fechaAlta;
             int salidaHost, salidaDni;
             bool esValido;
@@ -95,19 +95,20 @@ namespace Presentacion
 
             fechaAlta = DateTime.Now;
             id = Guid.NewGuid();
+            estado = "Inactivo";
 
             UsuarioModelo usuarioaAgregar = null;
 
             switch (hostSeleccionado)
             {
                 case 1:
-                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
+                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
                     break;
                 case 2:
-                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
+                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
                     break;
                 case 3:
-                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni);
+                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
                     break;
                 default:
                     usuarioaAgregar = null;
