@@ -1,9 +1,16 @@
 ﻿using Modelo.UsuarioModelo;
+using Negocio.Switch;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Negocio.UsuarioLogNegocio
 {
+
     public static class ClsUsuario
+
     {
+        static List<UsuarioModelo> listaUsuarios = new List<UsuarioModelo>();
+
         public static bool ValidarContrasenia(string campo, string valor)
         {
             bool flag = false;
@@ -54,11 +61,11 @@ namespace Negocio.UsuarioLogNegocio
                     nuevaContrasenia = Console.ReadLine();
                     flag = CambiarContrasenia(usuario, nuevaContrasenia);
                 } while (!flag);
-              
+
             }
-        
+
         }
-        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia) 
+        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia)
         {
             bool flag = false;
             bool validaciones = ValidarContrasenia("Contraseña", nuevaContrasenia);
@@ -75,7 +82,7 @@ namespace Negocio.UsuarioLogNegocio
                     //Actualizo la fecha actual.
                     usuario.FechaAlta = DateTime.Now;
                     usuario.Contrasenia = nuevaContrasenia;
-                    Console.WriteLine("\n \tLa contraseña se actualizó correctamente." );
+                    Console.WriteLine("\n \tLa contraseña se actualizó correctamente.");
                     flag = true;
                 }
             }
@@ -121,8 +128,11 @@ namespace Negocio.UsuarioLogNegocio
                 return false; // La fecha de renovación es menor a 30 días --> sigue con la misma
             }
         }
+
     }
 }
+
+
 
 
 
