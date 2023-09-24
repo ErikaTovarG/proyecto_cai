@@ -59,15 +59,21 @@ namespace Presentacion
                         {
                             case 1:
                                 Vistas.MenuAdministrador();                        
-                                int opcion2 = SeleccionarOpcion(5);
+                                int opcion2 = SeleccionarOpcion(10);
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 break;
                             case 2:
-                                Console.WriteLine("aca ira la vista de Supervisor");
+                                Vistas.MenuSupervisor();
+                                opcion2 = SeleccionarOpcion(10);
+                                Limpia();
+                                SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                                Limpia();
                                 break;
                             case 3:
-                                Console.WriteLine("aca ira la vista de Vendedor");
+                                Vistas.MenuVendedor();
+                                opcion2 = SeleccionarOpcion(10);
+                                Limpia();
                                 break;
                             default:
                                 Console.WriteLine("No se encontro");
