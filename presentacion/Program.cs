@@ -59,15 +59,21 @@ namespace Presentacion
                         {
                             case 1:
                                 Vistas.MenuAdministrador();                        
-                                int opcion2 = SeleccionarOpcion(5);
+                                int opcion2 = SeleccionarOpcion(6);
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 break;
                             case 2:
-                                Console.WriteLine("aca ira la vista de Supervisor");
+                                Vistas.VistaSupervisor();
+                                opcion2 = SeleccionarOpcion(7);
+                                Limpia();
+                               //SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                                Limpia();
                                 break;
                             case 3:
-                                Console.WriteLine("aca ira la vista de Vendedor");
+                                Vistas.VistaVendedor();
+                                opcion2 = SeleccionarOpcion(4);
+                                Limpia();
                                 break;
                             default:
                                 Console.WriteLine("No se encontro");
@@ -235,11 +241,7 @@ namespace Presentacion
                 case 2:
                     Limpia();
                     Console.WriteLine("\nLos usuarios son: \n\n");
-                    foreach (var fila in usuarios)
-                    {
-                        Console.WriteLine((" ").PadRight(60, '*'));
-                        Console.WriteLine($"{fila.ToString()}");
-                    }
+                    ListarUsuarios(usuarios);
                     Console.WriteLine("\n");
                     Console.WriteLine((" ").PadRight(60, '*'));
                     break;
@@ -254,6 +256,17 @@ namespace Presentacion
         {
             Thread.Sleep(750);
             Console.Clear();
+        }
+
+        private void ListarUsuarios(List<UsuarioModelo> listaDeUsuarios)
+        {
+
+            foreach (var fila in listaDeUsuarios)
+            {
+                Console.WriteLine((" ").PadRight(60, '*'));
+                Console.WriteLine($"{fila.ToString()}");
+            }
+
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using Modelo.UsuarioModelo;
+using System.Diagnostics.Metrics;
 
 namespace Presentacion
 {
@@ -7,8 +8,8 @@ namespace Presentacion
         public static bool ValidaEntero(string num, int cant, ref int salida)
         {
             bool flag = false;
-            if (!int.TryParse(num, out salida) || salida < 0) Console.WriteLine("\nERROR: El dato ingresado debe ser númerico y positivo.\n");
-            else if (salida < 1 || salida > cant) Console.WriteLine("\nERROR: La opción ingresada debe encontrarse en la tabla de opciones.\n");
+            if (!int.TryParse(num, out salida) || salida < -1) Console.WriteLine("\nERROR: El dato ingresado debe ser númerico y positivo.\n");
+            else if (salida < 0 || salida > cant) Console.WriteLine("\nERROR: La opción ingresada debe encontrarse en la tabla de opciones.\n");
             else flag = true;
             return flag;
         }
@@ -83,6 +84,8 @@ namespace Presentacion
 
             return true;
         }
+
+      
 
     }
 }
