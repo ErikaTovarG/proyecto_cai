@@ -100,7 +100,7 @@ namespace Presentacion
             Console.WriteLine("| Listar Productos           |    1   |");
             Console.WriteLine("| Registrar Venta Producto   |    2   |");
             Console.WriteLine("| Reporte de Ventas          |    3   |");
-            Console.WriteLine("| Salir                      |    5   |\n");
+            Console.WriteLine("| Salir                      |    4   |\n");
         }
 
         public static void VistaReportes()
@@ -113,7 +113,7 @@ namespace Presentacion
             Console.WriteLine("| Reporte de Ventas                               |    2   |");
             Console.WriteLine("| Reporte de productos más vendido por categoría  |    3   |");
             Console.WriteLine("| Salir                                           |    4   |\n");
-
+        }
         public static void ModificarContrasena()
         {
             Console.WriteLine("\n");

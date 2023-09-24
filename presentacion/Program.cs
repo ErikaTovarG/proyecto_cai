@@ -59,20 +59,20 @@ namespace Presentacion
                         {
                             case 1:
                                 Vistas.MenuAdministrador();                        
-                                int opcion2 = SeleccionarOpcion(10);
+                                int opcion2 = SeleccionarOpcion(6);
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 break;
                             case 2:
-                                Vistas.MenuSupervisor();
-                                opcion2 = SeleccionarOpcion(10);
+                                Vistas.VistaSupervisor();
+                                opcion2 = SeleccionarOpcion(7);
                                 Limpia();
-                                SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                               //SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 Limpia();
                                 break;
                             case 3:
-                                Vistas.MenuVendedor();
-                                opcion2 = SeleccionarOpcion(10);
+                                Vistas.VistaVendedor();
+                                opcion2 = SeleccionarOpcion(4);
                                 Limpia();
                                 break;
                             default:
