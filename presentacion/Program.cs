@@ -193,11 +193,7 @@ namespace Presentacion
                 case 2:
                     Limpia();
                     Console.WriteLine("\nLos usuarios son: \n\n");
-                    foreach (var fila in usuarios)
-                    {
-                        Console.WriteLine((" ").PadRight(60, '*'));
-                        Console.WriteLine($"{fila.ToString()}");
-                    }
+                    ListarUsuarios(usuarios);
                     Console.WriteLine("\n");
                     Console.WriteLine((" ").PadRight(60, '*'));
                     break;
@@ -212,6 +208,17 @@ namespace Presentacion
         {
             Thread.Sleep(750);
             Console.Clear();
+        }
+
+        private void ListarUsuarios(List<UsuarioModelo> listaDeUsuarios)
+        {
+
+            foreach (var fila in listaDeUsuarios)
+            {
+                Console.WriteLine((" ").PadRight(60, '*'));
+                Console.WriteLine($"{fila.ToString()}");
+            }
+
         }
 
     }
