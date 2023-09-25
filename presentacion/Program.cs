@@ -157,8 +157,41 @@ namespace Presentacion
                     int op1 = SeleccionarOpcion(2);
                     OpcionAContinuar(op1, usuarios);                   
                     break;
+
                 case 2:
-                    Console.WriteLine("\nProximamente...");
+                    int dniSupervisorNum = 0;
+                    string campo = "DNI";
+                    bool esValidoNum = false;
+                    bool esValidoVacio = false;
+
+                    do
+                    {
+                        Console.Write("Ingrese DNI de supervisor a eliminar: ");
+                        string dniSupervisor = Console.ReadLine();
+                        esValidoNum = Validaciones.ValidaNumerico(dniSupervisor, ref dniSupervisorNum);
+                        esValidoVacio = Validaciones.ValidaVacio(dniSupervisor, ref campo);
+
+                        if (esValidoNum && esValidoVacio)
+                        {break;}
+                        else
+                        {
+                            Console.WriteLine("Por favor, ingrese un DNI válido y no vacío.");
+                        }
+                    } while (true);
+
+                   
+                    bool flag = ClsUsuario.EliminarSupervisorPorDni(usuarios, dniSupervisorNum);
+
+                    if (flag)
+                    {
+                        Console.WriteLine("Se eliminó supervisor con DNI " + dniSupervisorNum);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontró supervisor con DNI " + dniSupervisorNum);
+                    }
+
+                    Console.ReadKey();
                     break;
                 case 3:
                     Limpia();
@@ -172,7 +205,40 @@ namespace Presentacion
                     OpcionAContinuar(op3, usuarios);
                     break;
                 case 4:
-                    Console.WriteLine("\nProximamente...");
+
+                    int dnivendedorNum = 0;
+                    campo = "DNI";
+                    esValidoNum = false;
+                    esValidoVacio = false;
+                    flag = false;
+
+                    do
+                    {
+                        Console.Write("Ingrese DNI de vendedor a eliminar: ");
+                        string dniSupervisor = Console.ReadLine();
+                        esValidoNum = Validaciones.ValidaNumerico(dniSupervisor, ref dnivendedorNum);
+                        esValidoVacio = Validaciones.ValidaVacio(dniSupervisor, ref campo);
+
+                        if (esValidoNum && esValidoVacio)
+                        { break; }
+                        else
+                        {
+                            Console.WriteLine("Por favor, ingrese un DNI válido y no vacío.");
+                        }
+                    } while (true);
+
+                    flag = ClsUsuario.EliminarVendedorPorDni(usuarios, dnivendedorNum);
+
+                    if (flag)
+                    {
+                        Console.WriteLine("Se eliminó vendedor con DNI " + dnivendedorNum);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontró vendedor con DNI " + dnivendedorNum);
+                    }
+
+                    Console.ReadKey();
                     break;
                 default:
                     Environment.Exit(0);
