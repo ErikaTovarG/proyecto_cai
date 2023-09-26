@@ -1,5 +1,6 @@
 ﻿using Modelo.UsuarioModelo;
 using Negocio.UsuarioLogNegocio;
+using Modelo.Switch;
 using System;
 using System.Threading.Channels;
 
@@ -11,10 +12,13 @@ namespace Presentacion
         {
             Program programa = new Program();
 
+            Activo estado;
+            estado = new Activo();
+
             List<UsuarioModelo> usuarios = new List<UsuarioModelo>();
-            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522, "Inactivo");   
-            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658, "Inactivo");
-            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752, "Inactivo");
+            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522, estado);   
+            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658, estado);
+            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752, estado);
             
             usuarios.Add(admin1);
             usuarios.Add(sup1);
@@ -52,27 +56,29 @@ namespace Presentacion
                 case 1:
                     Console.Clear();
                     UsuarioModelo usuLogueado = MenuLogin(usuarios);
+                    int cantidadOpciones = 10;
 
                     if (usuLogueado != null)
                     {
                         switch (usuLogueado.Host)
                         {
+                            
                             case 1:
                                 Vistas.MenuAdministrador();                        
-                                int opcion2 = SeleccionarOpcion(10);
+                                int opcion2 = SeleccionarOpcion(cantidadOpciones);
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 break;
                             case 2:
                                 Vistas.MenuSupervisor();
-                                opcion2 = SeleccionarOpcion(10);
+                                opcion2 = SeleccionarOpcion(cantidadOpciones);
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
                                 Limpia();
                                 break;
                             case 3:
                                 Vistas.MenuVendedor();
-                                opcion2 = SeleccionarOpcion(10);
+                                opcion2 = SeleccionarOpcion(cantidadOpciones);
                                 Limpia();
                                 break;
                             default:
@@ -129,7 +135,7 @@ namespace Presentacion
             if (inicioSesionExitoso)
             {
                 ClsUsuario.validarDias(usu2);
-                usu2.Estado = "Activo";
+                //usu2.Estado = "Activo";
                 Console.WriteLine("\t\n Inicio de sesión exitoso. ¡Bienvenido!\n");
                 Limpia();
                 return usu2;

@@ -1,10 +1,11 @@
-﻿
+﻿using Modelo.Switch;
+
 namespace Modelo.UsuarioModelo
 {
     public class Administrador : UsuarioModelo
     {
         #region Constructor 
-        public Administrador(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni, string estado)
+        public Administrador(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni, Switch.Estado estado)
         {
             Id = id;
             Nombre = nombre;

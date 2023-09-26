@@ -1,16 +1,22 @@
-﻿namespace Modelo.UsuarioModelo
+﻿
+using Modelo.Switch;
+
+namespace Modelo.UsuarioModelo
+
 {
     public abstract class UsuarioModelo
     {
         #region Variables Privadas
         private Guid _id;
-        private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario, _estado;
+        private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario;
+        private object _estado;
         private DateTime _fechaAlta, _fechaNacimiento;
         private int _host, _dni;
 
+
         #endregion
 
-         #region Variables Publicas
+        #region Variables Publicas
         public Guid Id { get => _id; set => _id = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
@@ -21,18 +27,19 @@
         public string Usuario { get => _usuario; set => _usuario = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
-        public DateTime? FechaBaja { get ; set ; }
+        public DateTime? FechaBaja { get; set; }
         public int Host { get => _host; set => _host = value; }
         public int Dni { get => _dni; set => _dni = value; }
-        public string Estado { get => _estado; set => _estado = value; }
-        #endregion
+        public Estado Estado { get; set; }
+	
+    #endregion
 
-        #region Contructores 
-        public UsuarioModelo()
+    #region Contructores 
+    public UsuarioModelo()
         {
 
         }
-        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni, string estado)
+        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni, Estado estado)
         {
             Id = id;
             Nombre = nombre;
