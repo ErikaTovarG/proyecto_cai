@@ -100,7 +100,7 @@ namespace Presentacion
             Console.WriteLine("| Listar Productos           |    1   |");
             Console.WriteLine("| Registrar Venta Producto   |    2   |");
             Console.WriteLine("| Reporte de Ventas          |    3   |");
-            Console.WriteLine("| Salir                      |    5   |\n");
+            Console.WriteLine("| Salir                      |    4   |\n");
         }
 
         public static void VistaReportes()
@@ -115,17 +115,15 @@ namespace Presentacion
             Console.WriteLine("| Salir                                           |    4   |\n");
 
         }
-
         public static void ModificarContrasena()
-            {
-                Console.WriteLine("\n");
-                Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-                Console.WriteLine("| Ingrese su contraseña actual: ");
-                //validar contraseña
-                Console.WriteLine("| Ingrese su nueva contraseña: ");
-                //
-                Console.WriteLine("| Repita su nueva contraseña: ");
-
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("| Ingrese su contraseña actual: ");
+            //validar contraseña
+            Console.WriteLine("| Ingrese su nueva contraseña: ");
+            //
+            Console.WriteLine("| Repita su nueva contraseña: ");
             }
     }
 
