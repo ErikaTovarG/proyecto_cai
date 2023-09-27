@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio.Switch
+namespace Modelo.Switch
 {
     public abstract class Estado
     {

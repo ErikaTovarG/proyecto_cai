@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio.Switch
+namespace Modelo.Switch
 {
-    public class Inactivo : Estado
+    public class Activo : Estado
     {
+
         public override void ControlarEstado(Switch sw)
         {
-            sw.CambiarEstadoUsuario(new Activo());
+            sw.CambiarEstadoUsuario(new Inactivo());
         }
 
         public override string Describir()
         {
-            return "Usuario Inactivo";
+            return "Usuario Activo";
         }
 
     }

@@ -44,7 +44,7 @@ namespace Presentacion
             
             if (!DateTime.TryParse(fecha, out salida)) Console.WriteLine("\nERROR: El dato ingresado no es un formato valido de fecha. Use el formato YYYY-MM-DD.");
 
-            if (salida < fechaMinima) Console.WriteLine("\nERROR: La fecha ingresado no puede ser menor a 1900/01/01.");
+            if (salida < fechaMinima) Console.WriteLine("\nERROR: La fecha ingresado no puede ser menor a 01/01/1900.");
             else if (salida > fechaActual) Console.WriteLine("\nERROR: la fecha de nacimiento no puede ser mayor a hoy.");
             else flag |= true;
 

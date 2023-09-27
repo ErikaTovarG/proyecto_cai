@@ -4,7 +4,7 @@
     public class Supervisor : UsuarioModelo
     {
         #region Constructor 
-        public Supervisor(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni, string estado)
+        public Supervisor(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime? fechaBaja, int host, int dni, Switch.Estado estado)
         {
             Id = id;
             Nombre = nombre;
