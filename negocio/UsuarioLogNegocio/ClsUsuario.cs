@@ -129,6 +129,35 @@ namespace Negocio.UsuarioLogNegocio
             }
         }
 
+
+        public static UsuarioModelo BuscarPorDni(List<UsuarioModelo> usuarios, int dniUsuario)
+        {
+            return usuarios.Find(usuario => usuario.Dni == dniUsuario);
+        }
+
+        public static bool EliminarSupervisorPorDni(List<UsuarioModelo> usuarios, int dniUsuario)
+        {
+            var usuario = BuscarPorDni(usuarios, dniUsuario);
+            if (usuario != null && usuario.Host==2)
+            {
+                usuarios.Remove(usuario);
+                return true;
+            }
+            return false;
+        }
+
+        public static bool EliminarVendedorPorDni(List<UsuarioModelo> usuarios, int dniUsuario)
+        {
+            var usuario = BuscarPorDni(usuarios, dniUsuario);
+            if (usuario != null && usuario.Host == 3)
+            {
+                usuarios.Remove(usuario);
+                return true;
+            }
+            return false;
+        }
+
+
     }
 }
 
