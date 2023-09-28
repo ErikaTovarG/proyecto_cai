@@ -14,7 +14,7 @@ namespace Presentacion
             string nombre, apellido, direccion, telefono, email, usuario, contrasenia;
             Inactivo estado;
             DateTime fechaNacimiento, fechaAlta;
-            int salidaHost, salidaDni;
+            int salidaHost, salidaDni, contador = 0;
             bool esValido;
             do
             {
@@ -106,13 +106,13 @@ namespace Presentacion
             {
                 
                 case 1:
-                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
+                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
                     break;
                 case 2:
-                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
+                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
                     break;
                 case 3:
-                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, estado);
+                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
                     break;
                 default:
                     usuarioaAgregar = null;

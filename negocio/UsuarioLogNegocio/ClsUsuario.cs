@@ -1,5 +1,5 @@
 ﻿using Modelo.UsuarioModelo;
-using Negocio.Switch;
+using Modelo.Switch;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 

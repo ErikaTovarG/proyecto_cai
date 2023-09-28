@@ -11,7 +11,7 @@ namespace Modelo.UsuarioModelo
         private string _nombre, _apellido, _direccion, _telefono, _email, _contrasenia, _usuario;
         private object _estado;
         private DateTime _fechaAlta, _fechaNacimiento;
-        private int _host, _dni;
+        private int _host, _dni, _contador;
 
 
         #endregion
@@ -30,6 +30,7 @@ namespace Modelo.UsuarioModelo
         public DateTime? FechaBaja { get; set; }
         public int Host { get => _host; set => _host = value; }
         public int Dni { get => _dni; set => _dni = value; }
+        public int Contador { get => _contador; set => _contador = value; }
         public Estado Estado { get; set; }
 	
     #endregion
@@ -39,7 +40,7 @@ namespace Modelo.UsuarioModelo
         {
 
         }
-        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni, Estado estado)
+        public UsuarioModelo(Guid id, string nombre, string apellido, string direccion, string telefono, string email, string contrasenia, string usuario, DateTime fechaAlta, DateTime fechaNacimiento, DateTime fechaBaja, int host, int dni, int contador, Estado estado)
         {
             Id = id;
             Nombre = nombre;
@@ -54,6 +55,7 @@ namespace Modelo.UsuarioModelo
             FechaBaja = fechaBaja;
             Host = host;
             Dni = dni;
+            Contador = contador;
             Estado = estado;
         }
         #endregion

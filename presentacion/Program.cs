@@ -16,9 +16,9 @@ namespace Presentacion
             estado = new Activo();
 
             List<UsuarioModelo> usuarios = new List<UsuarioModelo>();
-            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522, estado);   
-            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658, estado);
-            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752, estado);
+            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522,0, estado);   
+            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658,0, estado);
+            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752,0, estado);
             
             usuarios.Add(admin1);
             usuarios.Add(sup1);
@@ -110,20 +110,43 @@ namespace Presentacion
                     break;
             }
         }
-        public bool Preguntar()
+        public bool Preguntar(List<UsuarioModelo> usuarios)
         {
             string res;
             bool flag = false;
+            
             do
             {
                 Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
                 res = Console.ReadLine().ToUpper();
-                if (res == "S" || res == "N") { flag = true; }
+                if (res == "N") { flag = true; }
+
+                //Si responde SI, recorro los usuario y sumo el contador de intentos en uno
+                if (res == "S") { 
+                    foreach (var usu in usuarios)
+                    {
+                        usu.Contador++;
+                        if(usu.Contador >= 3)
+                        {
+                            Console.WriteLine("\n ERROR: Ha excedido los intentos.\n");
+                            Environment.Exit(0);
+                            //usu.Estado = "inactivo";
+                          
+                            
+                            
+                        }
+                        break;
+                    }
+                    flag = true;
+
+                }        
+
             } while (!flag);
 
             if (res == "N") { Environment.Exit(0); }
             return res == "S";
         }
+        //ANDREA
         public UsuarioModelo MenuLogin(List<UsuarioModelo> usuarios)
         {
             string usuarioIngresado, contrasenaIngresada;
@@ -131,10 +154,9 @@ namespace Presentacion
             usuarioIngresado = Console.ReadLine().Trim();
             Console.Write("\t Contraseña: ");
             contrasenaIngresada = Console.ReadLine().Trim();
-
             bool inicioSesionExitoso = false;
             UsuarioModelo usu2 = null;
-
+ 
             foreach (var usu in usuarios)
             {
                 if (usu.Usuario == usuarioIngresado && usu.Contrasenia == contrasenaIngresada)
@@ -143,48 +165,9 @@ namespace Presentacion
                     usu2 = usu;
                     break;
                 }
-
-            }
-            //Pruebas si es false
-            
-            if (!inicioSesionExitoso)
-            {
-                int contador = 0;
-                contador++;
-                Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");  
-                if (contador <= 3)
-                {
-                    Console.WriteLine("Ha excedido la cantidad de intentos permitidos para validar las credenciales.");
-                    //usu2.Estado = inactivo. 
-                }
-                else
-                {
-                    if (Preguntar())
-                    {
-                        Limpia();
-                        return MenuLogin(usuarios);
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
-
-               
-            }
-            else
-            {
-                ClsUsuario.validarDias(usu2);
-                Console.WriteLine("\t\n Inicio de sesión exitoso. ¡Bienvenido!\n");
-                Limpia();
-                return usu2;
             }
 
-
-
-
-
-            /* if (inicioSesionExitoso)
+            if (inicioSesionExitoso)
             {
                 ClsUsuario.validarDias(usu2);
                 //usu2.Estado = "Activo";
@@ -195,20 +178,21 @@ namespace Presentacion
             else
             {
                 Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");
-                if (Preguntar())
+              
+                if (Preguntar(usuarios))
                 {
                     Limpia();
+
                     return MenuLogin(usuarios);
+                   
                 }
                 else
                 {
-                    return null; 
+                    return null;
                 }
             }
-            */
-
-
         }
+
         private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
         {
             switch (opcion)
