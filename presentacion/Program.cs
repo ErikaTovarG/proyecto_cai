@@ -3,6 +3,7 @@ using Negocio.UsuarioLogNegocio;
 using Modelo.Switch;
 using System;
 using System.Threading.Channels;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
@@ -12,29 +13,31 @@ namespace Presentacion
         {
             Program programa = new Program();
 
-            Activo estado;
-            estado = new Activo();
+            Activo activo = new Activo();
+            Inactivo inactivo = new Inactivo(); 
+                       
+            List<UsuarioModelo> usuariosCreados = new List<UsuarioModelo>();
+            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522,0, activo);   
+            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658,0, activo);
+            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752,0, activo);
+                        
+            admin1.Estado = inactivo; 
+           
+            usuariosCreados.Add(admin1);
+            usuariosCreados.Add(sup1);
+            usuariosCreados.Add(vend1);
 
-            List<UsuarioModelo> usuarios = new List<UsuarioModelo>();
-            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522,0, estado);   
-            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658,0, estado);
-            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752,0, estado);
-            
-            usuarios.Add(admin1);
-            usuarios.Add(sup1);
-            usuarios.Add(vend1);
-
-            programa.Inicia(usuarios);
+            programa.Inicia(usuariosCreados);
      
         }
-        public void Inicia(List<UsuarioModelo> usuarios)
+        public void Inicia(List<UsuarioModelo> usuariosCreados)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
 
             Vistas.MenuInicial();
             int opcion = SeleccionarOpcion(2);
-            SeleccionarModulo(opcion, usuarios);
+            SeleccionarModulo(opcion, usuariosCreados);
         }
         private int SeleccionarOpcion(int cant)
         {
@@ -43,8 +46,8 @@ namespace Presentacion
             do
             {
                 Console.Write("Indique la opción con la cual desea continuar: ");
-                string res = Console.ReadLine();
-                flag = Validaciones.ValidaEntero(res, cant, ref salida);
+                string respuesta = Console.ReadLine().Trim ();
+                flag = Validaciones.ValidaEntero(respuesta, cant, ref salida);
             } while (!flag);
 
             return salida;
@@ -55,19 +58,17 @@ namespace Presentacion
             {
                 case 1:
                     Console.Clear();
-                    UsuarioModelo usuLogueado = MenuLogin(usuarios);
+                    UsuarioModelo usuarioLogueado = MenuLogin(usuarios);
                     int cantidadOpciones = 10;
 
-                    if (usuLogueado != null)
+                    if (usuarioLogueado != null)
                     {
-                        switch (usuLogueado.Host)
+                        switch (usuarioLogueado.Host)
                         {
                             
                             case 1:
                                 Vistas.MenuAdministrador();                        
                                 int opcion2 = SeleccionarOpcion(cantidadOpciones);
-
-                                //int opcion2 = SeleccionarOpcion(6);
 
                                 Limpia();
                                 SeleccionarOpcionesAdministrador(opcion2, usuarios);
@@ -78,7 +79,7 @@ namespace Presentacion
                                 opcion2 = SeleccionarOpcion(cantidadOpciones);
 
                                 Vistas.VistaSupervisor();
-                                //opcion2 = SeleccionarOpcion(7);
+                                
 
                                 Limpia();
                                //SeleccionarOpcionesAdministrador(opcion2, usuarios);
@@ -147,30 +148,41 @@ namespace Presentacion
             return res == "S";
         }
         //ANDREA
-        public UsuarioModelo MenuLogin(List<UsuarioModelo> usuarios)
+        public UsuarioModelo MenuLogin(List<UsuarioModelo> usuariosCreados)
         {
             string usuarioIngresado, contrasenaIngresada;
-            Console.Write("\n\t Usuario: ");
-            usuarioIngresado = Console.ReadLine().Trim();
-            Console.Write("\t Contraseña: ");
-            contrasenaIngresada = Console.ReadLine().Trim();
+            Activo activo = new Activo();
+            Inactivo inactivo = new Inactivo();
             bool inicioSesionExitoso = false;
             UsuarioModelo usu2 = null;
- 
-            foreach (var usu in usuarios)
+
+
+            //Vistas.Login();
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
+            Console.Write("\n\t Ingrese su Usuario: ");
+            usuarioIngresado = Console.ReadLine().Trim();
+            Console.Write("\t Ingrese su Contraseña: ");
+            contrasenaIngresada = Console.ReadLine().Trim();
+
+
+            foreach (var usu in usuariosCreados)
             {
-                if (usu.Usuario == usuarioIngresado && usu.Contrasenia == contrasenaIngresada)
-                {
-                    inicioSesionExitoso = true;
-                    usu2 = usu;
-                    break;
+                if (usu.Usuario == usuarioIngresado && usu.Contrasenia == contrasenaIngresada) 
+                { 
+                         if (usu.Estado == activo)
+                            {
+                                 inicioSesionExitoso = true;
+                                 usu2 = usu;
+                                 break;
+                             }
                 }
             }
 
             if (inicioSesionExitoso)
             {
                 ClsUsuario.validarDias(usu2);
-                //usu2.Estado = "Activo";
                 Console.WriteLine("\t\n Inicio de sesión exitoso. ¡Bienvenido!\n");
                 Limpia();
                 return usu2;
@@ -179,11 +191,10 @@ namespace Presentacion
             {
                 Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");
               
-                if (Preguntar(usuarios))
+                if (Preguntar(usuariosCreados))
                 {
                     Limpia();
-
-                    return MenuLogin(usuarios);
+                    return MenuLogin(usuariosCreados);
                    
                 }
                 else
@@ -291,6 +302,17 @@ namespace Presentacion
 
                     Console.ReadKey();
                     break;
+                case 5:
+                    
+                /*case 6:
+                    Console.WriteLine("\n");
+                    Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+                    Console.WriteLine("| Ingrese su contraseña actual: ");
+                    string contrasenaIngresada = Console.ReadLine().Trim();
+                    if (ClsUsuario.ValidarContrasenia)
+                    {
+                        ClsUsuario.CambiarContrasenia(usuarioSup, nuevaContrasenia);
+                    }*/
                 default:
                     Environment.Exit(0);
                     break;

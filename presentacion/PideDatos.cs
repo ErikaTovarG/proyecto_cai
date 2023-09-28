@@ -12,7 +12,7 @@ namespace Presentacion
         {
             Guid id;
             string nombre, apellido, direccion, telefono, email, usuario, contrasenia;
-            Inactivo estado;
+            Inactivo inactivo = new Inactivo();
             DateTime fechaNacimiento, fechaAlta;
             int salidaHost, salidaDni, contador = 0;
             bool esValido;
@@ -98,21 +98,20 @@ namespace Presentacion
 
             fechaAlta = DateTime.Now;
             id = Guid.NewGuid();
-            estado = new Inactivo();
-
+            
             UsuarioModelo usuarioaAgregar = null;
 
             switch (hostSeleccionado)
             {
                 
                 case 1:
-                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
+                    usuarioaAgregar = new Administrador(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, inactivo);
                     break;
                 case 2:
-                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
+                    usuarioaAgregar = new Supervisor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, inactivo);
                     break;
                 case 3:
-                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, estado);
+                    usuarioaAgregar = new Vendedor(id, nombre, apellido, direccion, telefono, email, contrasenia, usuario, fechaAlta, fechaNacimiento, null, hostSeleccionado, salidaDni, contador, inactivo);
                     break;
                 default:
                     usuarioaAgregar = null;

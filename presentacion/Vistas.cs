@@ -19,6 +19,11 @@ namespace Presentacion
             Console.WriteLine("| Salir          |    2   |\n");
         }
 
+        public static void Login ()
+        {
+            
+            
+        }
         public static void MenuAdministrador()
         {
             Console.WriteLine("\n");
