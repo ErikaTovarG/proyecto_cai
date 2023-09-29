@@ -69,34 +69,25 @@ namespace Presentacion
                             case 1:
                                 Vistas.MenuAdministrador();                        
                                 int opcion2 = SeleccionarOpcion(cantidadOpciones);
-
                                 Limpia();
-                                SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                                SeleccionarOpcionesAdministrador(opcion2, usuarios, usuarioLogueado);
                                 break;
                             case 2:
-
                                 Vistas.MenuSupervisor();
                                 opcion2 = SeleccionarOpcion(cantidadOpciones);
-
-                                Vistas.VistaSupervisor();
-                                
-
+                               // Vistas.VistaSupervisor();                          
                                 Limpia();
-                               //SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                                SeleccionarOpcionesSupervisor(opcion2, usuarios, usuarioLogueado);
                                 Limpia();
                                 break;
                             case 3:
-
                                 Vistas.MenuVendedor();
                                 opcion2 = SeleccionarOpcion(cantidadOpciones);
-
-                                Vistas.VistaVendedor();
-                                //opcion2 = SeleccionarOpcion(4);
-
+                                SeleccionarOpcionesVendedor(opcion2, usuarios, usuarioLogueado);
                                 Limpia();
                                 break;
                             default:
-                                Console.WriteLine("No se encontro");
+                                Console.WriteLine("No se encontró.");
                                 break;
                         }
 
@@ -111,11 +102,12 @@ namespace Presentacion
                     break;
             }
         }
-        public bool Preguntar(List<UsuarioModelo> usuarios)
+        public bool Preguntar(UsuarioModelo usuario)
         {
             string res;
             bool flag = false;
-            
+            // do while el usuaario 
+            //do while con flag de validarSN
             do
             {
                 Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
@@ -124,20 +116,15 @@ namespace Presentacion
 
                 //Si responde SI, recorro los usuario y sumo el contador de intentos en uno
                 if (res == "S") { 
-                    foreach (var usu in usuarios)
+                  
+                        usuario.Contador++;
+                    if (usuario.Contador >= 3)
                     {
-                        usu.Contador++;
-                        if(usu.Contador >= 3)
-                        {
-                            Console.WriteLine("\n ERROR: Ha excedido los intentos.\n");
-                            Environment.Exit(0);
-                            //usu.Estado = "inactivo";
-                          
-                            
-                            
-                        }
-                        break;
+                        Console.WriteLine("\n ERROR: Ha excedido los intentos.\n El usuario {0} ha pasado a inactivo", usuario);
+                        Inactivo inactivo = new Inactivo();
+                        usuario.Estado = inactivo;
                     }
+               
                     flag = true;
 
                 }        
@@ -145,9 +132,9 @@ namespace Presentacion
             } while (!flag);
 
             if (res == "N") { Environment.Exit(0); }
-            return res == "S";
+            return flag;
         }
-        //ANDREA
+
         public UsuarioModelo MenuLogin(List<UsuarioModelo> usuariosCreados)
         {
             string usuarioIngresado, contrasenaIngresada;
@@ -155,9 +142,6 @@ namespace Presentacion
             Inactivo inactivo = new Inactivo();
             bool inicioSesionExitoso = false;
             UsuarioModelo usu2 = null;
-
-
-            //Vistas.Login();
             Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
             Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
@@ -171,12 +155,20 @@ namespace Presentacion
             {
                 if (usu.Usuario == usuarioIngresado && usu.Contrasenia == contrasenaIngresada) 
                 { 
-                         if (usu.Estado == activo)
+                        // if (usu.Estado == activo && usu.logueadas > 1)
                             {
+                                 
                                  inicioSesionExitoso = true;
                                  usu2 = usu;
+                                 usu2.Estado = activo;
+                                 
                                  break;
+
                              }
+                }
+                if(usu.Usuario == usuarioIngresado)
+                {
+                    usu2 = usu;
                 }
             }
 
@@ -191,7 +183,7 @@ namespace Presentacion
             {
                 Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");
               
-                if (Preguntar(usuariosCreados))
+                if (Preguntar(usu2))
                 {
                     Limpia();
                     return MenuLogin(usuariosCreados);
@@ -204,7 +196,7 @@ namespace Presentacion
             }
         }
 
-        private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
+        private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
         {
             switch (opcion)
             {     
@@ -303,16 +295,14 @@ namespace Presentacion
                     Console.ReadKey();
                     break;
                 case 5:
-                    
-                /*case 6:
-                    Console.WriteLine("\n");
-                    Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-                    Console.WriteLine("| Ingrese su contraseña actual: ");
-                    string contrasenaIngresada = Console.ReadLine().Trim();
-                    if (ClsUsuario.ValidarContrasenia)
-                    {
-                        ClsUsuario.CambiarContrasenia(usuarioSup, nuevaContrasenia);
-                    }*/
+                    Console.WriteLine(" Proximamente " );
+                    break;
+                case 6:
+                    Console.Write("\n Ingrese una nueva contraseña: \n");
+                    string nuevaContrasenia = Console.ReadLine();           
+                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
+                   break;
+                
                 default:
                     Environment.Exit(0);
                     break;
@@ -325,9 +315,11 @@ namespace Presentacion
             {
                 case 1:
                     Limpia();
+                    UsuarioModelo usuarioLogueado = new Administrador();
+                    usuarioLogueado = null;
                     Vistas.MenuAdministrador();
                     int opcion2 = SeleccionarOpcion(5);
-                    SeleccionarOpcionesAdministrador(opcion2, usuarios);
+                    SeleccionarOpcionesAdministrador(opcion2, usuarios, usuarioLogueado);
                     break;
                 case 2:
                     Limpia();
@@ -343,6 +335,61 @@ namespace Presentacion
                     break;
             }
         }
+
+        private void SeleccionarOpcionesSupervisor(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
+        {
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 2:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 3:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 4:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 5:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 6:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 7:
+                    Console.Write("\n Ingrese una nueva contraseña: \n");
+                    string nuevaContrasenia = Console.ReadLine();
+                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
+                    break;
+            }
+        }
+
+
+
+        private void SeleccionarOpcionesVendedor(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
+        {
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 2:
+                    Console.WriteLine("Proximamente.");
+                    break;
+                case 3:
+                    Console.Write("\n Ingrese una nueva contraseña: \n");
+                    string nuevaContrasenia = Console.ReadLine();
+                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
+                    break;
+            }
+        }
+
+
+
+
+
         private void Limpia()
         {
             Thread.Sleep(750);

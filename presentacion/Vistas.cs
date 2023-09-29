@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Modelo.UsuarioModelo;
+using Negocio;
+using Negocio.UsuarioLogNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -120,16 +123,6 @@ namespace Presentacion
             Console.WriteLine("| Salir                                           |    4   |\n");
 
         }
-        public static void ModificarContrasena()
-        {
-            Console.WriteLine("\n");
-            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-            Console.WriteLine("| Ingrese su contraseña actual: ");
-            //validar contraseña
-            Console.WriteLine("| Ingrese su nueva contraseña: ");
-            //
-            Console.WriteLine("| Repita su nueva contraseña: ");
-            }
     }
 
 }
