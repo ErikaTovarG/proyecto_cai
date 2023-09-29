@@ -30,6 +30,15 @@ namespace Presentacion
             else flag = true;
             return flag;
         }
+
+        public static bool ValidaSyN(string dato)
+        {
+            bool flag = false;
+            if (string.IsNullOrEmpty(dato.ToUpper().Trim())) Console.WriteLine($"\nERROR: El campo de respuesta no puede estar vacío.\n");
+            else if (dato.ToUpper() != "S" && dato.ToUpper() != "N") Console.WriteLine($"\nERROR: Debe ingresar las opciones indicadas.\n");
+            else flag = true;
+            return flag;
+        }
         public static bool ValidaNumerico(string num, ref int salida)
         {
             bool flag = false;

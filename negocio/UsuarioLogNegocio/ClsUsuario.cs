@@ -50,6 +50,7 @@ namespace Negocio.UsuarioLogNegocio
             bool flag;
             bool fechaExpiracion = ValidarExpiracion(usuario);
             string nuevaContrasenia;
+            string contraseniActual = usuario.Contrasenia;
 
             if (fechaExpiracion)
             {
@@ -59,24 +60,21 @@ namespace Negocio.UsuarioLogNegocio
                 {
                     Console.Write("\nPor favor, ingrese una nueva contraseña: ");
                     nuevaContrasenia = Console.ReadLine();
-                    flag = CambiarContrasenia(usuario, nuevaContrasenia);
+                    flag = CambiarContrasenia(usuario, contraseniActual, nuevaContrasenia);
                 } while (!flag);
 
             }
 
         }
-        public static bool CambiarContrasenia(UsuarioModelo usuario, string nuevaContrasenia)
+        public static bool CambiarContrasenia(UsuarioModelo usuario, string contraseniaActual, string nuevaContrasenia)
         {
             bool flag = false;
             bool validaciones = ValidarContrasenia("Contraseña", nuevaContrasenia);
-
             //Si se cumplen todas las validaciones de la contraseña, valido que la nueva contraseña no sea igual a la anterior.
             if (validaciones)
             {
-                if (usuario.Contrasenia == nuevaContrasenia)
-                {
-                    Console.WriteLine("\nERROR: La contraseña nueva no debe ser igual a la contraseña anterior.\n");
-                }
+                if (contraseniaActual != usuario.Contrasenia) Console.WriteLine("\nERROR: La contraseña ingresada no coincide con la contraseña actual.\n");
+                else if (usuario.Contrasenia == nuevaContrasenia) Console.WriteLine("\nERROR: La contraseña nueva no debe ser igual a la contraseña anterior.\n");      
                 else
                 {
                     //Actualizo la fecha actual.

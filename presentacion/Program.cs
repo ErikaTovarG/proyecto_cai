@@ -105,51 +105,55 @@ namespace Presentacion
         public bool Preguntar(UsuarioModelo usuario)
         {
             string res;
-            bool flag = false;
-            // do while el usuaario 
-            //do while con flag de validarSN
+            bool flag;
             do
             {
                 Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
                 res = Console.ReadLine().ToUpper();
-                if (res == "N") { flag = true; }
-
-                //Si responde SI, recorro los usuario y sumo el contador de intentos en uno
-                if (res == "S") { 
-                  
-                        usuario.Contador++;
-                    if (usuario.Contador >= 3)
-                    {
-                        Console.WriteLine("\n ERROR: Ha excedido los intentos.\n El usuario {0} ha pasado a inactivo", usuario);
-                        Inactivo inactivo = new Inactivo();
-                        usuario.Estado = inactivo;
-                    }
-               
-                    flag = true;
-
-                }        
-
+                flag = Validaciones.ValidaSyN(res);
             } while (!flag);
 
             if (res == "N") { Environment.Exit(0); }
+            //Si la res es S, sumo el contador del usuario en 1 hasta que sea mayor igual a 3.
+            if (res == "S")
+            {
+                usuario.Contador++;
+                if (usuario.Contador >= 3)
+                {
+                    Console.WriteLine("\n ERROR: Ha excedido los intentos.\n El usuario {0} ha pasado a inactivo", usuario.Usuario);
+                    Inactivo inactivo = new Inactivo();
+                    usuario.Estado = inactivo;
+                    Environment.Exit(0);
+                }
+
+            }
             return flag;
         }
 
         public UsuarioModelo MenuLogin(List<UsuarioModelo> usuariosCreados)
         {
             string usuarioIngresado, contrasenaIngresada;
+            string campo = "Usuario";
+            string campo2 = "Contraseña";
             Activo activo = new Activo();
-            Inactivo inactivo = new Inactivo();
             bool inicioSesionExitoso = false;
+            bool flag;
             UsuarioModelo usu2 = null;
             Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
             Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
-            Console.Write("\n\t Ingrese su Usuario: ");
-            usuarioIngresado = Console.ReadLine().Trim();
-            Console.Write("\t Ingrese su Contraseña: ");
-            contrasenaIngresada = Console.ReadLine().Trim();
 
+            //valido que haya ingresado un usuario.
+            do
+            {
+                Console.Write("\n\t Ingrese su Usuario: ");
+                usuarioIngresado = Console.ReadLine().Trim();
+                Console.Write("\t Ingrese su Contraseña: ");
+                contrasenaIngresada = Console.ReadLine().Trim();
+                //Valido que ni el usario ni la contraseña estén vacíos.
+                flag = Validaciones.ValidaVacio(usuarioIngresado, ref campo); Validaciones.ValidaVacio(contrasenaIngresada, ref campo2);
+
+            } while (!flag);
 
             foreach (var usu in usuariosCreados)
             {
@@ -160,8 +164,7 @@ namespace Presentacion
                                  
                                  inicioSesionExitoso = true;
                                  usu2 = usu;
-                                 usu2.Estado = activo;
-                                 
+                                 usu2.Estado = activo;      
                                  break;
 
                              }
@@ -298,11 +301,18 @@ namespace Presentacion
                     Console.WriteLine(" Proximamente " );
                     break;
                 case 6:
-                    Console.Write("\n Ingrese una nueva contraseña: \n");
-                    string nuevaContrasenia = Console.ReadLine();           
-                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
-                   break;
-                
+                    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
+                    bool flag1;
+                    do
+                    {
+                        Console.Write("\n Ingrese su contraseña actual: ");
+                        string contraseniaActual = Console.ReadLine();
+                        Console.Write("\n Ingrese una nueva contraseña: ");
+                        string nuevaContrasenia = Console.ReadLine();
+                        flag1 = ClsUsuario.CambiarContrasenia(usuarioLogueado, contraseniaActual, nuevaContrasenia);
+                    } while (!flag1);
+                    break;
+
                 default:
                     Environment.Exit(0);
                     break;
@@ -319,7 +329,7 @@ namespace Presentacion
                     usuarioLogueado = null;
                     Vistas.MenuAdministrador();
                     int opcion2 = SeleccionarOpcion(5);
-                    SeleccionarOpcionesAdministrador(opcion2, usuarios, usuarioLogueado);
+                    SeleccionarOpcionesAdministrador(opcion2,usuarios,usuarioLogueado);
                     break;
                 case 2:
                     Limpia();
@@ -359,14 +369,19 @@ namespace Presentacion
                     Console.WriteLine("Proximamente.");
                     break;
                 case 7:
-                    Console.Write("\n Ingrese una nueva contraseña: \n");
-                    string nuevaContrasenia = Console.ReadLine();
-                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
+                    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
+                    bool flag = false;
+                    do
+                    {
+                        Console.Write("\n Ingrese su contraseña actual: ");
+                        string contraseniaActual = Console.ReadLine();
+                        Console.Write("\n Ingrese una nueva contraseña: ");
+                        string nuevaContrasenia = Console.ReadLine();
+                        flag = ClsUsuario.CambiarContrasenia(usuarioLogueado,contraseniaActual,nuevaContrasenia);
+                    } while (!flag);
                     break;
             }
         }
-
-
 
         private void SeleccionarOpcionesVendedor(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
         {
@@ -379,16 +394,19 @@ namespace Presentacion
                     Console.WriteLine("Proximamente.");
                     break;
                 case 3:
-                    Console.Write("\n Ingrese una nueva contraseña: \n");
-                    string nuevaContrasenia = Console.ReadLine();
-                    ClsUsuario.CambiarContrasenia(usuarioLogueado, nuevaContrasenia);
+                    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
+                    bool flag;
+                    do
+                    {
+                        Console.Write("\n Ingrese su contraseña actual: ");
+                        string contraseniaActual = Console.ReadLine();
+                        Console.Write("\n Ingrese una nueva contraseña: ");
+                        string nuevaContrasenia = Console.ReadLine();
+                        flag = ClsUsuario.CambiarContrasenia(usuarioLogueado, contraseniaActual, nuevaContrasenia);
+                    } while (!flag);
                     break;
             }
         }
-
-
-
-
 
         private void Limpia()
         {
