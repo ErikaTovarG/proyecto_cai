@@ -95,27 +95,28 @@ namespace Presentacion
                     break;
 
                 case 2:
-                    Console.WriteLine("\nProximamente...");
+                    Salir();
                     break;
                 default:
                     Environment.Exit(0);
                     break;
             }
         }
-        public bool Preguntar(UsuarioModelo usuario)
+        public bool volverAIntentar(UsuarioModelo usuario)
         {
-            string res;
+            string reIntentar;
             bool flag;
             do
             {
                 Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
-                res = Console.ReadLine().ToUpper();
-                flag = Validaciones.ValidaSyN(res);
+                reIntentar = Console.ReadLine().ToUpper();
+                flag = Validaciones.ValidaSyN(reIntentar);
             } while (!flag);
 
-            if (res == "N") { Environment.Exit(0); }
+            if (reIntentar == "N") {
+                Salir(); }
             //Si la res es S, sumo el contador del usuario en 1 hasta que sea mayor igual a 3.
-            if (res == "S")
+            if (reIntentar == "S")
             {
                 usuario.Contador++;
                 if (usuario.Contador >= 3)
@@ -186,7 +187,7 @@ namespace Presentacion
             {
                 Console.WriteLine("\t\nInicio de sesión fallido. Credenciales incorrectas.");
               
-                if (Preguntar(usu2))
+                if (volverAIntentar(usu2))
                 {
                     Limpia();
                     return MenuLogin(usuariosCreados);
@@ -202,7 +203,10 @@ namespace Presentacion
         private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
         {
             switch (opcion)
-            {     
+            {
+                case 0:
+                    Salir();
+                    break;
                 case 1:
                     Limpia();
                     Console.WriteLine("\n\tVas a crear un usuario Supervisor.\n");
@@ -339,7 +343,7 @@ namespace Presentacion
                     Console.WriteLine((" ").PadRight(60, '*'));
                     break;
                 case 3:
-                    Environment.Exit(0);
+                    Salir();
                     break;
                 default : Environment.Exit(0);
                     break;
@@ -350,6 +354,9 @@ namespace Presentacion
         {
             switch (opcion)
             {
+                case 0:
+                    Salir();
+                    break;
                 case 1:
                     Console.WriteLine("Proximamente.");
                     break;
@@ -387,6 +394,9 @@ namespace Presentacion
         {
             switch (opcion)
             {
+                case 0:
+                    Salir();
+                    break;
                 case 1:
                     Console.WriteLine("Proximamente.");
                     break;
@@ -412,6 +422,13 @@ namespace Presentacion
         {
             Thread.Sleep(750);
             Console.Clear();
+        }
+
+        private void Salir()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Seleccionó salir. Hasta luego.");
+            Environment.Exit(0);
         }
 
         private void ListarUsuarios(List<UsuarioModelo> listaDeUsuarios)
