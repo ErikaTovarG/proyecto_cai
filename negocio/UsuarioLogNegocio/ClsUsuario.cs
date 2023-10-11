@@ -2,6 +2,9 @@
 using Modelo.Switch;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Modelo.UsuarioWS;
+//using CapaDatos;
+
 
 namespace Negocio.UsuarioLogNegocio
 {
@@ -10,6 +13,14 @@ namespace Negocio.UsuarioLogNegocio
 
     {
         static List<UsuarioModelo> listaUsuarios = new List<UsuarioModelo>();
+
+        //Agrego MV
+        public static void CrearUsuario(UsuarioWS usuario)
+        {
+            //Este es el idUsuario Master
+            usuario.IdUsuario = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            //UsuarioDatos.CrearUsuario(usuario);
+        }
 
         public static bool ValidarContrasenia(string campo, string valor)
         {

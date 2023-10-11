@@ -4,23 +4,43 @@ using Modelo.Switch;
 using System;
 using System.Threading.Channels;
 using System.Runtime.InteropServices;
+using Modelo.UsuarioWS;
 
 namespace Presentacion
 {
     public class Program
     {
         public static void Main(string[] args)
+
         {
             Program programa = new Program();
 
             Activo activo = new Activo();
-            Inactivo inactivo = new Inactivo(); 
-                       
+            Inactivo inactivo = new Inactivo();
+
+            int indiceContraseña = 0;
+            String Contraseña = "Password_" + indiceContraseña;
+
             List<UsuarioModelo> usuariosCreados = new List<UsuarioModelo>();
-            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522,0, activo);   
-            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658,0, activo);
-            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752,0, activo);
-                        
+            UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522, 0, activo);
+            UsuarioModelo sup1 = new Supervisor(Guid.NewGuid(), "Andrea", "Rivera", "Av. cabildo", "22222", "acrs@GMAIL.COM", "CAI20232", "andrivera", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 2, 8542658, 0, activo);
+            UsuarioModelo vend1 = new Vendedor(Guid.NewGuid(), "Facundo", "Cairo", "Av. belgrano", "33333", "facundo@GMAIL.COM", "CAI20232", "heygoogle", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 3, 4845752, 0, activo);
+
+            UsuarioWS usr = new UsuarioWS();
+            // (Guid.NewGuid(), "Rodolfo ","Zavala", "Calle false","123", null, null, null, DateTime.Now.AddYears(-30), DateTime.Now.AddYears(-30), null, 1, 4443333, 0, activo) ;
+
+            usr.Host = 1;
+            usr.Nombre = "Rodolfo ";
+            usr.Apellido = "Zavala";
+            usr.Dni = 32531831;
+            usr.Direccion = "Calle false 123";
+            usr.Telefono = "44443333";
+            usr.Email = "test@test.com";
+            usr.FechaNacimiento = DateTime.Now.AddYears(-30);
+            usr.NombreUsuario = "AyudanteCAI";
+            usr.Contraseña = Contraseña;
+            ClsUsuario.CrearUsuario(usr);
+
             admin1.Estado = inactivo; 
            
             usuariosCreados.Add(admin1);
@@ -28,7 +48,7 @@ namespace Presentacion
             usuariosCreados.Add(vend1);
 
             programa.Inicia(usuariosCreados);
-     
+            
         }
         public void Inicia(List<UsuarioModelo> usuariosCreados)
         {
@@ -200,7 +220,7 @@ namespace Presentacion
             }
         }
 
-        private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
+          private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios, UsuarioModelo usuarioLogueado)
         {
             switch (opcion)
             {
@@ -210,6 +230,10 @@ namespace Presentacion
                 case 1:
                     Limpia();
                     Console.WriteLine("\n\tVas a crear un usuario Supervisor.\n");
+                    //Prueba
+                    //usr.IdUsuario = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+
+                    // Fin de prueba
                     UsuarioModelo usuarioSup = PideDatos.PedirUsuario(2);
                     usuarios.Add(usuarioSup);
                     Console.WriteLine("\n\tUsuario creado con exito.");
