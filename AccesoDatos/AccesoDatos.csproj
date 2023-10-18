@@ -6,9 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj" />
-		<ProjectReference Include="..\modelo\Modelo.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\modelo\Modelo.csproj" />
+  </ItemGroup>
 
 </Project>

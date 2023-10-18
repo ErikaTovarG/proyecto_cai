@@ -16,10 +16,10 @@ namespace Presentacion
             Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
             Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
-            Console.WriteLine("| Opcion         | Marcar |");
-            Console.WriteLine("| Login          |    1   |");
-            //Console.WriteLine("| Registrarse    |    2   |");
-            Console.WriteLine("| Salir          |    2   |\n");
+            Console.WriteLine("| Opcion               | Marcar |");
+            Console.WriteLine("| Login                |    1   |");
+            Console.WriteLine("| Cambiar contraseña   |    2   |");
+            Console.WriteLine("| Salir                |    3   |\n");
         }
 
         public static void Login ()

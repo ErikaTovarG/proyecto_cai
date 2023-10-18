@@ -1,7 +1,6 @@
-﻿using Modelo.UsuarioModelo;
-using Modelo.Switch;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using AccesoDatos;
+using Modelo.UsuarioModelo;
+
 
 namespace Negocio.UsuarioLogNegocio
 {
@@ -126,8 +125,6 @@ namespace Negocio.UsuarioLogNegocio
                 return false; // La fecha de renovación es menor a 30 días --> sigue con la misma
             }
         }
-
-
         public static UsuarioModelo BuscarPorDni(List<UsuarioModelo> usuarios, int dniUsuario)
         {
             return usuarios.Find(usuario => usuario.Dni == dniUsuario);
@@ -155,7 +152,16 @@ namespace Negocio.UsuarioLogNegocio
             return false;
         }
 
+        public static String Login(Login login)
+        {
+            String idUsuario = UsuarioDatos.Login(login);
+            return idUsuario;
+        }
 
+        public static List<UsuarioWebServices> ListarUsuarios(Guid idUsuario)
+        {
+            return UsuarioDatos.Listarusuarios(idUsuario);
+        }
     }
 }
 
