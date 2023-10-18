@@ -41,7 +41,7 @@ namespace Presentacion
             Console.Clear();
 
             Vistas.MenuInicial();
-            int opcion = SeleccionarOpcion(2);
+            int opcion = SeleccionarOpcion(3);
             SeleccionarModulo(opcion, usuariosCreados);
         }
         private int SeleccionarOpcion(int cant)
@@ -68,18 +68,21 @@ namespace Presentacion
                     switch (hostLogin)
                     {
                         case 3:
+                            Console.Clear();
                             Vistas.MenuAdministrador();
                             int opcion2 = SeleccionarOpcion(6);
                             Limpia();
                             SeleccionarOpcionesAdministrador(opcion2, usuarios);
                             break;
                         case 2:
+                            Console.Clear();
                             Vistas.MenuSupervisor();
                             opcion2 = SeleccionarOpcion(7);
                             Limpia();
                             SeleccionarOpcionesSupervisor(opcion2, usuarios);
                             break;
                         case 1:
+                            Console.Clear();
                             Vistas.MenuVendedor();
                             opcion2 = SeleccionarOpcion(3);
                             SeleccionarOpcionesVendedor(opcion2, usuarios);

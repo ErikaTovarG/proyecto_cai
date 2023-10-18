@@ -22,26 +22,9 @@ namespace AccesoDatos
                 var contentstream = response.Content.ReadAsStringAsync().Result;
                 List<UsuarioWebServices> listadousuarios = JsonConvert.DeserializeObject<List<UsuarioWebServices>>(contentstream);
                 return listadousuarios;
-                
-                //var reader = new StreamReader(response.Content.ReadAsStream());
 
-                //List<UsuarioWebServices> respuesta = JsonConvert.DeserializeObject<List<UsuarioWebServices>>(reader.ReadToEnd());
-
-                //return listadousuarios;
             }
         }
-        //public static List<UsuarioWebServices> ConsultarUsuarios(Guid idUsuarioAdmin)
-        //{
-        //    HttpResponseMessage response = WebHelper.Get("Usuario/TraerUsuariosActivos?id=" + idUsuarioAdmin);
-
-        //    if (!response.IsSuccessStatusCode)
-        //    {
-        //        throw new Exception("Verifique los datos ingresados");
-        //    }
-        //    var reader = new StreamReader(response.Content.ReadAsStream());
-        //    List<UsuarioWebServices> respuesta = JsonConvert.DeserializeObject<List<UsuarioWebServices>>(reader.ReadToEnd());
-        //    return respuesta;
-        //}
 
         public static void CrearUsuario(UsuarioModelo usuario)
         {

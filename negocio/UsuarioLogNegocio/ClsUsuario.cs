@@ -162,19 +162,6 @@ namespace Negocio.UsuarioLogNegocio
         {
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
-
-        //public static int BuscarHostUsuario(Guid idUsuario)
-        //{
-        //    List<UsuarioWebServices> listaUsuarios = UsuarioDatos.ConsultarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
-        //    try
-        //    {
-        //        return listaUsuarios.Find((usuario) => usuario.id == idUsuario).host;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return 0;
-        //    }
-        //}
     }
 }
 
