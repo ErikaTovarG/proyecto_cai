@@ -1,15 +1,34 @@
 ﻿using AccesoDatos.Utilidades;
 using Newtonsoft.Json;
 using Modelo.UsuarioModelo;
+using System.Web;
 
 namespace AccesoDatos
 {
     public static class UsuarioDatos
     {
 
-        public static List<UsuarioModelo> ListarUsuarios()
+        //public static list<usuariomodelo> listarusuarios()
+        //{
+        //    httpresponsemessage response = webhelper.get("usuario/traerusuariosactivos");
+
+        //    if (!response.issuccessstatuscode)
+        //    {
+        //        throw new exception("verifique los datos ingresados");
+        //    }
+        //    else
+        //    {
+        //        var contentstream = response.content.readasstringasync().result;
+        //        list<usuariomodelo> listadousuarios = jsonconvert.deserializeobject<list<usuariomodelo>>(contentstream);
+        //        return listadousuarios;
+        //    }
+        //}
+        public static List<UsuarioWebServices> ListarUsuarios(string id)
         {
-            HttpResponseMessage response = WebHelper.Get("Usuario/TraerUsuariosActivos");
+            // Construye la URL con el parámetro en la cadena de consulta
+            string url = $"Usuario/TraerUsuariosActivos?id={HttpUtility.UrlEncode(id)}";
+
+            HttpResponseMessage response = WebHelper.Get(url);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -18,10 +37,11 @@ namespace AccesoDatos
             else
             {
                 var contentStream = response.Content.ReadAsStringAsync().Result;
-                List<UsuarioModelo> listadoUsuarios = JsonConvert.DeserializeObject<List<UsuarioModelo>>(contentStream);
+                List<UsuarioWebServices> listadoUsuarios = JsonConvert.DeserializeObject<List<UsuarioWebServices>>(contentStream);
                 return listadoUsuarios;
             }
         }
+
         public static void CrearUsuario(UsuarioModelo usuario)
         {
             var jsonRequest = JsonConvert.SerializeObject(usuario);
@@ -91,6 +111,7 @@ namespace AccesoDatos
             }
 
         }
-        
+       
+
     }
 }

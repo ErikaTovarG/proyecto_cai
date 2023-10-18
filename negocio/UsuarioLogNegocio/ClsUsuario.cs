@@ -158,9 +158,9 @@ namespace Negocio.UsuarioLogNegocio
             return idUsuario;
         }
 
-        public static List<UsuarioModelo> ListarUsuarios()
+        public static List<UsuarioWebServices> ListarUsuarios(string parametro)
         {
-            return UsuarioDatos.ListarUsuarios();
+            return UsuarioDatos.ListarUsuarios(parametro);
         }
     }
 }
