@@ -119,6 +119,29 @@ namespace Presentacion
             }
             return usuarioaAgregar;
         }
+
+
+        public static Login PidoDatosEnLogin(Login login)
+        {
+            string usuarioIngresado, contrasenaIngresada, campo = "Usuario", campo2 = "Contraseña";
+            bool flag;
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
+
+            do
+            {
+                Console.Write("\n\t Ingrese su Usuario: ");
+                usuarioIngresado = Console.ReadLine().Trim();
+                Console.Write("\t Ingrese su Contraseña: ");
+                contrasenaIngresada = Console.ReadLine().Trim();
+                flag = Validaciones.ValidaVacio(usuarioIngresado, ref campo) && Validaciones.ValidaVacio(contrasenaIngresada, ref campo2);
+            } while (!flag);
+
+            login.NombreUsuario = usuarioIngresado;
+            login.Contraseña = contrasenaIngresada;
+            return login;
+        }
     }
 }
 

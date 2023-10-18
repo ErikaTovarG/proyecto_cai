@@ -13,16 +13,11 @@ namespace Presentacion
 {
     public class Program
     {
-        private static int indiceContraseña = 0;
-
-
         public static void Main(string[] args)
         {
             Program programa = new Program();
             Activo activo = new Activo();
             Inactivo inactivo = new Inactivo();
-
-
 
             List<UsuarioModelo> usuariosCreados = new List<UsuarioModelo>();
             UsuarioModelo admin1 = new Administrador(Guid.NewGuid(), "Erika", "Tovar", "Av. 123", "111111", "etovar@GMAIL.COM", "CAI20232", "etovar", Convert.ToDateTime("01/09/2023"), Convert.ToDateTime("18/10/1991"), null, 1, 44665522, 0, activo);
@@ -103,7 +98,7 @@ namespace Presentacion
                     break;
             }
         }
-        public bool Preguntar(UsuarioModelo usuario)
+        private bool Preguntar(UsuarioModelo usuario)
         {
             string res;
             bool flag;
@@ -129,27 +124,6 @@ namespace Presentacion
 
             }
             return flag;
-        }
-        private Login PidoDatosEnLogin(Login login)
-        {
-            string usuarioIngresado, contrasenaIngresada, campo = "Usuario", campo2 = "Contraseña";
-            bool flag;
-            Console.WriteLine("\n");
-            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
-            Console.WriteLine("\n¡Bienvenidos a ElectroHogar S.A!\n");
-
-            do
-            {
-                Console.Write("\n\t Ingrese su Usuario: ");
-                usuarioIngresado = Console.ReadLine().Trim();
-                Console.Write("\t Ingrese su Contraseña: ");
-                contrasenaIngresada = Console.ReadLine().Trim();
-                flag = Validaciones.ValidaVacio(usuarioIngresado, ref campo) && Validaciones.ValidaVacio(contrasenaIngresada, ref campo2);
-            } while (!flag);
-
-            login.NombreUsuario = usuarioIngresado;
-            login.Contraseña = contrasenaIngresada;
-            return login;
         }
         private static int ListarUsuarios(Guid idUsuario)
         {
@@ -193,7 +167,7 @@ namespace Presentacion
             {
                 try
                 {
-                    login = PidoDatosEnLogin(login);
+                    login = PideDatos.PidoDatosEnLogin(login);
                     idUsuario = ClsUsuario.Login(login);
                     test = idUsuario.Substring(1, idUsuario.Length - 2);
                     host = ListarUsuarios(Guid.Parse(test));
@@ -283,8 +257,7 @@ namespace Presentacion
                 case 2:
                     int dniSupervisorNum = 0;
                     string campo = "DNI";
-                    bool esValidoNum = false;
-                    bool esValidoVacio = false;
+                    bool esValidoNum = false, esValidoVacio = false;
 
                     do
                     {
