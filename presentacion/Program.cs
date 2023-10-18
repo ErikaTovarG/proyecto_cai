@@ -1,9 +1,13 @@
 ﻿using Modelo.UsuarioModelo;
+using Modelo.Proveedor;
+using Modelo.Producto;
 using Negocio.UsuarioLogNegocio;
 using Modelo.Switch;
 using System;
 using System.Threading.Channels;
 using System.Runtime.InteropServices;
+using Negocio.ProductoNegocio;
+using Negocio.ProveedorNegocio;
 
 namespace Presentacion
 {
@@ -15,7 +19,6 @@ namespace Presentacion
         public static void Main(string[] args)
         {
             Program programa = new Program();
-
             Activo activo = new Activo();
             Inactivo inactivo = new Inactivo();
 
@@ -31,7 +34,6 @@ namespace Presentacion
             usuariosCreados.Add(admin1);
             usuariosCreados.Add(sup1);
             usuariosCreados.Add(vend1);
-
             programa.Inicia(usuariosCreados);
 
         }
@@ -362,6 +364,52 @@ namespace Presentacion
                     break;
                 case 5:
                     Console.WriteLine(" Proximamente ");
+
+                    break;
+                //case 6:
+                //    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
+                //    bool flag1;
+                //    do
+                //    {
+                //        Console.Write("\n Ingrese su contraseña actual: ");
+                //        string contraseniaActual = Console.ReadLine();
+                //        Console.Write("\n Ingrese una nueva contraseña: ");
+                //        string nuevaContrasenia = Console.ReadLine();
+                //        flag1 = ClsUsuario.CambiarContrasenia(usuarioLogueado, contraseniaActual, nuevaContrasenia);
+                //    } while (!flag1);
+                //    break;
+
+                case 7: 
+                    Console.WriteLine("\nVas a modificar un proveedor.\n");
+                    esValidoNum = false;
+                    esValidoVacio = false;
+                    campo = "CUIT";
+                    int cuitSalida = 0;
+                    bool flag2 = false;
+                    do
+                    {
+
+                        Console.Write("\nIngrese el CUIT del proveedor que desea modificar: ");
+                        string cuit = Console.ReadLine();
+                        Console.Write("\nIngrese el nuevo nombre para el proveedor: ");
+                        string nuevoNombre = Console.ReadLine();
+                        esValidoNum = Validaciones.ValidaNumerico(cuit, ref cuitSalida);
+                        esValidoVacio = Validaciones.ValidaVacio(nuevoNombre, ref campo);
+
+                        
+                        if(esValidoNum & esValidoVacio)
+                        {
+                            flag2 = ClsProveedor.ModificarProveedor(Convert.ToInt32(cuit), nuevoNombre);
+                        }
+
+                        if (flag2)
+                        {
+                            Console.WriteLine("\nSe modificó correctamente el proveedor con CUIT: {0}\n", cuit);
+                        }
+
+                    } while (!flag2 || !esValidoNum || !esValidoVacio); 
+                   
+
                     break;
                 //case 6:
                 //    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
