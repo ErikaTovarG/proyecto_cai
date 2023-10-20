@@ -40,6 +40,9 @@ namespace Presentacion
             Console.WriteLine("| Baja Vendedor                   |    4   |");
             Console.WriteLine("| Reporte de ventas por vendedor  |    5   |");
             Console.WriteLine("| Modificar contraseña            |    6   |");
+            Console.WriteLine("| Listar productos                |    7   |");
+            Console.WriteLine("| Listar usuarios                 |    8   |");
+            Console.WriteLine("| Modificar proveedor             |    9   |");
             Console.WriteLine("| Salir                           |    0   |\n");
         }
 
@@ -73,14 +76,24 @@ namespace Presentacion
              Console.WriteLine("| Salir                           |    0   |\n");
          } 
 
-        public static void OpcionesContinuar()
+        public static void OpcionesContinuarUsuario()
         {
             Console.WriteLine("\n");
             Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
             Console.WriteLine("| Opcion                     |          Marcar          |");
             Console.WriteLine("|----------------------------|--------------------------|");
             Console.WriteLine("| Volver al menu anterior    |            1             |");
-            Console.WriteLine("| Ver usuarios registrados   |            2             |");
+            Console.WriteLine("| Listar usuarios             |            2             |");
+            Console.WriteLine("| Salir                      |     3 o cualquier tecla. |\n");
+        }
+        public static void OpcionesContinuarProducto()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine((" ").PadRight(48, '=') + "   " + DateTime.Now + $"{0:D}" + "   " + (" ").PadRight(48, '='));
+            Console.WriteLine("| Opcion                     |          Marcar          |");
+            Console.WriteLine("|----------------------------|--------------------------|");
+            Console.WriteLine("| Volver al menu anterior    |            1             |");
+            Console.WriteLine("| Listar productos           |            2             |");
             Console.WriteLine("| Salir                      |     3 o cualquier tecla. |\n");
         }
 

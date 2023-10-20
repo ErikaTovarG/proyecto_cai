@@ -8,6 +8,7 @@ using System.Threading.Channels;
 using System.Runtime.InteropServices;
 using Negocio.ProductoNegocio;
 using Negocio.ProveedorNegocio;
+using Modelo.ProductoModelo;
 
 namespace Presentacion
 {
@@ -38,22 +39,11 @@ namespace Presentacion
             Console.Clear();
 
             Vistas.MenuInicial();
-            int opcion = SeleccionarOpcion(3);
+            int opcion = FuncionesAuxiliares.SeleccionarOpcion(3);
             SeleccionarModulo(opcion, usuariosCreados);
         }
-        private int SeleccionarOpcion(int cant)
-        {
-            bool flag;
-            int salida = 0;
-            do
-            {
-                Console.Write("Indique la opción con la cual desea continuar: ");
-                string respuesta = Console.ReadLine().Trim();
-                flag = Validaciones.ValidaEntero(respuesta, cant, ref salida);
-            } while (!flag);
 
-            return salida;
-        }
+
         private void SeleccionarModulo(int opcion, List<UsuarioModelo> usuarios)
         {
             int hostLogin;
@@ -67,23 +57,23 @@ namespace Presentacion
                         case 3:
                             Console.Clear();
                             Vistas.MenuAdministrador();
-                            int opcion2 = SeleccionarOpcion(6);
-                            Limpia();
+                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(8);
+                            FuncionesAuxiliares.Limpia();
                             SeleccionarOpcionesAdministrador(opcion2, usuarios);
                             break;
                         case 2:
                             Console.Clear();
                             Vistas.MenuSupervisor();
-                            opcion2 = SeleccionarOpcion(7);
-                            Limpia();
+                            opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
+                            FuncionesAuxiliares.Limpia();
                             SeleccionarOpcionesSupervisor(opcion2, usuarios);
                             break;
                         case 1:
                             Console.Clear();
                             Vistas.MenuVendedor();
-                            opcion2 = SeleccionarOpcion(3);
+                            opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
                             SeleccionarOpcionesVendedor(opcion2, usuarios);
-                            Limpia();
+                            FuncionesAuxiliares.Limpia();
                             break;
                         default:
                             Console.WriteLine("No se encontró.");
@@ -98,62 +88,8 @@ namespace Presentacion
                     break;
             }
         }
-        private bool Preguntar(UsuarioModelo usuario)
-        {
-            string res;
-            bool flag;
-            do
-            {
-                Console.Write("\n\t¿Desea intentar nuevamente? S/N: ");
-                res = Console.ReadLine().ToUpper();
-                flag = Validaciones.ValidaSyN(res);
-            } while (!flag);
-
-            if (res == "N") { Environment.Exit(0); }
-            //Si la res es S, sumo el contador del usuario en 1 hasta que sea mayor igual a 3.
-            if (res == "S")
-            {
-                usuario.Contador++;
-                if (usuario.Contador >= 3)
-                {
-                    Console.WriteLine("\n ERROR: Ha excedido los intentos.\n El usuario {0} ha pasado a inactivo", usuario.Usuario);
-                    Inactivo inactivo = new Inactivo();
-                    usuario.Estado = inactivo;
-                    Environment.Exit(0);
-                }
-
-            }
-            return flag;
-        }
-        private static int ListarUsuarios(Guid idUsuario)
-        {
-            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));           
-            UsuarioWebServices usuarioEncontrado = usuarios.Find((usuario) => usuario.id == idUsuario);
-
-            if (usuarioEncontrado != null)
-            {
-                return usuarioEncontrado.host; 
-            }
-            else
-            {
-                return -1; 
-            }
-        }
-
-        private static UsuarioWebServices BuscarUsuarioCompletoDatos(Guid idUsuario)
-        {
-            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
-            UsuarioWebServices usuarioEncontrado = usuarios.Find((usuario) => usuario.id == idUsuario);
-
-            if (usuarioEncontrado != null)
-            {
-                return usuarioEncontrado;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        
+        
 
         private int LoginAction()
         {
@@ -170,7 +106,7 @@ namespace Presentacion
                     login = PideDatos.PidoDatosEnLogin(login);
                     idUsuario = ClsUsuario.Login(login);
                     test = idUsuario.Substring(1, idUsuario.Length - 2);
-                    host = ListarUsuarios(Guid.Parse(test));
+                    host = FuncionesAuxiliares.BuscarUsuarioYDevolverHost(Guid.Parse(test));
                     loginExitoso = true;
                 }
                 catch (Exception ex)
@@ -238,20 +174,20 @@ namespace Presentacion
         //    }
         //}
 
-        private void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
+        public static void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
         {
             switch (opcion)
             {
                 case 1:
-                    Limpia();
+                    FuncionesAuxiliares.Limpia();
                     Console.WriteLine("\n\tVas a crear un usuario Supervisor.\n");
                     UsuarioModelo usuarioSup = PideDatos.PedirUsuario(2);
                     usuarios.Add(usuarioSup);
                     Console.WriteLine("\n\tUsuario creado con exito.");
-                    Limpia();
-                    Vistas.OpcionesContinuar();
-                    int op1 = SeleccionarOpcion(2);
-                    OpcionAContinuar(op1, usuarios);
+                    FuncionesAuxiliares.Limpia();
+                    Vistas.OpcionesContinuarUsuario();
+                    int op1 = FuncionesAuxiliares.SeleccionarOpcion(2);
+                    FuncionesAuxiliares.OpcionAContinuarAdministrador(op1, usuarios);
                     break;
 
                 case 2:
@@ -289,15 +225,15 @@ namespace Presentacion
                     Console.ReadKey();
                     break;
                 case 3:
-                    Limpia();
+                    FuncionesAuxiliares.Limpia();
                     Console.WriteLine("\n\tVas a crear un usuario Vendedor.\n");
                     UsuarioModelo usuarioVen = PideDatos.PedirUsuario(3);
                     usuarios.Add(usuarioVen);
                     Console.WriteLine("\n\tUsuario creado con exito.");
-                    Limpia();
-                    Vistas.OpcionesContinuar();
-                    int op3 = SeleccionarOpcion(2);
-                    OpcionAContinuar(op3, usuarios);
+                    FuncionesAuxiliares.Limpia();
+                    Vistas.OpcionesContinuarUsuario(); 
+                    int op3 = FuncionesAuxiliares.SeleccionarOpcion(2);
+                    FuncionesAuxiliares.OpcionAContinuarAdministrador(op3, usuarios);
                     break;
                 case 4:
 
@@ -351,8 +287,19 @@ namespace Presentacion
                 //        flag1 = ClsUsuario.CambiarContrasenia(usuarioLogueado, contraseniaActual, nuevaContrasenia);
                 //    } while (!flag1);
                 //    break;
-
-                case 7: 
+                case 7:
+                    FuncionesAuxiliares.ListarProductos();
+                    Vistas.OpcionesContinuarProducto();
+                    int op7 = FuncionesAuxiliares.SeleccionarOpcion(2);
+                    FuncionesAuxiliares.OpcionAContinuarAdministrador(op7, usuarios);
+                    break;
+                case 8:
+                    FuncionesAuxiliares.ListarUsuarios();
+                    Vistas.OpcionesContinuarUsuario();
+                    int op8 = FuncionesAuxiliares.SeleccionarOpcion(2);
+                    FuncionesAuxiliares.OpcionAContinuarAdministrador(op8, usuarios);
+                    break;
+                case 9: 
                     Console.WriteLine("\nVas a modificar un proveedor.\n");
                     esValidoNum = false;
                     esValidoVacio = false;
@@ -402,33 +349,6 @@ namespace Presentacion
                     break;
             }
 
-        }
-        public void OpcionAContinuar(int opcion, List<UsuarioModelo> usuarios)
-        {
-            switch (opcion)
-            {
-                case 1:
-                    Limpia();
-                    UsuarioModelo usuarioLogueado = new Administrador();
-                    usuarioLogueado = null;
-                    Vistas.MenuAdministrador();
-                    int opcion2 = SeleccionarOpcion(5);
-                    SeleccionarOpcionesAdministrador(opcion2, usuarios);
-                    break;
-                case 2:
-                    Limpia();
-                    Console.WriteLine("\nLos usuarios son: \n\n");
-                    ListarUsuarios(usuarios);
-                    Console.WriteLine("\n");
-                    Console.WriteLine((" ").PadRight(60, '*'));
-                    break;
-                case 3:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Environment.Exit(0);
-                    break;
-            }
         }
 
         private void SeleccionarOpcionesSupervisor(int opcion, List<UsuarioModelo> usuarios)
@@ -491,23 +411,6 @@ namespace Presentacion
                 //    } while (!flag);
                 //    break;
             }
-        }
-
-        private void Limpia()
-        {
-            Thread.Sleep(750);
-            Console.Clear();
-        }
-
-        private void ListarUsuarios(List<UsuarioModelo> listaDeUsuarios)
-        {
-
-            foreach (var fila in listaDeUsuarios)
-            {
-                Console.WriteLine((" ").PadRight(60, '*'));
-                Console.WriteLine($"{fila.ToString()}");
-            }
-
         }
 
     }
