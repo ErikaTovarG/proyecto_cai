@@ -55,8 +55,8 @@ namespace Presentacion
                     switch (hostLogin)
                     {
                         case 3:
-                            Console.Clear();
                             List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+                            Console.Clear();
                             FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                             Vistas.MenuAdministrador();
                             int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(11);
@@ -65,6 +65,8 @@ namespace Presentacion
                             break;
                         case 2:
                             Console.Clear();
+                            List<ProductoWebServices> listaProductos2 = ClsProducto.ListarProductos();
+                            FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos2);
                             Vistas.MenuSupervisor();
                             opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
                             FuncionesAuxiliares.Limpia();
