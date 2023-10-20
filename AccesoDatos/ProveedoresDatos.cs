@@ -1,5 +1,6 @@
 ﻿using AccesoDatos.Utilidades;
 using Modelo.Proveedor;
+using Modelo.ProveedorModelo;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    internal class ProveedoresDatos
+    public class ProveedoresDatos
     {
         public static List<ProveedorWebServices> ListarProveedores()
         {

@@ -1,4 +1,5 @@
 ﻿using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Modelo.Switch;
 using Modelo.UsuarioModelo;
 using Negocio.ProductoNegocio;
@@ -165,16 +166,17 @@ namespace Presentacion
 
         public static void ListarProveedores()
         {
-            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProductos();
+            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();
 
-            Console.WriteLine($"\n\tHay en stock {proveedorWebServices.Count} productos \n");
+            Console.WriteLine($"\n\tExisten {proveedorWebServices.Count} proveedores.\n");
 
-            foreach (var producto in proveedorWebServices)
+            foreach (var proveedor in proveedorWebServices)
             {
-                ImprimirProducto(producto);
+                ImprimirProveedor(proveedor);
             }
 
         }
+
         private static void ImprimirProveedor(ProveedorWebServices proveedor)
         {
             Console.WriteLine(new string('*', 60));

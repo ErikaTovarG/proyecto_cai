@@ -33,9 +33,6 @@ namespace Negocio.ProductoNegocio
         {
             return ProductosDatos.ListarProductos();
         }
-
-        
-
     }
 }
 

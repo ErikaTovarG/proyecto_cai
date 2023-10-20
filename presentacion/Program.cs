@@ -57,7 +57,7 @@ namespace Presentacion
                         case 3:
                             Console.Clear();
                             Vistas.MenuAdministrador();
-                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(8);
+                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(11);
                             FuncionesAuxiliares.Limpia();
                             SeleccionarOpcionesAdministrador(opcion2, usuarios);
                             break;
@@ -330,7 +330,10 @@ namespace Presentacion
                     } while (!flag2 || !esValidoNum || !esValidoVacio); 
                     break;
                 case 10:
-
+                   
+                    break;
+                case 11:
+                    FuncionesAuxiliares.ListarProveedores();
                     break;
                 //case 6:
                 //    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
