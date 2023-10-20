@@ -2,6 +2,7 @@
 using Modelo.Switch;
 using Modelo.UsuarioModelo;
 using Negocio.ProductoNegocio;
+using Negocio.ProveedorNegocio;
 using Negocio.UsuarioLogNegocio;
 using System;
 using System.Collections.Generic;
@@ -155,12 +156,38 @@ namespace Presentacion
             Console.WriteLine($"ID: {producto.Id}");
             Console.WriteLine($"IdCategoria: {producto.IdCategoria}");
             Console.WriteLine($"Nombre: {producto.Nombre}");
-            Console.WriteLine($"Nombre: {producto.FechaAlta}");
-            Console.WriteLine($"Nombre: {producto.FechaBaja}");
+            Console.WriteLine($"FechaAlta: {producto.FechaAlta}");
+            Console.WriteLine($"FechaBaja: {producto.FechaBaja}");
             Console.WriteLine($"Precio: {producto.Precio:C}"); 
             Console.WriteLine($"Stock: {producto.Stock}");
             Console.WriteLine(new string('*', 60)); 
         }
+
+        public static void ListarProveedores()
+        {
+            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProductos();
+
+            Console.WriteLine($"\n\tHay en stock {proveedorWebServices.Count} productos \n");
+
+            foreach (var producto in proveedorWebServices)
+            {
+                ImprimirProducto(producto);
+            }
+
+        }
+        private static void ImprimirProveedor(ProveedorWebServices proveedor)
+        {
+            Console.WriteLine(new string('*', 60));
+            Console.WriteLine($"ID: {proveedor.Id}");
+            Console.WriteLine($"Nombre: {proveedor.Nombre}");
+            Console.WriteLine($"Apellido: {proveedor.Apellido}");
+            Console.WriteLine($"Email: {proveedor.Email}");
+            Console.WriteLine($"Cuit: {proveedor.Cuit}");
+            Console.WriteLine($"FechaAlta: {proveedor.FechaAlta}");
+            Console.WriteLine($"FechaBaja: {proveedor.FechaBaja}");
+            Console.WriteLine(new string('*', 60));
+        }
+
 
         public static void Limpia()
         {

@@ -94,6 +94,13 @@ namespace Presentacion
             return true;
         }
 
+        public static bool ValidaDecimal(string num, ref Double salida)
+        {
+            bool flag = false;
+            if(!Double.TryParse(num, out salida) || salida < 0) Console.WriteLine("\nERROR: El dato ingresado debe ser númerico y positivo.\n");
+            else flag = true;
+            return flag;
+        }
       
 
     }

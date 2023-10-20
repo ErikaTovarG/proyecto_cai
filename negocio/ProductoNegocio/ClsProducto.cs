@@ -3,6 +3,7 @@ using Modelo.Producto;
 using Modelo.Switch;
 using AccesoDatos;
 using Modelo.ProductoModelo;
+using System.Data;
 
 namespace Negocio.ProductoNegocio
 {
@@ -33,7 +34,7 @@ namespace Negocio.ProductoNegocio
             return ProductosDatos.ListarProductos();
         }
 
-
+        
 
     }
 }

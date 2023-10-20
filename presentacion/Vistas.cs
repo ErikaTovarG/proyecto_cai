@@ -43,6 +43,7 @@ namespace Presentacion
             Console.WriteLine("| Listar productos                |    7   |");
             Console.WriteLine("| Listar usuarios                 |    8   |");
             Console.WriteLine("| Modificar proveedor             |    9   |");
+            Console.WriteLine("| Alta de productos               |    10  |");
             Console.WriteLine("| Salir                           |    0   |\n");
         }
 

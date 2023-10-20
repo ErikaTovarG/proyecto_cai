@@ -2,6 +2,8 @@
 using Negocio.UsuarioLogNegocio;
 using Modelo.Switch;
 using System.Runtime.CompilerServices;
+using Negocio.ProveedorNegocio;
+using Modelo.ProductoModelo;
 
 namespace Presentacion
 {
@@ -120,7 +122,48 @@ namespace Presentacion
             return usuarioaAgregar;
         }
 
+        public static ProductoWebServices IngresoDatosProducto()
+        {
+            ProductoWebServices producto = new ProductoWebServices();
+            int idCategoriaSalida, cantidadSalida;
+            string nombreProducto, precioProducto, idCategoria, nombreProductoSalida, cantidad;
+            Double salidaprecioProducto;
+            bool esValido;
+            do
+            {
+                esValido = false;
+                Console.Write("\nCategoria del producto: ");
+                idCategoria = Console.ReadLine();
+                idCategoriaSalida = 0;
+                esValido = Validaciones.ValidaNumerico(idCategoria, ref idCategoriaSalida);
+            } while (!esValido);
+            do
+            {
+                esValido = false;
+                Console.Write("\nNombre del producto: ");
+                nombreProducto = Console.ReadLine();
+                nombreProductoSalida = "";
+                esValido = Validaciones.ValidaVacio(nombreProducto, ref nombreProductoSalida);
+            } while (!esValido);
+            do
+            {
+                esValido = false;
+                Console.Write("\nPrecio del producto: ");
+                precioProducto = Console.ReadLine();
+                salidaprecioProducto = 0;
+                esValido = Validaciones.ValidaDecimal(precioProducto, ref salidaprecioProducto);
+            } while (!esValido);
+            do
+            {
+                esValido = false;
+                Console.Write("\nCantidad del producto: ");
+                cantidad = Console.ReadLine();
+                cantidadSalida= 0;
+                esValido = Validaciones.ValidaNumerico(cantidad, ref cantidadSalida);
+            } while (!esValido);
 
+            return producto;
+        }
         public static Login PidoDatosEnLogin(Login login)
         {
             string usuarioIngresado, contrasenaIngresada, campo = "Usuario", campo2 = "Contraseña";

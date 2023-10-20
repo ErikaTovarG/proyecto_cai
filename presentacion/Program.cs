@@ -328,7 +328,8 @@ namespace Presentacion
                         }
 
                     } while (!flag2 || !esValidoNum || !esValidoVacio); 
-                   
+                    break;
+                case 10:
 
                     break;
                 //case 6:

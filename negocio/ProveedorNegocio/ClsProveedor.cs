@@ -1,4 +1,6 @@
-﻿using Modelo.Proveedor;
+﻿using AccesoDatos;
+using Modelo.ProductoModelo;
+using Modelo.Proveedor;
 using Modelo.UsuarioModelo;
 
 
@@ -38,6 +40,11 @@ namespace Negocio.ProveedorNegocio
         public static Proveedor BuscarProveedorporCUIT(int cuit)
         {
             return listaProveedores.Find(proveedor => proveedor.CUIT == cuit);
+        }
+
+        public static List<ProveedorWebServices> ListarProductos()
+        {
+            return ProveedoresDatos.ListarProveedores();
         }
     }
 }

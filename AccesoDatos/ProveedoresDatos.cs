@@ -11,7 +11,7 @@ namespace AccesoDatos
 {
     internal class ProveedoresDatos
     {
-        public static List<Proveedor> ListarProveedores()
+        public static List<ProveedorWebServices> ListarProveedores()
         {
             HttpResponseMessage response = WebHelper.Get("Proveedor/TraerProveedores");
 
@@ -22,7 +22,7 @@ namespace AccesoDatos
             else
             {
                 var contentStream = response.Content.ReadAsStringAsync().Result;
-                List<Proveedor> listadoProveedores = JsonConvert.DeserializeObject<List<Proveedor>>(contentStream);
+                List<ProveedorWebServices> listadoProveedores = JsonConvert.DeserializeObject<List<ProveedorWebServices>>(contentStream);
                 return listadoProveedores;
             }
         }

@@ -28,5 +28,17 @@ namespace AccesoDatos
 
             }
         }
+
+        public static void CrearProducto(ProductoWebServices producto)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(producto);
+
+            HttpResponseMessage response = WebHelper.Post("Producto/AgregarProducto", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.StatusCode.ToString());
+            }
+        }
     }
 }
