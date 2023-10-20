@@ -37,12 +37,14 @@ namespace AccesoDatos
             var jsonRequest = JsonConvert.SerializeObject(map);
 
             HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
-
+            
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception("Verifique los datos ingresados");
             }
 
         }
+
+
     }
 }

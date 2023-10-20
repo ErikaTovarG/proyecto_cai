@@ -53,9 +53,10 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Verifique los datos ingresados");
+                throw new Exception("Verifique los datos ingresados.");
             }
 
         }
+
     }
 }

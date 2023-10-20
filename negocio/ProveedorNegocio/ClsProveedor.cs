@@ -11,11 +11,6 @@ namespace Negocio.ProveedorNegocio
 
     {
         static List<Proveedor> listaProveedores = new List<Proveedor>();
-        public static void cargarProveedores()
-        {
-            Proveedor proveedor1 = new Proveedor(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), "Proveedor 1", "Apellido 1", "acrs@gmail.com", Convert.ToDateTime("15/10/2023"), Convert.ToDateTime(null), 123456);
-            listaProveedores.Add(proveedor1);
-        }
     
         //¿Qué valores se deben modificar del proveedor?
         public static bool ModificarProveedor (int cuit, string nuevoNombre)

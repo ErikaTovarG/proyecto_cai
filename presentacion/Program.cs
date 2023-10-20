@@ -32,7 +32,6 @@ namespace Presentacion
             usuariosCreados.Add(sup1);
             usuariosCreados.Add(vend1);
             programa.Inicia(usuariosCreados);
-
         }
         public void Inicia(List<UsuarioModelo> usuariosCreados)
         {
@@ -60,7 +59,7 @@ namespace Presentacion
                             Console.Clear();
                             FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                             Vistas.MenuAdministrador();
-                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(12);
+                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(13);
                             FuncionesAuxiliares.Limpia();
                             SeleccionarOpcionesAdministrador(opcion2, usuarios);
                             break;
@@ -181,7 +180,7 @@ namespace Presentacion
 
         public static void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
         {
-            
+
             switch (opcion)
             {
                 case 1:
@@ -237,7 +236,7 @@ namespace Presentacion
                     usuarios.Add(usuarioVen);
                     Console.WriteLine("\n\tUsuario creado con exito.");
                     FuncionesAuxiliares.Limpia();
-                    Vistas.OpcionesContinuarUsuario(); 
+                    Vistas.OpcionesContinuarUsuario();
                     int op3 = FuncionesAuxiliares.SeleccionarOpcion(2);
                     FuncionesAuxiliares.OpcionAContinuarAdministrador(op3, usuarios);
                     break;
@@ -305,7 +304,8 @@ namespace Presentacion
                     int op8 = FuncionesAuxiliares.SeleccionarOpcion(2);
                     FuncionesAuxiliares.OpcionAContinuarAdministrador(op8, usuarios);
                     break;
-                case 9: 
+                case 9:
+                    Console.WriteLine("\nEsta opcion no tiene Swagger todavía. \n");
                     Console.WriteLine("\nVas a modificar un proveedor.\n");
                     esValidoNum = false;
                     esValidoVacio = false;
@@ -322,8 +322,8 @@ namespace Presentacion
                         esValidoNum = Validaciones.ValidaNumerico(cuit, ref cuitSalida);
                         esValidoVacio = Validaciones.ValidaVacio(nuevoNombre, ref campo);
 
-                        
-                        if(esValidoNum & esValidoVacio)
+
+                        if (esValidoNum & esValidoVacio)
                         {
                             flag2 = ClsProveedor.ModificarProveedor(Convert.ToInt32(cuit), nuevoNombre);
                         }
@@ -333,7 +333,7 @@ namespace Presentacion
                             Console.WriteLine("\nSe modificó correctamente el proveedor con CUIT: {0}\n", cuit);
                         }
 
-                    } while (!flag2 || !esValidoNum || !esValidoVacio); 
+                    } while (!flag2 || !esValidoNum || !esValidoVacio);
                     break;
                 case 10:
                     ProductoWebServicesPost ProductoAgregar = PideDatos.IngresoDatosProducto();
@@ -343,7 +343,7 @@ namespace Presentacion
                     FuncionesAuxiliares.ListarProveedores();
                     break;
                 case 12:
-                   
+
                     int idProveedorNum = 0;
                     string idProveedor;
                     campo = "CUIT";
@@ -359,12 +359,9 @@ namespace Presentacion
                     } while (!esValidoVacioID);
 
                     string proveedor = ClsProveedor.BuscarProveedorPorCuitYDevolverString(idProveedor);
-                    ClsProveedor.EliminarProveedorPorCuit (proveedor);  
-          
-                    Console.WriteLine("Se eliminó Proveedor con CUIT " + idProveedor);
-                
-                
+                    ClsProveedor.EliminarProveedorPorCuit(proveedor);
 
+                    Console.WriteLine("Se eliminó Proveedor con CUIT " + idProveedor);
                     Console.ReadKey();
                     break;
                 //case 6:
