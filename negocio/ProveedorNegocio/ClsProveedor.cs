@@ -47,6 +47,10 @@ namespace Negocio.ProveedorNegocio
         {
             return ProveedoresDatos.ListarProveedores();
         }
+        public static ProveedorWebServices BuscarProveedorPorCuit(string cuit)
+        {
+            return ListarProveedores().Find(p => p.Cuit == cuit);
+        }
     }
 }
 

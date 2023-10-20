@@ -13,7 +13,6 @@ namespace Modelo.ProductoModelo
         private string _nombre;
         private int _idCategoria,_precio, _stock;
         private DateTime _fechaAlta, _fechaBaja;
-
         public Guid Id { get => _id; set => _id = value; }
         public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }

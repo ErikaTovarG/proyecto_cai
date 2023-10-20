@@ -4,6 +4,7 @@ using Modelo.Switch;
 using System.Runtime.CompilerServices;
 using Negocio.ProveedorNegocio;
 using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 
 namespace Presentacion
 {
@@ -122,12 +123,11 @@ namespace Presentacion
             return usuarioaAgregar;
         }
 
-        public static ProductoWebServices IngresoDatosProducto()
+        public static ProductoWebServicesPost IngresoDatosProducto()
         {
-            ProductoWebServices producto = new ProductoWebServices();
-            int idCategoriaSalida, cantidadSalida;
-            string nombreProducto, precioProducto, idCategoria, nombreProductoSalida, cantidad;
-            Double salidaprecioProducto;
+            ProductoWebServicesPost producto = new ProductoWebServicesPost();
+            int idCategoriaSalida, cantidadSalida, salidaprecioProducto;
+            string nombreProducto, precioProducto, idCategoria, nombreProductoSalida, cantidad, cuitIngresado, cuitSalida;
             bool esValido;
             do
             {
@@ -142,7 +142,7 @@ namespace Presentacion
                 esValido = false;
                 Console.Write("\nNombre del producto: ");
                 nombreProducto = Console.ReadLine();
-                nombreProductoSalida = "";
+                nombreProductoSalida = "Nombre";
                 esValido = Validaciones.ValidaVacio(nombreProducto, ref nombreProductoSalida);
             } while (!esValido);
             do
@@ -151,16 +151,39 @@ namespace Presentacion
                 Console.Write("\nPrecio del producto: ");
                 precioProducto = Console.ReadLine();
                 salidaprecioProducto = 0;
-                esValido = Validaciones.ValidaDecimal(precioProducto, ref salidaprecioProducto);
+                esValido = Validaciones.ValidaNumerico(precioProducto, ref salidaprecioProducto);
             } while (!esValido);
             do
             {
                 esValido = false;
                 Console.Write("\nCantidad del producto: ");
                 cantidad = Console.ReadLine();
-                cantidadSalida= 0;
+                cantidadSalida = 0;
                 esValido = Validaciones.ValidaNumerico(cantidad, ref cantidadSalida);
             } while (!esValido);
+
+            do
+            {
+                esValido = false;
+                Console.Write("\nIngrese el cuit del proveedor: ");
+                cuitIngresado = Console.ReadLine();
+                cuitSalida = "Cuit";
+                esValido = Validaciones.ValidaVacio(cuitIngresado, ref cuitSalida);
+            } while(!esValido);
+
+            ProveedorWebServices ProveedorEncontrado = ClsProveedor.BuscarProveedorPorCuit(cuitIngresado);
+            Console.WriteLine(ProveedorEncontrado.Id);
+            
+            producto.IdCategoria = idCategoriaSalida;
+            producto.IdProveedor = ProveedorEncontrado.Id;
+            Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
+            producto.IdUsuario = idUsuario;
+            producto.Nombre = nombreProducto;
+            producto.Precio = salidaprecioProducto;
+            producto.Stock = cantidadSalida;
+
+            //Guid idProveedor = Guid.Parse("984c5534-0b26-46f1-8b89-04496bff9957");
+            //"1850fefa-e074-47f6-8a0e-7e212cb98ea3"
 
             return producto;
         }

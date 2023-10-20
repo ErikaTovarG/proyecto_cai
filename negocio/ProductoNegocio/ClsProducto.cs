@@ -4,6 +4,7 @@ using Modelo.Switch;
 using AccesoDatos;
 using Modelo.ProductoModelo;
 using System.Data;
+using Modelo.Proveedor;
 
 namespace Negocio.ProductoNegocio
 {
@@ -32,6 +33,11 @@ namespace Negocio.ProductoNegocio
         public static List<ProductoWebServices> ListarProductos()
         {
             return ProductosDatos.ListarProductos();
+        }
+
+        public static void CrearProducto(ProductoWebServicesPost usuario)
+        {
+            ProductosDatos.CrearProducto(usuario);
         }
     }
 }

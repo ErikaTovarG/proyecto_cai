@@ -29,7 +29,7 @@ namespace AccesoDatos
             }
         }
 
-        public static void CrearProducto(ProductoWebServices producto)
+        public static void CrearProducto(ProductoWebServicesPost producto)
         {
             var jsonRequest = JsonConvert.SerializeObject(producto);
 

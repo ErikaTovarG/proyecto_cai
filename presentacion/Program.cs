@@ -56,6 +56,8 @@ namespace Presentacion
                     {
                         case 3:
                             Console.Clear();
+                            List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+                            FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                             Vistas.MenuAdministrador();
                             int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(11);
                             FuncionesAuxiliares.Limpia();
@@ -176,6 +178,7 @@ namespace Presentacion
 
         public static void SeleccionarOpcionesAdministrador(int opcion, List<UsuarioModelo> usuarios)
         {
+            
             switch (opcion)
             {
                 case 1:
@@ -330,7 +333,8 @@ namespace Presentacion
                     } while (!flag2 || !esValidoNum || !esValidoVacio); 
                     break;
                 case 10:
-                   
+                    ProductoWebServicesPost ProductoAgregar = PideDatos.IngresoDatosProducto();
+                    ClsProducto.CrearProducto(ProductoAgregar);
                     break;
                 case 11:
                     FuncionesAuxiliares.ListarProveedores();

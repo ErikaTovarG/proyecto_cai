@@ -189,7 +189,19 @@ namespace Presentacion
             Console.WriteLine($"FechaBaja: {proveedor.FechaBaja}");
             Console.WriteLine(new string('*', 60));
         }
+        public static void MostrarAlertaDeStockBajo(List<ProductoWebServices> listaProductos)
+        {
+            foreach (var producto in listaProductos)
+            {
+                double stock = producto.Stock;
+                double stockLimite = 0.25 * stock;
 
+                if (stock < stockLimite)
+                {
+                    Console.WriteLine($"Alerta: Stock bajo para el producto {producto.Nombre}. Stock actual: {stock}");
+                }
+            }
+        }
 
         public static void Limpia()
         {
