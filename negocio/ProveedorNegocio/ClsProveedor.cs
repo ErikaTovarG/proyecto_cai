@@ -51,6 +51,27 @@ namespace Negocio.ProveedorNegocio
         {
             return ListarProveedores().Find(p => p.Cuit == cuit);
         }
+
+        public static ProveedorWebServices BuscarProveedorPorId( Guid idProveedor)
+        {
+            return ListarProveedores().Find(proveedor => proveedor.Id == idProveedor);
+        }
+
+
+        public static string BuscarProveedorPorCuitYDevolverString(string cuit)
+        {
+           ProveedorWebServices proveedorEncontrado= ListarProveedores().Find(p => p.Cuit == cuit);
+           return Convert.ToString(proveedorEncontrado.Id);
+        }
+
+
+
+        public static void EliminarProveedorPorCuit(string idProveedor)
+        {
+            string usuarioAdministrador = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            ProveedoresDatos.BorrarProveedor(idProveedor, usuarioAdministrador);
+        }
+
     }
 }
 

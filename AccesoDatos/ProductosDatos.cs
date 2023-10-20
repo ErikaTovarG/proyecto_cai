@@ -40,5 +40,22 @@ namespace AccesoDatos
                 throw new Exception(response.StatusCode.ToString());
             }
         }
+
+        public static void BorrarProducto(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+
+        }
     }
 }

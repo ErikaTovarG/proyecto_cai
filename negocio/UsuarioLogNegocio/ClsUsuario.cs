@@ -162,6 +162,8 @@ namespace Negocio.UsuarioLogNegocio
         {
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
+   
+
     }
 }
 

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using Negocio.ProductoNegocio;
 using Negocio.ProveedorNegocio;
 using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 
 namespace Presentacion
 {
@@ -59,7 +60,7 @@ namespace Presentacion
                             Console.Clear();
                             FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                             Vistas.MenuAdministrador();
-                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(11);
+                            int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(12);
                             FuncionesAuxiliares.Limpia();
                             SeleccionarOpcionesAdministrador(opcion2, usuarios);
                             break;
@@ -341,6 +342,31 @@ namespace Presentacion
                 case 11:
                     FuncionesAuxiliares.ListarProveedores();
                     break;
+                case 12:
+                   
+                    int idProveedorNum = 0;
+                    string idProveedor;
+                    campo = "CUIT";
+                    bool esValidoId = false;
+                    bool esValidoVacioID = false;
+                    flag = false;
+
+                    do
+                    {
+                        Console.Write("Ingrese CUIT de Proveedor a eliminar: ");
+                        idProveedor = Console.ReadLine();
+                        esValidoVacioID = Validaciones.ValidaVacio(idProveedor, ref campo);
+                    } while (!esValidoVacioID);
+
+                    string proveedor = ClsProveedor.BuscarProveedorPorCuitYDevolverString(idProveedor);
+                    ClsProveedor.EliminarProveedorPorCuit (proveedor);  
+          
+                    Console.WriteLine("Se eliminó Proveedor con CUIT " + idProveedor);
+                
+                
+
+                    Console.ReadKey();
+                    break;
                 //case 6:
                 //    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
                 //    bool flag1;
@@ -372,7 +398,27 @@ namespace Presentacion
                     Console.WriteLine("Proximamente.");
                     break;
                 case 3:
-                    Console.WriteLine("Proximamente.");
+                    int idProductoNum = 0;
+                    string campo = "ID";
+                    string idProducto;
+                    bool esValidoNum = false;
+                    bool esValidoVacio = false;
+                    bool flag = false;
+
+                    do
+                    {
+                        Console.Write("Ingrese ID producto a eliminar: ");
+                         idProducto = Console.ReadLine();
+                        esValidoVacio = Validaciones.ValidaVacio(idProducto, ref campo);
+                    } while (!esValidoVacio);
+
+                    Guid idProductoGuid=Guid.Parse(idProducto);
+
+                    string productoEncontrado = ClsProducto.BuscarProveedorPorCuitYDevolverString(idProductoGuid);
+                    ClsProducto.EliminarProductoPorId(productoEncontrado);
+                    Console.WriteLine("Se eliminó Producto con ID " + idProductoNum);
+                
+                    Console.ReadKey();
                     break;
                 case 4:
                     Console.WriteLine("Proximamente.");

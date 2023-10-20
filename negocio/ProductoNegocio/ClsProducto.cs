@@ -5,6 +5,7 @@ using AccesoDatos;
 using Modelo.ProductoModelo;
 using System.Data;
 using Modelo.Proveedor;
+using Modelo.ProveedorModelo;
 
 namespace Negocio.ProductoNegocio
 {
@@ -39,6 +40,39 @@ namespace Negocio.ProductoNegocio
         {
             ProductosDatos.CrearProducto(usuario);
         }
+
+
+        //public static ProductoWebServices BuscarProductoPorId( Guid idProducto)
+        //{
+        //    return ListarProductos().Find(producto => producto.Id == idProducto);
+        //}
+
+        //public static bool EliminarProductoPorId( Guid idProducto)
+        //{
+        //    var producto = BuscarProductoPorId( idProducto);
+        //    if (producto != null)
+        //    {
+        //        ListarProductos().Remove(producto);
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
+        public static string BuscarProveedorPorCuitYDevolverString(Guid id)
+        {
+            ProductoWebServices productoEncontrado = ListarProductos().Find(p => p.Id == id);
+            return Convert.ToString( productoEncontrado.Id);
+        }
+
+
+
+        public static void EliminarProductoPorId(string idProducto)
+        {
+            string usuarioAdministrador = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            ProductosDatos.BorrarProducto(idProducto, usuarioAdministrador);
+        }
+
+
     }
 }
 

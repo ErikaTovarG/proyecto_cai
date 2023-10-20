@@ -45,6 +45,7 @@ namespace Presentacion
             Console.WriteLine("| Modificar proveedor             |    9   |");
             Console.WriteLine("| Alta de productos               |    10  |");
             Console.WriteLine("| Listar proveedores              |    11  |");
+            Console.WriteLine("| Baja proveedores                |    12  |");
             Console.WriteLine("| Salir                           |    0   |\n");
         }
 
