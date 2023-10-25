@@ -39,13 +39,14 @@ namespace Presentacion
             Console.WriteLine("| Registrar Vendedor              |    3   |");
             Console.WriteLine("| Baja Vendedor                   |    4   |");
             Console.WriteLine("| Reporte de ventas por vendedor  |    5   |");
-            Console.WriteLine("| Modificar contraseña            |    6   |");
+            Console.WriteLine("| Modificar contraseña            |    6   |"); 
             Console.WriteLine("| Listar productos                |    7   |");
             Console.WriteLine("| Listar usuarios                 |    8   |");
-            Console.WriteLine("| Modificar proveedor             |    9   |");
-            Console.WriteLine("| Alta de productos               |    10  |");
-            Console.WriteLine("| Listar proveedores              |    11  |");
-            Console.WriteLine("| Baja proveedores                |    12  |");
+            Console.WriteLine("| Registrar proveedor             |    9   |");
+            Console.WriteLine("| Modificar proveedor             |    10  |");
+            Console.WriteLine("| Alta de productos               |    11  |");
+            Console.WriteLine("| Listar proveedores              |    12  |");
+            Console.WriteLine("| Baja proveedores                |    13  |");
             Console.WriteLine("| Salir                           |    0   |\n");
         }
 
