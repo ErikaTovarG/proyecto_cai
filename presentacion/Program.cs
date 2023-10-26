@@ -10,6 +10,7 @@ using Negocio.ProductoNegocio;
 using Negocio.ProveedorNegocio;
 using Modelo.ProductoModelo;
 using Modelo.ProveedorModelo;
+using AccesoDatos;
 
 namespace Presentacion
 {
@@ -280,18 +281,11 @@ namespace Presentacion
                     Console.WriteLine(" Proximamente ");
 
                     break;
-                //case 6:
-                //    Console.WriteLine("\nElegiste la opción para cambiar contraseña.\n");
-                //    bool flag1;
-                //    do
-                //    {
-                //        Console.Write("\n Ingrese su contraseña actual: ");
-                //        string contraseniaActual = Console.ReadLine();
-                //        Console.Write("\n Ingrese una nueva contraseña: ");
-                //        string nuevaContrasenia = Console.ReadLine();
-                //        flag1 = ClsUsuario.CambiarContrasenia(usuarioLogueado, contraseniaActual, nuevaContrasenia);
-                //    } while (!flag1);
-                //    break;
+                case 6:
+                    Console.WriteLine("\nElegiste la opción para modificar la contraseña.\n");
+                    //Proximamente
+                    break;
+
                 case 7:
                     FuncionesAuxiliares.ListarProductos();
                     Vistas.OpcionesContinuarProducto();
@@ -304,8 +298,21 @@ namespace Presentacion
                     int op8 = FuncionesAuxiliares.SeleccionarOpcion(2);
                     FuncionesAuxiliares.OpcionAContinuarAdministrador(op8, usuarios);
                     break;
+
                 case 9:
-                    Console.WriteLine("\nEsta opcion no tiene Swagger todavía. \n");
+                    Console.WriteLine("\nElegiste la opción para dar de alta un proveedor.\n");
+                    bool flag1;
+                    do
+                    {
+
+                        ProveedoresDatos.CrearProveedor(PideDatos.IngresoDatosProveedor());
+
+
+                        flag1 = true;
+                    } while (!flag1);
+                    break;
+                case 10: 
+
                     Console.WriteLine("\nVas a modificar un proveedor.\n");
                     esValidoNum = false;
                     esValidoVacio = false;
@@ -335,15 +342,16 @@ namespace Presentacion
 
                     } while (!flag2 || !esValidoNum || !esValidoVacio);
                     break;
-                case 10:
+                case 11:
                     ProductoWebServicesPost ProductoAgregar = PideDatos.IngresoDatosProducto();
                     ClsProducto.CrearProducto(ProductoAgregar);
                     break;
-                case 11:
+                case 12:
                     FuncionesAuxiliares.ListarProveedores();
                     break;
-                case 12:
 
+                case 13:
+                   
                     int idProveedorNum = 0;
                     string idProveedor;
                     campo = "CUIT";

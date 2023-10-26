@@ -28,6 +28,25 @@ namespace AccesoDatos
             }
         }
 
+        public static void CrearProveedor(ProveedorWebServices proveedor)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(proveedor);
+
+            //Console.WriteLine(jsonRequest);
+
+            HttpResponseMessage response = WebHelper.Post("Proveedor/AgregarProveedor", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Proveedor agregado exitosamente.");
+            }
+        }
+
         public static void BorrarProveedor(string idUsuario, string idUsuarioMaster)
         {
             Dictionary<String, String> map = new Dictionary<String, String>();

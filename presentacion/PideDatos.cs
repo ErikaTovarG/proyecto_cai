@@ -187,6 +187,69 @@ namespace Presentacion
 
             return producto;
         }
+
+        public static ProveedorWebServices IngresoDatosProveedor()
+        {
+            ProveedorWebServices proveedor = new ProveedorWebServices();
+           
+            string nombreProveedor, apellidoProveedor, emailProveedor, cuitProveedor, nombreProveedorSalida, apellidoProveedorSalida, emailProveedorSalida;
+            int cuitProveedorSalida;
+            DateTime fechaAlta, fechaBaja;
+            bool esValido;
+
+            do
+            {
+                esValido = false;
+                Console.Write("\nNombre del proveedor: ");
+                nombreProveedor = Console.ReadLine();
+                nombreProveedorSalida = "Nombre";
+                esValido = Validaciones.ValidaVacio(nombreProveedor, ref nombreProveedorSalida);
+            } while (!esValido);
+
+            do
+            {
+                esValido = false;
+                Console.Write("\nApellido del proveedor: ");
+                apellidoProveedor = Console.ReadLine();
+                apellidoProveedorSalida = "Apellido";
+                esValido = Validaciones.ValidaVacio(apellidoProveedor, ref apellidoProveedorSalida);
+            } while (!esValido);
+
+            do
+            {
+                esValido = false;
+                Console.Write("\nemail del proveedor: ");
+                emailProveedor = Console.ReadLine();
+                emailProveedorSalida = "Email";
+                esValido = Validaciones.ValidaVacio(emailProveedor, ref emailProveedorSalida);
+            } while (!esValido);
+
+            do
+            {
+                esValido = false;
+                Console.Write("\nCUIT del proveedor: ");
+                cuitProveedor = Console.ReadLine();
+                cuitProveedorSalida = 0;
+                esValido = Validaciones.ValidaNumerico(cuitProveedor, ref cuitProveedorSalida);
+            } while (!esValido);
+
+            
+
+            Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
+            proveedor.IdUsuario = idUsuario;
+            proveedor.Nombre = nombreProveedor;
+            proveedor.Apellido = apellidoProveedor;
+            proveedor.Email = emailProveedor;
+            proveedor.Cuit = cuitProveedorSalida.ToString();
+            proveedor.FechaAlta = DateTime.Now;
+
+            Console.WriteLine(proveedor.ToString());
+            Console.WriteLine();
+
+            return proveedor;
+        }
+
+
         public static Login PidoDatosEnLogin(Login login)
         {
             string usuarioIngresado, contrasenaIngresada, campo = "Usuario", campo2 = "Contraseña";
