@@ -37,13 +37,17 @@
             btnCerrar = new Button();
             label1 = new Label();
             lblContraseña = new LinkLabel();
+            pctCerrar = new PictureBox();
+            pctMinimizar = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptureLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctCerrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctMinimizar).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 122, 204);
+            panel1.BackColor = Color.Teal;
             panel1.Controls.Add(ptureLogo);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -148,7 +152,34 @@
             lblContraseña.TabIndex = 0;
             lblContraseña.TabStop = true;
             lblContraseña.Text = "Cambiar Contraseña";
- 
+            // 
+            // pctCerrar
+            // 
+            pctCerrar.BackColor = Color.FromArgb(40, 40, 40);
+            pctCerrar.BackgroundImageLayout = ImageLayout.None;
+            pctCerrar.Image = (Image)resources.GetObject("pctCerrar.Image");
+            pctCerrar.Location = new Point(863, 0);
+            pctCerrar.Margin = new Padding(0);
+            pctCerrar.Name = "pctCerrar";
+            pctCerrar.Size = new Size(25, 25);
+            pctCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctCerrar.TabIndex = 6;
+            pctCerrar.TabStop = false;
+            pctCerrar.Click += pctCerrar_Click;
+            // 
+            // pctMinimizar
+            // 
+            pctMinimizar.BackColor = Color.FromArgb(40, 40, 40);
+            pctMinimizar.BackgroundImageLayout = ImageLayout.None;
+            pctMinimizar.Image = (Image)resources.GetObject("pctMinimizar.Image");
+            pctMinimizar.Location = new Point(832, 0);
+            pctMinimizar.Margin = new Padding(0);
+            pctMinimizar.Name = "pctMinimizar";
+            pctMinimizar.Size = new Size(25, 25);
+            pctMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctMinimizar.TabIndex = 7;
+            pctMinimizar.TabStop = false;
+            pctMinimizar.Click += pctMinimizar_Click;
             // 
             // FormLogin
             // 
@@ -156,6 +187,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(891, 440);
+            Controls.Add(pctMinimizar);
+            Controls.Add(pctCerrar);
             Controls.Add(lblContraseña);
             Controls.Add(label1);
             Controls.Add(btnCerrar);
@@ -171,6 +204,8 @@
             Text = "FormLogin";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ptureLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctCerrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctMinimizar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +220,7 @@
         private Label label1;
         private LinkLabel lblContraseña;
         private PictureBox ptureLogo;
+        private PictureBox pctCerrar;
+        private PictureBox pctMinimizar;
     }
 }
