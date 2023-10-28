@@ -39,6 +39,7 @@
             lblContraseña = new LinkLabel();
             pctCerrar = new PictureBox();
             pctMinimizar = new PictureBox();
+            lblErrorMensaje = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptureLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctCerrar).BeginInit();
@@ -103,13 +104,14 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Bookman Old Style", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.LightGray;
-            btnLogin.Location = new Point(413, 294);
+            btnLogin.Location = new Point(409, 296);
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(166, 50);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnCerrar
             // 
@@ -120,7 +122,7 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Bookman Old Style", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnCerrar.ForeColor = Color.LightGray;
-            btnCerrar.Location = new Point(611, 294);
+            btnCerrar.Location = new Point(607, 296);
             btnCerrar.Margin = new Padding(0);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(166, 50);
@@ -146,7 +148,7 @@
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblContraseña.LinkColor = Color.DimGray;
-            lblContraseña.Location = new Point(506, 380);
+            lblContraseña.Location = new Point(502, 382);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(187, 21);
             lblContraseña.TabIndex = 0;
@@ -181,12 +183,25 @@
             pctMinimizar.TabStop = false;
             pctMinimizar.Click += pctMinimizar_Click;
             // 
+            // lblErrorMensaje
+            // 
+            lblErrorMensaje.AutoSize = true;
+            lblErrorMensaje.Font = new Font("MS Reference Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorMensaje.ForeColor = Color.DarkGray;
+            lblErrorMensaje.Location = new Point(347, 244);
+            lblErrorMensaje.Name = "lblErrorMensaje";
+            lblErrorMensaje.Size = new Size(121, 20);
+            lblErrorMensaje.TabIndex = 8;
+            lblErrorMensaje.Text = "Mensaje Error";
+            lblErrorMensaje.Visible = false;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(891, 440);
+            Controls.Add(lblErrorMensaje);
             Controls.Add(pctMinimizar);
             Controls.Add(pctCerrar);
             Controls.Add(lblContraseña);
@@ -222,5 +237,6 @@
         private PictureBox ptureLogo;
         private PictureBox pctCerrar;
         private PictureBox pctMinimizar;
+        private Label lblErrorMensaje;
     }
 }

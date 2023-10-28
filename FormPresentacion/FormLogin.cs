@@ -1,3 +1,9 @@
+using Modelo.ProductoModelo;
+using Modelo.UsuarioModelo;
+using Negocio.ProductoNegocio;
+using Negocio.UsuarioLogNegocio;
+using Presentacion;
+
 namespace FormPresentacion
 {
     public partial class FormLogin : Form
@@ -7,6 +13,7 @@ namespace FormPresentacion
             InitializeComponent();
         }
 
+        #region Funciones del Login 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "USUARIO")
@@ -59,5 +66,85 @@ namespace FormPresentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        #endregion
+
+        private void MensajeError(string mensaje)
+        {
+            lblErrorMensaje.Text = mensaje;
+            lblErrorMensaje.Visible = true;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text != "USUARIO")
+            {
+                if (txtContraseña.Text != "CONTRASEÑA")
+                {
+                    Login login = new Login();
+                    login.NombreUsuario = txtUsuario.Text;
+                    login.Contraseña = txtContraseña.Text;
+                    int host = -1, intentosMaximos = 3;
+                    string idUsuario = null, test = "test";
+                    try
+                    {
+                        //login = PideDatos.PidoDatosEnLogin(login);
+                        idUsuario = ClsUsuario.Login(login);
+                        test = idUsuario.Substring(1, idUsuario.Length - 2);
+                        host = FuncionesAuxiliares.BuscarUsuarioYDevolverHost(Guid.Parse(test));
+                        switch (host)
+                        {
+                            case 3:
+                                FormPrincipal principal = new FormPrincipal();
+                                principal.Show();
+                                this.Hide();
+                                //List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+                                //Console.Clear();
+                                //FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
+                                //Vistas.MenuAdministrador();
+                                //int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(13);
+                                //FuncionesAuxiliares.Limpia();
+                                //SeleccionarOpcionesAdministrador(opcion2, usuarios);
+
+                                break;
+                            //case 2:
+                            //    Console.Clear();
+                            //    List<ProductoWebServices> listaProductos2 = ClsProducto.ListarProductos();
+                            //    FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos2);
+                            //    Vistas.MenuSupervisor();
+                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
+                            //    FuncionesAuxiliares.Limpia();
+                            //    SeleccionarOpcionesSupervisor(opcion2, usuarios);
+                            //    break;
+                            //case 1:
+                            //    Console.Clear();
+                            //    Vistas.MenuVendedor();
+                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
+                            //    SeleccionarOpcionesVendedor(opcion2, usuarios);
+                            //    FuncionesAuxiliares.Limpia();
+                            //    break;
+                            //default:
+                            //    Console.WriteLine("No se encontró.");
+                            //    break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (idUsuario == null)
+                        {
+                            UsuarioSesion.AgregarUsuarioLista(login.NombreUsuario);
+                        }
+
+                        if (login.Intentos >= intentosMaximos)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                else MensajeError("Por favor ingrese una contraseña");
+            }
+            else MensajeError("Por favor ingrese un usuario");
+
+        }
     }
+
 }

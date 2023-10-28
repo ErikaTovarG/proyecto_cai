@@ -64,7 +64,7 @@ namespace FormPresentacion
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault(); //En controles de tipo envio mi formulario 
             //Busca en una coleccion el formulario 
             //Si el formulario no existe 
-            if (formulario != null)
+            if (formulario == null)
             {
                 formulario = new MiForm(); //Instacio el nuevo formulario 
                 formulario.TopLevel = false; // no es de nivel superior 
