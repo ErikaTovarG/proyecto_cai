@@ -54,6 +54,21 @@ namespace FormPresentacion
             AbrirFormulario<FormBajaProveedor>();
         }
 
+        private void btnListarProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarProductos>();
+        }
+
+        private void btnListarProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarProveedores>();
+        }
+
+        private void btnListarUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarUsuarios>();
+        }
+
         #endregion
 
         //Metodo para abrir el formulario dentro del panel.

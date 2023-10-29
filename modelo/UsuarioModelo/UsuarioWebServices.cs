@@ -25,5 +25,10 @@ namespace Modelo.UsuarioModelo
         {
 
         }
+
+        public override string ToString()
+        {
+            return string.Format($"* {nombre} - {apellido}.");
+        }
     }
 }

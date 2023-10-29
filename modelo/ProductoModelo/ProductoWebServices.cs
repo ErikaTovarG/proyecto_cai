@@ -20,6 +20,12 @@ namespace Modelo.ProductoModelo
         public int Stock { get => _stock; set => _stock = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get; set; }
-        
+
+
+        public override string ToString()
+        {
+            return string.Format($"* {Nombre} - {Stock}.");
+        }
+
     }
 }

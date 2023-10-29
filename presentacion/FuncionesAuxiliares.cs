@@ -92,7 +92,7 @@ namespace Presentacion
         public static void ListarUsuarios()
         {
             List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
-            Console.WriteLine($"\n\tHay en stock {usuariosWebServices.Count} usuarios \n");
+            //Console.WriteLine($"\n\tHay en stock {usuariosWebServices.Count} usuarios \n");
 
             foreach (var usuario in usuariosWebServices)
             {

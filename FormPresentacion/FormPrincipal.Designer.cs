@@ -33,6 +33,7 @@
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
             panelMenu = new Panel();
+            btnListarProductos = new Button();
             btnListarProveedores = new Button();
             btnListarUsuarios = new Button();
             btnBajaProveedor = new Button();
@@ -85,6 +86,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.Teal;
+            panelMenu.Controls.Add(btnListarProductos);
             panelMenu.Controls.Add(btnListarProveedores);
             panelMenu.Controls.Add(btnListarUsuarios);
             panelMenu.Controls.Add(btnBajaProveedor);
@@ -96,6 +98,21 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(250, 697);
             panelMenu.TabIndex = 1;
+            // 
+            // btnListarProductos
+            // 
+            btnListarProductos.FlatAppearance.BorderSize = 0;
+            btnListarProductos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnListarProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnListarProductos.FlatStyle = FlatStyle.Flat;
+            btnListarProductos.ForeColor = Color.Gainsboro;
+            btnListarProductos.Location = new Point(3, 451);
+            btnListarProductos.Name = "btnListarProductos";
+            btnListarProductos.Size = new Size(247, 47);
+            btnListarProductos.TabIndex = 6;
+            btnListarProductos.Text = "Listar Productos";
+            btnListarProductos.UseVisualStyleBackColor = true;
+            btnListarProductos.Click += btnListarProductos_Click;
             // 
             // btnListarProveedores
             // 
@@ -110,6 +127,7 @@
             btnListarProveedores.TabIndex = 5;
             btnListarProveedores.Text = "Listar Proveedores";
             btnListarProveedores.UseVisualStyleBackColor = true;
+            btnListarProveedores.Click += btnListarProveedores_Click;
             // 
             // btnListarUsuarios
             // 
@@ -124,6 +142,7 @@
             btnListarUsuarios.TabIndex = 4;
             btnListarUsuarios.Text = "Listar Usuarios";
             btnListarUsuarios.UseVisualStyleBackColor = true;
+            btnListarUsuarios.Click += btnListarUsuarios_Click;
             // 
             // btnBajaProveedor
             // 
@@ -240,5 +259,6 @@
         private Button btnBajaUsuario;
         private Button btnAddSupplier;
         private Button btnAddUser;
+        private Button btnListarProductos;
     }
 }
