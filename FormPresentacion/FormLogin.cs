@@ -106,25 +106,25 @@ namespace FormPresentacion
                                 //SeleccionarOpcionesAdministrador(opcion2, usuarios);
 
                                 break;
-                            //case 2:
-                            //    Console.Clear();
-                            //    List<ProductoWebServices> listaProductos2 = ClsProducto.ListarProductos();
-                            //    FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos2);
-                            //    Vistas.MenuSupervisor();
-                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
-                            //    FuncionesAuxiliares.Limpia();
-                            //    SeleccionarOpcionesSupervisor(opcion2, usuarios);
-                            //    break;
-                            //case 1:
-                            //    Console.Clear();
-                            //    Vistas.MenuVendedor();
-                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
-                            //    SeleccionarOpcionesVendedor(opcion2, usuarios);
-                            //    FuncionesAuxiliares.Limpia();
-                            //    break;
-                            //default:
-                            //    Console.WriteLine("No se encontró.");
-                            //    break;
+                                //case 2:
+                                //    Console.Clear();
+                                //    List<ProductoWebServices> listaProductos2 = ClsProducto.ListarProductos();
+                                //    FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos2);
+                                //    Vistas.MenuSupervisor();
+                                //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
+                                //    FuncionesAuxiliares.Limpia();
+                                //    SeleccionarOpcionesSupervisor(opcion2, usuarios);
+                                //    break;
+                                //case 1:
+                                //    Console.Clear();
+                                //    Vistas.MenuVendedor();
+                                //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
+                                //    SeleccionarOpcionesVendedor(opcion2, usuarios);
+                                //    FuncionesAuxiliares.Limpia();
+                                //    break;
+                                //default:
+                                //    Console.WriteLine("No se encontró.");
+                                //    break;
                         }
                     }
                     catch (Exception ex)
