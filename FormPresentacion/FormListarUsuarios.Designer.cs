@@ -44,11 +44,19 @@
             btnVerDetalle = new Button();
             btnListar = new Button();
             btnLimpiar = new Button();
+            btnEditar = new Button();
+            btnEliminar = new Button();
+            txtIDUsuario = new TextBox();
+            lblID = new Label();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
             // grbDetalle
             // 
+            grbDetalle.Controls.Add(txtIDUsuario);
+            grbDetalle.Controls.Add(lblID);
+            grbDetalle.Controls.Add(btnEditar);
+            grbDetalle.Controls.Add(btnEliminar);
             grbDetalle.Controls.Add(txtHost);
             grbDetalle.Controls.Add(lblHost);
             grbDetalle.Controls.Add(txtDNI);
@@ -68,7 +76,7 @@
             // 
             // txtHost
             // 
-            txtHost.Location = new Point(25, 425);
+            txtHost.Location = new Point(25, 465);
             txtHost.Name = "txtHost";
             txtHost.Size = new Size(94, 27);
             txtHost.TabIndex = 9;
@@ -76,7 +84,7 @@
             // lblHost
             // 
             lblHost.AutoSize = true;
-            lblHost.Location = new Point(25, 392);
+            lblHost.Location = new Point(25, 432);
             lblHost.Name = "lblHost";
             lblHost.Size = new Size(40, 20);
             lblHost.TabIndex = 8;
@@ -84,7 +92,7 @@
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(25, 334);
+            txtDNI.Location = new Point(25, 382);
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(346, 27);
             txtDNI.TabIndex = 7;
@@ -92,7 +100,7 @@
             // lblDNI
             // 
             lblDNI.AutoSize = true;
-            lblDNI.Location = new Point(25, 301);
+            lblDNI.Location = new Point(25, 349);
             lblDNI.Name = "lblDNI";
             lblDNI.Size = new Size(35, 20);
             lblDNI.TabIndex = 6;
@@ -100,7 +108,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(25, 255);
+            txtUsuario.Location = new Point(25, 303);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(346, 27);
             txtUsuario.TabIndex = 5;
@@ -108,7 +116,7 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(25, 222);
+            lblUsuario.Location = new Point(25, 270);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(59, 20);
             lblUsuario.TabIndex = 4;
@@ -116,7 +124,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(25, 165);
+            txtApellido.Location = new Point(25, 213);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(346, 27);
             txtApellido.TabIndex = 3;
@@ -124,7 +132,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(25, 132);
+            lblApellido.Location = new Point(25, 180);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(66, 20);
             lblApellido.TabIndex = 2;
@@ -132,7 +140,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(25, 84);
+            txtNombre.Location = new Point(25, 132);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(346, 27);
             txtNombre.TabIndex = 1;
@@ -140,7 +148,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(25, 51);
+            lblNombre.Location = new Point(25, 99);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);
             lblNombre.TabIndex = 0;
@@ -205,6 +213,55 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.DarkGray;
+            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnEditar.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Location = new Point(42, 512);
+            btnEditar.Margin = new Padding(5);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(115, 40);
+            btnEditar.TabIndex = 17;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.DarkGray;
+            btnEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Location = new Point(186, 512);
+            btnEliminar.Margin = new Padding(5);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(115, 40);
+            btnEliminar.TabIndex = 16;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // txtIDUsuario
+            // 
+            txtIDUsuario.Enabled = false;
+            txtIDUsuario.Location = new Point(25, 68);
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.Size = new Size(346, 27);
+            txtIDUsuario.TabIndex = 19;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Location = new Point(25, 35);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(24, 20);
+            lblID.TabIndex = 18;
+            lblID.Text = "ID";
+            // 
             // FormListarUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -240,5 +297,9 @@
         private Button btnLimpiar;
         private TextBox txtHost;
         private Label lblHost;
+        private Button btnEditar;
+        private Button btnEliminar;
+        private TextBox txtIDUsuario;
+        private Label lblID;
     }
 }

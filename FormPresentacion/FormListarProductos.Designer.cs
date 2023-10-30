@@ -31,17 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarProductos));
             lstProductos = new ListBox();
             grbDetalle = new GroupBox();
+            btnEditar = new Button();
+            btnEliminar = new Button();
             textBox4 = new TextBox();
             label4 = new Label();
             textBox3 = new TextBox();
             label3 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtIDProveedor = new TextBox();
+            lblID = new Label();
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
+            textBox5 = new TextBox();
+            label5 = new Label();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,20 +60,56 @@
             // 
             // grbDetalle
             // 
+            grbDetalle.Controls.Add(textBox5);
+            grbDetalle.Controls.Add(label5);
+            grbDetalle.Controls.Add(btnEditar);
+            grbDetalle.Controls.Add(btnEliminar);
             grbDetalle.Controls.Add(textBox4);
             grbDetalle.Controls.Add(label4);
             grbDetalle.Controls.Add(textBox3);
             grbDetalle.Controls.Add(label3);
             grbDetalle.Controls.Add(textBox2);
             grbDetalle.Controls.Add(label2);
-            grbDetalle.Controls.Add(textBox1);
-            grbDetalle.Controls.Add(label1);
+            grbDetalle.Controls.Add(txtIDProveedor);
+            grbDetalle.Controls.Add(lblID);
             grbDetalle.Location = new Point(564, 27);
             grbDetalle.Name = "grbDetalle";
             grbDetalle.Size = new Size(575, 570);
             grbDetalle.TabIndex = 3;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del producto";
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.DarkGray;
+            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnEditar.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Location = new Point(96, 512);
+            btnEditar.Margin = new Padding(5);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(115, 40);
+            btnEditar.TabIndex = 15;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.DarkGray;
+            btnEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Location = new Point(240, 512);
+            btnEliminar.Margin = new Padding(5);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(115, 40);
+            btnEliminar.TabIndex = 14;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -119,21 +159,22 @@
             label2.TabIndex = 2;
             label2.Text = "label2";
             // 
-            // textBox1
+            // txtIDProveedor
             // 
-            textBox1.Location = new Point(25, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(346, 27);
-            textBox1.TabIndex = 1;
+            txtIDProveedor.Enabled = false;
+            txtIDProveedor.Location = new Point(25, 84);
+            txtIDProveedor.Name = "txtIDProveedor";
+            txtIDProveedor.Size = new Size(346, 27);
+            txtIDProveedor.TabIndex = 1;
             // 
-            // label1
+            // lblID
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(25, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblID.AutoSize = true;
+            lblID.Location = new Point(25, 51);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(24, 20);
+            lblID.TabIndex = 0;
+            lblID.Text = "ID";
             // 
             // btnLimpiar
             // 
@@ -185,6 +226,22 @@
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(25, 412);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(346, 27);
+            textBox5.TabIndex = 17;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(25, 379);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 20);
+            label5.TabIndex = 16;
+            label5.Text = "label5";
+            // 
             // FormListarProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -207,8 +264,8 @@
         private GroupBox grpLista;
         private ListBox lstProductos;
         private GroupBox grbDetalle;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtIDProveedor;
+        private Label lblID;
         private TextBox textBox4;
         private Label label4;
         private TextBox textBox3;
@@ -218,5 +275,9 @@
         private Button btnLimpiar;
         private Button btnListar;
         private Button btnVerDetalle;
+        private Button btnEditar;
+        private Button btnEliminar;
+        private TextBox textBox5;
+        private Label label5;
     }
 }
