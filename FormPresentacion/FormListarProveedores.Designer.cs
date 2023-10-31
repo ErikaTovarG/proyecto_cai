@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarProveedores));
             grbDetalle = new GroupBox();
+            btnLimpiarCmb = new Button();
             txtIDProveedor = new TextBox();
             lblID = new Label();
             btnEditar = new Button();
@@ -46,7 +47,6 @@
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
-            btnLimpiarCmb = new Button();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +71,23 @@
             grbDetalle.TabIndex = 6;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del proveedor";
+            // 
+            // btnLimpiarCmb
+            // 
+            btnLimpiarCmb.BackColor = Color.DarkGray;
+            btnLimpiarCmb.FlatAppearance.BorderSize = 0;
+            btnLimpiarCmb.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarCmb.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
+            btnLimpiarCmb.Location = new Point(301, 512);
+            btnLimpiarCmb.Margin = new Padding(5);
+            btnLimpiarCmb.Name = "btnLimpiarCmb";
+            btnLimpiarCmb.Size = new Size(115, 40);
+            btnLimpiarCmb.TabIndex = 20;
+            btnLimpiarCmb.Text = "Limpiar";
+            btnLimpiarCmb.UseVisualStyleBackColor = false;
+            btnLimpiarCmb.Click += btnLimpiarCmb_Click;
             // 
             // txtIDProveedor
             // 
@@ -120,6 +137,7 @@
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // txtCuit
             // 
@@ -243,23 +261,6 @@
             btnVerDetalle.TabIndex = 9;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiarCmb
-            // 
-            btnLimpiarCmb.BackColor = Color.DarkGray;
-            btnLimpiarCmb.FlatAppearance.BorderSize = 0;
-            btnLimpiarCmb.FlatAppearance.CheckedBackColor = Color.Black;
-            btnLimpiarCmb.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
-            btnLimpiarCmb.Location = new Point(301, 512);
-            btnLimpiarCmb.Margin = new Padding(5);
-            btnLimpiarCmb.Name = "btnLimpiarCmb";
-            btnLimpiarCmb.Size = new Size(115, 40);
-            btnLimpiarCmb.TabIndex = 20;
-            btnLimpiarCmb.Text = "Limpiar";
-            btnLimpiarCmb.UseVisualStyleBackColor = false;
-            btnLimpiarCmb.Click += btnLimpiarCmb_Click;
             // 
             // FormListarProveedores
             // 

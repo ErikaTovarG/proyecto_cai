@@ -46,5 +46,20 @@ namespace FormPresentacion
             txtHost.Clear();
             txtDNI.Clear();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            AbrirFormulario<FormAlertaEliminarUsuario>();
+        }
+
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            T form = new T(); 
+            form.TopLevel = true;
+            form.ShowDialog();
+            form.Dock = DockStyle.Fill;
+            form.BringToFront();
+        }
     }
 }

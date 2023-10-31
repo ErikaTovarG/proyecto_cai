@@ -39,8 +39,21 @@ namespace FormPresentacion
             txtIDProveedor.Clear();
             txtCategoria.Clear();
             txtNombre.Clear();
-            txtPrecio.Clear();  
-            txtStock.Clear();   
+            txtPrecio.Clear();
+            txtStock.Clear();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormAlertaEliminarProducto>();
+        }
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            T form = new T();
+            form.TopLevel = true;
+            form.ShowDialog();
+            form.Dock = DockStyle.Fill;
+            form.BringToFront();
         }
     }
 }

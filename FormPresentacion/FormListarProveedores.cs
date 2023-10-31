@@ -34,5 +34,19 @@ namespace FormPresentacion
             txtIDProveedor.Clear();
             txtEmail.Clear();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormAlertaEliminarProveedor>();
+        }
+
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            T form = new T();
+            form.TopLevel = true;
+            form.ShowDialog();
+            form.Dock = DockStyle.Fill;
+            form.BringToFront();
+        }
     }
 }
