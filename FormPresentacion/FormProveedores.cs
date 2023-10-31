@@ -40,6 +40,11 @@ namespace FormPresentacion
             AbrirFormulario<FormAlertaEliminarProveedor>();
         }
 
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarProveedor>();
+        }
+
         private void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();

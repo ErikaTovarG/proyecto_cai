@@ -16,5 +16,18 @@ namespace FormPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLimpiarDetalle_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtCUIT.Clear();
+            txtEmail.Clear();   
+        }
     }
 }

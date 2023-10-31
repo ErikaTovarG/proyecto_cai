@@ -47,6 +47,7 @@
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
+            btnAgregarProveedor = new Button();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,9 +66,9 @@
             grbDetalle.Controls.Add(lblApellido);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(543, 23);
+            grbDetalle.Location = new Point(374, 23);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(575, 570);
+            grbDetalle.Size = new Size(449, 570);
             grbDetalle.TabIndex = 6;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del proveedor";
@@ -262,18 +263,36 @@
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
-            // FormListarProveedores
+            // btnAgregarProveedor
+            // 
+            btnAgregarProveedor.BackColor = Color.DarkGray;
+            btnAgregarProveedor.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnAgregarProveedor.FlatAppearance.CheckedBackColor = Color.Black;
+            btnAgregarProveedor.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnAgregarProveedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnAgregarProveedor.FlatStyle = FlatStyle.Flat;
+            btnAgregarProveedor.Location = new Point(869, 32);
+            btnAgregarProveedor.Margin = new Padding(5);
+            btnAgregarProveedor.Name = "btnAgregarProveedor";
+            btnAgregarProveedor.Size = new Size(255, 40);
+            btnAgregarProveedor.TabIndex = 23;
+            btnAgregarProveedor.Text = "Agregar proveedor";
+            btnAgregarProveedor.UseVisualStyleBackColor = false;
+            btnAgregarProveedor.Click += btnAgregarProveedor_Click;
+            // 
+            // FormProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1147, 650);
+            Controls.Add(btnAgregarProveedor);
             Controls.Add(btnLimpiar);
             Controls.Add(btnListar);
             Controls.Add(btnVerDetalle);
             Controls.Add(grbDetalle);
             Controls.Add(lstProveedores);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormListarProveedores";
+            Name = "FormProveedores";
             Text = "Listado de Proveedores";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
@@ -300,5 +319,6 @@
         private TextBox txtIDProveedor;
         private Label lblID;
         private Button btnLimpiarCmb;
+        private Button btnAgregarProveedor;
     }
 }
