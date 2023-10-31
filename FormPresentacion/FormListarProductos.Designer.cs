@@ -31,21 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarProductos));
             lstProductos = new ListBox();
             grbDetalle = new GroupBox();
+            btnLimpiarDetalle = new Button();
+            txtStock = new TextBox();
+            lblStock = new Label();
             btnEditar = new Button();
             btnEliminar = new Button();
-            textBox4 = new TextBox();
-            label4 = new Label();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
+            txtPrecio = new TextBox();
+            lblPrecio = new Label();
+            txtNombre = new TextBox();
+            lblNombre = new Label();
+            txtCategoria = new TextBox();
+            lblCategoria = new Label();
             txtIDProveedor = new TextBox();
             lblID = new Label();
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
-            textBox5 = new TextBox();
-            label5 = new Label();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,24 +61,58 @@
             // 
             // grbDetalle
             // 
-            grbDetalle.Controls.Add(textBox5);
-            grbDetalle.Controls.Add(label5);
+            grbDetalle.Controls.Add(btnLimpiarDetalle);
+            grbDetalle.Controls.Add(txtStock);
+            grbDetalle.Controls.Add(lblStock);
             grbDetalle.Controls.Add(btnEditar);
             grbDetalle.Controls.Add(btnEliminar);
-            grbDetalle.Controls.Add(textBox4);
-            grbDetalle.Controls.Add(label4);
-            grbDetalle.Controls.Add(textBox3);
-            grbDetalle.Controls.Add(label3);
-            grbDetalle.Controls.Add(textBox2);
-            grbDetalle.Controls.Add(label2);
+            grbDetalle.Controls.Add(txtPrecio);
+            grbDetalle.Controls.Add(lblPrecio);
+            grbDetalle.Controls.Add(txtNombre);
+            grbDetalle.Controls.Add(lblNombre);
+            grbDetalle.Controls.Add(txtCategoria);
+            grbDetalle.Controls.Add(lblCategoria);
             grbDetalle.Controls.Add(txtIDProveedor);
             grbDetalle.Controls.Add(lblID);
-            grbDetalle.Location = new Point(564, 27);
+            grbDetalle.Location = new Point(371, 27);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(575, 570);
+            grbDetalle.Size = new Size(421, 445);
             grbDetalle.TabIndex = 3;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del producto";
+            // 
+            // btnLimpiarDetalle
+            // 
+            btnLimpiarDetalle.BackColor = Color.DarkGray;
+            btnLimpiarDetalle.FlatAppearance.BorderSize = 0;
+            btnLimpiarDetalle.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
+            btnLimpiarDetalle.Location = new Point(274, 382);
+            btnLimpiarDetalle.Margin = new Padding(5);
+            btnLimpiarDetalle.Name = "btnLimpiarDetalle";
+            btnLimpiarDetalle.Size = new Size(115, 40);
+            btnLimpiarDetalle.TabIndex = 18;
+            btnLimpiarDetalle.Text = "Limpiar";
+            btnLimpiarDetalle.UseVisualStyleBackColor = false;
+            btnLimpiarDetalle.Click += btnLimpiarDetalle_Click;
+            // 
+            // txtStock
+            // 
+            txtStock.Location = new Point(25, 262);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(346, 27);
+            txtStock.TabIndex = 17;
+            // 
+            // lblStock
+            // 
+            lblStock.AutoSize = true;
+            lblStock.Location = new Point(25, 239);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(45, 20);
+            lblStock.TabIndex = 16;
+            lblStock.Text = "Stock";
             // 
             // btnEditar
             // 
@@ -87,7 +122,7 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(96, 512);
+            btnEditar.Location = new Point(24, 382);
             btnEditar.Margin = new Padding(5);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(115, 40);
@@ -103,7 +138,7 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(240, 512);
+            btnEliminar.Location = new Point(149, 382);
             btnEliminar.Margin = new Padding(5);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(115, 40);
@@ -111,58 +146,58 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // txtPrecio
             // 
-            textBox4.Location = new Point(25, 334);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(346, 27);
-            textBox4.TabIndex = 7;
+            txtPrecio.Location = new Point(25, 200);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(346, 27);
+            txtPrecio.TabIndex = 7;
             // 
-            // label4
+            // lblPrecio
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(25, 301);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 6;
-            label4.Text = "label4";
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(25, 177);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(50, 20);
+            lblPrecio.TabIndex = 6;
+            lblPrecio.Text = "Precio";
             // 
-            // textBox3
+            // txtNombre
             // 
-            textBox3.Location = new Point(25, 255);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(346, 27);
-            textBox3.TabIndex = 5;
+            txtNombre.Location = new Point(25, 137);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(346, 27);
+            txtNombre.TabIndex = 5;
             // 
-            // label3
+            // lblNombre
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(25, 222);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(25, 114);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(64, 20);
+            lblNombre.TabIndex = 4;
+            lblNombre.Text = "Nombre";
             // 
-            // textBox2
+            // txtCategoria
             // 
-            textBox2.Location = new Point(25, 165);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(346, 27);
-            textBox2.TabIndex = 3;
+            txtCategoria.Location = new Point(25, 325);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(87, 27);
+            txtCategoria.TabIndex = 3;
             // 
-            // label2
+            // lblCategoria
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(25, 132);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(25, 302);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(74, 20);
+            lblCategoria.TabIndex = 2;
+            lblCategoria.Text = "Categoria";
             // 
             // txtIDProveedor
             // 
             txtIDProveedor.Enabled = false;
-            txtIDProveedor.Location = new Point(25, 84);
+            txtIDProveedor.Location = new Point(25, 73);
             txtIDProveedor.Name = "txtIDProveedor";
             txtIDProveedor.Size = new Size(346, 27);
             txtIDProveedor.TabIndex = 1;
@@ -170,7 +205,7 @@
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(25, 51);
+            lblID.Location = new Point(25, 50);
             lblID.Name = "lblID";
             lblID.Size = new Size(24, 20);
             lblID.TabIndex = 0;
@@ -226,22 +261,6 @@
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(25, 412);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(346, 27);
-            textBox5.TabIndex = 17;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(25, 379);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 16;
-            label5.Text = "label5";
-            // 
             // FormListarProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -266,18 +285,19 @@
         private GroupBox grbDetalle;
         private TextBox txtIDProveedor;
         private Label lblID;
-        private TextBox textBox4;
-        private Label label4;
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label2;
+        private TextBox txtPrecio;
+        private Label lblPrecio;
+        private TextBox txtNombre;
+        private Label lblNombre;
+        private TextBox txtCategoria;
+        private Label lblCategoria;
         private Button btnLimpiar;
         private Button btnListar;
         private Button btnVerDetalle;
         private Button btnEditar;
         private Button btnEliminar;
-        private TextBox textBox5;
-        private Label label5;
+        private TextBox txtStock;
+        private Label lblStock;
+        private Button btnLimpiarDetalle;
     }
 }

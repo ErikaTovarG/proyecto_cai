@@ -36,5 +36,15 @@ namespace FormPresentacion
         {
             lstUsuarios.Items.Clear();
         }
+
+        private void btnLimpiarDetalle_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtIDUsuario.Clear();
+            txtUsuario.Clear();
+            txtApellido.Clear();
+            txtHost.Clear();
+            txtDNI.Clear();
+        }
     }
 }

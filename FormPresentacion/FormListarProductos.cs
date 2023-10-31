@@ -33,5 +33,14 @@ namespace FormPresentacion
         {
             lstProductos.Items.Clear();
         }
+
+        private void btnLimpiarDetalle_Click(object sender, EventArgs e)
+        {
+            txtIDProveedor.Clear();
+            txtCategoria.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();  
+            txtStock.Clear();   
+        }
     }
 }

@@ -34,35 +34,37 @@
             lblID = new Label();
             btnEditar = new Button();
             btnEliminar = new Button();
-            textBox4 = new TextBox();
-            label4 = new Label();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtCuit = new TextBox();
+            lblCuit = new Label();
+            txtEmail = new TextBox();
+            lblEmail = new Label();
+            txtApellido = new TextBox();
+            lblApellido = new Label();
+            txtNombre = new TextBox();
+            lblNombre = new Label();
             lstProveedores = new ListBox();
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
+            btnLimpiarCmb = new Button();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
             // grbDetalle
             // 
+            grbDetalle.Controls.Add(btnLimpiarCmb);
             grbDetalle.Controls.Add(txtIDProveedor);
             grbDetalle.Controls.Add(lblID);
             grbDetalle.Controls.Add(btnEditar);
             grbDetalle.Controls.Add(btnEliminar);
-            grbDetalle.Controls.Add(textBox4);
-            grbDetalle.Controls.Add(label4);
-            grbDetalle.Controls.Add(textBox3);
-            grbDetalle.Controls.Add(label3);
-            grbDetalle.Controls.Add(textBox2);
-            grbDetalle.Controls.Add(label2);
-            grbDetalle.Controls.Add(textBox1);
-            grbDetalle.Controls.Add(label1);
+            grbDetalle.Controls.Add(txtCuit);
+            grbDetalle.Controls.Add(lblCuit);
+            grbDetalle.Controls.Add(txtEmail);
+            grbDetalle.Controls.Add(lblEmail);
+            grbDetalle.Controls.Add(txtApellido);
+            grbDetalle.Controls.Add(lblApellido);
+            grbDetalle.Controls.Add(txtNombre);
+            grbDetalle.Controls.Add(lblNombre);
             grbDetalle.Location = new Point(543, 23);
             grbDetalle.Name = "grbDetalle";
             grbDetalle.Size = new Size(575, 570);
@@ -95,7 +97,7 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(68, 512);
+            btnEditar.Location = new Point(42, 512);
             btnEditar.Margin = new Padding(5);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(115, 40);
@@ -111,7 +113,7 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(212, 512);
+            btnEliminar.Location = new Point(176, 512);
             btnEliminar.Margin = new Padding(5);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(115, 40);
@@ -119,69 +121,69 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // txtCuit
             // 
-            textBox4.Location = new Point(42, 400);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(346, 27);
-            textBox4.TabIndex = 7;
+            txtCuit.Location = new Point(42, 374);
+            txtCuit.Name = "txtCuit";
+            txtCuit.Size = new Size(346, 27);
+            txtCuit.TabIndex = 7;
             // 
-            // label4
+            // lblCuit
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(42, 367);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 6;
-            label4.Text = "label4";
+            lblCuit.AutoSize = true;
+            lblCuit.Location = new Point(42, 341);
+            lblCuit.Name = "lblCuit";
+            lblCuit.Size = new Size(40, 20);
+            lblCuit.TabIndex = 6;
+            lblCuit.Text = "CUIT";
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.Location = new Point(42, 321);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(346, 27);
-            textBox3.TabIndex = 5;
+            txtEmail.Location = new Point(42, 296);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(346, 27);
+            txtEmail.TabIndex = 5;
             // 
-            // label3
+            // lblEmail
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(42, 288);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(42, 263);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(46, 20);
+            lblEmail.TabIndex = 4;
+            lblEmail.Text = "Email";
             // 
-            // textBox2
+            // txtApellido
             // 
-            textBox2.Location = new Point(42, 231);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(346, 27);
-            textBox2.TabIndex = 3;
+            txtApellido.Location = new Point(42, 222);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(346, 27);
+            txtApellido.TabIndex = 3;
             // 
-            // label2
+            // lblApellido
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(42, 198);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(42, 189);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(66, 20);
+            lblApellido.TabIndex = 2;
+            lblApellido.Text = "Apellido";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(42, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(346, 27);
-            textBox1.TabIndex = 1;
+            txtNombre.Location = new Point(42, 150);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(346, 27);
+            txtNombre.TabIndex = 1;
             // 
-            // label1
+            // lblNombre
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(42, 117);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(42, 117);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(64, 20);
+            lblNombre.TabIndex = 0;
+            lblNombre.Text = "Nombre";
             // 
             // lstProveedores
             // 
@@ -242,6 +244,23 @@
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
+            // btnLimpiarCmb
+            // 
+            btnLimpiarCmb.BackColor = Color.DarkGray;
+            btnLimpiarCmb.FlatAppearance.BorderSize = 0;
+            btnLimpiarCmb.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarCmb.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
+            btnLimpiarCmb.Location = new Point(301, 512);
+            btnLimpiarCmb.Margin = new Padding(5);
+            btnLimpiarCmb.Name = "btnLimpiarCmb";
+            btnLimpiarCmb.Size = new Size(115, 40);
+            btnLimpiarCmb.TabIndex = 20;
+            btnLimpiarCmb.Text = "Limpiar";
+            btnLimpiarCmb.UseVisualStyleBackColor = false;
+            btnLimpiarCmb.Click += btnLimpiarCmb_Click;
+            // 
             // FormListarProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -263,14 +282,14 @@
         #endregion
 
         private GroupBox grbDetalle;
-        private TextBox textBox4;
-        private Label label4;
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtCuit;
+        private Label lblCuit;
+        private TextBox txtEmail;
+        private Label lblEmail;
+        private TextBox txtApellido;
+        private Label lblApellido;
+        private TextBox txtNombre;
+        private Label lblNombre;
         private ListBox lstProveedores;
         private Button btnLimpiar;
         private Button btnListar;
@@ -279,5 +298,6 @@
         private Button btnEliminar;
         private TextBox txtIDProveedor;
         private Label lblID;
+        private Button btnLimpiarCmb;
     }
 }

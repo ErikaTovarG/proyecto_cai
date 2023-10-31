@@ -25,5 +25,14 @@ namespace FormPresentacion
                 lstProveedores.Items.Add(proveedor.ToString());
             }
         }
+
+        private void btnLimpiarCmb_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtCuit.Clear();
+            txtIDProveedor.Clear();
+            txtEmail.Clear();
+        }
     }
 }
