@@ -26,16 +26,6 @@ namespace FormPresentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormRegistrarUsuario>();
-        }
-
-        private void btnAddSupplier_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormRegistrarProveedor>();
-        }
-
         private void btnBajaUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBajaUsuario>();
@@ -48,17 +38,17 @@ namespace FormPresentacion
 
         private void btnListarProductos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormListarProductos>();
+            AbrirFormulario<FormProductos>();
         }
 
         private void btnListarProveedores_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormListarProveedores>();
+            AbrirFormulario<FormProveedores>();
         }
 
         private void btnListarUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormListarUsuarios>();
+            AbrirFormulario<FormUsuarios>();
         }
 
         #endregion

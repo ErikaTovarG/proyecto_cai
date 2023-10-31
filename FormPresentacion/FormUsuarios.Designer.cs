@@ -1,6 +1,6 @@
 ﻿namespace FormPresentacion
 {
-    partial class FormListarUsuarios
+    partial class FormUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
             grbDetalle = new GroupBox();
             btnLimpiarDetalle = new Button();
             txtIDUsuario = new TextBox();
@@ -49,7 +49,13 @@
             btnVerDetalle = new Button();
             btnListar = new Button();
             btnLimpiar = new Button();
+            btnAgregarUsuario = new Button();
+            btnReactivarUsuario = new Button();
+            btnUsuariosActivos = new Button();
+            lstUsuariosActivos = new ListBox();
+            grbUsuariosActivos = new GroupBox();
             grbDetalle.SuspendLayout();
+            grbUsuariosActivos.SuspendLayout();
             SuspendLayout();
             // 
             // grbDetalle
@@ -69,9 +75,9 @@
             grbDetalle.Controls.Add(lblApellido);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(518, 25);
+            grbDetalle.Location = new Point(374, 25);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(575, 570);
+            grbDetalle.Size = new Size(407, 565);
             grbDetalle.TabIndex = 6;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del usuario";
@@ -282,21 +288,95 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // FormListarUsuarios
+            // btnAgregarUsuario
+            // 
+            btnAgregarUsuario.BackColor = Color.DarkGray;
+            btnAgregarUsuario.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnAgregarUsuario.FlatAppearance.CheckedBackColor = Color.Black;
+            btnAgregarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnAgregarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnAgregarUsuario.FlatStyle = FlatStyle.Flat;
+            btnAgregarUsuario.Location = new Point(838, 40);
+            btnAgregarUsuario.Margin = new Padding(5);
+            btnAgregarUsuario.Name = "btnAgregarUsuario";
+            btnAgregarUsuario.Size = new Size(255, 40);
+            btnAgregarUsuario.TabIndex = 21;
+            btnAgregarUsuario.Text = "Agregar usuario";
+            btnAgregarUsuario.UseVisualStyleBackColor = false;
+            btnAgregarUsuario.Click += btnAgregarUsuario_Click;
+            // 
+            // btnReactivarUsuario
+            // 
+            btnReactivarUsuario.BackColor = Color.DarkGray;
+            btnReactivarUsuario.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnReactivarUsuario.FlatAppearance.CheckedBackColor = Color.Black;
+            btnReactivarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnReactivarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnReactivarUsuario.FlatStyle = FlatStyle.Flat;
+            btnReactivarUsuario.Location = new Point(838, 114);
+            btnReactivarUsuario.Margin = new Padding(5);
+            btnReactivarUsuario.Name = "btnReactivarUsuario";
+            btnReactivarUsuario.Size = new Size(255, 40);
+            btnReactivarUsuario.TabIndex = 22;
+            btnReactivarUsuario.Text = "Reactivar usuario";
+            btnReactivarUsuario.UseVisualStyleBackColor = false;
+            btnReactivarUsuario.Visible = false;
+            // 
+            // btnUsuariosActivos
+            // 
+            btnUsuariosActivos.BackColor = Color.DarkGray;
+            btnUsuariosActivos.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnUsuariosActivos.FlatAppearance.CheckedBackColor = Color.Black;
+            btnUsuariosActivos.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnUsuariosActivos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnUsuariosActivos.FlatStyle = FlatStyle.Flat;
+            btnUsuariosActivos.Location = new Point(40, 357);
+            btnUsuariosActivos.Margin = new Padding(5);
+            btnUsuariosActivos.Name = "btnUsuariosActivos";
+            btnUsuariosActivos.Size = new Size(255, 40);
+            btnUsuariosActivos.TabIndex = 23;
+            btnUsuariosActivos.Text = "Listar usuarios activos";
+            btnUsuariosActivos.UseVisualStyleBackColor = false;
+            // 
+            // lstUsuariosActivos
+            // 
+            lstUsuariosActivos.FormattingEnabled = true;
+            lstUsuariosActivos.ItemHeight = 20;
+            lstUsuariosActivos.Location = new Point(16, 48);
+            lstUsuariosActivos.Name = "lstUsuariosActivos";
+            lstUsuariosActivos.Size = new Size(295, 284);
+            lstUsuariosActivos.TabIndex = 24;
+            // 
+            // grbUsuariosActivos
+            // 
+            grbUsuariosActivos.Controls.Add(lstUsuariosActivos);
+            grbUsuariosActivos.Controls.Add(btnUsuariosActivos);
+            grbUsuariosActivos.Location = new Point(798, 168);
+            grbUsuariosActivos.Name = "grbUsuariosActivos";
+            grbUsuariosActivos.Size = new Size(337, 422);
+            grbUsuariosActivos.TabIndex = 25;
+            grbUsuariosActivos.TabStop = false;
+            grbUsuariosActivos.Text = "Usuarios Activos";
+            // 
+            // FormUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1147, 650);
+            Controls.Add(grbUsuariosActivos);
+            Controls.Add(btnReactivarUsuario);
+            Controls.Add(btnAgregarUsuario);
             Controls.Add(btnLimpiar);
             Controls.Add(btnListar);
             Controls.Add(grbDetalle);
             Controls.Add(lstUsuarios);
             Controls.Add(btnVerDetalle);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormListarUsuarios";
+            Name = "FormUsuarios";
             Text = "Listado de Usuarios";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
+            grbUsuariosActivos.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -322,5 +402,10 @@
         private TextBox txtIDUsuario;
         private Label lblID;
         private Button btnLimpiarDetalle;
+        private Button btnAgregarUsuario;
+        private Button btnReactivarUsuario;
+        private Button btnUsuariosActivos;
+        private ListBox lstUsuariosActivos;
+        private GroupBox grbUsuariosActivos;
     }
 }

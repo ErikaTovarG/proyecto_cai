@@ -1,6 +1,6 @@
 ﻿namespace FormPresentacion
 {
-    partial class FormListarProveedores
+    partial class FormProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,83 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarProveedores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
+            lstProductos = new ListBox();
             grbDetalle = new GroupBox();
-            btnLimpiarCmb = new Button();
-            txtIDProveedor = new TextBox();
-            lblID = new Label();
+            btnLimpiarDetalle = new Button();
+            txtStock = new TextBox();
+            lblStock = new Label();
             btnEditar = new Button();
             btnEliminar = new Button();
-            txtCuit = new TextBox();
-            lblCuit = new Label();
-            txtEmail = new TextBox();
-            lblEmail = new Label();
-            txtApellido = new TextBox();
-            lblApellido = new Label();
+            txtPrecio = new TextBox();
+            lblPrecio = new Label();
             txtNombre = new TextBox();
             lblNombre = new Label();
-            lstProveedores = new ListBox();
+            txtCategoria = new TextBox();
+            lblCategoria = new Label();
+            txtIDProveedor = new TextBox();
+            lblID = new Label();
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
             grbDetalle.SuspendLayout();
             SuspendLayout();
             // 
+            // lstProductos
+            // 
+            lstProductos.FormattingEnabled = true;
+            lstProductos.ItemHeight = 20;
+            lstProductos.Location = new Point(43, 27);
+            lstProductos.Name = "lstProductos";
+            lstProductos.Size = new Size(302, 504);
+            lstProductos.TabIndex = 2;
+            // 
             // grbDetalle
             // 
-            grbDetalle.Controls.Add(btnLimpiarCmb);
-            grbDetalle.Controls.Add(txtIDProveedor);
-            grbDetalle.Controls.Add(lblID);
+            grbDetalle.Controls.Add(btnLimpiarDetalle);
+            grbDetalle.Controls.Add(txtStock);
+            grbDetalle.Controls.Add(lblStock);
             grbDetalle.Controls.Add(btnEditar);
             grbDetalle.Controls.Add(btnEliminar);
-            grbDetalle.Controls.Add(txtCuit);
-            grbDetalle.Controls.Add(lblCuit);
-            grbDetalle.Controls.Add(txtEmail);
-            grbDetalle.Controls.Add(lblEmail);
-            grbDetalle.Controls.Add(txtApellido);
-            grbDetalle.Controls.Add(lblApellido);
+            grbDetalle.Controls.Add(txtPrecio);
+            grbDetalle.Controls.Add(lblPrecio);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(543, 23);
+            grbDetalle.Controls.Add(txtCategoria);
+            grbDetalle.Controls.Add(lblCategoria);
+            grbDetalle.Controls.Add(txtIDProveedor);
+            grbDetalle.Controls.Add(lblID);
+            grbDetalle.Location = new Point(371, 27);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(575, 570);
-            grbDetalle.TabIndex = 6;
+            grbDetalle.Size = new Size(421, 445);
+            grbDetalle.TabIndex = 3;
             grbDetalle.TabStop = false;
-            grbDetalle.Text = "Detalle del proveedor";
+            grbDetalle.Text = "Detalle del producto";
             // 
-            // btnLimpiarCmb
+            // btnLimpiarDetalle
             // 
-            btnLimpiarCmb.BackColor = Color.DarkGray;
-            btnLimpiarCmb.FlatAppearance.BorderSize = 0;
-            btnLimpiarCmb.FlatAppearance.CheckedBackColor = Color.Black;
-            btnLimpiarCmb.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
-            btnLimpiarCmb.Location = new Point(301, 512);
-            btnLimpiarCmb.Margin = new Padding(5);
-            btnLimpiarCmb.Name = "btnLimpiarCmb";
-            btnLimpiarCmb.Size = new Size(115, 40);
-            btnLimpiarCmb.TabIndex = 20;
-            btnLimpiarCmb.Text = "Limpiar";
-            btnLimpiarCmb.UseVisualStyleBackColor = false;
-            btnLimpiarCmb.Click += btnLimpiarCmb_Click;
+            btnLimpiarDetalle.BackColor = Color.DarkGray;
+            btnLimpiarDetalle.FlatAppearance.BorderSize = 0;
+            btnLimpiarDetalle.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
+            btnLimpiarDetalle.Location = new Point(274, 382);
+            btnLimpiarDetalle.Margin = new Padding(5);
+            btnLimpiarDetalle.Name = "btnLimpiarDetalle";
+            btnLimpiarDetalle.Size = new Size(115, 40);
+            btnLimpiarDetalle.TabIndex = 18;
+            btnLimpiarDetalle.Text = "Limpiar";
+            btnLimpiarDetalle.UseVisualStyleBackColor = false;
+            btnLimpiarDetalle.Click += btnLimpiarDetalle_Click;
             // 
-            // txtIDProveedor
+            // txtStock
             // 
-            txtIDProveedor.Enabled = false;
-            txtIDProveedor.Location = new Point(42, 84);
-            txtIDProveedor.Name = "txtIDProveedor";
-            txtIDProveedor.Size = new Size(346, 27);
-            txtIDProveedor.TabIndex = 19;
+            txtStock.Location = new Point(25, 262);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(346, 27);
+            txtStock.TabIndex = 17;
             // 
-            // lblID
+            // lblStock
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new Point(42, 51);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(24, 20);
-            lblID.TabIndex = 18;
-            lblID.Text = "ID";
+            lblStock.AutoSize = true;
+            lblStock.Location = new Point(25, 239);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(45, 20);
+            lblStock.TabIndex = 16;
+            lblStock.Text = "Stock";
             // 
             // btnEditar
             // 
@@ -114,11 +122,11 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(42, 512);
+            btnEditar.Location = new Point(24, 382);
             btnEditar.Margin = new Padding(5);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(115, 40);
-            btnEditar.TabIndex = 17;
+            btnEditar.TabIndex = 15;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -130,87 +138,79 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(176, 512);
+            btnEliminar.Location = new Point(149, 382);
             btnEliminar.Margin = new Padding(5);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(115, 40);
-            btnEliminar.TabIndex = 16;
+            btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // txtCuit
+            // txtPrecio
             // 
-            txtCuit.Location = new Point(42, 374);
-            txtCuit.Name = "txtCuit";
-            txtCuit.Size = new Size(346, 27);
-            txtCuit.TabIndex = 7;
+            txtPrecio.Location = new Point(25, 200);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(346, 27);
+            txtPrecio.TabIndex = 7;
             // 
-            // lblCuit
+            // lblPrecio
             // 
-            lblCuit.AutoSize = true;
-            lblCuit.Location = new Point(42, 341);
-            lblCuit.Name = "lblCuit";
-            lblCuit.Size = new Size(40, 20);
-            lblCuit.TabIndex = 6;
-            lblCuit.Text = "CUIT";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(42, 296);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(346, 27);
-            txtEmail.TabIndex = 5;
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(42, 263);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
-            lblEmail.TabIndex = 4;
-            lblEmail.Text = "Email";
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(42, 222);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(346, 27);
-            txtApellido.TabIndex = 3;
-            // 
-            // lblApellido
-            // 
-            lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(42, 189);
-            lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 20);
-            lblApellido.TabIndex = 2;
-            lblApellido.Text = "Apellido";
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(25, 177);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(50, 20);
+            lblPrecio.TabIndex = 6;
+            lblPrecio.Text = "Precio";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(42, 150);
+            txtNombre.Location = new Point(25, 137);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(346, 27);
-            txtNombre.TabIndex = 1;
+            txtNombre.TabIndex = 5;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(42, 117);
+            lblNombre.Location = new Point(25, 114);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);
-            lblNombre.TabIndex = 0;
+            lblNombre.TabIndex = 4;
             lblNombre.Text = "Nombre";
             // 
-            // lstProveedores
+            // txtCategoria
             // 
-            lstProveedores.FormattingEnabled = true;
-            lstProveedores.ItemHeight = 20;
-            lstProveedores.Location = new Point(36, 23);
-            lstProveedores.Name = "lstProveedores";
-            lstProveedores.Size = new Size(302, 504);
-            lstProveedores.TabIndex = 5;
+            txtCategoria.Location = new Point(25, 325);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(87, 27);
+            txtCategoria.TabIndex = 3;
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(25, 302);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(74, 20);
+            lblCategoria.TabIndex = 2;
+            lblCategoria.Text = "Categoria";
+            // 
+            // txtIDProveedor
+            // 
+            txtIDProveedor.Enabled = false;
+            txtIDProveedor.Location = new Point(25, 73);
+            txtIDProveedor.Name = "txtIDProveedor";
+            txtIDProveedor.Size = new Size(346, 27);
+            txtIDProveedor.TabIndex = 1;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Location = new Point(25, 50);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(24, 20);
+            lblID.TabIndex = 0;
+            lblID.Text = "ID";
             // 
             // btnLimpiar
             // 
@@ -220,11 +220,11 @@
             btnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
-            btnLimpiar.Location = new Point(126, 585);
+            btnLimpiar.Location = new Point(131, 589);
             btnLimpiar.Margin = new Padding(5);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(115, 40);
-            btnLimpiar.TabIndex = 11;
+            btnLimpiar.TabIndex = 14;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
@@ -237,11 +237,11 @@
             btnListar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
-            btnListar.Location = new Point(58, 535);
+            btnListar.Location = new Point(63, 539);
             btnListar.Margin = new Padding(5);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(115, 40);
-            btnListar.TabIndex = 10;
+            btnListar.TabIndex = 13;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
             btnListar.Click += btnListar_Click;
@@ -254,15 +254,15 @@
             btnVerDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
-            btnVerDetalle.Location = new Point(202, 535);
+            btnVerDetalle.Location = new Point(207, 539);
             btnVerDetalle.Margin = new Padding(5);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.Size = new Size(115, 40);
-            btnVerDetalle.TabIndex = 9;
+            btnVerDetalle.TabIndex = 12;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
-            // FormListarProveedores
+            // FormListarProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -271,34 +271,34 @@
             Controls.Add(btnListar);
             Controls.Add(btnVerDetalle);
             Controls.Add(grbDetalle);
-            Controls.Add(lstProveedores);
+            Controls.Add(lstProductos);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormListarProveedores";
-            Text = "Listado de Proveedores";
+            Name = "FormListarProductos";
+            Text = "Listado de Productos";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
+        private GroupBox grpLista;
+        private ListBox lstProductos;
         private GroupBox grbDetalle;
-        private TextBox txtCuit;
-        private Label lblCuit;
-        private TextBox txtEmail;
-        private Label lblEmail;
-        private TextBox txtApellido;
-        private Label lblApellido;
+        private TextBox txtIDProveedor;
+        private Label lblID;
+        private TextBox txtPrecio;
+        private Label lblPrecio;
         private TextBox txtNombre;
         private Label lblNombre;
-        private ListBox lstProveedores;
+        private TextBox txtCategoria;
+        private Label lblCategoria;
         private Button btnLimpiar;
         private Button btnListar;
         private Button btnVerDetalle;
         private Button btnEditar;
         private Button btnEliminar;
-        private TextBox txtIDProveedor;
-        private Label lblID;
-        private Button btnLimpiarCmb;
+        private TextBox txtStock;
+        private Label lblStock;
+        private Button btnLimpiarDetalle;
     }
 }

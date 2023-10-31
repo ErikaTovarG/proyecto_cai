@@ -4,9 +4,9 @@ using Negocio.ProveedorNegocio;
 
 namespace FormPresentacion
 {
-    public partial class FormListarProveedores : Form
+    public partial class FormProveedores : Form
     {
-        public FormListarProveedores()
+        public FormProveedores()
         {
             InitializeComponent();
         }

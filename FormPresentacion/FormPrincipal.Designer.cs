@@ -38,8 +38,6 @@
             btnListarUsuarios = new Button();
             btnBajaProveedor = new Button();
             btnBajaUsuario = new Button();
-            btnAddSupplier = new Button();
-            btnAddUser = new Button();
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelTitulo.SuspendLayout();
@@ -91,8 +89,6 @@
             panelMenu.Controls.Add(btnListarUsuarios);
             panelMenu.Controls.Add(btnBajaProveedor);
             panelMenu.Controls.Add(btnBajaUsuario);
-            panelMenu.Controls.Add(btnAddSupplier);
-            panelMenu.Controls.Add(btnAddUser);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 40);
             panelMenu.Name = "panelMenu";
@@ -106,11 +102,11 @@
             btnListarProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnListarProductos.FlatStyle = FlatStyle.Flat;
             btnListarProductos.ForeColor = Color.Gainsboro;
-            btnListarProductos.Location = new Point(3, 451);
+            btnListarProductos.Location = new Point(0, 251);
             btnListarProductos.Name = "btnListarProductos";
             btnListarProductos.Size = new Size(247, 47);
             btnListarProductos.TabIndex = 6;
-            btnListarProductos.Text = "Listar Productos";
+            btnListarProductos.Text = "Productos";
             btnListarProductos.UseVisualStyleBackColor = true;
             btnListarProductos.Click += btnListarProductos_Click;
             // 
@@ -121,11 +117,11 @@
             btnListarProveedores.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnListarProveedores.FlatStyle = FlatStyle.Flat;
             btnListarProveedores.ForeColor = Color.Gainsboro;
-            btnListarProveedores.Location = new Point(3, 398);
+            btnListarProveedores.Location = new Point(0, 198);
             btnListarProveedores.Name = "btnListarProveedores";
             btnListarProveedores.Size = new Size(247, 47);
             btnListarProveedores.TabIndex = 5;
-            btnListarProveedores.Text = "Listar Proveedores";
+            btnListarProveedores.Text = "Proveedores";
             btnListarProveedores.UseVisualStyleBackColor = true;
             btnListarProveedores.Click += btnListarProveedores_Click;
             // 
@@ -136,11 +132,11 @@
             btnListarUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnListarUsuarios.FlatStyle = FlatStyle.Flat;
             btnListarUsuarios.ForeColor = Color.Gainsboro;
-            btnListarUsuarios.Location = new Point(3, 345);
+            btnListarUsuarios.Location = new Point(0, 145);
             btnListarUsuarios.Name = "btnListarUsuarios";
             btnListarUsuarios.Size = new Size(247, 47);
             btnListarUsuarios.TabIndex = 4;
-            btnListarUsuarios.Text = "Listar Usuarios";
+            btnListarUsuarios.Text = "Usuarios";
             btnListarUsuarios.UseVisualStyleBackColor = true;
             btnListarUsuarios.Click += btnListarUsuarios_Click;
             // 
@@ -151,7 +147,7 @@
             btnBajaProveedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnBajaProveedor.FlatStyle = FlatStyle.Flat;
             btnBajaProveedor.ForeColor = Color.Gainsboro;
-            btnBajaProveedor.Location = new Point(3, 292);
+            btnBajaProveedor.Location = new Point(3, 304);
             btnBajaProveedor.Name = "btnBajaProveedor";
             btnBajaProveedor.Size = new Size(247, 47);
             btnBajaProveedor.TabIndex = 3;
@@ -166,43 +162,13 @@
             btnBajaUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnBajaUsuario.FlatStyle = FlatStyle.Flat;
             btnBajaUsuario.ForeColor = Color.Gainsboro;
-            btnBajaUsuario.Location = new Point(3, 239);
+            btnBajaUsuario.Location = new Point(0, 357);
             btnBajaUsuario.Name = "btnBajaUsuario";
             btnBajaUsuario.Size = new Size(247, 47);
             btnBajaUsuario.TabIndex = 2;
             btnBajaUsuario.Text = "Baja Usuario";
             btnBajaUsuario.UseVisualStyleBackColor = true;
             btnBajaUsuario.Click += btnBajaUsuario_Click;
-            // 
-            // btnAddSupplier
-            // 
-            btnAddSupplier.FlatAppearance.BorderSize = 0;
-            btnAddSupplier.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnAddSupplier.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnAddSupplier.FlatStyle = FlatStyle.Flat;
-            btnAddSupplier.ForeColor = Color.Gainsboro;
-            btnAddSupplier.Location = new Point(3, 186);
-            btnAddSupplier.Name = "btnAddSupplier";
-            btnAddSupplier.Size = new Size(247, 47);
-            btnAddSupplier.TabIndex = 1;
-            btnAddSupplier.Text = "Agregar Proveedor";
-            btnAddSupplier.UseVisualStyleBackColor = true;
-            btnAddSupplier.Click += btnAddSupplier_Click;
-            // 
-            // btnAddUser
-            // 
-            btnAddUser.FlatAppearance.BorderSize = 0;
-            btnAddUser.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnAddUser.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnAddUser.FlatStyle = FlatStyle.Flat;
-            btnAddUser.ForeColor = Color.Gainsboro;
-            btnAddUser.Location = new Point(3, 133);
-            btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(247, 47);
-            btnAddUser.TabIndex = 0;
-            btnAddUser.Text = "Agregar Usuario";
-            btnAddUser.UseVisualStyleBackColor = true;
-            btnAddUser.Click += btnAddUser_Click;
             // 
             // panelFormularios
             // 
@@ -257,8 +223,6 @@
         private Button btnListarUsuarios;
         private Button btnBajaProveedor;
         private Button btnBajaUsuario;
-        private Button btnAddSupplier;
-        private Button btnAddUser;
         private Button btnListarProductos;
     }
 }

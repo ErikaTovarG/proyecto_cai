@@ -1,5 +1,6 @@
-﻿using Modelo.ProductoModelo;
-using Negocio.ProductoNegocio;
+﻿using Modelo.UsuarioModelo;
+using Negocio.UsuarioLogNegocio;
+using Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,41 +13,52 @@ using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormListarProductos : Form
+    public partial class FormUsuarios : Form
     {
-        public FormListarProductos()
+        public FormUsuarios()
         {
             InitializeComponent();
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<ProductoWebServices> productoWebServices = ClsProducto.ListarProductos();
+            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            lstUsuarios.Items.Clear();
 
-            foreach (var producto in productoWebServices)
+            foreach (var usuario in usuariosWebServices)
             {
-                lstProductos.Items.Add(producto.ToString());
+                lstUsuarios.Items.Add(usuario.ToString());
             }
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            lstProductos.Items.Clear();
+            lstUsuarios.Items.Clear();
         }
 
         private void btnLimpiarDetalle_Click(object sender, EventArgs e)
         {
-            txtIDProveedor.Clear();
-            txtCategoria.Clear();
             txtNombre.Clear();
-            txtPrecio.Clear();
-            txtStock.Clear();
+            txtIDUsuario.Clear();
+            txtUsuario.Clear();
+            txtApellido.Clear();
+            txtHost.Clear();
+            txtDNI.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormAlertaEliminarProducto>();
+
+            AbrirFormulario<FormAlertaEliminarUsuario>();
         }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarUsuario>();
+        }
+
+
         private void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();
