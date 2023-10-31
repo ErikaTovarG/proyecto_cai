@@ -47,6 +47,17 @@ namespace FormPresentacion
         {
             AbrirFormulario<FormAlertaEliminarProducto>();
         }
+
+        private void btnLimpiarCategoria_Click(object sender, EventArgs e)
+        {
+            lstProductosCategoria.Items.Clear();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarProducto>();
+        }
+
         private void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();

@@ -47,7 +47,14 @@
             btnLimpiar = new Button();
             btnListar = new Button();
             btnVerDetalle = new Button();
+            btnAgregarProducto = new Button();
+            grbListaPorCategoria = new GroupBox();
+            btnListarCategoria = new Button();
+            btnLimpiarCategoria = new Button();
+            lstProductosCategoria = new ListBox();
+            cmbCategoria = new ComboBox();
             grbDetalle.SuspendLayout();
+            grbListaPorCategoria.SuspendLayout();
             SuspendLayout();
             // 
             // lstProductos
@@ -262,21 +269,104 @@
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
             // 
-            // FormListarProductos
+            // btnAgregarProducto
+            // 
+            btnAgregarProducto.BackColor = Color.DarkGray;
+            btnAgregarProducto.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnAgregarProducto.FlatAppearance.CheckedBackColor = Color.Black;
+            btnAgregarProducto.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnAgregarProducto.FlatStyle = FlatStyle.Flat;
+            btnAgregarProducto.Location = new Point(844, 38);
+            btnAgregarProducto.Margin = new Padding(5);
+            btnAgregarProducto.Name = "btnAgregarProducto";
+            btnAgregarProducto.Size = new Size(255, 40);
+            btnAgregarProducto.TabIndex = 22;
+            btnAgregarProducto.Text = "Agregar producto";
+            btnAgregarProducto.UseVisualStyleBackColor = false;
+            btnAgregarProducto.Click += btnAgregarProducto_Click;
+            // 
+            // grbListaPorCategoria
+            // 
+            grbListaPorCategoria.Controls.Add(btnListarCategoria);
+            grbListaPorCategoria.Controls.Add(btnLimpiarCategoria);
+            grbListaPorCategoria.Controls.Add(lstProductosCategoria);
+            grbListaPorCategoria.Controls.Add(cmbCategoria);
+            grbListaPorCategoria.Location = new Point(822, 100);
+            grbListaPorCategoria.Name = "grbListaPorCategoria";
+            grbListaPorCategoria.Size = new Size(302, 487);
+            grbListaPorCategoria.TabIndex = 23;
+            grbListaPorCategoria.TabStop = false;
+            grbListaPorCategoria.Text = "Listado por categoria";
+            // 
+            // btnListarCategoria
+            // 
+            btnListarCategoria.BackColor = Color.DarkGray;
+            btnListarCategoria.FlatAppearance.BorderSize = 0;
+            btnListarCategoria.FlatAppearance.CheckedBackColor = Color.Black;
+            btnListarCategoria.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnListarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnListarCategoria.FlatStyle = FlatStyle.Flat;
+            btnListarCategoria.Location = new Point(22, 74);
+            btnListarCategoria.Margin = new Padding(5);
+            btnListarCategoria.Name = "btnListarCategoria";
+            btnListarCategoria.Size = new Size(78, 34);
+            btnListarCategoria.TabIndex = 24;
+            btnListarCategoria.Text = "Listar";
+            btnListarCategoria.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiarCategoria
+            // 
+            btnLimpiarCategoria.BackColor = Color.DarkGray;
+            btnLimpiarCategoria.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnLimpiarCategoria.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarCategoria.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnLimpiarCategoria.FlatStyle = FlatStyle.Flat;
+            btnLimpiarCategoria.Location = new Point(105, 74);
+            btnLimpiarCategoria.Margin = new Padding(5);
+            btnLimpiarCategoria.Name = "btnLimpiarCategoria";
+            btnLimpiarCategoria.Size = new Size(78, 34);
+            btnLimpiarCategoria.TabIndex = 21;
+            btnLimpiarCategoria.Text = "Limpiar";
+            btnLimpiarCategoria.UseVisualStyleBackColor = false;
+            btnLimpiarCategoria.Click += btnLimpiarCategoria_Click;
+            // 
+            // lstProductosCategoria
+            // 
+            lstProductosCategoria.FormattingEnabled = true;
+            lstProductosCategoria.ItemHeight = 20;
+            lstProductosCategoria.Location = new Point(22, 116);
+            lstProductosCategoria.Name = "lstProductosCategoria";
+            lstProductosCategoria.Size = new Size(255, 344);
+            lstProductosCategoria.TabIndex = 20;
+            // 
+            // cmbCategoria
+            // 
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(22, 38);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(174, 28);
+            cmbCategoria.TabIndex = 0;
+            // 
+            // FormProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1147, 650);
+            Controls.Add(grbListaPorCategoria);
+            Controls.Add(btnAgregarProducto);
             Controls.Add(btnLimpiar);
             Controls.Add(btnListar);
             Controls.Add(btnVerDetalle);
             Controls.Add(grbDetalle);
             Controls.Add(lstProductos);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormListarProductos";
+            Name = "FormProductos";
             Text = "Listado de Productos";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
+            grbListaPorCategoria.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -300,5 +390,11 @@
         private TextBox txtStock;
         private Label lblStock;
         private Button btnLimpiarDetalle;
+        private Button btnAgregarProducto;
+        private GroupBox grbListaPorCategoria;
+        private Button btnListarCategoria;
+        private Button btnLimpiarCategoria;
+        private ListBox lstProductosCategoria;
+        private ComboBox cmbCategoria;
     }
 }

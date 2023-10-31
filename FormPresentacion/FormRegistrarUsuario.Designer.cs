@@ -86,7 +86,7 @@
             grbAgregarUsuario.Controls.Add(lblApellido);
             grbAgregarUsuario.Controls.Add(txtNombre);
             grbAgregarUsuario.Controls.Add(lblNombre);
-            grbAgregarUsuario.Location = new Point(289, 55);
+            grbAgregarUsuario.Location = new Point(276, 55);
             grbAgregarUsuario.Name = "grbAgregarUsuario";
             grbAgregarUsuario.Size = new Size(839, 547);
             grbAgregarUsuario.TabIndex = 12;
@@ -317,7 +317,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(76, 55);
+            pictureBox1.Location = new Point(63, 55);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
