@@ -293,7 +293,7 @@
             Controls.Add(lstProveedores);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormProveedores";
-            Text = "Listado de Proveedores";
+            Text = "Proveedores";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             ResumeLayout(false);

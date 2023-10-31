@@ -373,7 +373,7 @@
             Controls.Add(btnVerDetalle);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormUsuarios";
-            Text = "Listado de Usuarios";
+            Text = "Usuarios";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             grbUsuariosActivos.ResumeLayout(false);

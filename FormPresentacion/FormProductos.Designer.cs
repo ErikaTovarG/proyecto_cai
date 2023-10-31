@@ -363,7 +363,7 @@
             Controls.Add(lstProductos);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormProductos";
-            Text = "Listado de Productos";
+            Text = "Productos";
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             grbListaPorCategoria.ResumeLayout(false);
