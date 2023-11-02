@@ -94,37 +94,33 @@ namespace FormPresentacion
                         switch (host)
                         {
                             case 3:
-                                FormPrincipal principal = new FormPrincipal();
-                                principal.Show();
+                                FormPrincipal formAdmin = new FormPrincipal();
+                                formAdmin.Show();
                                 this.Hide();
-                                //List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
-                                //Console.Clear();
                                 //FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
-                                //Vistas.MenuAdministrador();
                                 //int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(13);
-                                //FuncionesAuxiliares.Limpia();
+
                                 //SeleccionarOpcionesAdministrador(opcion2, usuarios);
 
                                 break;
-                            //case 2:
-                            //    Console.Clear();
-                            //    List<ProductoWebServices> listaProductos2 = ClsProducto.ListarProductos();
-                            //    FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos2);
-                            //    Vistas.MenuSupervisor();
-                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(7);
-                            //    FuncionesAuxiliares.Limpia();
-                            //    SeleccionarOpcionesSupervisor(opcion2, usuarios);
-                            //    break;
-                            //case 1:
-                            //    Console.Clear();
-                            //    Vistas.MenuVendedor();
-                            //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
-                            //    SeleccionarOpcionesVendedor(opcion2, usuarios);
-                            //    FuncionesAuxiliares.Limpia();
-                            //    break;
-                            //default:
-                            //    Console.WriteLine("No se encontró.");
-                            //    break;
+                            case 2:
+                                FormPrincipalSupervisor formSuper = new FormPrincipalSupervisor();
+                                formSuper.Show();
+                                this.Hide();
+                                //funcionesauxiliares.mostraralertadestockbajo(listaproductos2);
+                                //opcion2 = funcionesauxiliares.seleccionaropcion(7);
+                                //seleccionaropcionessupervisor(opcion2, usuarios);
+                                break;
+                                //case 1:
+                                //    Console.Clear();
+                                //    Vistas.MenuVendedor();
+                                //    opcion2 = FuncionesAuxiliares.SeleccionarOpcion(3);
+                                //    SeleccionarOpcionesVendedor(opcion2, usuarios);
+                                //    FuncionesAuxiliares.Limpia();
+                                //    break;
+                                //default:
+                                //    Console.WriteLine("No se encontró.");
+                                //    break;
                         }
                     }
                     catch (Exception ex)

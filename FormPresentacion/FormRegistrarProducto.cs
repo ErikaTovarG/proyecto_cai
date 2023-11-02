@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormRegistrarProveedor : Form
+    public partial class FormRegistrarProducto : Form
     {
-        public FormRegistrarProveedor()
+        public FormRegistrarProducto()
         {
             InitializeComponent();
         }
@@ -24,10 +24,11 @@ namespace FormPresentacion
 
         private void btnLimpiarDetalle_Click(object sender, EventArgs e)
         {
+            cmbCategoria.Items.Clear();
+            cmbProveedor.Items.Clear();
             txtNombre.Clear();
-            txtApellido.Clear();
-            txtCUIT.Clear();
-            txtEmail.Clear();   
+            txtPrecio.Clear();
+            cmbStock.Items.Clear();
         }
     }
 }

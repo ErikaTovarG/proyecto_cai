@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormRegistrarProveedor : Form
+    public partial class FormAlertaEliminarProducto : Form
     {
-        public FormRegistrarProveedor()
+        public FormAlertaEliminarProducto()
         {
             InitializeComponent();
         }
@@ -20,14 +20,6 @@ namespace FormPresentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnLimpiarDetalle_Click(object sender, EventArgs e)
-        {
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtCUIT.Clear();
-            txtEmail.Clear();   
         }
     }
 }

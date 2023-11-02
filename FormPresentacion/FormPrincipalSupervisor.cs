@@ -1,24 +1,20 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormPrincipal : Form
+    public partial class FormPrincipalSupervisor : Form
     {
-        public FormPrincipal()
+        public FormPrincipalSupervisor()
         {
             InitializeComponent();
-        }
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        #region Funcionalidades del Formulario
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -26,25 +22,16 @@ namespace FormPresentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnListarProductos_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormProductos>();
         }
 
-        private void btnListarProveedores_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormProveedores>();
-        }
-
-        private void btnListarUsuarios_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormUsuarios>();
-        }
-
-        #endregion
-
-        //Metodo para abrir el formulario dentro del panel.
-        //<> esto indica que el metodo es generico () sin parametros y con restricciones 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario; //declaro un form 
@@ -68,7 +55,5 @@ namespace FormPresentacion
                 formulario.BringToFront();
             }
         }
-
-
     }
 }
