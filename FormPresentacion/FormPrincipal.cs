@@ -1,5 +1,9 @@
 ﻿
 
+using Modelo.Producto;
+using Modelo.ProductoModelo;
+using Negocio.ProductoNegocio;
+
 namespace FormPresentacion
 {
     public partial class FormPrincipal : Form
@@ -11,7 +15,7 @@ namespace FormPresentacion
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            MostrarAlertaDeStockBajo();
         }
 
 
@@ -68,7 +72,19 @@ namespace FormPresentacion
                 formulario.BringToFront();
             }
         }
+        private static void MostrarAlertaDeStockBajo()
+        {
+            List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+            FormAlertaStock formOtro = new FormAlertaStock();
 
+            foreach (var producto in listaProductos)
+            {
+                double stock = producto.Stock;
+                double stockLimite = 0.25 * stock;
+                if (stock < stockLimite) formOtro.AgregarProductoALista(producto.ToString());
+            }
+            formOtro.ShowDialog();
+        }
 
     }
 }

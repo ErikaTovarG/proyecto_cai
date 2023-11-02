@@ -97,9 +97,7 @@ namespace FormPresentacion
                                 FormPrincipal formAdmin = new FormPrincipal();
                                 formAdmin.Show();
                                 this.Hide();
-                                //FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                                 //int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(13);
-
                                 //SeleccionarOpcionesAdministrador(opcion2, usuarios);
 
                                 break;

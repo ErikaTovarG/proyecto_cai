@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Modelo.Producto;
+using Modelo.ProductoModelo;
+using Negocio.ProductoNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,7 @@ namespace FormPresentacion
         public FormPrincipalSupervisor()
         {
             InitializeComponent();
+            MostrarAlertaDeStockBajo();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -54,6 +58,20 @@ namespace FormPresentacion
                 //Si el formulario existe simplemente lo traigo al frente 
                 formulario.BringToFront();
             }
+        }
+
+        private static void MostrarAlertaDeStockBajo()
+        {
+            List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+            FormAlertaStock formOtro = new FormAlertaStock();
+
+            foreach (var producto in listaProductos)
+            {
+                double stock = producto.Stock;
+                double stockLimite = 0.25 * stock;
+                if (stock < stockLimite) formOtro.AgregarProductoALista(producto.ToString());      
+            }
+            formOtro.ShowDialog();
         }
     }
 }
