@@ -28,7 +28,7 @@ namespace AccesoDatos
             }
         }
 
-        public static void CrearProveedor(ProveedorWebServices proveedor)
+        public static void CrearProveedor(ProveedorWebServicePost proveedor)
         {
             var jsonRequest = JsonConvert.SerializeObject(proveedor);
 

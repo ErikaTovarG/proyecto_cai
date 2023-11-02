@@ -33,6 +33,8 @@ namespace Negocio.ProveedorNegocio
           return flag;
         }
 
+       
+
         public static Proveedor BuscarProveedorporCUIT(int cuit)
         {
             return listaProveedores.Find(proveedor => proveedor.CUIT == cuit);
@@ -59,6 +61,10 @@ namespace Negocio.ProveedorNegocio
            return Convert.ToString(proveedorEncontrado.Id);
         }
 
+        public static void CrearProveedor(ProveedorWebServicePost usuario)
+        {
+            ProveedoresDatos.CrearProveedor(usuario);
+        }
 
 
         public static void EliminarProveedorPorCuit(string idProveedor)

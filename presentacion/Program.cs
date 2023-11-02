@@ -298,19 +298,19 @@ namespace Presentacion
                     int op8 = FuncionesAuxiliares.SeleccionarOpcion(2);
                     FuncionesAuxiliares.OpcionAContinuarAdministrador(op8, usuarios);
                     break;
-
+                  
                 case 9:
-                    Console.WriteLine("\nElegiste la opción para dar de alta un proveedor.\n");
-                    bool flag1;
-                    do
-                    {
+                    //Console.WriteLine("\nElegiste la opción para dar de alta un proveedor.\n");
+                    //bool flag1;
+                    //do
+                    //{
 
-                        ProveedoresDatos.CrearProveedor(PideDatos.IngresoDatosProveedor());
+                    //    ProveedoresDatos.CrearProveedor(PideDatos.IngresoDatosProveedor());
 
 
-                        flag1 = true;
-                    } while (!flag1);
-                    break;
+                    //    flag1 = true;
+                    //} while (!flag1);
+                    //break;
                 case 10: 
 
                     Console.WriteLine("\nVas a modificar un proveedor.\n");
