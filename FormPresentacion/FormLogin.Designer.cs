@@ -36,7 +36,6 @@
             btnLogin = new Button();
             btnCerrar = new Button();
             label1 = new Label();
-            lblContraseña = new LinkLabel();
             pctCerrar = new PictureBox();
             pctMinimizar = new PictureBox();
             lblErrorMensaje = new Label();
@@ -142,19 +141,6 @@
             label1.TabIndex = 5;
             label1.Text = "LOGIN";
             // 
-            // lblContraseña
-            // 
-            lblContraseña.ActiveLinkColor = Color.FromArgb(0, 122, 204);
-            lblContraseña.AutoSize = true;
-            lblContraseña.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblContraseña.LinkColor = Color.DimGray;
-            lblContraseña.Location = new Point(502, 382);
-            lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new Size(187, 21);
-            lblContraseña.TabIndex = 0;
-            lblContraseña.TabStop = true;
-            lblContraseña.Text = "Cambiar Contraseña";
-            // 
             // pctCerrar
             // 
             pctCerrar.BackColor = Color.FromArgb(40, 40, 40);
@@ -204,7 +190,6 @@
             Controls.Add(lblErrorMensaje);
             Controls.Add(pctMinimizar);
             Controls.Add(pctCerrar);
-            Controls.Add(lblContraseña);
             Controls.Add(label1);
             Controls.Add(btnCerrar);
             Controls.Add(btnLogin);
@@ -233,7 +218,6 @@
         private Button btnLogin;
         private Button btnCerrar;
         private Label label1;
-        private LinkLabel lblContraseña;
         private PictureBox ptureLogo;
         private PictureBox pctCerrar;
         private PictureBox pctMinimizar;

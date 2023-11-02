@@ -54,6 +54,7 @@
             btnUsuariosActivos = new Button();
             lstUsuariosActivos = new ListBox();
             grbUsuariosActivos = new GroupBox();
+            btnCambiarContraseña = new Button();
             grbDetalle.SuspendLayout();
             grbUsuariosActivos.SuspendLayout();
             SuspendLayout();
@@ -313,14 +314,13 @@
             btnReactivarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnReactivarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnReactivarUsuario.FlatStyle = FlatStyle.Flat;
-            btnReactivarUsuario.Location = new Point(838, 114);
+            btnReactivarUsuario.Location = new Point(838, 93);
             btnReactivarUsuario.Margin = new Padding(5);
             btnReactivarUsuario.Name = "btnReactivarUsuario";
             btnReactivarUsuario.Size = new Size(255, 40);
             btnReactivarUsuario.TabIndex = 22;
             btnReactivarUsuario.Text = "Reactivar usuario";
             btnReactivarUsuario.UseVisualStyleBackColor = false;
-            btnReactivarUsuario.Visible = false;
             // 
             // btnUsuariosActivos
             // 
@@ -330,7 +330,7 @@
             btnUsuariosActivos.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnUsuariosActivos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnUsuariosActivos.FlatStyle = FlatStyle.Flat;
-            btnUsuariosActivos.Location = new Point(40, 357);
+            btnUsuariosActivos.Location = new Point(40, 317);
             btnUsuariosActivos.Margin = new Padding(5);
             btnUsuariosActivos.Name = "btnUsuariosActivos";
             btnUsuariosActivos.Size = new Size(255, 40);
@@ -342,7 +342,7 @@
             // 
             lstUsuariosActivos.FormattingEnabled = true;
             lstUsuariosActivos.ItemHeight = 20;
-            lstUsuariosActivos.Location = new Point(16, 48);
+            lstUsuariosActivos.Location = new Point(19, 26);
             lstUsuariosActivos.Name = "lstUsuariosActivos";
             lstUsuariosActivos.Size = new Size(295, 284);
             lstUsuariosActivos.TabIndex = 24;
@@ -351,18 +351,35 @@
             // 
             grbUsuariosActivos.Controls.Add(lstUsuariosActivos);
             grbUsuariosActivos.Controls.Add(btnUsuariosActivos);
-            grbUsuariosActivos.Location = new Point(798, 168);
+            grbUsuariosActivos.Location = new Point(798, 220);
             grbUsuariosActivos.Name = "grbUsuariosActivos";
-            grbUsuariosActivos.Size = new Size(337, 422);
+            grbUsuariosActivos.Size = new Size(337, 370);
             grbUsuariosActivos.TabIndex = 25;
             grbUsuariosActivos.TabStop = false;
             grbUsuariosActivos.Text = "Usuarios Activos";
+            // 
+            // btnCambiarContraseña
+            // 
+            btnCambiarContraseña.BackColor = Color.DarkGray;
+            btnCambiarContraseña.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnCambiarContraseña.FlatAppearance.CheckedBackColor = Color.Black;
+            btnCambiarContraseña.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnCambiarContraseña.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnCambiarContraseña.FlatStyle = FlatStyle.Flat;
+            btnCambiarContraseña.Location = new Point(838, 150);
+            btnCambiarContraseña.Margin = new Padding(5);
+            btnCambiarContraseña.Name = "btnCambiarContraseña";
+            btnCambiarContraseña.Size = new Size(255, 40);
+            btnCambiarContraseña.TabIndex = 26;
+            btnCambiarContraseña.Text = "Cambiar contraseña";
+            btnCambiarContraseña.UseVisualStyleBackColor = false;
             // 
             // FormUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1147, 650);
+            Controls.Add(btnCambiarContraseña);
             Controls.Add(grbUsuariosActivos);
             Controls.Add(btnReactivarUsuario);
             Controls.Add(btnAgregarUsuario);
@@ -407,5 +424,6 @@
         private Button btnUsuariosActivos;
         private ListBox lstUsuariosActivos;
         private GroupBox grbUsuariosActivos;
+        private Button btnCambiarContraseña;
     }
 }

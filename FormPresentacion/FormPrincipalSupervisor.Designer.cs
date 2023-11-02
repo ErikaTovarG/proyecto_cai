@@ -1,6 +1,6 @@
 ﻿namespace FormPresentacion
 {
-    partial class FormPrincipal
+    partial class FormPrincipalSupervisor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipalSupervisor));
             panelTitulo = new Panel();
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
             panelMenu = new Panel();
-            btnListarProductos = new Button();
-            btnListarProveedores = new Button();
-            btnListarUsuarios = new Button();
-            panelFormularios = new Panel();
-            pictureBox1 = new PictureBox();
             lblUser = new Label();
             pictureBox2 = new PictureBox();
+            btnProductos = new Button();
+            btnReportes = new Button();
+            btnDevoluciones = new Button();
+            panelFormularios = new Panel();
+            pictureBox1 = new PictureBox();
             panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panelTitulo
@@ -58,7 +58,7 @@
             panelTitulo.Location = new Point(0, 0);
             panelTitulo.Name = "panelTitulo";
             panelTitulo.Size = new Size(1415, 40);
-            panelTitulo.TabIndex = 0;
+            panelTitulo.TabIndex = 1;
             // 
             // btnMinimizar
             // 
@@ -87,59 +87,79 @@
             panelMenu.BackColor = Color.Teal;
             panelMenu.Controls.Add(lblUser);
             panelMenu.Controls.Add(pictureBox2);
-            panelMenu.Controls.Add(btnListarProductos);
-            panelMenu.Controls.Add(btnListarProveedores);
-            panelMenu.Controls.Add(btnListarUsuarios);
+            panelMenu.Controls.Add(btnProductos);
+            panelMenu.Controls.Add(btnReportes);
+            panelMenu.Controls.Add(btnDevoluciones);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 40);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(250, 697);
-            panelMenu.TabIndex = 1;
+            panelMenu.TabIndex = 2;
             // 
-            // btnListarProductos
+            // lblUser
             // 
-            btnListarProductos.FlatAppearance.BorderSize = 0;
-            btnListarProductos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnListarProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnListarProductos.FlatStyle = FlatStyle.Flat;
-            btnListarProductos.ForeColor = Color.Gainsboro;
-            btnListarProductos.Location = new Point(3, 327);
-            btnListarProductos.Name = "btnListarProductos";
-            btnListarProductos.Size = new Size(247, 47);
-            btnListarProductos.TabIndex = 6;
-            btnListarProductos.Text = "Productos";
-            btnListarProductos.UseVisualStyleBackColor = true;
-            btnListarProductos.Click += btnListarProductos_Click;
+            lblUser.AutoSize = true;
+            lblUser.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUser.Location = new Point(82, 130);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(103, 25);
+            lblUser.TabIndex = 8;
+            lblUser.Text = "Supervisor";
             // 
-            // btnListarProveedores
+            // pictureBox2
             // 
-            btnListarProveedores.FlatAppearance.BorderSize = 0;
-            btnListarProveedores.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnListarProveedores.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnListarProveedores.FlatStyle = FlatStyle.Flat;
-            btnListarProveedores.ForeColor = Color.Gainsboro;
-            btnListarProveedores.Location = new Point(3, 274);
-            btnListarProveedores.Name = "btnListarProveedores";
-            btnListarProveedores.Size = new Size(247, 47);
-            btnListarProveedores.TabIndex = 5;
-            btnListarProveedores.Text = "Proveedores";
-            btnListarProveedores.UseVisualStyleBackColor = true;
-            btnListarProveedores.Click += btnListarProveedores_Click;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(55, 21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(140, 106);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
             // 
-            // btnListarUsuarios
+            // btnProductos
             // 
-            btnListarUsuarios.FlatAppearance.BorderSize = 0;
-            btnListarUsuarios.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnListarUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnListarUsuarios.FlatStyle = FlatStyle.Flat;
-            btnListarUsuarios.ForeColor = Color.Gainsboro;
-            btnListarUsuarios.Location = new Point(3, 221);
-            btnListarUsuarios.Name = "btnListarUsuarios";
-            btnListarUsuarios.Size = new Size(247, 47);
-            btnListarUsuarios.TabIndex = 4;
-            btnListarUsuarios.Text = "Usuarios";
-            btnListarUsuarios.UseVisualStyleBackColor = true;
-            btnListarUsuarios.Click += btnListarUsuarios_Click;
+            btnProductos.FlatAppearance.BorderSize = 0;
+            btnProductos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnProductos.FlatStyle = FlatStyle.Flat;
+            btnProductos.ForeColor = Color.Gainsboro;
+            btnProductos.Location = new Point(3, 221);
+            btnProductos.Name = "btnProductos";
+            btnProductos.Size = new Size(247, 47);
+            btnProductos.TabIndex = 6;
+            btnProductos.Text = "Productos";
+            btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
+            // 
+            // btnReportes
+            // 
+            btnReportes.FlatAppearance.BorderSize = 0;
+            btnReportes.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnReportes.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.ForeColor = Color.Gainsboro;
+            btnReportes.Location = new Point(3, 327);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(247, 47);
+            btnReportes.TabIndex = 5;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Visible = false;
+            // 
+            // btnDevoluciones
+            // 
+            btnDevoluciones.FlatAppearance.BorderSize = 0;
+            btnDevoluciones.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnDevoluciones.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnDevoluciones.FlatStyle = FlatStyle.Flat;
+            btnDevoluciones.ForeColor = Color.Gainsboro;
+            btnDevoluciones.Location = new Point(3, 274);
+            btnDevoluciones.Name = "btnDevoluciones";
+            btnDevoluciones.Size = new Size(247, 47);
+            btnDevoluciones.TabIndex = 4;
+            btnDevoluciones.Text = "Devoluciones";
+            btnDevoluciones.UseVisualStyleBackColor = true;
+            btnDevoluciones.Visible = false;
             // 
             // panelFormularios
             // 
@@ -148,7 +168,7 @@
             panelFormularios.Location = new Point(250, 40);
             panelFormularios.Name = "panelFormularios";
             panelFormularios.Size = new Size(1165, 697);
-            panelFormularios.TabIndex = 2;
+            panelFormularios.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -160,27 +180,7 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // lblUser
-            // 
-            lblUser.AutoSize = true;
-            lblUser.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUser.Location = new Point(61, 130);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new Size(134, 25);
-            lblUser.TabIndex = 10;
-            lblUser.Text = "Administrador";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(55, 21);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(140, 106);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 9;
-            pictureBox2.TabStop = false;
-            // 
-            // FormPrincipal
+            // FormPrincipalSupervisor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -189,33 +189,31 @@
             Controls.Add(panelMenu);
             Controls.Add(panelTitulo);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormPrincipal";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormPrincipal";
-            Load += FormPrincipal_Load;
+            Name = "FormPrincipalSupervisor";
+            Text = "FormPrincipalSupervisor";
             panelTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelFormularios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panelTitulo;
-        private Panel panelMenu;
         private PictureBox btnMinimizar;
         private PictureBox btnCerrar;
+        private Panel panelMenu;
+        private Button btnProductos;
+        private Button btnReportes;
+        private Button btnDevoluciones;
         private Panel panelFormularios;
         private PictureBox pictureBox1;
-        private Button btnListarProveedores;
-        private Button btnListarUsuarios;
-        private Button btnListarProductos;
-        private Label lblUser;
         private PictureBox pictureBox2;
+        private Label lblUser;
     }
 }
