@@ -42,7 +42,7 @@
             btnAceptar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAceptar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAceptar.FlatStyle = FlatStyle.Flat;
-            btnAceptar.Location = new Point(115, 298);
+            btnAceptar.Location = new Point(170, 322);
             btnAceptar.Margin = new Padding(5);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(115, 40);
@@ -57,7 +57,7 @@
             lblAdvertencia.ForeColor = Color.LightGray;
             lblAdvertencia.Location = new Point(45, 71);
             lblAdvertencia.Name = "lblAdvertencia";
-            lblAdvertencia.Size = new Size(274, 61);
+            lblAdvertencia.Size = new Size(384, 61);
             lblAdvertencia.TabIndex = 23;
             lblAdvertencia.Text = "El stock de los siguientes productos se encuentra por debajo del 25%";
             // 
@@ -80,7 +80,7 @@
             lstStockFaltante.ItemHeight = 20;
             lstStockFaltante.Location = new Point(45, 126);
             lstStockFaltante.Name = "lstStockFaltante";
-            lstStockFaltante.Size = new Size(274, 164);
+            lstStockFaltante.Size = new Size(384, 164);
             lstStockFaltante.TabIndex = 24;
             // 
             // FormAlertaStock
@@ -89,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(373, 378);
+            ClientSize = new Size(481, 429);
             Controls.Add(lstStockFaltante);
             Controls.Add(lblAdvertencia);
             Controls.Add(lblAtencion);

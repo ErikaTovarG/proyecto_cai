@@ -63,15 +63,28 @@ namespace FormPresentacion
         private static void MostrarAlertaDeStockBajo()
         {
             List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+            List<ProductoWebServices> listaProductos2;
+            listaProductos2 = null;
             FormAlertaStock formOtro = new FormAlertaStock();
 
             foreach (var producto in listaProductos)
             {
                 double stock = producto.Stock;
                 double stockLimite = 0.25 * stock;
-                if (stock < stockLimite) formOtro.AgregarProductoALista(producto.ToString());      
+                if (stock < stockLimite)
+                {
+                    listaProductos2.Add(producto);
+                }
             }
-            formOtro.ShowDialog();
+
+            if (listaProductos2 != null)
+            {
+                foreach (var producto in listaProductos)
+                {
+                    formOtro.AgregarProductoALista(producto.ToString());
+                }
+                formOtro.ShowDialog();
+            }
         }
     }
 }
