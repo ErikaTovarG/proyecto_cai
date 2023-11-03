@@ -32,6 +32,11 @@ namespace FormPresentacion
             AbrirFormulario<FormProductos>();
         }
 
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario; //declaro un form 

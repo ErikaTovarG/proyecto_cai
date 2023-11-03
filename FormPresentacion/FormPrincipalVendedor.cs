@@ -1,44 +1,20 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormPrincipal : Form
+    public partial class FormPrincipalVendedor : Form
     {
-        public FormPrincipal()
+        public FormPrincipalVendedor()
         {
             InitializeComponent();
-        }
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        #region Funcionalidades del Formulario
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnListarProductos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormProductos>();
-        }
-
-        private void btnListarProveedores_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormProveedores>();
-        }
-
-        private void btnListarUsuarios_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormUsuarios>();
         }
 
         private void panelTitulo_Paint(object sender, PaintEventArgs e)
@@ -46,7 +22,47 @@ namespace FormPresentacion
 
         }
 
-        #endregion
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormVenta>();
+        }
+
+        private void btnReportesVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteVendedor>();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarVenta>();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnReporteVendedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteVendedor>();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FormPrincipalVendedor formVendedor = new FormPrincipalVendedor();
+            formVendedor.Show();
+            this.Hide();
+        }
 
         //Metodo para abrir el formulario dentro del panel.
         //<> esto indica que el metodo es generico () sin parametros y con restricciones 
@@ -63,7 +79,7 @@ namespace FormPresentacion
                 panelFormularios.Controls.Add(formulario); //Agrego el formulario al panel de formularios 
                 panelFormularios.Tag = formulario; //Especifico la propiedad tag 
                 formulario.Show(); //muestro el formulario 
-                //formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
+                formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
                 formulario.Dock = DockStyle.Fill; //acoplo al panel 
                 formulario.BringToFront(); //para traer al frente el formulario cuando hacemos click 
             }
@@ -73,6 +89,9 @@ namespace FormPresentacion
                 formulario.BringToFront();
             }
         }
+
+
+
 
 
     }
