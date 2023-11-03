@@ -94,7 +94,7 @@
             btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
             btnLimpiarDetalle.Location = new Point(241, 384);
-            btnLimpiarDetalle.Margin = new Padding(4, 4, 4, 4);
+            btnLimpiarDetalle.Margin = new Padding(4);
             btnLimpiarDetalle.Name = "btnLimpiarDetalle";
             btnLimpiarDetalle.Size = new Size(101, 30);
             btnLimpiarDetalle.TabIndex = 20;
@@ -129,7 +129,7 @@
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Location = new Point(22, 384);
-            btnEditar.Margin = new Padding(4, 4, 4, 4);
+            btnEditar.Margin = new Padding(4);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(101, 30);
             btnEditar.TabIndex = 17;
@@ -145,7 +145,7 @@
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Location = new Point(131, 384);
-            btnEliminar.Margin = new Padding(4, 4, 4, 4);
+            btnEliminar.Margin = new Padding(4);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(101, 30);
             btnEliminar.TabIndex = 16;
@@ -257,12 +257,13 @@
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
             btnVerDetalle.Location = new Point(182, 403);
-            btnVerDetalle.Margin = new Padding(4, 4, 4, 4);
+            btnVerDetalle.Margin = new Padding(4);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.Size = new Size(101, 30);
             btnVerDetalle.TabIndex = 4;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
+            btnVerDetalle.Click += btnVerDetalle_Click;
             // 
             // btnListar
             // 
@@ -273,7 +274,7 @@
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
             btnListar.Location = new Point(56, 403);
-            btnListar.Margin = new Padding(4, 4, 4, 4);
+            btnListar.Margin = new Padding(4);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(101, 30);
             btnListar.TabIndex = 7;
@@ -290,7 +291,7 @@
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Location = new Point(116, 440);
-            btnLimpiar.Margin = new Padding(4, 4, 4, 4);
+            btnLimpiar.Margin = new Padding(4);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(101, 30);
             btnLimpiar.TabIndex = 8;
@@ -307,7 +308,7 @@
             btnAgregarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarUsuario.FlatStyle = FlatStyle.Flat;
             btnAgregarUsuario.Location = new Point(733, 30);
-            btnAgregarUsuario.Margin = new Padding(4, 4, 4, 4);
+            btnAgregarUsuario.Margin = new Padding(4);
             btnAgregarUsuario.Name = "btnAgregarUsuario";
             btnAgregarUsuario.Size = new Size(223, 30);
             btnAgregarUsuario.TabIndex = 21;
@@ -324,7 +325,7 @@
             btnReactivarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnReactivarUsuario.FlatStyle = FlatStyle.Flat;
             btnReactivarUsuario.Location = new Point(733, 70);
-            btnReactivarUsuario.Margin = new Padding(4, 4, 4, 4);
+            btnReactivarUsuario.Margin = new Padding(4);
             btnReactivarUsuario.Name = "btnReactivarUsuario";
             btnReactivarUsuario.Size = new Size(223, 30);
             btnReactivarUsuario.TabIndex = 22;
@@ -340,7 +341,7 @@
             btnUsuariosActivos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnUsuariosActivos.FlatStyle = FlatStyle.Flat;
             btnUsuariosActivos.Location = new Point(35, 238);
-            btnUsuariosActivos.Margin = new Padding(4, 4, 4, 4);
+            btnUsuariosActivos.Margin = new Padding(4);
             btnUsuariosActivos.Name = "btnUsuariosActivos";
             btnUsuariosActivos.Size = new Size(223, 30);
             btnUsuariosActivos.TabIndex = 23;
@@ -379,7 +380,7 @@
             btnCambiarContraseña.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnCambiarContraseña.FlatStyle = FlatStyle.Flat;
             btnCambiarContraseña.Location = new Point(733, 112);
-            btnCambiarContraseña.Margin = new Padding(4, 4, 4, 4);
+            btnCambiarContraseña.Margin = new Padding(4);
             btnCambiarContraseña.Name = "btnCambiarContraseña";
             btnCambiarContraseña.Size = new Size(223, 30);
             btnCambiarContraseña.TabIndex = 26;
