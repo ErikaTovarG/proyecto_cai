@@ -45,6 +45,11 @@ namespace FormPresentacion
             AbrirFormulario<FormUsuarios>();
         }
 
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         #endregion
 
         //Metodo para abrir el formulario dentro del panel.
