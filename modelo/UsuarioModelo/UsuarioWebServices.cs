@@ -28,7 +28,7 @@ namespace Modelo.UsuarioModelo
 
         public override string ToString()
         {
-            return string.Format($"* {nombre} - {apellido}.");
+            return string.Format($"* {dni} - {nombre} - {apellido}.");
         }
     }
 }

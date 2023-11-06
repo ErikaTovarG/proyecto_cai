@@ -66,9 +66,11 @@
             grbDetalle.Controls.Add(lblApellido);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(374, 23);
+            grbDetalle.Location = new Point(327, 17);
+            grbDetalle.Margin = new Padding(3, 2, 3, 2);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(449, 570);
+            grbDetalle.Padding = new Padding(3, 2, 3, 2);
+            grbDetalle.Size = new Size(393, 428);
             grbDetalle.TabIndex = 6;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del proveedor";
@@ -81,10 +83,10 @@
             btnLimpiarCmb.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
-            btnLimpiarCmb.Location = new Point(301, 512);
-            btnLimpiarCmb.Margin = new Padding(5);
+            btnLimpiarCmb.Location = new Point(263, 384);
+            btnLimpiarCmb.Margin = new Padding(4, 4, 4, 4);
             btnLimpiarCmb.Name = "btnLimpiarCmb";
-            btnLimpiarCmb.Size = new Size(115, 40);
+            btnLimpiarCmb.Size = new Size(101, 30);
             btnLimpiarCmb.TabIndex = 20;
             btnLimpiarCmb.Text = "Limpiar";
             btnLimpiarCmb.UseVisualStyleBackColor = false;
@@ -93,17 +95,18 @@
             // txtIDProveedor
             // 
             txtIDProveedor.Enabled = false;
-            txtIDProveedor.Location = new Point(42, 84);
+            txtIDProveedor.Location = new Point(37, 63);
+            txtIDProveedor.Margin = new Padding(3, 2, 3, 2);
             txtIDProveedor.Name = "txtIDProveedor";
-            txtIDProveedor.Size = new Size(346, 27);
+            txtIDProveedor.Size = new Size(303, 23);
             txtIDProveedor.TabIndex = 19;
             // 
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(42, 51);
+            lblID.Location = new Point(37, 38);
             lblID.Name = "lblID";
-            lblID.Size = new Size(24, 20);
+            lblID.Size = new Size(18, 15);
             lblID.TabIndex = 18;
             lblID.Text = "ID";
             // 
@@ -115,10 +118,10 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(42, 512);
-            btnEditar.Margin = new Padding(5);
+            btnEditar.Location = new Point(37, 384);
+            btnEditar.Margin = new Padding(4, 4, 4, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(115, 40);
+            btnEditar.Size = new Size(101, 30);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -131,10 +134,10 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(176, 512);
-            btnEliminar.Margin = new Padding(5);
+            btnEliminar.Location = new Point(154, 384);
+            btnEliminar.Margin = new Padding(4, 4, 4, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(115, 40);
+            btnEliminar.Size = new Size(101, 30);
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -142,75 +145,80 @@
             // 
             // txtCuit
             // 
-            txtCuit.Location = new Point(42, 374);
+            txtCuit.Location = new Point(37, 280);
+            txtCuit.Margin = new Padding(3, 2, 3, 2);
             txtCuit.Name = "txtCuit";
-            txtCuit.Size = new Size(346, 27);
+            txtCuit.Size = new Size(303, 23);
             txtCuit.TabIndex = 7;
             // 
             // lblCuit
             // 
             lblCuit.AutoSize = true;
-            lblCuit.Location = new Point(42, 341);
+            lblCuit.Location = new Point(37, 256);
             lblCuit.Name = "lblCuit";
-            lblCuit.Size = new Size(40, 20);
+            lblCuit.Size = new Size(32, 15);
             lblCuit.TabIndex = 6;
             lblCuit.Text = "CUIT";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(42, 296);
+            txtEmail.Location = new Point(37, 222);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(346, 27);
+            txtEmail.Size = new Size(303, 23);
             txtEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(42, 263);
+            lblEmail.Location = new Point(37, 197);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
+            lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(42, 222);
+            txtApellido.Location = new Point(37, 166);
+            txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(346, 27);
+            txtApellido.Size = new Size(303, 23);
             txtApellido.TabIndex = 3;
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(42, 189);
+            lblApellido.Location = new Point(37, 142);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 20);
+            lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 2;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(42, 150);
+            txtNombre.Location = new Point(37, 112);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(346, 27);
+            txtNombre.Size = new Size(303, 23);
             txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(42, 117);
+            lblNombre.Location = new Point(37, 88);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
             // lstProveedores
             // 
             lstProveedores.FormattingEnabled = true;
-            lstProveedores.ItemHeight = 20;
-            lstProveedores.Location = new Point(36, 23);
+            lstProveedores.ItemHeight = 15;
+            lstProveedores.Location = new Point(32, 17);
+            lstProveedores.Margin = new Padding(3, 2, 3, 2);
             lstProveedores.Name = "lstProveedores";
-            lstProveedores.Size = new Size(302, 504);
+            lstProveedores.Size = new Size(265, 379);
             lstProveedores.TabIndex = 5;
             // 
             // btnLimpiar
@@ -221,10 +229,10 @@
             btnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
-            btnLimpiar.Location = new Point(126, 585);
-            btnLimpiar.Margin = new Padding(5);
+            btnLimpiar.Location = new Point(110, 439);
+            btnLimpiar.Margin = new Padding(4, 4, 4, 4);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(115, 40);
+            btnLimpiar.Size = new Size(101, 30);
             btnLimpiar.TabIndex = 11;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -238,10 +246,10 @@
             btnListar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
-            btnListar.Location = new Point(58, 535);
-            btnListar.Margin = new Padding(5);
+            btnListar.Location = new Point(51, 401);
+            btnListar.Margin = new Padding(4, 4, 4, 4);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(115, 40);
+            btnListar.Size = new Size(101, 30);
             btnListar.TabIndex = 10;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
@@ -255,13 +263,14 @@
             btnVerDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
-            btnVerDetalle.Location = new Point(202, 535);
-            btnVerDetalle.Margin = new Padding(5);
+            btnVerDetalle.Location = new Point(177, 401);
+            btnVerDetalle.Margin = new Padding(4, 4, 4, 4);
             btnVerDetalle.Name = "btnVerDetalle";
-            btnVerDetalle.Size = new Size(115, 40);
+            btnVerDetalle.Size = new Size(101, 30);
             btnVerDetalle.TabIndex = 9;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
+            btnVerDetalle.Click += btnVerDetalle_Click;
             // 
             // btnAgregarProveedor
             // 
@@ -271,10 +280,10 @@
             btnAgregarProveedor.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAgregarProveedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarProveedor.FlatStyle = FlatStyle.Flat;
-            btnAgregarProveedor.Location = new Point(869, 32);
-            btnAgregarProveedor.Margin = new Padding(5);
+            btnAgregarProveedor.Location = new Point(760, 24);
+            btnAgregarProveedor.Margin = new Padding(4, 4, 4, 4);
             btnAgregarProveedor.Name = "btnAgregarProveedor";
-            btnAgregarProveedor.Size = new Size(255, 40);
+            btnAgregarProveedor.Size = new Size(223, 30);
             btnAgregarProveedor.TabIndex = 23;
             btnAgregarProveedor.Text = "Agregar proveedor";
             btnAgregarProveedor.UseVisualStyleBackColor = false;
@@ -282,9 +291,9 @@
             // 
             // FormProveedores
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1147, 650);
+            ClientSize = new Size(1004, 488);
             Controls.Add(btnAgregarProveedor);
             Controls.Add(btnLimpiar);
             Controls.Add(btnListar);
@@ -292,6 +301,7 @@
             Controls.Add(grbDetalle);
             Controls.Add(lstProveedores);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormProveedores";
             Text = "Proveedores";
             grbDetalle.ResumeLayout(false);

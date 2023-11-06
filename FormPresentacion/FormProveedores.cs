@@ -1,4 +1,5 @@
-﻿using Modelo.ProveedorModelo;
+﻿using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Negocio.ProveedorNegocio;
 
 
@@ -13,17 +14,14 @@ namespace FormPresentacion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            lstProveedores.DataSource = null;
             lstProveedores.Items.Clear();
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();
-
-            foreach (var proveedor in proveedorWebServices)
-            {
-                lstProveedores.Items.Add(proveedor.ToString());
-            }
+            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();           
+            lstProveedores.DataSource= proveedorWebServices;                
         }
 
         private void btnLimpiarCmb_Click(object sender, EventArgs e)
@@ -44,6 +42,21 @@ namespace FormPresentacion
         {
             AbrirFormulario<FormRegistrarProveedor>();
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (lstProveedores.SelectedItem != null)
+            {
+                ProveedorWebServices proveedor = (ProveedorWebServices)lstProveedores.SelectedItem;
+
+                txtCuit.Text = proveedor.Cuit.ToString();
+                txtApellido.Text = proveedor.Apellido.ToString();
+                txtNombre.Text = proveedor.Nombre.ToString();
+                txtIDProveedor.Text = proveedor.Id.ToString();
+                txtEmail.Text = proveedor.Email.ToString();
+            }
+        }
+
 
         private void AbrirFormulario<T>() where T : Form, new()
         {
