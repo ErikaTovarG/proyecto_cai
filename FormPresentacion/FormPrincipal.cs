@@ -1,5 +1,9 @@
 ﻿
 
+using Modelo.Producto;
+using Modelo.ProductoModelo;
+using Negocio.ProductoNegocio;
+
 namespace FormPresentacion
 {
     public partial class FormPrincipal : Form
@@ -11,7 +15,7 @@ namespace FormPresentacion
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            MostrarAlertaDeStockBajo();
         }
 
 
@@ -41,6 +45,11 @@ namespace FormPresentacion
             AbrirFormulario<FormUsuarios>();
         }
 
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         #endregion
 
         //Metodo para abrir el formulario dentro del panel.
@@ -68,7 +77,32 @@ namespace FormPresentacion
                 formulario.BringToFront();
             }
         }
+        private static void MostrarAlertaDeStockBajo()
+        {
+            List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
+            List<ProductoWebServices> listaProductos2;
+            listaProductos2 = null;
+            FormAlertaStock formOtro = new FormAlertaStock();
 
+            foreach (var producto in listaProductos)
+            {
+                double stock = producto.Stock;
+                double stockLimite = 0.25 * stock;
+                if (stock < stockLimite)
+                {
+                    listaProductos2.Add(producto);
+                }    
+            }
+
+            if(listaProductos2 != null)
+            {
+                foreach (var producto in listaProductos)
+                {
+                    formOtro.AgregarProductoALista(producto.ToString());
+                }
+                    formOtro.ShowDialog();
+            }
+        }
 
     }
 }

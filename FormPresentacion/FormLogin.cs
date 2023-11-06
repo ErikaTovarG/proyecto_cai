@@ -97,9 +97,7 @@ namespace FormPresentacion
                                 FormPrincipal formAdmin = new FormPrincipal();
                                 formAdmin.Show();
                                 this.Hide();
-                                //FuncionesAuxiliares.MostrarAlertaDeStockBajo(listaProductos);
                                 //int opcion2 = FuncionesAuxiliares.SeleccionarOpcion(13);
-
                                 //SeleccionarOpcionesAdministrador(opcion2, usuarios);
 
                                 break;
@@ -111,6 +109,12 @@ namespace FormPresentacion
                                 //opcion2 = funcionesauxiliares.seleccionaropcion(7);
                                 //seleccionaropcionessupervisor(opcion2, usuarios);
                                 break;
+                            case 1:
+
+                                FormPrincipalVendedor formVendedor = new FormPrincipalVendedor();
+                                formVendedor.Show();
+                                this.Hide();
+                                ; break;
                                 //case 1:
                                 //    Console.Clear();
                                 //    Vistas.MenuVendedor();
@@ -139,6 +143,11 @@ namespace FormPresentacion
                 else MensajeError("Por favor ingrese una contraseña");
             }
             else MensajeError("Por favor ingrese un usuario");
+
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }

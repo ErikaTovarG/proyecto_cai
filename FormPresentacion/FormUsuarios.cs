@@ -56,7 +56,6 @@ namespace FormPresentacion
                 txtApellido.Text = usuario.apellido.ToString();
                 //txtUsuario.Text = usuario.usuario.ToString();
             }
-
         }
 
         private void AbrirFormulario<T>() where T : Form, new()

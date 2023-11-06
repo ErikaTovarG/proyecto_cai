@@ -1,7 +1,4 @@
-﻿using Modelo.Producto;
-using Modelo.ProductoModelo;
-using Negocio.ProductoNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +10,36 @@ using System.Windows.Forms;
 
 namespace FormPresentacion
 {
-    public partial class FormPrincipalSupervisor : Form
+    public partial class FormPrincipalVendedor : Form
     {
-        public FormPrincipalSupervisor()
+        public FormPrincipalVendedor()
         {
             InitializeComponent();
-            MostrarAlertaDeStockBajo();
+        }
+
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormVenta>();
+        }
+
+        private void btnReportesVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteVendedor>();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarVenta>();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -31,16 +52,20 @@ namespace FormPresentacion
             Application.Exit();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnReporteVendedor_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormProductos>();
+            AbrirFormulario<FormReporteVendedor>();
         }
 
-        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-
+            FormPrincipalVendedor formVendedor = new FormPrincipalVendedor();
+            formVendedor.Show();
+            this.Hide();
         }
 
+        //Metodo para abrir el formulario dentro del panel.
+        //<> esto indica que el metodo es generico () sin parametros y con restricciones 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario; //declaro un form 
@@ -54,7 +79,7 @@ namespace FormPresentacion
                 panelFormularios.Controls.Add(formulario); //Agrego el formulario al panel de formularios 
                 panelFormularios.Tag = formulario; //Especifico la propiedad tag 
                 formulario.Show(); //muestro el formulario 
-                //formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
+                formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
                 formulario.Dock = DockStyle.Fill; //acoplo al panel 
                 formulario.BringToFront(); //para traer al frente el formulario cuando hacemos click 
             }
@@ -65,31 +90,9 @@ namespace FormPresentacion
             }
         }
 
-        private static void MostrarAlertaDeStockBajo()
-        {
-            List<ProductoWebServices> listaProductos = ClsProducto.ListarProductos();
-            List<ProductoWebServices> listaProductos2;
-            listaProductos2 = null;
-            FormAlertaStock formOtro = new FormAlertaStock();
 
-            foreach (var producto in listaProductos)
-            {
-                double stock = producto.Stock;
-                double stockLimite = 0.25 * stock;
-                if (stock < stockLimite)
-                {
-                    listaProductos2.Add(producto);
-                }
-            }
 
-            if (listaProductos2 != null)
-            {
-                foreach (var producto in listaProductos)
-                {
-                    formOtro.AgregarProductoALista(producto.ToString());
-                }
-                formOtro.ShowDialog();
-            }
-        }
+
+
     }
 }
