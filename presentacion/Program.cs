@@ -367,7 +367,7 @@ namespace Presentacion
                     } while (!esValidoVacioID);
 
                     string proveedor = ClsProveedor.BuscarProveedorPorCuitYDevolverString(idProveedor);
-                    ClsProveedor.EliminarProveedorPorCuit(proveedor);
+                    //ClsProveedor.EliminarProveedorPorCuit(proveedor);
 
                     Console.WriteLine("Se eliminó Proveedor con CUIT " + idProveedor);
                     Console.ReadKey();

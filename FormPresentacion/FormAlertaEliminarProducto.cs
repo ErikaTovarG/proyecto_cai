@@ -23,8 +23,10 @@ namespace FormPresentacion
                 Guid idProductoGuid = Guid.Parse(IdProducto);
                 string productoEncontrado = ClsProducto.BuscarProveedorPorId_DevolverString(idProductoGuid);
                 ClsProducto.EliminarProductoPorId(productoEncontrado);
-
-            }catch(Exception ex)
+                MessageBox.Show("El producto se ha eliminado correctamente.");
+                this.Close();
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

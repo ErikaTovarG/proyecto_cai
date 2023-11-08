@@ -1,4 +1,5 @@
-﻿using Modelo.ProductoModelo;
+﻿using Modelo.Producto;
+using Modelo.ProductoModelo;
 using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 using Negocio.ProductoNegocio;
@@ -49,9 +50,10 @@ namespace FormPresentacion
             if (!string.IsNullOrEmpty(txtIDproducto.Text))
             {
                 FormAlertaEliminarProducto formAlerta = new FormAlertaEliminarProducto();
-                string idProveedor = txtIDproducto.Text;
-                formAlerta.IdProducto = idProveedor;
+                string idProducto = txtIDproducto.Text;
+                formAlerta.IdProducto = idProducto;
                 formAlerta.ShowDialog();
+                LimpiarCampos();
             }
             else
             {
@@ -127,6 +129,15 @@ namespace FormPresentacion
             {
                 MessageBox.Show("Error al traer la lista" + ex.Message);
             }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtPrecio.Clear();
+            txtStock.Clear();
+            txtCategoria.Clear();
+            txtIDproducto.Clear();
         }
     }
 }

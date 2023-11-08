@@ -47,15 +47,15 @@ namespace AccesoDatos
             }
         }
 
-        public static void BorrarProveedor(string idUsuario, string idUsuarioMaster)
+        public static void BorrarProveedor(string idProveedor, string idUsuarioMaster)
         {
             Dictionary<String, String> map = new Dictionary<String, String>();
-            map.Add("id", idUsuario);
+            map.Add("id", idProveedor);
             map.Add("idUsuario", idUsuarioMaster);
 
             var jsonRequest = JsonConvert.SerializeObject(map);
 
-            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+            HttpResponseMessage response = WebHelper.DeleteConBody("Proveedor/BajaProveedor", jsonRequest);
             
             if (!response.IsSuccessStatusCode)
             {
