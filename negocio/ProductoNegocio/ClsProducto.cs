@@ -59,30 +59,11 @@ namespace Negocio.ProductoNegocio
             ProductosDatos.CrearProducto(producto);
         }
 
-
-        //public static ProductoWebServices BuscarProductoPorId( Guid idProducto)
-        //{
-        //    return ListarProductos().Find(producto => producto.Id == idProducto);
-        //}
-
-        //public static bool EliminarProductoPorId( Guid idProducto)
-        //{
-        //    var producto = BuscarProductoPorId( idProducto);
-        //    if (producto != null)
-        //    {
-        //        ListarProductos().Remove(producto);
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        public static string BuscarProveedorPorCuitYDevolverString(Guid id)
+        public static string BuscarProveedorPorId_DevolverString(Guid id)
         {
             ProductoWebServices productoEncontrado = ListarProductos().Find(p => p.Id == id);
             return Convert.ToString( productoEncontrado.Id);
         }
-
-
 
         public static void EliminarProductoPorId(string idProducto)
         {

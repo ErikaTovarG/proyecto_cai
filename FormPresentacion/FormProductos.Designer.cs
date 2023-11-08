@@ -42,7 +42,7 @@
             lblNombre = new Label();
             txtCategoria = new TextBox();
             lblCategoria = new Label();
-            txtIDProveedor = new TextBox();
+            txtIDproducto = new TextBox();
             lblID = new Label();
             btnLimpiar = new Button();
             btnListar = new Button();
@@ -79,7 +79,7 @@
             grbDetalle.Controls.Add(lblNombre);
             grbDetalle.Controls.Add(txtCategoria);
             grbDetalle.Controls.Add(lblCategoria);
-            grbDetalle.Controls.Add(txtIDProveedor);
+            grbDetalle.Controls.Add(txtIDproducto);
             grbDetalle.Controls.Add(lblID);
             grbDetalle.Location = new Point(371, 27);
             grbDetalle.Name = "grbDetalle";
@@ -202,13 +202,13 @@
             lblCategoria.TabIndex = 2;
             lblCategoria.Text = "Categoria";
             // 
-            // txtIDProveedor
+            // txtIDproducto
             // 
-            txtIDProveedor.Enabled = false;
-            txtIDProveedor.Location = new Point(25, 73);
-            txtIDProveedor.Name = "txtIDProveedor";
-            txtIDProveedor.Size = new Size(346, 27);
-            txtIDProveedor.TabIndex = 1;
+            txtIDproducto.Enabled = false;
+            txtIDproducto.Location = new Point(25, 73);
+            txtIDproducto.Name = "txtIDproducto";
+            txtIDproducto.Size = new Size(346, 27);
+            txtIDproducto.TabIndex = 1;
             // 
             // lblID
             // 
@@ -377,7 +377,7 @@
         private GroupBox grpLista;
         private ListBox lstProductos;
         private GroupBox grbDetalle;
-        private TextBox txtIDProveedor;
+        private TextBox txtIDproducto;
         private Label lblID;
         private TextBox txtPrecio;
         private Label lblPrecio;

@@ -419,7 +419,7 @@ namespace Presentacion
 
                     Guid idProductoGuid=Guid.Parse(idProducto);
 
-                    string productoEncontrado = ClsProducto.BuscarProveedorPorCuitYDevolverString(idProductoGuid);
+                    string productoEncontrado = ClsProducto.BuscarProveedorPorId_DevolverString(idProductoGuid);
                     ClsProducto.EliminarProductoPorId(productoEncontrado);
                     Console.WriteLine("Se eliminó Producto con ID " + idProductoNum);
                 

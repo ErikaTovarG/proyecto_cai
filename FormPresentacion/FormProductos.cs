@@ -37,7 +37,7 @@ namespace FormPresentacion
 
         private void btnLimpiarDetalle_Click(object sender, EventArgs e)
         {
-            txtIDProveedor.Clear();
+            txtIDproducto.Clear();
             txtCategoria.Clear();
             txtNombre.Clear();
             txtPrecio.Clear();
@@ -46,7 +46,17 @@ namespace FormPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormAlertaEliminarProducto>();
+            if (!string.IsNullOrEmpty(txtIDproducto.Text))
+            {
+                FormAlertaEliminarProducto formAlerta = new FormAlertaEliminarProducto();
+                string idProveedor = txtIDproducto.Text;
+                formAlerta.IdProducto = idProveedor;
+                formAlerta.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar de la lista el producto que desea eliminar.");
+            }
         }
 
         private void btnLimpiarCategoria_Click(object sender, EventArgs e)
@@ -71,7 +81,7 @@ namespace FormPresentacion
                 txtPrecio.Text = producto.Precio.ToString();
                 txtStock.Text = producto.Stock.ToString();
                 txtCategoria.Text = producto.IdCategoria.ToString();
-                txtIDProveedor.Text = producto.Id.ToString();
+                txtIDproducto.Text = producto.Id.ToString();
             }
         }
 
