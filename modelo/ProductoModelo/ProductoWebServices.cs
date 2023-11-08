@@ -27,5 +27,7 @@ namespace Modelo.ProductoModelo
             return string.Format($"* {Nombre} - {Stock}.");
         }
 
+        public string ListarPorCategoria { get=> $"{this.Nombre}"; }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 using Negocio.ProductoNegocio;
+using Negocio.ProveedorNegocio;
 using Negocio.UsuarioLogNegocio;
 using System;
 using System.Collections.Generic;
@@ -49,6 +51,8 @@ namespace FormPresentacion
 
         private void btnLimpiarCategoria_Click(object sender, EventArgs e)
         {
+            cmbCategoria.SelectedIndex = 0;
+            lstProductosCategoria.DataSource = null;
             lstProductosCategoria.Items.Clear();
         }
 
@@ -59,20 +63,22 @@ namespace FormPresentacion
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
-           if (lstProductos.SelectedItem != null)
-           {
-            ProductoWebServices producto = (ProductoWebServices)lstProductos.SelectedItem;
+            if (lstProductos.SelectedItem != null)
+            {
+                ProductoWebServices producto = (ProductoWebServices)lstProductos.SelectedItem;
 
-            txtNombre.Text = producto.Nombre.ToString();
-            txtPrecio.Text = producto.Precio.ToString();
-            txtStock.Text = producto.Stock.ToString();
-            txtCategoria.Text = producto.IdCategoria.ToString();
-            txtIDProveedor.Text = producto.Id.ToString();
-           }
+                txtNombre.Text = producto.Nombre.ToString();
+                txtPrecio.Text = producto.Precio.ToString();
+                txtStock.Text = producto.Stock.ToString();
+                txtCategoria.Text = producto.IdCategoria.ToString();
+                txtIDProveedor.Text = producto.Id.ToString();
+            }
         }
 
-
-      
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+            CargarListaCategoria();
+        }
 
         private void AbrirFormulario<T>() where T : Form, new()
         {
@@ -81,6 +87,36 @@ namespace FormPresentacion
             form.ShowDialog();
             form.Dock = DockStyle.Fill;
             form.BringToFront();
+        }
+        private void CargarListaCategoria()
+        {
+            List<CategoriaProductos> categoriaProductos = ClsProducto.ListarCategorias();
+            cmbCategoria.DataSource = null;
+            cmbCategoria.DataSource = categoriaProductos;
+            cmbCategoria.DisplayMember = "Nombre";
+            cmbCategoria.ValueMember = "IdCategoria";
+        }
+
+        private void btnListarCategoria_Click(object sender, EventArgs e)
+        {
+
+            CargarListaPorCategoria();
+        }
+
+        private void CargarListaPorCategoria()
+        {
+            try
+            {
+                List<ProductoWebServices> productos = new List<ProductoWebServices>();
+                productos = ClsProducto.ListarProductosPorCategoria(Convert.ToInt32(cmbCategoria.SelectedValue));
+                lstProductosCategoria.DataSource = null;
+                lstProductosCategoria.DataSource = productos;
+                lstProductosCategoria.DisplayMember = "ListarPorCategoria";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al traer la lista" + ex.Message);
+            }
         }
     }
 }

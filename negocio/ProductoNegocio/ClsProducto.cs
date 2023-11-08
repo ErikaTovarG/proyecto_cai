@@ -49,6 +49,11 @@ namespace Negocio.ProductoNegocio
             return ProductosDatos.ListarProductos();
         }
 
+        public static List<ProductoWebServices> ListarProductosPorCategoria(int categoria)
+        {
+            return ProductosDatos.ListarProductosPorCategoria(categoria);
+        }
+
         public static void CrearProducto(ProductoWebServicesPost producto)
         {
             ProductosDatos.CrearProducto(producto);

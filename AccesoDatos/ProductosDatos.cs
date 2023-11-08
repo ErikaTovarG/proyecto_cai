@@ -29,6 +29,23 @@ namespace AccesoDatos
             }
         }
 
+        public static List<ProductoWebServices> ListarProductosPorCategoria(int idCategoria)
+        {
+            HttpResponseMessage response = WebHelper.Get("Producto/TraerProductosPorCategoria?catnum=" + idCategoria);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("verifique los datos ingresados");
+            }
+            else
+            {
+                var contentstream = response.Content.ReadAsStringAsync().Result;
+                List<ProductoWebServices> listadousuarios = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
+                return listadousuarios;
+
+            }
+        }
+
         public static void CrearProducto(ProductoWebServicesPost producto)
         {
             var jsonRequest = JsonConvert.SerializeObject(producto);

@@ -60,11 +60,10 @@
             // lstProductos
             // 
             lstProductos.FormattingEnabled = true;
-            lstProductos.ItemHeight = 15;
-            lstProductos.Location = new Point(38, 20);
-            lstProductos.Margin = new Padding(3, 2, 3, 2);
+            lstProductos.ItemHeight = 20;
+            lstProductos.Location = new Point(43, 27);
             lstProductos.Name = "lstProductos";
-            lstProductos.Size = new Size(265, 379);
+            lstProductos.Size = new Size(302, 504);
             lstProductos.TabIndex = 2;
             // 
             // grbDetalle
@@ -82,11 +81,9 @@
             grbDetalle.Controls.Add(lblCategoria);
             grbDetalle.Controls.Add(txtIDProveedor);
             grbDetalle.Controls.Add(lblID);
-            grbDetalle.Location = new Point(325, 20);
-            grbDetalle.Margin = new Padding(3, 2, 3, 2);
+            grbDetalle.Location = new Point(371, 27);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Padding = new Padding(3, 2, 3, 2);
-            grbDetalle.Size = new Size(368, 334);
+            grbDetalle.Size = new Size(421, 445);
             grbDetalle.TabIndex = 3;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del producto";
@@ -99,10 +96,10 @@
             btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
-            btnLimpiarDetalle.Location = new Point(240, 286);
-            btnLimpiarDetalle.Margin = new Padding(4);
+            btnLimpiarDetalle.Location = new Point(274, 381);
+            btnLimpiarDetalle.Margin = new Padding(5);
             btnLimpiarDetalle.Name = "btnLimpiarDetalle";
-            btnLimpiarDetalle.Size = new Size(101, 30);
+            btnLimpiarDetalle.Size = new Size(115, 40);
             btnLimpiarDetalle.TabIndex = 18;
             btnLimpiarDetalle.Text = "Limpiar";
             btnLimpiarDetalle.UseVisualStyleBackColor = false;
@@ -110,18 +107,17 @@
             // 
             // txtStock
             // 
-            txtStock.Location = new Point(22, 196);
-            txtStock.Margin = new Padding(3, 2, 3, 2);
+            txtStock.Location = new Point(25, 261);
             txtStock.Name = "txtStock";
-            txtStock.Size = new Size(303, 23);
+            txtStock.Size = new Size(346, 27);
             txtStock.TabIndex = 17;
             // 
             // lblStock
             // 
             lblStock.AutoSize = true;
-            lblStock.Location = new Point(22, 179);
+            lblStock.Location = new Point(25, 239);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(36, 15);
+            lblStock.Size = new Size(45, 20);
             lblStock.TabIndex = 16;
             lblStock.Text = "Stock";
             // 
@@ -133,10 +129,10 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(21, 286);
-            btnEditar.Margin = new Padding(4);
+            btnEditar.Location = new Point(24, 381);
+            btnEditar.Margin = new Padding(5);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(101, 30);
+            btnEditar.Size = new Size(115, 40);
             btnEditar.TabIndex = 15;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -149,10 +145,10 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(130, 286);
-            btnEliminar.Margin = new Padding(4);
+            btnEliminar.Location = new Point(149, 381);
+            btnEliminar.Margin = new Padding(5);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(101, 30);
+            btnEliminar.Size = new Size(115, 40);
             btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -160,70 +156,66 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(22, 150);
-            txtPrecio.Margin = new Padding(3, 2, 3, 2);
+            txtPrecio.Location = new Point(25, 200);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(303, 23);
+            txtPrecio.Size = new Size(346, 27);
             txtPrecio.TabIndex = 7;
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(22, 133);
+            lblPrecio.Location = new Point(25, 177);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(40, 15);
+            lblPrecio.Size = new Size(50, 20);
             lblPrecio.TabIndex = 6;
             lblPrecio.Text = "Precio";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(22, 103);
-            txtNombre.Margin = new Padding(3, 2, 3, 2);
+            txtNombre.Location = new Point(25, 137);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(303, 23);
+            txtNombre.Size = new Size(346, 27);
             txtNombre.TabIndex = 5;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(22, 86);
+            lblNombre.Location = new Point(25, 115);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
+            lblNombre.Size = new Size(64, 20);
             lblNombre.TabIndex = 4;
             lblNombre.Text = "Nombre";
             // 
             // txtCategoria
             // 
-            txtCategoria.Location = new Point(22, 244);
-            txtCategoria.Margin = new Padding(3, 2, 3, 2);
+            txtCategoria.Location = new Point(25, 325);
             txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(77, 23);
+            txtCategoria.Size = new Size(87, 27);
             txtCategoria.TabIndex = 3;
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(22, 226);
+            lblCategoria.Location = new Point(25, 301);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(58, 15);
+            lblCategoria.Size = new Size(74, 20);
             lblCategoria.TabIndex = 2;
             lblCategoria.Text = "Categoria";
             // 
             // txtIDProveedor
             // 
             txtIDProveedor.Enabled = false;
-            txtIDProveedor.Location = new Point(22, 55);
-            txtIDProveedor.Margin = new Padding(3, 2, 3, 2);
+            txtIDProveedor.Location = new Point(25, 73);
             txtIDProveedor.Name = "txtIDProveedor";
-            txtIDProveedor.Size = new Size(303, 23);
+            txtIDProveedor.Size = new Size(346, 27);
             txtIDProveedor.TabIndex = 1;
             // 
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(22, 38);
+            lblID.Location = new Point(25, 51);
             lblID.Name = "lblID";
-            lblID.Size = new Size(18, 15);
+            lblID.Size = new Size(24, 20);
             lblID.TabIndex = 0;
             lblID.Text = "ID";
             // 
@@ -235,10 +227,10 @@
             btnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
-            btnLimpiar.Location = new Point(115, 442);
-            btnLimpiar.Margin = new Padding(4);
+            btnLimpiar.Location = new Point(131, 589);
+            btnLimpiar.Margin = new Padding(5);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(101, 30);
+            btnLimpiar.Size = new Size(115, 40);
             btnLimpiar.TabIndex = 14;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -252,10 +244,10 @@
             btnListar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
-            btnListar.Location = new Point(55, 404);
-            btnListar.Margin = new Padding(4);
+            btnListar.Location = new Point(63, 539);
+            btnListar.Margin = new Padding(5);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(101, 30);
+            btnListar.Size = new Size(115, 40);
             btnListar.TabIndex = 13;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
@@ -269,10 +261,10 @@
             btnVerDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
-            btnVerDetalle.Location = new Point(181, 404);
-            btnVerDetalle.Margin = new Padding(4);
+            btnVerDetalle.Location = new Point(207, 539);
+            btnVerDetalle.Margin = new Padding(5);
             btnVerDetalle.Name = "btnVerDetalle";
-            btnVerDetalle.Size = new Size(101, 30);
+            btnVerDetalle.Size = new Size(115, 40);
             btnVerDetalle.TabIndex = 12;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
@@ -286,10 +278,10 @@
             btnAgregarProducto.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarProducto.FlatStyle = FlatStyle.Flat;
-            btnAgregarProducto.Location = new Point(738, 28);
-            btnAgregarProducto.Margin = new Padding(4);
+            btnAgregarProducto.Location = new Point(843, 37);
+            btnAgregarProducto.Margin = new Padding(5);
             btnAgregarProducto.Name = "btnAgregarProducto";
-            btnAgregarProducto.Size = new Size(223, 30);
+            btnAgregarProducto.Size = new Size(255, 40);
             btnAgregarProducto.TabIndex = 22;
             btnAgregarProducto.Text = "Agregar producto";
             btnAgregarProducto.UseVisualStyleBackColor = false;
@@ -301,11 +293,9 @@
             grbListaPorCategoria.Controls.Add(btnLimpiarCategoria);
             grbListaPorCategoria.Controls.Add(lstProductosCategoria);
             grbListaPorCategoria.Controls.Add(cmbCategoria);
-            grbListaPorCategoria.Location = new Point(719, 75);
-            grbListaPorCategoria.Margin = new Padding(3, 2, 3, 2);
+            grbListaPorCategoria.Location = new Point(822, 100);
             grbListaPorCategoria.Name = "grbListaPorCategoria";
-            grbListaPorCategoria.Padding = new Padding(3, 2, 3, 2);
-            grbListaPorCategoria.Size = new Size(264, 365);
+            grbListaPorCategoria.Size = new Size(302, 487);
             grbListaPorCategoria.TabIndex = 23;
             grbListaPorCategoria.TabStop = false;
             grbListaPorCategoria.Text = "Listado por categoria";
@@ -318,13 +308,14 @@
             btnListarCategoria.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListarCategoria.FlatStyle = FlatStyle.Flat;
-            btnListarCategoria.Location = new Point(19, 56);
-            btnListarCategoria.Margin = new Padding(4);
+            btnListarCategoria.Location = new Point(22, 75);
+            btnListarCategoria.Margin = new Padding(5);
             btnListarCategoria.Name = "btnListarCategoria";
-            btnListarCategoria.Size = new Size(68, 26);
+            btnListarCategoria.Size = new Size(78, 35);
             btnListarCategoria.TabIndex = 24;
             btnListarCategoria.Text = "Listar";
             btnListarCategoria.UseVisualStyleBackColor = false;
+            btnListarCategoria.Click += btnListarCategoria_Click;
             // 
             // btnLimpiarCategoria
             // 
@@ -334,10 +325,10 @@
             btnLimpiarCategoria.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnLimpiarCategoria.FlatStyle = FlatStyle.Flat;
-            btnLimpiarCategoria.Location = new Point(92, 56);
-            btnLimpiarCategoria.Margin = new Padding(4);
+            btnLimpiarCategoria.Location = new Point(105, 75);
+            btnLimpiarCategoria.Margin = new Padding(5);
             btnLimpiarCategoria.Name = "btnLimpiarCategoria";
-            btnLimpiarCategoria.Size = new Size(68, 26);
+            btnLimpiarCategoria.Size = new Size(78, 35);
             btnLimpiarCategoria.TabIndex = 21;
             btnLimpiarCategoria.Text = "Limpiar";
             btnLimpiarCategoria.UseVisualStyleBackColor = false;
@@ -346,27 +337,25 @@
             // lstProductosCategoria
             // 
             lstProductosCategoria.FormattingEnabled = true;
-            lstProductosCategoria.ItemHeight = 15;
-            lstProductosCategoria.Location = new Point(19, 87);
-            lstProductosCategoria.Margin = new Padding(3, 2, 3, 2);
+            lstProductosCategoria.ItemHeight = 20;
+            lstProductosCategoria.Location = new Point(22, 116);
             lstProductosCategoria.Name = "lstProductosCategoria";
-            lstProductosCategoria.Size = new Size(224, 259);
+            lstProductosCategoria.Size = new Size(255, 344);
             lstProductosCategoria.TabIndex = 20;
             // 
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(19, 28);
-            cmbCategoria.Margin = new Padding(3, 2, 3, 2);
+            cmbCategoria.Location = new Point(22, 37);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(153, 23);
+            cmbCategoria.Size = new Size(174, 28);
             cmbCategoria.TabIndex = 0;
             // 
             // FormProductos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1004, 488);
+            ClientSize = new Size(1147, 651);
             Controls.Add(grbListaPorCategoria);
             Controls.Add(btnAgregarProducto);
             Controls.Add(btnLimpiar);
@@ -375,9 +364,9 @@
             Controls.Add(grbDetalle);
             Controls.Add(lstProductos);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FormProductos";
             Text = "Productos";
+            Load += FormProductos_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             grbListaPorCategoria.ResumeLayout(false);
