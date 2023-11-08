@@ -166,6 +166,7 @@
             btnAgregar.TabIndex = 32;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCancelar
             // 
@@ -238,6 +239,7 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormRegistrarProducto";
+            Load += FormRegistrarProducto_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             grbAgregarProducto.ResumeLayout(false);
             grbAgregarProducto.PerformLayout();

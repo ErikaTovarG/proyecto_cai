@@ -31,14 +31,27 @@ namespace Negocio.ProductoNegocio
         //    }
         //}
 
+        public static List<CategoriaProductos> ListarCategorias()
+        {
+            List<CategoriaProductos> categorias = new List<CategoriaProductos>();
+
+            categorias.Add(new CategoriaProductos(1, "Audio"));
+            categorias.Add(new CategoriaProductos(2, "Celulares"));
+            categorias.Add(new CategoriaProductos(3, "Electro Hogar"));
+            categorias.Add(new CategoriaProductos(4, "Informatica"));
+            categorias.Add(new CategoriaProductos(5, "Smart TV"));
+
+            return categorias;
+        }
+
         public static List<ProductoWebServices> ListarProductos()
         {
             return ProductosDatos.ListarProductos();
         }
 
-        public static void CrearProducto(ProductoWebServicesPost usuario)
+        public static void CrearProducto(ProductoWebServicesPost producto)
         {
-            ProductosDatos.CrearProducto(usuario);
+            ProductosDatos.CrearProducto(producto);
         }
 
 

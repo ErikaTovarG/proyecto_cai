@@ -8,35 +8,25 @@ namespace Modelo.ProductoModelo
 {
     public class ProductoWebServicesPost
     {
-            private Guid _id;
-            private string _nombre;
-            private int _idCategoria, _precio, _stock;
-            private DateTime _fechaAlta, _fechaBaja;
-            private Guid _idUsuario, _idProveedor;
+            private string _nombre, _idUsuario, _idProveedor;
+            private int _idCategoria, _stock;
+            private double _precio;
 
-        
-
-            public Guid Id { get => _id; set => _id = value; }
-            public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
+            public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+            public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
             public string Nombre { get => _nombre; set => _nombre = value; }
-            public int Precio { get => _precio; set => _precio = value; }
+            public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
+            public double Precio { get => _precio; set => _precio = value; }
             public int Stock { get => _stock; set => _stock = value; }
-            public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
-            public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
-            public Guid IdProveedor { get => _idProveedor; set => _idProveedor = value; }
-            public DateTime? FechaBaja { get; set; }
 
-        public ProductoWebServicesPost(Guid id, int idCategoria, string nombre, int precio, int stock, DateTime fechaAlta, Guid idUsuario, Guid idProveedor, DateTime? fechaBaja)
+        public ProductoWebServicesPost(int idCategoria, string nombre, double precio, int stock, string idUsuario, string idProveedor)
         {
-            Id = id;
             IdCategoria = idCategoria;
+            IdUsuario = idUsuario;
+            IdProveedor = idProveedor;
             Nombre = nombre;
             Precio = precio;
             Stock = stock;
-            FechaAlta = fechaAlta;
-            IdUsuario = idUsuario;
-            IdProveedor = idProveedor;
-            FechaBaja = fechaBaja;
         }
         public ProductoWebServicesPost()
         {

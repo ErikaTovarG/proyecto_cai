@@ -61,6 +61,13 @@ namespace Negocio.ProveedorNegocio
            return Convert.ToString(proveedorEncontrado.Id);
         }
 
+        public static Guid BuscarProveedorPorCuitYDevolverId(string cuit)
+        {
+
+            ProveedorWebServices proveedorEncontrado = ListarProveedores().Find(p => p.Cuit == cuit);
+            return proveedorEncontrado.Id;
+
+        }
         public static void CrearProveedor(ProveedorWebServicePost usuario)
         {
             ProveedoresDatos.CrearProveedor(usuario);

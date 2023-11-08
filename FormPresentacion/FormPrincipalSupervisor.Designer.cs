@@ -56,19 +56,17 @@
             panelTitulo.Controls.Add(btnCerrar);
             panelTitulo.Dock = DockStyle.Top;
             panelTitulo.Location = new Point(0, 0);
-            panelTitulo.Margin = new Padding(3, 2, 3, 2);
             panelTitulo.Name = "panelTitulo";
-            panelTitulo.Size = new Size(1213, 30);
+            panelTitulo.Size = new Size(1386, 40);
             panelTitulo.TabIndex = 1;
             panelTitulo.Paint += panelTitulo_Paint;
             // 
             // btnMinimizar
             // 
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(1178, 4);
-            btnMinimizar.Margin = new Padding(3, 2, 3, 2);
+            btnMinimizar.Location = new Point(1308, 6);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(26, 23);
+            btnMinimizar.Size = new Size(30, 31);
             btnMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnMinimizar.TabIndex = 1;
             btnMinimizar.TabStop = false;
@@ -77,10 +75,9 @@
             // btnCerrar
             // 
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1209, 4);
-            btnCerrar.Margin = new Padding(3, 2, 3, 2);
+            btnCerrar.Location = new Point(1344, 6);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(26, 23);
+            btnCerrar.Size = new Size(30, 31);
             btnCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
             btnCerrar.TabIndex = 0;
             btnCerrar.TabStop = false;
@@ -95,29 +92,27 @@
             panelMenu.Controls.Add(btnReportes);
             panelMenu.Controls.Add(btnDevoluciones);
             panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 30);
-            panelMenu.Margin = new Padding(3, 2, 3, 2);
+            panelMenu.Location = new Point(0, 40);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(219, 523);
+            panelMenu.Size = new Size(250, 697);
             panelMenu.TabIndex = 2;
             // 
             // lblUser
             // 
             lblUser.AutoSize = true;
             lblUser.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUser.Location = new Point(72, 98);
+            lblUser.Location = new Point(82, 131);
             lblUser.Name = "lblUser";
-            lblUser.Size = new Size(84, 20);
+            lblUser.Size = new Size(103, 25);
             lblUser.TabIndex = 8;
             lblUser.Text = "Supervisor";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(48, 16);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(55, 21);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(122, 80);
+            pictureBox2.Size = new Size(139, 107);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
@@ -129,10 +124,9 @@
             btnProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.ForeColor = Color.Gainsboro;
-            btnProductos.Location = new Point(3, 166);
-            btnProductos.Margin = new Padding(3, 2, 3, 2);
+            btnProductos.Location = new Point(3, 221);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(216, 35);
+            btnProductos.Size = new Size(247, 47);
             btnProductos.TabIndex = 6;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -145,10 +139,9 @@
             btnReportes.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.ForeColor = Color.Gainsboro;
-            btnReportes.Location = new Point(3, 245);
-            btnReportes.Margin = new Padding(3, 2, 3, 2);
+            btnReportes.Location = new Point(3, 327);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(216, 35);
+            btnReportes.Size = new Size(247, 47);
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -161,10 +154,9 @@
             btnDevoluciones.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnDevoluciones.FlatStyle = FlatStyle.Flat;
             btnDevoluciones.ForeColor = Color.Gainsboro;
-            btnDevoluciones.Location = new Point(3, 206);
-            btnDevoluciones.Margin = new Padding(3, 2, 3, 2);
+            btnDevoluciones.Location = new Point(3, 275);
             btnDevoluciones.Name = "btnDevoluciones";
-            btnDevoluciones.Size = new Size(216, 35);
+            btnDevoluciones.Size = new Size(247, 47);
             btnDevoluciones.TabIndex = 4;
             btnDevoluciones.Text = "Devoluciones";
             btnDevoluciones.UseVisualStyleBackColor = true;
@@ -174,33 +166,30 @@
             // 
             panelFormularios.Controls.Add(pictureBox1);
             panelFormularios.Dock = DockStyle.Fill;
-            panelFormularios.Location = new Point(219, 30);
-            panelFormularios.Margin = new Padding(3, 2, 3, 2);
+            panelFormularios.Location = new Point(250, 40);
             panelFormularios.Name = "panelFormularios";
-            panelFormularios.Size = new Size(994, 523);
+            panelFormularios.Size = new Size(1136, 697);
             panelFormularios.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(291, 91);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(333, 121);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(386, 266);
+            pictureBox1.Size = new Size(441, 355);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // FormPrincipalSupervisor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1213, 553);
+            ClientSize = new Size(1386, 737);
             Controls.Add(panelFormularios);
             Controls.Add(panelMenu);
             Controls.Add(panelTitulo);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FormPrincipalSupervisor";
             Text = "FormPrincipalSupervisor";
             panelTitulo.ResumeLayout(false);

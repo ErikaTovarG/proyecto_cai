@@ -174,13 +174,13 @@ namespace Presentacion
             ProveedorWebServices ProveedorEncontrado = ClsProveedor.BuscarProveedorPorCuit(cuitIngresado);
             Console.WriteLine(ProveedorEncontrado.Id);
             
-            producto.IdCategoria = idCategoriaSalida;
-            producto.IdProveedor = ProveedorEncontrado.Id;
-            Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
-            producto.IdUsuario = idUsuario;
-            producto.Nombre = nombreProducto;
-            producto.Precio = salidaprecioProducto;
-            producto.Stock = cantidadSalida;
+            //producto.IdCategoria = idCategoriaSalida;
+            //producto.IdProveedor = ProveedorEncontrado.Id;
+            //Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
+            //producto.IdUsuario = idUsuario;
+            //producto.Nombre = nombreProducto;
+            //producto.Precio = salidaprecioProducto;
+            //producto.Stock = cantidadSalida;
 
             //Guid idProveedor = Guid.Parse("984c5534-0b26-46f1-8b89-04496bff9957");
             //"1850fefa-e074-47f6-8a0e-7e212cb98ea3"
