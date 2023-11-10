@@ -40,10 +40,10 @@ namespace AccesoDatos
             {
                 throw new Exception(response.StatusCode.ToString());
             }
-            else
-            {
-                Console.WriteLine("Cliente agregado exitosamente." + response.StatusCode.ToString());
-            }
+            //else
+            //{
+            //    Console.WriteLine("Cliente agregado exitosamente." + response.StatusCode.ToString());
+            //}
         }
 
         public static void BorrarCliente(string idUsuario, string idUsuarioMaster)

@@ -26,23 +26,26 @@ namespace FormPresentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string usuario = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            string usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             int dni = Convert.ToInt32(txtDNI.Text);
             string direccion = txtDireccion.Text;
             string telefono = txtTelefono.Text;
             string email = txtEmail.Text;
-            DateTime fechaNacimiento;
-            DateTime.TryParseExact(txtFechaNacimiento.Text, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out fechaNacimiento);
-            string host = "1";
+            DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            //DateTime.TryParseExact(txtFechaNacimiento.Text, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out fechaNacimiento);
+            string host = txtHost.Text;
             //'cmbHost.SelectedItem.ToString();
             string errores = "";
 
-            MessageBox.Show(fechaNacimiento.ToString());
-           
+            //MessageBox.Show(fechaNacimiento.ToString());
+
             errores += Validaciones.ValidaVacio(nombre, "Nombre");
             errores += Validaciones.ValidaVacio(apellido, "Apellido");
+            errores += Validaciones.ValidaVacio(direccion, "Direccion");
+            errores += Validaciones.ValidaVacio(telefono, "Telefono");
+            errores += Validaciones.ValidaVacio(email, "Email");
 
 
             if (!string.IsNullOrEmpty(errores))
@@ -50,9 +53,10 @@ namespace FormPresentacion
             else
             {
                 ClienteWebServicesPost ClienteAgregar = new ClienteWebServicesPost();
-                ClienteAgregar.IdUsuario = new Guid(usuario);
+                ClienteAgregar.IdUsuario = usuario;
                 ClienteAgregar.Nombre = nombre;
                 ClienteAgregar.Apellido = apellido;
+                ClienteAgregar.Dni = dni;
                 ClienteAgregar.Direccion = direccion;
                 ClienteAgregar.Telefono = telefono;
                 ClienteAgregar.Email = email;
@@ -61,7 +65,7 @@ namespace FormPresentacion
 
 
                 ClsCliente.CrearCliente(ClienteAgregar);
-
+                MessageBox.Show("Se creo el cliente exitosamente");
                 LimpiarCampos();
             }
         }
@@ -70,13 +74,18 @@ namespace FormPresentacion
         {
             txtNombre.Clear();
             txtApellido.Clear();
-            txtDNI.Clear(); 
+            txtDNI.Clear();
             txtDireccion.Clear();
             txtTelefono.Clear();
-            txtEmail.Clear();   
-            txtFechaNacimiento.Clear(); 
+            txtEmail.Clear();
+            txtFechaNacimiento.Clear();
+            txtHost.Clear();
             //cmbHost.SelectedIndex = 0;
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
