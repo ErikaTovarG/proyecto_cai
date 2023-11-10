@@ -9,8 +9,8 @@ namespace Modelo.Cliente_Modelo
     public class ClienteWebServicesPost
     {
 
-        private Guid _id, _idUsuario;
-        private string _nombre;
+        private Guid _id;
+        private string _nombre, _idUsuario;
         private string _apellido;
         private string _direccion;
         private string _telefono;
@@ -22,7 +22,7 @@ namespace Modelo.Cliente_Modelo
         private int _dni;
 
         public Guid Id { get => _id; set => _id = value; }
-        public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+        public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }

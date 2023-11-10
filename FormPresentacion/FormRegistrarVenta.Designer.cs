@@ -34,6 +34,8 @@
             nomPromocion = new DataGridViewTextBoxColumn();
             monDescuento = new DataGridViewTextBoxColumn();
             gbRegistrarVenta = new GroupBox();
+            textBox3 = new TextBox();
+            lblnroFactura = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             dataGridView3 = new DataGridView();
@@ -88,8 +90,6 @@
             txbEmpresa = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
-            lblnroFactura = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             gbRegistrarVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -150,6 +150,26 @@
             gbRegistrarVenta.TabIndex = 31;
             gbRegistrarVenta.TabStop = false;
             gbRegistrarVenta.Text = " Comprobante:   ";
+            // 
+            // textBox3
+            // 
+            textBox3.Enabled = false;
+            textBox3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(344, 50);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(126, 25);
+            textBox3.TabIndex = 35;
+            // 
+            // lblnroFactura
+            // 
+            lblnroFactura.AutoSize = true;
+            lblnroFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblnroFactura.Location = new Point(343, 33);
+            lblnroFactura.Name = "lblnroFactura";
+            lblnroFactura.Size = new Size(75, 15);
+            lblnroFactura.TabIndex = 34;
+            lblnroFactura.Text = "Nro. Factura";
             // 
             // textBox2
             // 
@@ -319,6 +339,7 @@
             btnRegistrar.TabIndex = 32;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnLimpiar
             // 
@@ -670,26 +691,6 @@
             label4.Name = "label4";
             label4.Size = new Size(0, 15);
             label4.TabIndex = 0;
-            // 
-            // textBox3
-            // 
-            textBox3.Enabled = false;
-            textBox3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(344, 50);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(126, 25);
-            textBox3.TabIndex = 35;
-            // 
-            // lblnroFactura
-            // 
-            lblnroFactura.AutoSize = true;
-            lblnroFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblnroFactura.Location = new Point(343, 33);
-            lblnroFactura.Name = "lblnroFactura";
-            lblnroFactura.Size = new Size(75, 15);
-            lblnroFactura.TabIndex = 34;
-            lblnroFactura.Text = "Nro. Factura";
             // 
             // FormRegistrarVenta
             // 
