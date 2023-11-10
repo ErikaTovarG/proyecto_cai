@@ -27,7 +27,12 @@ namespace FormPresentacion
             txtNombre.Clear();
             txtApellido.Clear();
             txtCUIT.Clear();
-            txtEmail.Clear();   
+            txtEmail.Clear();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

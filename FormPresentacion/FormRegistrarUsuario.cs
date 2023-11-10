@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Modelo.ProductoModelo;
+using Negocio.ProductoNegocio;
+using Negocio.ProveedorNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +37,11 @@ namespace FormPresentacion
             txtFechaNacimiento.Clear();
             txtUsuario.Clear();
             cmbHost.Items.Clear();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

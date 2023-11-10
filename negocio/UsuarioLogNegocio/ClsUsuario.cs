@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Modelo.ProductoModelo;
 using Modelo.UsuarioModelo;
 
 
@@ -162,7 +163,12 @@ namespace Negocio.UsuarioLogNegocio
         {
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
-   
+
+
+        public static void CrearUsuario(UsuarioWebServicePost usuario)
+        {
+            UsuarioDatos.CrearUsuario(usuario);
+        }
 
     }
 }

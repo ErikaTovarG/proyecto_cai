@@ -30,5 +30,18 @@ namespace FormPresentacion
         {
 
         }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarCliente>();
+        }
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            T form = new T();
+            form.TopLevel = true;
+            form.ShowDialog();
+            form.Dock = DockStyle.Fill;
+            form.BringToFront();
+        }
     }
 }

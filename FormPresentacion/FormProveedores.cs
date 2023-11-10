@@ -21,8 +21,8 @@ namespace FormPresentacion
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();           
-            lstProveedores.DataSource= proveedorWebServices;                
+            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();
+            lstProveedores.DataSource = proveedorWebServices;
         }
 
         private void btnLimpiarCmb_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace FormPresentacion
             txtCuit.Clear();
             txtIDProveedor.Clear();
             txtEmail.Clear();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

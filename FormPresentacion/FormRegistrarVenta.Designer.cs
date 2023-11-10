@@ -34,6 +34,8 @@
             nomPromocion = new DataGridViewTextBoxColumn();
             monDescuento = new DataGridViewTextBoxColumn();
             gbRegistrarVenta = new GroupBox();
+            textBox3 = new TextBox();
+            lblnroFactura = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             dataGridView3 = new DataGridView();
@@ -88,8 +90,7 @@
             txbEmpresa = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
-            lblnroFactura = new Label();
+            btnAgregarCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             gbRegistrarVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -150,6 +151,26 @@
             gbRegistrarVenta.TabIndex = 31;
             gbRegistrarVenta.TabStop = false;
             gbRegistrarVenta.Text = " Comprobante:   ";
+            // 
+            // textBox3
+            // 
+            textBox3.Enabled = false;
+            textBox3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(344, 50);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(126, 25);
+            textBox3.TabIndex = 35;
+            // 
+            // lblnroFactura
+            // 
+            lblnroFactura.AutoSize = true;
+            lblnroFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblnroFactura.Location = new Point(343, 33);
+            lblnroFactura.Name = "lblnroFactura";
+            lblnroFactura.Size = new Size(75, 15);
+            lblnroFactura.TabIndex = 34;
+            lblnroFactura.Text = "Nro. Factura";
             // 
             // textBox2
             // 
@@ -671,25 +692,22 @@
             label4.Size = new Size(0, 15);
             label4.TabIndex = 0;
             // 
-            // textBox3
+            // btnAgregarCliente
             // 
-            textBox3.Enabled = false;
-            textBox3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(344, 50);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(126, 25);
-            textBox3.TabIndex = 35;
-            // 
-            // lblnroFactura
-            // 
-            lblnroFactura.AutoSize = true;
-            lblnroFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblnroFactura.Location = new Point(343, 33);
-            lblnroFactura.Name = "lblnroFactura";
-            lblnroFactura.Size = new Size(75, 15);
-            lblnroFactura.TabIndex = 34;
-            lblnroFactura.Text = "Nro. Factura";
+            btnAgregarCliente.BackColor = Color.DarkGray;
+            btnAgregarCliente.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnAgregarCliente.FlatAppearance.CheckedBackColor = Color.Black;
+            btnAgregarCliente.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnAgregarCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnAgregarCliente.FlatStyle = FlatStyle.Flat;
+            btnAgregarCliente.Location = new Point(78, 468);
+            btnAgregarCliente.Margin = new Padding(4);
+            btnAgregarCliente.Name = "btnAgregarCliente";
+            btnAgregarCliente.Size = new Size(223, 30);
+            btnAgregarCliente.TabIndex = 35;
+            btnAgregarCliente.Text = "Agregar Cliente";
+            btnAgregarCliente.UseVisualStyleBackColor = false;
+            btnAgregarCliente.Click += btnAgregarCliente_Click;
             // 
             // FormRegistrarVenta
             // 
@@ -697,6 +715,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1041, 540);
+            Controls.Add(btnAgregarCliente);
             Controls.Add(groupBox1);
             Controls.Add(gbRegistrarVenta);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -776,5 +795,6 @@
         private Label label4;
         private TextBox textBox3;
         private Label lblnroFactura;
+        private Button btnAgregarCliente;
     }
 }

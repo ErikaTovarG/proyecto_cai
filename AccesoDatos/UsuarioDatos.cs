@@ -26,7 +26,7 @@ namespace AccesoDatos
             }
         }
 
-        public static void CrearUsuario(UsuarioModelo usuario)
+        public static void CrearUsuario(UsuarioWebServicePost usuario)
         {
             var jsonRequest = JsonConvert.SerializeObject(usuario);
 

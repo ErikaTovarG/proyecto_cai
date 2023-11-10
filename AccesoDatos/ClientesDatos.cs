@@ -38,12 +38,11 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                //throw new Exception(response.StatusCode.ToString());
-                Console.WriteLine(response.StatusCode.ToString());
+                throw new Exception(response.StatusCode.ToString());
             }
             else
             {
-                Console.WriteLine("Proveedor agregado exitosamente.");
+                Console.WriteLine("Cliente agregado exitosamente." + response.StatusCode.ToString());
             }
         }
 

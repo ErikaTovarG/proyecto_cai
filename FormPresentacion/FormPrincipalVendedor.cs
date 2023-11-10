@@ -64,6 +64,11 @@ namespace FormPresentacion
             this.Hide();
         }
 
+        private void btnModificarCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormModificarCliente>();
+        }
+
         //Metodo para abrir el formulario dentro del panel.
         //<> esto indica que el metodo es generico () sin parametros y con restricciones 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

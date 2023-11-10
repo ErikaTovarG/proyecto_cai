@@ -12,14 +12,13 @@ namespace Modelo.Cliente_Modelo
         private Guid _id, _idUsuario;
         private string _nombre;
         private string _apellido;
+        private int _dni;
         private string _direccion;
         private string _telefono;
         private string _email;
-        private DateTime _fechaAlta;
         private DateTime _fechaNacimiento;
-        private DateTime _fechaBaja;
         private string _host;
-        private int _dni;
+   
 
         public Guid Id { get => _id; set => _id = value; }
         public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
@@ -28,7 +27,6 @@ namespace Modelo.Cliente_Modelo
         public string Direccion { get => _direccion; set => _direccion = value; }
         public string Telefono { get => _telefono; set => _telefono = value; }
         public string Email { get => _email; set => _email = value; }
-        public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
         public DateTime? FechaBaja { get; set; }
         public string Host { get => _host; set => _host = value; }

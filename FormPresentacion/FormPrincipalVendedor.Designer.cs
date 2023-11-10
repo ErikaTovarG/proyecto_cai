@@ -32,6 +32,8 @@
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
+            btnModificarCliente = new Button();
+            btnInicio = new Button();
             btnReporteVendedor = new Button();
             btnRegistrarVenta = new Button();
             lblVendedor = new Label();
@@ -40,7 +42,6 @@
             panelTitulo = new Panel();
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
-            btnInicio = new Button();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             panelMenu.BackColor = Color.Teal;
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
+            panelMenu.Controls.Add(btnModificarCliente);
             panelMenu.Controls.Add(btnInicio);
             panelMenu.Controls.Add(btnReporteVendedor);
             panelMenu.Controls.Add(btnRegistrarVenta);
@@ -88,6 +90,39 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(219, 523);
             panelMenu.TabIndex = 5;
+            // 
+            // btnModificarCliente
+            // 
+            btnModificarCliente.FlatAppearance.BorderSize = 0;
+            btnModificarCliente.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnModificarCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnModificarCliente.FlatStyle = FlatStyle.Flat;
+            btnModificarCliente.ForeColor = Color.Gainsboro;
+            btnModificarCliente.Location = new Point(13, 280);
+            btnModificarCliente.Margin = new Padding(3, 2, 3, 2);
+            btnModificarCliente.Name = "btnModificarCliente";
+            btnModificarCliente.Size = new Size(201, 35);
+            btnModificarCliente.TabIndex = 12;
+            btnModificarCliente.Text = "Modificar Datos Cliente";
+            btnModificarCliente.UseVisualStyleBackColor = true;
+            btnModificarCliente.Click += btnModificarCliente_Click;
+            // 
+            // btnInicio
+            // 
+            btnInicio.Dock = DockStyle.Bottom;
+            btnInicio.FlatAppearance.BorderSize = 0;
+            btnInicio.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnInicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.ForeColor = Color.Gainsboro;
+            btnInicio.Location = new Point(0, 486);
+            btnInicio.Margin = new Padding(3, 2, 3, 2);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(217, 35);
+            btnInicio.TabIndex = 12;
+            btnInicio.Text = "Inicio";
+            btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // btnReporteVendedor
             // 
@@ -197,23 +232,6 @@
             btnCerrar.TabStop = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // btnInicio
-            // 
-            btnInicio.Dock = DockStyle.Bottom;
-            btnInicio.FlatAppearance.BorderSize = 0;
-            btnInicio.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnInicio.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnInicio.FlatStyle = FlatStyle.Flat;
-            btnInicio.ForeColor = Color.Gainsboro;
-            btnInicio.Location = new Point(0, 486);
-            btnInicio.Margin = new Padding(3, 2, 3, 2);
-            btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(217, 35);
-            btnInicio.TabIndex = 12;
-            btnInicio.Text = "Inicio";
-            btnInicio.UseVisualStyleBackColor = true;
-            btnInicio.Click += btnInicio_Click;
-            // 
             // FormPrincipalVendedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -251,5 +269,6 @@
         private Button btnRegistrarVenta;
         private Button btnReporteVendedor;
         private Button btnInicio;
+        private Button btnModificarCliente;
     }
 }
