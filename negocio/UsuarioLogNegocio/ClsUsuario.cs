@@ -152,9 +152,9 @@ namespace Negocio.UsuarioLogNegocio
             return false;
         }
 
-        public static String Login(Login login)
+        public static string Login(Login login)
         {
-            String idUsuario = UsuarioDatos.Login(login);
+            string idUsuario = UsuarioDatos.Login(login);
             return idUsuario;
         }
 

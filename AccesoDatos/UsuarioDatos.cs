@@ -46,14 +46,16 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Verifique los datos ingresados");
+                //throw new Exception(response.StatusCode.ToString());
+                return null;
+            }
+            else
+            {
+                var reader = new StreamReader(response.Content.ReadAsStream());
+                String respuesta = reader.ReadToEnd();
+                return respuesta;
             }
 
-            var reader = new StreamReader(response.Content.ReadAsStream());
-
-            String respuesta = reader.ReadToEnd();
-
-            return respuesta;
         }
 
         public static string CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
