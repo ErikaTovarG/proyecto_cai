@@ -9,11 +9,12 @@ namespace Modelo.VentaModelo
     public class VentaWebServicePost
     {
         private string idCliente, idUsuario, idProducto;
-        private int cantidad;
-
+        private int cantidad, estado;
+      
         public string IdCliente { get => idCliente; set => idCliente = value; }
         public string IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string IdProducto { get => idProducto; set => idProducto = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int Estado { get => estado; set => estado = value; }
     }
 }

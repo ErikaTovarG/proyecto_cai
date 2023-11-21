@@ -57,12 +57,19 @@ namespace FormPresentacion
             AbrirFormulario<FormReporteVendedor>();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormVentaCliente>();
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             FormPrincipalVendedor formVendedor = new FormPrincipalVendedor();
             formVendedor.Show();
             this.Hide();
         }
+
+
 
         //Metodo para abrir el formulario dentro del panel.
         //<> esto indica que el metodo es generico () sin parametros y con restricciones 
