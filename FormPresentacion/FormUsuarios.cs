@@ -58,6 +58,11 @@ namespace FormPresentacion
             }
         }
 
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();

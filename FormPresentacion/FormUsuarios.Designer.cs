@@ -405,6 +405,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormUsuarios";
             Text = "Usuarios";
+            Load += FormUsuarios_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             grbUsuariosActivos.ResumeLayout(false);
