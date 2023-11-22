@@ -2,6 +2,8 @@
 using Modelo.UsuarioModelo;
 using Negocio.UsuarioLogNegocio;
 using Newtonsoft.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
 
 namespace FormPresentacion
 {
@@ -16,7 +18,7 @@ namespace FormPresentacion
         {
             List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
             lstUsuarios.DataSource = usuariosWebServices;
-        }   
+        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -36,7 +38,19 @@ namespace FormPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormAlertaEliminarUsuario>();
+            if (lstUsuarios.SelectedItem != null && (!string.IsNullOrEmpty(txtIDUsuario.Text) && !string.IsNullOrEmpty(txtDNI.Text) && !string.IsNullOrEmpty(txtHost.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text)))
+            {
+                AbrirFormulario<FormAlertaEliminarUsuario>();
+                LimpiarCampos();
+                lstUsuarios.DataSource = null;
+                lstUsuarios.Items.Remove(lstUsuarios.SelectedItem);
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el detalle de un usuario a eliminar.");
+            }
+
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
@@ -73,10 +87,11 @@ namespace FormPresentacion
                     MessageBox.Show("Se reactivo el usuario correctamente");
                     LimpiarCampos();
                 }
-            }catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void LimpiarCampos()
+        public void LimpiarCampos()
         {
             txtIDUsuario.Clear();
             txtDNI.Clear();
@@ -89,7 +104,12 @@ namespace FormPresentacion
 
         }
 
-        private void AbrirFormulario<T>() where T : Form, new()
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //no está el endóint para editar parcialmente un usuario. 
+        }
+
+        public void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();
             form.TopLevel = true;
