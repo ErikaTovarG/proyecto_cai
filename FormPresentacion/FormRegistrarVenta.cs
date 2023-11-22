@@ -1,7 +1,10 @@
 ﻿using Modelo.Cliente;
+using Modelo.Cliente_Modelo;
+using Modelo.ProductoModelo;
 using Modelo.Switch;
 using Modelo.VentaModelo;
 using Negocio.ClienteNegocio;
+using Negocio.ProductoNegocio;
 using Negocio.Venta;
 using System;
 using System.Collections.Generic;
@@ -79,34 +82,102 @@ namespace FormPresentacion
             cmbClientes.Items.Clear();
             txbMonUni.Clear();
             txbMonTot.Clear();
-            txtNomPromocion.Clear();
             txtMonPromocion.Clear();
-            txtTotalDatos.Clear();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
         private void FormRegistrarVenta_Load(object sender, EventArgs e)
         {
-            //    Cliente Cliente1 = new Cliente(Guid.NewGuid(), Guid.NewGuid(), "Andrea", "Rivera", "Palermo", "1166995544", "andre@gmail.com", Convert.ToDateTime("15/11/2023"), Convert.ToDateTime("24/10/1997"), Convert.ToDateTime(null), "Grupo A", 1111111, new Activo());
-            //    Cliente Cliente2 = new Cliente(Guid.NewGuid(), Guid.NewGuid(), "Erika", "Tovar", "Belgrano", "2222222222", "eri@gmail.com", Convert.ToDateTime("18/11/2023"), Convert.ToDateTime("24/10/1997"), Convert.ToDateTime(null), "Grupo A", 2222222, new Activo());
-            //    Cliente Cliente3 = new Cliente(Guid.NewGuid(), Guid.NewGuid(), "Nazareno", "Martedi", "Saladillo", "3333333333", "naza@gmail.com", Convert.ToDateTime("20/11/2023"), Convert.ToDateTime("24/10/1997"), Convert.ToDateTime(null), "Grupo A", 3333333, new Activo());
-            //    Cliente Cliente4 = new Cliente(Guid.NewGuid(), Guid.NewGuid(), "Facundo", "Cairo", "Colegiales", "4444444444", "facu@gmail.com", Convert.ToDateTime("11/11/2023"), Convert.ToDateTime("24/10/1997"), Convert.ToDateTime(null), "Grupo A", 4444444, new Activo());
-            cmbClientes.Items.Add("Andrea");
-            cmbClientes.Items.Add("Erika");
-            cmbClientes.Items.Add("Nazareno");
-            cmbClientes.Items.Add("Facundo");
+            CargarListaClientes();
+            CargarListaCategoria();
+            cmbCategoria.SelectedIndexChanged += CmbCategoria_SelectedIndexChanged;
+            CargarStock();
+            cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged;
+            cmbCantidad.SelectedIndexChanged += cmbCantidad_SelectedIndexChanged;
+        }
+        private void CargarListaClientes()
+        {
+            List<ClienteWebServices> lstClientes = ClsCliente.ListarClientes();
+            cmbClientes.DataSource = null;
+
+            cmbClientes.DataSource = lstClientes;
+            cmbClientes.DisplayMember = "ComboDisplay";
+            cmbClientes.ValueMember = "Id";
+        }
+
+
+
+        private void CargarListaCategoria()
+        {
+            List<CategoriaProductos> categoriaProductos = ClsProducto.ListarCategorias();
+            cmbCategoria.DataSource = null;
+            cmbCategoria.DataSource = categoriaProductos;
+            cmbCategoria.DisplayMember = "Nombre";
+            cmbCategoria.ValueMember = "IdCategoria";
+        }
+        private void CargarListaProductos()
+        {
+            List<ProductoWebServices> lstProductos = ClsProducto.ListarProductosPorCategoria(Convert.ToInt32(cmbCategoria.SelectedValue));
+            cmbProducto.DataSource = null;
+            cmbProducto.DataSource = lstProductos;
+            cmbProducto.DisplayMember = "ComboDisplay";
+            cmbProducto.ValueMember = "Id";
+        }
+        private void CmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarListaProductos(); // Llama al método cuando cambia la categoría seleccionada
+        }
+
+        private void CargarStock()
+        {
+            int[] stock = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+            cmbCantidad.DataSource = null;
+            cmbCantidad.DataSource = stock;
+        }
+
+        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProducto.SelectedIndex != -1)
+            {
+                ProductoWebServices productoSeleccionado = (ProductoWebServices)cmbProducto.SelectedItem;
+                int precioUnitario = ClsProducto.PrecioUnitarioProducto(productoSeleccionado.Id);
+                txbMonUni.Text = precioUnitario.ToString();
+            }
+        }
+
+        private void cmbCantidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularTotal();
+        }
+
+        private void CalcularTotal()
+        {
+            if (!string.IsNullOrEmpty(txbMonUni.Text) && cmbCantidad.SelectedIndex != -1)
+            {
+                if (int.TryParse(txbMonUni.Text, out int precioUnitario))
+                {
+                    // Obtiene la cantidad seleccionada
+                    int cantidad = (int)cmbCantidad.SelectedItem;
+                    int total = precioUnitario * cantidad;
+                    txbMonTot.Text = total.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("El precio unitario no es un número válido.");
+                }
+            }
+        }
+
+        private void VerificarNombrePromocion()
+        {
+            if (txtNombrePromocion.Text.Length > 0)
+            {
+
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,12 +22,11 @@ namespace Modelo.ProductoModelo
         public DateTime? FechaBaja { get; set; }
 
 
-        public override string ToString()
-        {
-            return string.Format($"* {Nombre} - {Stock}.");
-        }
+        //public override string ToString()
+        //{
+        //    return string.Format($"* {Nombre} - {Stock}.");
+        //}
 
-        public string ListarPorCategoria { get=> $"{this.Nombre}"; }
-
+        public string ComboDisplay { get => $"{Nombre}"; }
     }
 }
