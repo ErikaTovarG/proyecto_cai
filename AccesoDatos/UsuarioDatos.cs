@@ -97,7 +97,22 @@ namespace AccesoDatos
             }
 
         }
-       
+        
+        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+        }
 
     }
 }

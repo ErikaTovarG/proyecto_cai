@@ -79,17 +79,11 @@ namespace FormPresentacion
         {
             try
             {
-                //    if (txtUsuario.Text != "USUARIO")
-                //{
-                //    if (txtContraseña.Text != "CONTRASEÑA")
-                //    {
                 Login login = new Login();
                 login.NombreUsuario = txtUsuario.Text;
                 login.Contraseña = txtContraseña.Text;
                 int host = -1, intentosMaximos = 3;
                 string idUsuario = null, test = "test";
-                //try
-                //{
                 idUsuario = ClsUsuario.Login(login);
                 if (idUsuario != null)
                 {
@@ -136,11 +130,6 @@ namespace FormPresentacion
                         Application.Exit();
                     }
                 }
-
-            //    }
-            //    else MensajeError("Por favor ingrese una contraseña");
-            //}
-            //else MensajeError("Por favor ingrese un usuario");
             }
             catch (Exception ex)
             {
