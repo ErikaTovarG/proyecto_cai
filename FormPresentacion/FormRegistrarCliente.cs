@@ -50,7 +50,7 @@ namespace FormPresentacion
             else
             {
                 ClienteWebServicesPost ClienteAgregar = new ClienteWebServicesPost();
-                ClienteAgregar.IdUsuario = new Guid(usuario);
+                //ClienteAgregar.IdUsuario = new Guid(usuario);
                 ClienteAgregar.Nombre = nombre;
                 ClienteAgregar.Apellido = apellido;
                 ClienteAgregar.Direccion = direccion;
