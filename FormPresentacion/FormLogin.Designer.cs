@@ -51,17 +51,17 @@
             panel1.Controls.Add(ptureLogo);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 330);
+            panel1.Size = new Size(286, 440);
             panel1.TabIndex = 0;
             // 
             // ptureLogo
             // 
             ptureLogo.Image = (Image)resources.GetObject("ptureLogo.Image");
-            ptureLogo.Location = new Point(31, 94);
-            ptureLogo.Margin = new Padding(3, 2, 3, 2);
+            ptureLogo.Location = new Point(35, 125);
             ptureLogo.Name = "ptureLogo";
-            ptureLogo.Size = new Size(187, 98);
+            ptureLogo.Size = new Size(214, 131);
             ptureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             ptureLogo.TabIndex = 0;
             ptureLogo.TabStop = false;
@@ -72,10 +72,9 @@
             txtUsuario.BorderStyle = BorderStyle.FixedSingle;
             txtUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsuario.ForeColor = Color.DimGray;
-            txtUsuario.Location = new Point(299, 94);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Location = new Point(342, 125);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(432, 27);
+            txtUsuario.Size = new Size(493, 32);
             txtUsuario.TabIndex = 1;
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
@@ -87,10 +86,9 @@
             txtContraseña.BorderStyle = BorderStyle.FixedSingle;
             txtContraseña.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtContraseña.ForeColor = Color.DimGray;
-            txtContraseña.Location = new Point(299, 147);
-            txtContraseña.Margin = new Padding(3, 2, 3, 2);
+            txtContraseña.Location = new Point(342, 196);
             txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(432, 27);
+            txtContraseña.Size = new Size(493, 32);
             txtContraseña.TabIndex = 2;
             txtContraseña.Text = "CONTRASEÑA";
             txtContraseña.Enter += txtContraseña_Enter;
@@ -105,10 +103,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Bookman Old Style", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.LightGray;
-            btnLogin.Location = new Point(358, 222);
+            btnLogin.Location = new Point(409, 296);
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(145, 38);
+            btnLogin.Size = new Size(166, 51);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -123,10 +121,10 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Bookman Old Style", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnCerrar.ForeColor = Color.LightGray;
-            btnCerrar.Location = new Point(531, 222);
+            btnCerrar.Location = new Point(607, 296);
             btnCerrar.Margin = new Padding(0);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(145, 38);
+            btnCerrar.Size = new Size(166, 51);
             btnCerrar.TabIndex = 4;
             btnCerrar.Text = "Cancelar";
             btnCerrar.UseVisualStyleBackColor = false;
@@ -137,9 +135,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(495, 0);
+            label1.Location = new Point(566, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 33);
+            label1.Size = new Size(126, 40);
             label1.TabIndex = 5;
             label1.Text = "LOGIN";
             // 
@@ -148,10 +146,10 @@
             pctCerrar.BackColor = Color.FromArgb(40, 40, 40);
             pctCerrar.BackgroundImageLayout = ImageLayout.None;
             pctCerrar.Image = (Image)resources.GetObject("pctCerrar.Image");
-            pctCerrar.Location = new Point(755, 0);
+            pctCerrar.Location = new Point(863, 0);
             pctCerrar.Margin = new Padding(0);
             pctCerrar.Name = "pctCerrar";
-            pctCerrar.Size = new Size(22, 19);
+            pctCerrar.Size = new Size(25, 25);
             pctCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
             pctCerrar.TabIndex = 6;
             pctCerrar.TabStop = false;
@@ -162,10 +160,10 @@
             pctMinimizar.BackColor = Color.FromArgb(40, 40, 40);
             pctMinimizar.BackgroundImageLayout = ImageLayout.None;
             pctMinimizar.Image = (Image)resources.GetObject("pctMinimizar.Image");
-            pctMinimizar.Location = new Point(728, 0);
+            pctMinimizar.Location = new Point(832, 0);
             pctMinimizar.Margin = new Padding(0);
             pctMinimizar.Name = "pctMinimizar";
-            pctMinimizar.Size = new Size(22, 19);
+            pctMinimizar.Size = new Size(25, 25);
             pctMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
             pctMinimizar.TabIndex = 7;
             pctMinimizar.TabStop = false;
@@ -176,19 +174,19 @@
             lblErrorMensaje.AutoSize = true;
             lblErrorMensaje.Font = new Font("MS Reference Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorMensaje.ForeColor = Color.DarkGray;
-            lblErrorMensaje.Location = new Point(304, 183);
+            lblErrorMensaje.Location = new Point(347, 244);
             lblErrorMensaje.Name = "lblErrorMensaje";
-            lblErrorMensaje.Size = new Size(97, 16);
+            lblErrorMensaje.Size = new Size(121, 20);
             lblErrorMensaje.TabIndex = 8;
             lblErrorMensaje.Text = "Mensaje Error";
             lblErrorMensaje.Visible = false;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(780, 330);
+            ClientSize = new Size(891, 440);
             Controls.Add(lblErrorMensaje);
             Controls.Add(pctMinimizar);
             Controls.Add(pctCerrar);
@@ -199,6 +197,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormLogin";
             Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;

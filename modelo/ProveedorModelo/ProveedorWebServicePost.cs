@@ -8,12 +8,12 @@ namespace Modelo.ProveedorModelo
 {
     public class ProveedorWebServicePost
     {
-        private Guid _id, _idUsuario;
-        private string _nombre, _apellido, _email, _cuit;
+        private Guid _id;
+        private string _nombre, _apellido, _email, _cuit, _idUsuario;
         private DateTime _fechaAlta, _fechaBaja;
 
         public Guid Id { get => _id; set => _id = value; }
-        public Guid IdUsuario { get => _idUsuario; set => _idUsuario = value; }
+        public string IdUsuario { get => _idUsuario; set => _idUsuario = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Email { get => _email; set => _email = value; }

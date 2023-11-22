@@ -95,6 +95,23 @@
             grbAgregarUsuario.TabStop = false;
             grbAgregarUsuario.Text = "Registar nuevo usuario";
             // 
+            // btnLimpiarDetalle
+            // 
+            btnLimpiarDetalle.BackColor = Color.DarkGray;
+            btnLimpiarDetalle.FlatAppearance.BorderSize = 0;
+            btnLimpiarDetalle.FlatAppearance.CheckedBackColor = Color.Black;
+            btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
+            btnLimpiarDetalle.Location = new Point(291, 338);
+            btnLimpiarDetalle.Margin = new Padding(4);
+            btnLimpiarDetalle.Name = "btnLimpiarDetalle";
+            btnLimpiarDetalle.Size = new Size(101, 30);
+            btnLimpiarDetalle.TabIndex = 34;
+            btnLimpiarDetalle.Text = "Limpiar";
+            btnLimpiarDetalle.UseVisualStyleBackColor = false;
+            btnLimpiarDetalle.Click += btnLimpiarDetalle_Click;
+            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -210,7 +227,7 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(40, 163);
+            txtDireccion.Location = new Point(40, 162);
             txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(279, 23);
@@ -233,6 +250,7 @@
             cmbHost.Name = "cmbHost";
             cmbHost.Size = new Size(132, 23);
             cmbHost.TabIndex = 20;
+            cmbHost.Text = "Rol";
             // 
             // lblHost
             // 
@@ -262,7 +280,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(383, 85);
+            txtUsuario.Location = new Point(383, 84);
             txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(132, 23);
@@ -354,6 +372,7 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrar Usuario";
+            Load += FormRegistrarUsuario_Load;
             grbAgregarUsuario.ResumeLayout(false);
             grbAgregarUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

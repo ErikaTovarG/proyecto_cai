@@ -51,10 +51,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(54, 38);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(78, 62);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(131, 112);
+            pictureBox1.Size = new Size(188, 188);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
@@ -73,80 +73,84 @@
             grbAgregarProveedor.Controls.Add(pictureBox2);
             grbAgregarProveedor.Controls.Add(btnAgregar);
             grbAgregarProveedor.Controls.Add(btnCancelar);
-            grbAgregarProveedor.Location = new Point(228, 38);
-            grbAgregarProveedor.Margin = new Padding(3, 2, 3, 2);
+            grbAgregarProveedor.Location = new Point(326, 62);
+            grbAgregarProveedor.Margin = new Padding(4, 4, 4, 4);
             grbAgregarProveedor.Name = "grbAgregarProveedor";
-            grbAgregarProveedor.Padding = new Padding(3, 2, 3, 2);
-            grbAgregarProveedor.Size = new Size(559, 287);
+            grbAgregarProveedor.Padding = new Padding(4, 4, 4, 4);
+            grbAgregarProveedor.Size = new Size(799, 479);
             grbAgregarProveedor.TabIndex = 16;
             grbAgregarProveedor.TabStop = false;
             grbAgregarProveedor.Text = "Registar nuevo proveedor";
             // 
             // txtCUIT
             // 
-            txtCUIT.Location = new Point(40, 169);
-            txtCUIT.Margin = new Padding(3, 2, 3, 2);
+            txtCUIT.Location = new Point(58, 281);
+            txtCUIT.Margin = new Padding(4, 4, 4, 4);
             txtCUIT.Name = "txtCUIT";
-            txtCUIT.Size = new Size(279, 23);
+            txtCUIT.Size = new Size(396, 31);
             txtCUIT.TabIndex = 43;
             // 
             // lblCUIT
             // 
             lblCUIT.AutoSize = true;
-            lblCUIT.Location = new Point(40, 152);
+            lblCUIT.Location = new Point(58, 252);
+            lblCUIT.Margin = new Padding(4, 0, 4, 0);
             lblCUIT.Name = "lblCUIT";
-            lblCUIT.Size = new Size(32, 15);
+            lblCUIT.Size = new Size(49, 25);
             lblCUIT.TabIndex = 42;
             lblCUIT.Text = "CUIT";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(40, 129);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Location = new Point(58, 215);
+            txtEmail.Margin = new Padding(4, 4, 4, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(279, 23);
+            txtEmail.Size = new Size(396, 31);
             txtEmail.TabIndex = 40;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(40, 112);
+            lblEmail.Location = new Point(58, 186);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(36, 15);
+            lblEmail.Size = new Size(54, 25);
             lblEmail.TabIndex = 39;
             lblEmail.Text = "Email";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(40, 89);
-            txtApellido.Margin = new Padding(3, 2, 3, 2);
+            txtApellido.Location = new Point(58, 149);
+            txtApellido.Margin = new Padding(4, 4, 4, 4);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(279, 23);
+            txtApellido.Size = new Size(396, 31);
             txtApellido.TabIndex = 38;
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(40, 72);
+            lblApellido.Location = new Point(58, 120);
+            lblApellido.Margin = new Padding(4, 0, 4, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
+            lblApellido.Size = new Size(78, 25);
             lblApellido.TabIndex = 37;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(40, 50);
-            txtNombre.Margin = new Padding(3, 2, 3, 2);
+            txtNombre.Location = new Point(58, 82);
+            txtNombre.Margin = new Padding(4, 4, 4, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(279, 23);
+            txtNombre.Size = new Size(396, 31);
             txtNombre.TabIndex = 36;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(40, 32);
+            lblNombre.Location = new Point(58, 54);
+            lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
+            lblNombre.Size = new Size(78, 25);
             lblNombre.TabIndex = 35;
             lblNombre.Text = "Nombre";
             // 
@@ -158,10 +162,10 @@
             btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
-            btnLimpiarDetalle.Location = new Point(172, 208);
-            btnLimpiarDetalle.Margin = new Padding(4, 4, 4, 4);
+            btnLimpiarDetalle.Location = new Point(245, 348);
+            btnLimpiarDetalle.Margin = new Padding(6, 6, 6, 6);
             btnLimpiarDetalle.Name = "btnLimpiarDetalle";
-            btnLimpiarDetalle.Size = new Size(101, 30);
+            btnLimpiarDetalle.Size = new Size(144, 50);
             btnLimpiarDetalle.TabIndex = 34;
             btnLimpiarDetalle.Text = "Limpiar";
             btnLimpiarDetalle.UseVisualStyleBackColor = false;
@@ -170,10 +174,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(402, 44);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(575, 72);
+            pictureBox2.Margin = new Padding(4, 4, 4, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(131, 112);
+            pictureBox2.Size = new Size(188, 188);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 14;
             pictureBox2.TabStop = false;
@@ -186,10 +190,10 @@
             btnAgregar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Location = new Point(45, 208);
-            btnAgregar.Margin = new Padding(4, 4, 4, 4);
+            btnAgregar.Location = new Point(64, 348);
+            btnAgregar.Margin = new Padding(6, 6, 6, 6);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(101, 30);
+            btnAgregar.Size = new Size(144, 50);
             btnAgregar.TabIndex = 32;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -203,10 +207,10 @@
             btnCancelar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Location = new Point(294, 208);
-            btnCancelar.Margin = new Padding(4, 4, 4, 4);
+            btnCancelar.Location = new Point(420, 348);
+            btnCancelar.Margin = new Padding(6, 6, 6, 6);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(101, 30);
+            btnCancelar.Size = new Size(144, 50);
             btnCancelar.TabIndex = 31;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -214,15 +218,15 @@
             // 
             // FormRegistrarProveedor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(893, 412);
+            ClientSize = new Size(1276, 688);
             Controls.Add(pictureBox1);
             Controls.Add(grbAgregarProveedor);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "FormRegistrarProveedor";
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;

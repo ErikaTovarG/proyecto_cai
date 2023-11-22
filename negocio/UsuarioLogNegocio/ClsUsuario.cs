@@ -1,5 +1,5 @@
 ﻿using AccesoDatos;
-using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 
 
@@ -153,9 +153,9 @@ namespace Negocio.UsuarioLogNegocio
             return false;
         }
 
-        public static String Login(Login login)
+        public static string Login(Login login)
         {
-            String idUsuario = UsuarioDatos.Login(login);
+            string idUsuario = UsuarioDatos.Login(login);
             return idUsuario;
         }
 
@@ -164,11 +164,19 @@ namespace Negocio.UsuarioLogNegocio
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
 
+        
+        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            UsuarioDatos.ReactivarUsuario(idUsuario,idUsuarioMaster);
+        }
+
 
         public static void CrearUsuario(UsuarioWebServicePost usuario)
         {
             UsuarioDatos.CrearUsuario(usuario);
         }
+
+
 
     }
 }
