@@ -1,4 +1,5 @@
-﻿using Modelo.UsuarioModelo;
+﻿using Modelo.ProveedorModelo;
+using Modelo.UsuarioModelo;
 using Negocio.UsuarioLogNegocio;
 using Newtonsoft.Json;
 
@@ -58,6 +59,25 @@ namespace FormPresentacion
             }
         }
 
+        private void btnReactivarUsuario_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string UsuarioAdmin = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+                string idUsuario = txtIDUsuario.Text;
+                string error = Validaciones.ValidaVacio(idUsuario, "ID");
+
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el ID del usuario a reactivar.");
+                else
+                {
+                    ClsUsuario.ReactivarUsuario(idUsuario, UsuarioAdmin);
+                    MessageBox.Show("Se reactivo el usuario correctamente");
+                    LimpiarCampos();
+                }
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
+        }
+
         private void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();
@@ -66,5 +86,15 @@ namespace FormPresentacion
             form.Dock = DockStyle.Fill;
             form.BringToFront();
         }
+
+        private void LimpiarCampos()
+        {
+            txtIDUsuario.Clear();
+            txtDNI.Clear();
+            txtHost.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+        }
+
     }
 }

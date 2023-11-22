@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 
 
@@ -162,7 +163,11 @@ namespace Negocio.UsuarioLogNegocio
         {
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
-   
+        
+        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            UsuarioDatos.ReactivarUsuario(idUsuario,idUsuarioMaster);
+        }
 
     }
 }
