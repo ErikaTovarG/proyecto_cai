@@ -423,7 +423,6 @@
             cmbProducto.Name = "cmbProducto";
             cmbProducto.Size = new Size(211, 28);
             cmbProducto.TabIndex = 69;
-            cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged_1;
             // 
             // cmbCantidad
             // 
@@ -434,7 +433,6 @@
             cmbCantidad.Name = "cmbCantidad";
             cmbCantidad.Size = new Size(211, 28);
             cmbCantidad.TabIndex = 68;
-            cmbCantidad.SelectedIndexChanged += cmbCantidad_SelectedIndexChanged_1;
             // 
             // cmbCategoria
             // 

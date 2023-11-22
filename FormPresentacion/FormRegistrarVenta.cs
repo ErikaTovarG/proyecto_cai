@@ -16,38 +16,7 @@ namespace FormPresentacion
             InitializeComponent();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
 
-            string idProducto = cmbProducto.SelectedValue.ToString();
-            string idCliente = cmbClientes.SelectedValue.ToString();
-            string cantidad = cmbCantidad.SelectedValue.ToString();
-            string Usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
-            string errores = "";
-
-            errores += Validaciones.ValidaVacio(idProducto, "idProducto");
-            errores += Validaciones.ValidaVacio(idCliente, "idCliente");
-            errores += Validaciones.ValidaVacio(cantidad, "Cantidad");
-
-            if (!string.IsNullOrEmpty(errores))
-            {
-                MessageBox.Show("Error", errores);
-            }
-            else
-            {
-                VentaWebServicePost venta = new VentaWebServicePost();
-                venta.IdCliente = idCliente;
-                venta.IdProducto = idProducto;
-                venta.IdUsuario = Usuario;
-                venta.Cantidad = Convert.ToInt32(cantidad);
-                ClsVenta.CrearVenta(venta);
-                MessageBox.Show("Se ha creado la venta correctamente.");
-                limpiarCampos();
-                cmbClientes.SelectedIndex = 0;
-                dtaGriewDetalle.Rows.Clear();
-            }
-
-        }
         private void limpiarCampos()
         {
             txbMonUni.Clear();
@@ -57,7 +26,7 @@ namespace FormPresentacion
             cmbCategoria.SelectedIndex = 0;
             cmbProducto.SelectedIndex = 0;
             cmbCantidad.SelectedIndex = 0;
-            
+
         }
 
 
@@ -147,8 +116,8 @@ namespace FormPresentacion
             CargarListaCategoria();
             cmbCategoria.SelectedIndexChanged += CmbCategoria_SelectedIndexChanged;
             CargarStock();
-            //cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged;
-            //cmbCantidad.SelectedIndexChanged += cmbCantidad_SelectedIndexChanged;
+            cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged_1;
+            cmbCantidad.SelectedIndexChanged += cmbCantidad_SelectedIndexChanged_1;
         }
 
 
@@ -208,6 +177,54 @@ namespace FormPresentacion
             if (n != -1)
             {
                 dtaGriewDetalle.Rows.RemoveAt(n);
+            }
+        }
+
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+            string idProducto = dtaGriewDetalle.Rows[n].Cells[0].Value.ToString();
+            string idCliente = cmbClientes.SelectedValue.ToString();
+            string cantidad = dtaGriewDetalle.Rows[n].Cells[2].Value.ToString();
+            string Usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
+            string errores = "";
+
+            bool flag = ClsProducto.SinStock(Guid.Parse(idProducto));
+            if (!flag) MessageBox.Show("El producto no cuenta con stock.");
+            else
+            {
+                bool flag2 = ClsProducto.StockBajo(Guid.Parse(idProducto));
+                if (flag) MessageBox.Show("El producto cuenta con un 25% de stock.\n\nAvise a su supervisor");
+                bool hayStock = ClsProducto.ConsultaStock(Guid.Parse(idProducto), cantidad);
+                if(hayStock)
+                {
+                    errores += Validaciones.ValidaVacio(idProducto, "idProducto");
+                    errores += Validaciones.ValidaVacio(idCliente, "idCliente");
+                    errores += Validaciones.ValidaVacio(cantidad, "Cantidad");
+
+                    if (!string.IsNullOrEmpty(errores))
+                    {
+                        MessageBox.Show("Error", errores);
+                    }
+                    else
+                    {
+                        VentaWebServicePost venta = new VentaWebServicePost();
+                        venta.IdCliente = idCliente;
+                        venta.IdProducto = idProducto;
+                        venta.IdUsuario = Usuario;
+                        venta.Cantidad = Convert.ToInt32(cantidad);
+                        ClsVenta.CrearVenta(venta);
+                        MessageBox.Show("Se ha creado la venta correctamente.");
+                        limpiarCampos();
+                        cmbClientes.SelectedIndex = 0;
+                        dtaGriewDetalle.Rows.Clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay stock sufiente para realizar esta venta.\n\nContactese con su supervisor.");
+                }
             }
         }
     }
