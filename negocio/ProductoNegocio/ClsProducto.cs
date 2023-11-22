@@ -56,8 +56,23 @@ namespace Negocio.ProductoNegocio
 
         public static int PrecioUnitarioProducto(Guid id)
         {
+            try
+            {
                 ProductoWebServices productoEncontrado = ListarProductos().Find(p => p.Id == id);
-                return productoEncontrado.Precio;
+                if (productoEncontrado != null)
+                {
+                    return productoEncontrado.Precio;
+                }
+                else
+                {
+                    throw new Exception("Producto no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener el precio unitario: {ex.Message}");
+                return 0; 
+            }
         }
         public static void Valida()
         {
