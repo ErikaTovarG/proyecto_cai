@@ -22,7 +22,7 @@ namespace AccesoDatos
             }
             else
             {
-                Console.WriteLine("Proveedor agregado exitosamente.");
+                Console.WriteLine("Venta agregada exitosamente.");
             }
         }
 
