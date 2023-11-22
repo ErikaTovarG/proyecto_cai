@@ -105,6 +105,9 @@ namespace FormPresentacion
             return true;
         }
 
+
+        // hacer referencia a estas validaciones en crear usuario 
+
         private bool EsTextoNoVacio(string input)
         {
             // Verifica si la cadena contiene solo letras y no está vacía.

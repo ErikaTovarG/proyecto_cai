@@ -26,7 +26,7 @@ namespace AccesoDatos
             }
         }
 
-        public static void CrearUsuario(UsuarioModelo usuario)
+        public static void CrearUsuario(UsuarioWebServicePost usuario)
         {
             var jsonRequest = JsonConvert.SerializeObject(usuario);
 
@@ -34,9 +34,17 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(response.StatusCode.ToString());
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
             }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
+
         }
+
+
 
         public static string Login(Login login)
         {
