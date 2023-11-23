@@ -4,6 +4,7 @@ using Modelo.VentaModelo;
 using Negocio.ClienteNegocio;
 using Negocio.ProductoNegocio;
 using Negocio.Venta;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
 namespace FormPresentacion
@@ -21,8 +22,8 @@ namespace FormPresentacion
         {
             txbMonUni.Clear();
             txbMonTot.Clear();
-            txtNombrePromocion.Clear();
-            txtMonPromocion.Clear();
+            cmbPromo.SelectedIndex = 0;
+            cmbNombrePromo.SelectedIndex = 0;
             cmbCategoria.SelectedIndex = 0;
             cmbProducto.SelectedIndex = 0;
             cmbCantidad.SelectedIndex = 0;
@@ -77,17 +78,40 @@ namespace FormPresentacion
             cmbCantidad.DataSource = null;
             cmbCantidad.DataSource = stock;
         }
+        private void CargarDescuentos()
+        {
+            int[] descuento = new int[] { 0, 5, 10, 20 };
+            cmbPromo.DataSource = null;
+            cmbPromo.DataSource = descuento;
+        }
+        private void NombrePromos()
+        {
+            string[] nombrePromo = new string[] { "No aplica", "Promo Electro Hogar", "Promo Cliente Nuevo" };
+            cmbNombrePromo.DataSource = null;
+            cmbNombrePromo.DataSource = nombrePromo;
+        }
 
         private void CalcularTotal()
         {
-            if (!string.IsNullOrEmpty(txbMonUni.Text) && cmbCantidad.SelectedIndex != -1)
+            if (!string.IsNullOrEmpty(txbMonUni.Text) && cmbCantidad.SelectedIndex != -1 && cmbPromo.SelectedIndex != -1)
             {
                 if (int.TryParse(txbMonUni.Text, out int precioUnitario))
                 {
-                    // Obtiene la cantidad seleccionada
-                    int cantidad = (int)cmbCantidad.SelectedItem;
-                    int total = precioUnitario * cantidad;
-                    txbMonTot.Text = total.ToString();
+                    double descuento = (int)cmbPromo.SelectedItem;
+                    if (descuento > 0)
+                    {
+                        double porcen = descuento / 100;
+                        int cantidad = (int)cmbCantidad.SelectedItem;
+                        double subtotal = (precioUnitario * cantidad) * porcen;
+                        double total = precioUnitario - subtotal;
+                        txbMonTot.Text = total.ToString();
+                    }
+                    else
+                    {
+                        int cantidad = (int)cmbCantidad.SelectedItem;
+                        int total = precioUnitario * cantidad;
+                        txbMonTot.Text = total.ToString();
+                    }
                 }
                 else
                 {
@@ -106,7 +130,9 @@ namespace FormPresentacion
             dtaGriewDetalle.Rows[n].Cells[2].Value = cmbCantidad.SelectedItem;
             dtaGriewDetalle.Rows[n].Cells[3].Value = txbMonUni.Text;
             dtaGriewDetalle.Rows[n].Cells[4].Value = txbMonTot.Text;
-
+            txbtotalPagar.Text = txbMonTot.Text;
+            dtaGriewPromocion.Rows[n].Cells[0].Value = cmbNombrePromo.SelectedItem.ToString();
+            dtaGriewPromocion.Rows[n].Cells[1].Value = cmbPromo.SelectedItem.ToString();
             limpiarCampos();
         }
 
@@ -118,17 +144,10 @@ namespace FormPresentacion
             CargarStock();
             cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged_1;
             cmbCantidad.SelectedIndexChanged += cmbCantidad_SelectedIndexChanged_1;
+            CargarDescuentos();
+            NombrePromos();
         }
 
-
-        private void ac()
-        {
-            int pos = cmbProducto.SelectedIndex;
-            if (cmbProducto.SelectedIndex != -1)
-            {
-
-            }
-        }
         private void cmbProducto_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbProducto.SelectedIndex != -1)
@@ -177,6 +196,7 @@ namespace FormPresentacion
             if (n != -1)
             {
                 dtaGriewDetalle.Rows.RemoveAt(n);
+                dtaGriewPromocion.Rows.RemoveAt(n);
             }
         }
 
@@ -188,6 +208,7 @@ namespace FormPresentacion
             string idCliente = cmbClientes.SelectedValue.ToString();
             string cantidad = dtaGriewDetalle.Rows[n].Cells[2].Value.ToString();
             string Usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
+            string categoria = cmbCategoria.SelectedValue.ToString();
             string errores = "";
 
             bool flag = ClsProducto.SinStock(Guid.Parse(idProducto));
@@ -197,8 +218,11 @@ namespace FormPresentacion
                 bool flag2 = ClsProducto.StockBajo(Guid.Parse(idProducto));
                 if (flag) MessageBox.Show("El producto cuenta con un 25% de stock.\n\nAvise a su supervisor");
                 bool hayStock = ClsProducto.ConsultaStock(Guid.Parse(idProducto), cantidad);
-                if(hayStock)
+                if (hayStock)
                 {
+
+                    //if (cmbCategoria.SelectedValue.ToString() == "Electro Hogar")
+                    //{
                     errores += Validaciones.ValidaVacio(idProducto, "idProducto");
                     errores += Validaciones.ValidaVacio(idCliente, "idCliente");
                     errores += Validaciones.ValidaVacio(cantidad, "Cantidad");
@@ -217,15 +241,23 @@ namespace FormPresentacion
                         ClsVenta.CrearVenta(venta);
                         MessageBox.Show("Se ha creado la venta correctamente.");
                         limpiarCampos();
+                        txbtotalPagar.Clear();
                         cmbClientes.SelectedIndex = 0;
                         dtaGriewDetalle.Rows.Clear();
                     }
+
+                    //}
                 }
                 else
                 {
                     MessageBox.Show("No hay stock sufiente para realizar esta venta.\n\nContactese con su supervisor.");
                 }
             }
+        }
+
+        private void cmbPromo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularTotal();
         }
     }
 }
