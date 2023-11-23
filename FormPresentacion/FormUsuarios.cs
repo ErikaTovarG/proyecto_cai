@@ -72,7 +72,7 @@ namespace FormPresentacion
                 txtHost.Text = usuario.host.ToString();
                 txtNombre.Text = usuario.nombre.ToString();
                 txtApellido.Text = usuario.apellido.ToString();
-                //txtUsuario.Text = usuario.usuario.ToString();
+                txtUsuario.Text = usuario.nombreUsuario.ToString();
             }
         }
         private void btnReactivarUsuario_Click_1(object sender, EventArgs e)
@@ -110,6 +110,7 @@ namespace FormPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //no está el endóint para editar parcialmente un usuario. 
+       
         }
 
         public void AbrirFormulario<T>() where T : Form, new()
