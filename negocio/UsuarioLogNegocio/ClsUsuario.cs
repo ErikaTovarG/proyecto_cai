@@ -177,6 +177,11 @@ namespace Negocio.UsuarioLogNegocio
         }
 
 
+        public static void EliminarUsuario(UsuarioWebServiceDelete usuario)
+        {
+            UsuarioDatos.EliminarUsuario(usuario);
+        }
+
 
     }
 }

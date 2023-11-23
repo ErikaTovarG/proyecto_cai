@@ -42,10 +42,10 @@
             btnCancelar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Location = new Point(210, 121);
-            btnCancelar.Margin = new Padding(5);
+            btnCancelar.Location = new Point(184, 91);
+            btnCancelar.Margin = new Padding(4, 4, 4, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(115, 40);
+            btnCancelar.Size = new Size(101, 30);
             btnCancelar.TabIndex = 19;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -59,22 +59,23 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(64, 121);
-            btnEliminar.Margin = new Padding(5);
+            btnEliminar.Location = new Point(56, 91);
+            btnEliminar.Margin = new Padding(4, 4, 4, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(115, 40);
+            btnEliminar.Size = new Size(101, 30);
             btnEliminar.TabIndex = 18;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // lblAtencion
             // 
             lblAtencion.AutoSize = true;
             lblAtencion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblAtencion.ForeColor = Color.LightGray;
-            lblAtencion.Location = new Point(40, 25);
+            lblAtencion.Location = new Point(35, 19);
             lblAtencion.Name = "lblAtencion";
-            lblAtencion.Size = new Size(93, 23);
+            lblAtencion.Size = new Size(78, 19);
             lblAtencion.TabIndex = 20;
             lblAtencion.Text = "¡Atención!";
             // 
@@ -83,23 +84,24 @@
             lblAdvertencia.AutoSize = true;
             lblAdvertencia.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblAdvertencia.ForeColor = Color.LightGray;
-            lblAdvertencia.Location = new Point(64, 62);
+            lblAdvertencia.Location = new Point(56, 46);
             lblAdvertencia.Name = "lblAdvertencia";
-            lblAdvertencia.Size = new Size(261, 20);
+            lblAdvertencia.Size = new Size(205, 15);
             lblAdvertencia.TabIndex = 21;
             lblAdvertencia.Text = "¿Está seguro de eliminar este usuario?";
             // 
             // FormAlertaEliminarUsuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(395, 193);
+            ClientSize = new Size(346, 145);
             Controls.Add(lblAdvertencia);
             Controls.Add(lblAtencion);
             Controls.Add(btnCancelar);
             Controls.Add(btnEliminar);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormAlertaEliminarUsuario";
             Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;

@@ -44,9 +44,25 @@ namespace AccesoDatos
 
         }
 
+        public static void EliminarUsuario(UsuarioWebServiceDelete usuario)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(usuario);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
 
 
-        public static string Login(Login login)
+        }
+            public static string Login(Login login)
         {
             var jsonRequest = JsonConvert.SerializeObject(login);
 
