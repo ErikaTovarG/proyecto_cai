@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Modelo.ProductoModelo;
 using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 
@@ -159,15 +160,17 @@ namespace Negocio.UsuarioLogNegocio
             return idUsuario;
         }
 
-        public static List<UsuarioWebServices> ListarUsuarios(Guid idUsuario)
+        public static List<UsuarioWebServices> ListarUsuarios()
         {
+            Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
             return UsuarioDatos.Listarusuarios(idUsuario);
         }
 
         
-        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        public static void ReactivarUsuario(string idUsuario)
         {
-            UsuarioDatos.ReactivarUsuario(idUsuario,idUsuarioMaster);
+            string UsuarioAdmin = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            UsuarioDatos.ReactivarUsuario(idUsuario, UsuarioAdmin);
         }
 
 
@@ -181,7 +184,17 @@ namespace Negocio.UsuarioLogNegocio
         {
             UsuarioDatos.EliminarUsuario(usuario);
         }
+        public static string BuscoPorUsuario(string usuario)
+        {
+            UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
+            return usuarioEncontrado.id.ToString();
+        }
 
+        public static void InactivarUsuario(string idUsuario)
+        {
+            string idUsuarioMaster = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            UsuarioDatos.InactivarUsuario(idUsuario, idUsuarioMaster);
+        }
 
     }
 }

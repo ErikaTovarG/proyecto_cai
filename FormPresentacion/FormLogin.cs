@@ -124,8 +124,15 @@ namespace FormPresentacion
                     
                     if(intRestante ==0)
                     {
-                        // Desactivar el usuario después de superar el límite de intentos
-                        UsuarioSesion.InactivarUsuario(login.NombreUsuario);
+                        string usuarioEncontrado = ClsUsuario.BuscoPorUsuario(login.NombreUsuario);
+                        if(!string.IsNullOrEmpty(usuarioEncontrado))
+                        {
+                            ClsUsuario.InactivarUsuario(usuarioEncontrado.ToString());
+                        }
+                        else
+                        {
+                            UsuarioSesion.InactivarUsuario(login.NombreUsuario);
+                        }
                         MessageBox.Show("Ha superado la cantidad de intentos.\n\n\tPóngase en contacto con el administrador.");
                         Application.Exit();
                     }

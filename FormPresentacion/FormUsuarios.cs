@@ -16,7 +16,7 @@ namespace FormPresentacion
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
             lstUsuarios.DataSource = usuariosWebServices;
         }
 
@@ -76,14 +76,14 @@ namespace FormPresentacion
         {
             try
             {
-                string UsuarioAdmin = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+                
                 string idUsuario = txtIDUsuario.Text;
                 string error = Validaciones.ValidaVacio(idUsuario, "ID");
 
                 if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el ID del usuario a reactivar.");
                 else
                 {
-                    ClsUsuario.ReactivarUsuario(idUsuario, UsuarioAdmin);
+                    ClsUsuario.ReactivarUsuario(idUsuario);
                     MessageBox.Show("Se reactivo el usuario correctamente");
                     LimpiarCampos();
                 }

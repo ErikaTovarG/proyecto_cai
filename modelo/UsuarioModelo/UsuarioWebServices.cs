@@ -18,7 +18,7 @@ namespace Modelo.UsuarioModelo
         public string nombre { get => _nombre; set => _nombre = value; }
         public string apellido { get => _apellido; set => _apellido = value; }
         public int dni { get => _dni; set => _dni = value; }
-        public string usuario { get => _usuario; set => _usuario = value; }
+        public string nombreUsuario { get => _usuario; set => _usuario = value; }
         public int host { get => _host; set => _host = value; }
 
         public UsuarioWebServices()
@@ -26,9 +26,9 @@ namespace Modelo.UsuarioModelo
 
         }
 
-        public override string ToString()
-        {
-            return string.Format($"* {dni} - {nombre} - {apellido}.");
-        }
+        //public override string ToString()
+        //{
+        //    return string.Format($"* {dni} - {nombre} - {apellido}.");
+        //}
     }
 }

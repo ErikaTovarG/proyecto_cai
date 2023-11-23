@@ -59,10 +59,8 @@ namespace AccesoDatos
             {
                 Console.WriteLine("Usuario agregado exitosamente.");
             }
-
-
         }
-            public static string Login(Login login)
+        public static string Login(Login login)
         {
             var jsonRequest = JsonConvert.SerializeObject(login);
 
@@ -121,7 +119,7 @@ namespace AccesoDatos
             }
 
         }
-        
+
         public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
         {
             Dictionary<String, String> map = new Dictionary<String, String>();
@@ -131,6 +129,21 @@ namespace AccesoDatos
             var jsonRequest = JsonConvert.SerializeObject(map);
 
             HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+        }
+        public static void InactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
 
             if (!response.IsSuccessStatusCode)
             {

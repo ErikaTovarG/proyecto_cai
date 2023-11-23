@@ -61,7 +61,7 @@ namespace Presentacion
         //USUARIOS
         public static int BuscarUsuarioYDevolverHost(Guid idUsuario)
         {
-            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios();
             UsuarioWebServices usuarioEncontrado = usuarios.Find((usuario) => usuario.id == idUsuario);
 
             if (usuarioEncontrado != null)
@@ -76,7 +76,7 @@ namespace Presentacion
 
         public static UsuarioWebServices BuscarUsuarioCompletoDatos(Guid idUsuario)
         {
-            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            List<UsuarioWebServices> usuarios = ClsUsuario.ListarUsuarios();
             UsuarioWebServices usuarioEncontrado = usuarios.Find((usuario) => usuario.id == idUsuario);
 
             if (usuarioEncontrado != null)
@@ -91,7 +91,7 @@ namespace Presentacion
 
         public static void ListarUsuarios()
         {
-            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
             //Console.WriteLine($"\n\tHay en stock {usuariosWebServices.Count} usuarios \n");
 
             foreach (var usuario in usuariosWebServices)
@@ -108,7 +108,7 @@ namespace Presentacion
             Console.WriteLine($"Nombre: {usuario.nombre}");
             Console.WriteLine($"DNI: {usuario.dni}");
             Console.WriteLine($"Host: {usuario.host}");
-            Console.WriteLine($"Usuario: {usuario.usuario}");
+            Console.WriteLine($"Usuario: {usuario.nombreUsuario}");
             Console.WriteLine(new string('*', 60));
         }
 
