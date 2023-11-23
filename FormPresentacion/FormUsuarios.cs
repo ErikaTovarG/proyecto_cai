@@ -79,7 +79,7 @@ namespace FormPresentacion
         {
             try
             {
-                
+
                 string idUsuario = txtIDUsuario.Text;
                 string error = Validaciones.ValidaVacio(idUsuario, "ID");
 
@@ -110,7 +110,19 @@ namespace FormPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //no está el endóint para editar parcialmente un usuario. 
-       
+
+        }
+
+        private void btnUsuariosActivos_Click(object sender, EventArgs e)
+        {
+            
+           List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
+
+            lstUsuariosActivos.DataSource = usuariosWebServices;
+            lstUsuariosActivos.DisplayMember = "ComboDisplay";
+            lstUsuariosActivos.ValueMember = "Id";
+
+            
         }
 
         public void AbrirFormulario<T>() where T : Form, new()
