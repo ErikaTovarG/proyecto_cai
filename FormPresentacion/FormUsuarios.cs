@@ -4,6 +4,7 @@ using Negocio.UsuarioLogNegocio;
 using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Net;
+using Microsoft.VisualBasic.Logging;
 
 namespace FormPresentacion
 {
@@ -79,21 +80,54 @@ namespace FormPresentacion
         {
             try
             {
-                
-                string idUsuario = txtIDUsuario.Text;
-                string error = Validaciones.ValidaVacio(idUsuario, "ID");
+                string usuario = txtUsuarioCambioEstado.Text;
+                string error = Validaciones.ValidaVacio(usuario, "Nombre de Usuario");
 
-                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el ID del usuario a reactivar.");
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el 'Nombre de Usuario' del usuario a reactivar.");
                 else
                 {
-                    ClsUsuario.ReactivarUsuario(idUsuario);
-                    MessageBox.Show("Se reactivo el usuario correctamente");
-                    LimpiarCampos();
+                    string idUsuario = ClsUsuario.BuscoPorUsuarioParaActivar(usuario);
+                    if (!string.IsNullOrEmpty(idUsuario))
+                    {
+                        ClsUsuario.ReactivarUsuario(idUsuario);
+                        MessageBox.Show("Se reactivo el usuario correctamente");
+                        txtUsuarioCambioEstado.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra el usuario para reactivar");
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        private void btnInhabiliarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuarioCambioEstado.Text;
+                string error = Validaciones.ValidaVacio(usuario, "Nombre de Usuario");
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el 'Nombre de Usuario' del usuario a Inactivar.");
+                else
+                {
+                    string usuarioEncontrado = ClsUsuario.BuscoPorUsuario(txtUsuarioCambioEstado.Text);
+                    if (!string.IsNullOrEmpty(usuarioEncontrado))
+                    {
+                        ClsUsuario.InactivarUsuario(usuarioEncontrado.ToString());
+                        MessageBox.Show("Se inactivo el usuario correctamente");
+                        txtUsuarioCambioEstado.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra el usuario para inactivar");
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
+            
+        }
         public void LimpiarCampos()
         {
             txtIDUsuario.Clear();
@@ -110,8 +144,10 @@ namespace FormPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //no está el endóint para editar parcialmente un usuario. 
-       
+
         }
+
+       
 
         public void AbrirFormulario<T>() where T : Form, new()
         {

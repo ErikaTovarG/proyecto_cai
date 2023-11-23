@@ -189,7 +189,14 @@ namespace Negocio.UsuarioLogNegocio
             UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
             return usuarioEncontrado.id.ToString();
         }
-
+        public static string BuscoPorUsuarioParaActivar(string usuario)
+        {
+            string devolver;
+            UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
+            if(usuarioEncontrado == null) devolver = "";
+            else devolver = usuarioEncontrado.id.ToString();
+            return devolver;
+        }
         public static void InactivarUsuario(string idUsuario)
         {
             string idUsuarioMaster = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";

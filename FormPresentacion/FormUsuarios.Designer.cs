@@ -55,8 +55,13 @@
             lstUsuariosActivos = new ListBox();
             grbUsuariosActivos = new GroupBox();
             btnCambiarContraseña = new Button();
+            grbCambiosEstado = new GroupBox();
+            lblUsuarioCambioEstado = new Label();
+            txtUsuarioCambioEstado = new TextBox();
+            btnInhabiliarUsuario = new Button();
             grbDetalle.SuspendLayout();
             grbUsuariosActivos.SuspendLayout();
+            grbCambiosEstado.SuspendLayout();
             SuspendLayout();
             // 
             // grbDetalle
@@ -76,11 +81,9 @@
             grbDetalle.Controls.Add(lblApellido);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(327, 19);
-            grbDetalle.Margin = new Padding(3, 2, 3, 2);
+            grbDetalle.Location = new Point(374, 25);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Padding = new Padding(3, 2, 3, 2);
-            grbDetalle.Size = new Size(356, 424);
+            grbDetalle.Size = new Size(407, 443);
             grbDetalle.TabIndex = 6;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del usuario";
@@ -93,10 +96,10 @@
             btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
-            btnLimpiarDetalle.Location = new Point(241, 384);
-            btnLimpiarDetalle.Margin = new Padding(4);
+            btnLimpiarDetalle.Location = new Point(275, 389);
+            btnLimpiarDetalle.Margin = new Padding(5);
             btnLimpiarDetalle.Name = "btnLimpiarDetalle";
-            btnLimpiarDetalle.Size = new Size(101, 30);
+            btnLimpiarDetalle.Size = new Size(115, 40);
             btnLimpiarDetalle.TabIndex = 20;
             btnLimpiarDetalle.Text = "Limpiar";
             btnLimpiarDetalle.UseVisualStyleBackColor = false;
@@ -105,18 +108,18 @@
             // txtIDUsuario
             // 
             txtIDUsuario.Enabled = false;
-            txtIDUsuario.Location = new Point(22, 51);
-            txtIDUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtIDUsuario.Location = new Point(25, 68);
             txtIDUsuario.Name = "txtIDUsuario";
-            txtIDUsuario.Size = new Size(303, 23);
+            txtIDUsuario.Size = new Size(346, 27);
             txtIDUsuario.TabIndex = 19;
             // 
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(22, 26);
+            lblID.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblID.Location = new Point(25, 45);
             lblID.Name = "lblID";
-            lblID.Size = new Size(18, 15);
+            lblID.Size = new Size(25, 20);
             lblID.TabIndex = 18;
             lblID.Text = "ID";
             // 
@@ -128,10 +131,10 @@
             btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(22, 384);
-            btnEditar.Margin = new Padding(4);
+            btnEditar.Location = new Point(25, 389);
+            btnEditar.Margin = new Padding(5);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(101, 30);
+            btnEditar.Size = new Size(115, 40);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -145,10 +148,10 @@
             btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(131, 384);
-            btnEliminar.Margin = new Padding(4);
+            btnEliminar.Location = new Point(150, 389);
+            btnEliminar.Margin = new Padding(5);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(101, 30);
+            btnEliminar.Size = new Size(115, 40);
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -156,97 +159,96 @@
             // 
             // txtHost
             // 
-            txtHost.Location = new Point(22, 349);
-            txtHost.Margin = new Padding(3, 2, 3, 2);
+            txtHost.Location = new Point(25, 336);
             txtHost.Name = "txtHost";
-            txtHost.Size = new Size(83, 23);
+            txtHost.Size = new Size(94, 27);
             txtHost.TabIndex = 9;
             // 
             // lblHost
             // 
             lblHost.AutoSize = true;
-            lblHost.Location = new Point(22, 324);
+            lblHost.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHost.Location = new Point(26, 313);
             lblHost.Name = "lblHost";
-            lblHost.Size = new Size(32, 15);
+            lblHost.Size = new Size(42, 20);
             lblHost.TabIndex = 8;
             lblHost.Text = "Host";
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(22, 286);
-            txtDNI.Margin = new Padding(3, 2, 3, 2);
+            txtDNI.Location = new Point(25, 281);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(303, 23);
+            txtDNI.Size = new Size(346, 27);
             txtDNI.TabIndex = 7;
             // 
             // lblDNI
             // 
             lblDNI.AutoSize = true;
-            lblDNI.Location = new Point(22, 262);
+            lblDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDNI.Location = new Point(25, 258);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(27, 15);
+            lblDNI.Size = new Size(37, 20);
             lblDNI.TabIndex = 6;
             lblDNI.Text = "DNI";
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(22, 227);
-            txtUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtUsuario.Location = new Point(25, 227);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(303, 23);
+            txtUsuario.Size = new Size(346, 27);
             txtUsuario.TabIndex = 5;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(22, 202);
+            lblUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsuario.Location = new Point(25, 204);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(47, 15);
+            lblUsuario.Size = new Size(63, 20);
             lblUsuario.TabIndex = 4;
             lblUsuario.Text = "Usuario";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(22, 160);
-            txtApellido.Margin = new Padding(3, 2, 3, 2);
+            txtApellido.Location = new Point(25, 174);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(303, 23);
+            txtApellido.Size = new Size(346, 27);
             txtApellido.TabIndex = 3;
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(22, 135);
+            lblApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblApellido.Location = new Point(26, 151);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
+            lblApellido.Size = new Size(67, 20);
             lblApellido.TabIndex = 2;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(22, 99);
-            txtNombre.Margin = new Padding(3, 2, 3, 2);
+            txtNombre.Location = new Point(25, 121);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(303, 23);
+            txtNombre.Size = new Size(346, 27);
             txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(22, 74);
+            lblNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNombre.Location = new Point(25, 98);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
+            lblNombre.Size = new Size(67, 20);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
             // lstUsuarios
             // 
             lstUsuarios.FormattingEnabled = true;
-            lstUsuarios.ItemHeight = 15;
-            lstUsuarios.Location = new Point(38, 19);
-            lstUsuarios.Margin = new Padding(3, 2, 3, 2);
+            lstUsuarios.ItemHeight = 20;
+            lstUsuarios.Location = new Point(43, 25);
             lstUsuarios.Name = "lstUsuarios";
-            lstUsuarios.Size = new Size(265, 379);
+            lstUsuarios.Size = new Size(302, 504);
             lstUsuarios.TabIndex = 5;
             // 
             // btnVerDetalle
@@ -257,10 +259,10 @@
             btnVerDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
-            btnVerDetalle.Location = new Point(182, 403);
-            btnVerDetalle.Margin = new Padding(4);
+            btnVerDetalle.Location = new Point(208, 537);
+            btnVerDetalle.Margin = new Padding(5);
             btnVerDetalle.Name = "btnVerDetalle";
-            btnVerDetalle.Size = new Size(101, 30);
+            btnVerDetalle.Size = new Size(115, 40);
             btnVerDetalle.TabIndex = 4;
             btnVerDetalle.Text = "Ver detalle";
             btnVerDetalle.UseVisualStyleBackColor = false;
@@ -274,10 +276,10 @@
             btnListar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
-            btnListar.Location = new Point(56, 403);
-            btnListar.Margin = new Padding(4);
+            btnListar.Location = new Point(64, 537);
+            btnListar.Margin = new Padding(5);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(101, 30);
+            btnListar.Size = new Size(115, 40);
             btnListar.TabIndex = 7;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
@@ -291,10 +293,10 @@
             btnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
-            btnLimpiar.Location = new Point(116, 440);
-            btnLimpiar.Margin = new Padding(4);
+            btnLimpiar.Location = new Point(133, 587);
+            btnLimpiar.Margin = new Padding(5);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(101, 30);
+            btnLimpiar.Size = new Size(115, 40);
             btnLimpiar.TabIndex = 8;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -308,10 +310,10 @@
             btnAgregarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAgregarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarUsuario.FlatStyle = FlatStyle.Flat;
-            btnAgregarUsuario.Location = new Point(733, 30);
-            btnAgregarUsuario.Margin = new Padding(4);
+            btnAgregarUsuario.Location = new Point(816, 40);
+            btnAgregarUsuario.Margin = new Padding(5);
             btnAgregarUsuario.Name = "btnAgregarUsuario";
-            btnAgregarUsuario.Size = new Size(223, 30);
+            btnAgregarUsuario.Size = new Size(255, 40);
             btnAgregarUsuario.TabIndex = 21;
             btnAgregarUsuario.Text = "Agregar usuario";
             btnAgregarUsuario.UseVisualStyleBackColor = false;
@@ -325,10 +327,10 @@
             btnReactivarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnReactivarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnReactivarUsuario.FlatStyle = FlatStyle.Flat;
-            btnReactivarUsuario.Location = new Point(733, 70);
-            btnReactivarUsuario.Margin = new Padding(4);
+            btnReactivarUsuario.Location = new Point(26, 97);
+            btnReactivarUsuario.Margin = new Padding(5);
             btnReactivarUsuario.Name = "btnReactivarUsuario";
-            btnReactivarUsuario.Size = new Size(223, 30);
+            btnReactivarUsuario.Size = new Size(152, 40);
             btnReactivarUsuario.TabIndex = 22;
             btnReactivarUsuario.Text = "Reactivar usuario";
             btnReactivarUsuario.UseVisualStyleBackColor = false;
@@ -342,10 +344,10 @@
             btnUsuariosActivos.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnUsuariosActivos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnUsuariosActivos.FlatStyle = FlatStyle.Flat;
-            btnUsuariosActivos.Location = new Point(35, 238);
-            btnUsuariosActivos.Margin = new Padding(4);
+            btnUsuariosActivos.Location = new Point(29, 414);
+            btnUsuariosActivos.Margin = new Padding(5);
             btnUsuariosActivos.Name = "btnUsuariosActivos";
-            btnUsuariosActivos.Size = new Size(223, 30);
+            btnUsuariosActivos.Size = new Size(255, 40);
             btnUsuariosActivos.TabIndex = 23;
             btnUsuariosActivos.Text = "Listar usuarios activos";
             btnUsuariosActivos.UseVisualStyleBackColor = false;
@@ -353,22 +355,19 @@
             // lstUsuariosActivos
             // 
             lstUsuariosActivos.FormattingEnabled = true;
-            lstUsuariosActivos.ItemHeight = 15;
-            lstUsuariosActivos.Location = new Point(17, 20);
-            lstUsuariosActivos.Margin = new Padding(3, 2, 3, 2);
+            lstUsuariosActivos.ItemHeight = 20;
+            lstUsuariosActivos.Location = new Point(16, 30);
             lstUsuariosActivos.Name = "lstUsuariosActivos";
-            lstUsuariosActivos.Size = new Size(259, 214);
+            lstUsuariosActivos.Size = new Size(279, 364);
             lstUsuariosActivos.TabIndex = 24;
             // 
             // grbUsuariosActivos
             // 
             grbUsuariosActivos.Controls.Add(lstUsuariosActivos);
             grbUsuariosActivos.Controls.Add(btnUsuariosActivos);
-            grbUsuariosActivos.Location = new Point(698, 165);
-            grbUsuariosActivos.Margin = new Padding(3, 2, 3, 2);
+            grbUsuariosActivos.Location = new Point(787, 159);
             grbUsuariosActivos.Name = "grbUsuariosActivos";
-            grbUsuariosActivos.Padding = new Padding(3, 2, 3, 2);
-            grbUsuariosActivos.Size = new Size(295, 278);
+            grbUsuariosActivos.Size = new Size(315, 468);
             grbUsuariosActivos.TabIndex = 25;
             grbUsuariosActivos.TabStop = false;
             grbUsuariosActivos.Text = "Usuarios Activos";
@@ -381,22 +380,69 @@
             btnCambiarContraseña.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnCambiarContraseña.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnCambiarContraseña.FlatStyle = FlatStyle.Flat;
-            btnCambiarContraseña.Location = new Point(733, 112);
-            btnCambiarContraseña.Margin = new Padding(4);
+            btnCambiarContraseña.Location = new Point(816, 93);
+            btnCambiarContraseña.Margin = new Padding(5);
             btnCambiarContraseña.Name = "btnCambiarContraseña";
-            btnCambiarContraseña.Size = new Size(223, 30);
+            btnCambiarContraseña.Size = new Size(255, 40);
             btnCambiarContraseña.TabIndex = 26;
             btnCambiarContraseña.Text = "Cambiar contraseña";
             btnCambiarContraseña.UseVisualStyleBackColor = false;
             // 
+            // grbCambiosEstado
+            // 
+            grbCambiosEstado.Controls.Add(lblUsuarioCambioEstado);
+            grbCambiosEstado.Controls.Add(txtUsuarioCambioEstado);
+            grbCambiosEstado.Controls.Add(btnInhabiliarUsuario);
+            grbCambiosEstado.Controls.Add(btnReactivarUsuario);
+            grbCambiosEstado.Location = new Point(374, 476);
+            grbCambiosEstado.Name = "grbCambiosEstado";
+            grbCambiosEstado.Size = new Size(407, 151);
+            grbCambiosEstado.TabIndex = 27;
+            grbCambiosEstado.TabStop = false;
+            grbCambiosEstado.Text = "Cambios de estado";
+            // 
+            // lblUsuarioCambioEstado
+            // 
+            lblUsuarioCambioEstado.AutoSize = true;
+            lblUsuarioCambioEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsuarioCambioEstado.Location = new Point(25, 34);
+            lblUsuarioCambioEstado.Name = "lblUsuarioCambioEstado";
+            lblUsuarioCambioEstado.Size = new Size(139, 20);
+            lblUsuarioCambioEstado.TabIndex = 21;
+            lblUsuarioCambioEstado.Text = "Ingrese el Usuario:";
+            // 
+            // txtUsuarioCambioEstado
+            // 
+            txtUsuarioCambioEstado.Location = new Point(25, 57);
+            txtUsuarioCambioEstado.Name = "txtUsuarioCambioEstado";
+            txtUsuarioCambioEstado.Size = new Size(346, 27);
+            txtUsuarioCambioEstado.TabIndex = 21;
+            // 
+            // btnInhabiliarUsuario
+            // 
+            btnInhabiliarUsuario.BackColor = Color.DarkGray;
+            btnInhabiliarUsuario.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnInhabiliarUsuario.FlatAppearance.CheckedBackColor = Color.Black;
+            btnInhabiliarUsuario.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnInhabiliarUsuario.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnInhabiliarUsuario.FlatStyle = FlatStyle.Flat;
+            btnInhabiliarUsuario.Location = new Point(217, 97);
+            btnInhabiliarUsuario.Margin = new Padding(5);
+            btnInhabiliarUsuario.Name = "btnInhabiliarUsuario";
+            btnInhabiliarUsuario.Size = new Size(154, 40);
+            btnInhabiliarUsuario.TabIndex = 23;
+            btnInhabiliarUsuario.Text = "Inhabilitar usuario";
+            btnInhabiliarUsuario.UseVisualStyleBackColor = false;
+            btnInhabiliarUsuario.Click += btnInhabiliarUsuario_Click;
+            // 
             // FormUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1004, 488);
+            ClientSize = new Size(1147, 651);
+            Controls.Add(grbCambiosEstado);
             Controls.Add(btnCambiarContraseña);
             Controls.Add(grbUsuariosActivos);
-            Controls.Add(btnReactivarUsuario);
             Controls.Add(btnAgregarUsuario);
             Controls.Add(btnLimpiar);
             Controls.Add(btnListar);
@@ -404,13 +450,14 @@
             Controls.Add(lstUsuarios);
             Controls.Add(btnVerDetalle);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FormUsuarios";
             Text = "Usuarios";
             Load += FormUsuarios_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             grbUsuariosActivos.ResumeLayout(false);
+            grbCambiosEstado.ResumeLayout(false);
+            grbCambiosEstado.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -442,5 +489,9 @@
         public TextBox txtNombre;
         public TextBox txtHost;
         public TextBox txtUsuario;
+        private GroupBox grbCambiosEstado;
+        private Button btnInhabiliarUsuario;
+        private Label lblUsuarioCambioEstado;
+        public TextBox txtUsuarioCambioEstado;
     }
 }
