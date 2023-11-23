@@ -26,48 +26,47 @@ namespace FormPresentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            int dni = Convert.ToInt32(txtDNI.Text);
-            string direccion = txtDireccion.Text;
-            string telefono = txtTelefono.Text;
-            string email = txtEmail.Text;
-            DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-            //DateTime.TryParseExact(txtFechaNacimiento.Text, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out fechaNacimiento);
-            string host = txtHost.Text;
-            //'cmbHost.SelectedItem.ToString();
-            string errores = "";
-
-            //MessageBox.Show(fechaNacimiento.ToString());
-
-            errores += Validaciones.ValidaVacio(nombre, "Nombre");
-            errores += Validaciones.ValidaVacio(apellido, "Apellido");
-            errores += Validaciones.ValidaVacio(direccion, "Direccion");
-            errores += Validaciones.ValidaVacio(telefono, "Telefono");
-            errores += Validaciones.ValidaVacio(email, "Email");
-
-
-            if (!string.IsNullOrEmpty(errores))
-                MessageBox.Show(errores);
-            else
+            try
             {
-                ClienteWebServicesPost ClienteAgregar = new ClienteWebServicesPost();
-                ClienteAgregar.IdUsuario = usuario;
-                ClienteAgregar.Nombre = nombre;
-                ClienteAgregar.Apellido = apellido;
-                ClienteAgregar.Dni = dni;
-                ClienteAgregar.Direccion = direccion;
-                ClienteAgregar.Telefono = telefono;
-                ClienteAgregar.Email = email;
-                ClienteAgregar.FechaNacimiento = fechaNacimiento;
-                ClienteAgregar.Host = host;
+                string usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string dni = txtDNI.Text;
+                string direccion = txtDireccion.Text;
+                string telefono = txtTelefono.Text;
+                string email = txtEmail.Text;
+                DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+                string host = txtHost.Text;
+                int salida = 0;
+                string errores = "";
+                errores += Validaciones.ValidaVacio(nombre, "Nombre");
+                errores += Validaciones.ValidaVacio(apellido, "Apellido");
+                errores += Validaciones.ValidaVacio(direccion, "Direccion");
+                errores += Validaciones.ValidaVacio(telefono, "Telefono");
+                errores += Validaciones.ValidaVacio(email, "Email");
+                errores += Validaciones.ValidaNumerico(dni, ref salida, "DNI");
 
 
-                ClsCliente.CrearCliente(ClienteAgregar);
-                MessageBox.Show("Se creo el cliente exitosamente");
-                LimpiarCampos();
+                if (!string.IsNullOrEmpty(errores))
+                    MessageBox.Show(errores);
+                else
+                {
+                    ClienteWebServicesPost ClienteAgregar = new ClienteWebServicesPost();
+                    ClienteAgregar.IdUsuario = usuario;
+                    ClienteAgregar.Nombre = nombre;
+                    ClienteAgregar.Apellido = apellido;
+                    ClienteAgregar.Dni = Convert.ToInt32(salida);
+                    ClienteAgregar.Direccion = direccion;
+                    ClienteAgregar.Telefono = telefono;
+                    ClienteAgregar.Email = email;
+                    ClienteAgregar.FechaNacimiento = fechaNacimiento;
+                    ClienteAgregar.Host = host;
+                    ClsCliente.CrearCliente(ClienteAgregar);
+                    MessageBox.Show("Se creo el cliente exitosamente");
+                    LimpiarCampos();
+                }
             }
+            catch (Exception ex) { }
         }
 
         private void LimpiarCampos()

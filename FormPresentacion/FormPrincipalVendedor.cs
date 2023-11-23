@@ -80,6 +80,11 @@ namespace FormPresentacion
             AbrirFormulario<FormMaximaVentaCliente>();
         }
 
+        private void btnRegistarCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormRegistrarCliente>();
+        }
+
 
 
 

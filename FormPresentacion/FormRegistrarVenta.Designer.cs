@@ -554,7 +554,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormRegistrarVenta";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormRegistrarVenta";
+            Text = "Registrar venta";
             Load += FormRegistrarVenta_Load;
             ((System.ComponentModel.ISupportInitialize)dtaGriewPromocion).EndInit();
             gbRegistrarVenta.ResumeLayout(false);

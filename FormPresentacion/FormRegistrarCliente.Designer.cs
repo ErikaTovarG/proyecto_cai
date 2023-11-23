@@ -58,7 +58,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(43, 76);
+            pictureBox1.Location = new Point(32, 42);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 149);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -86,7 +86,7 @@
             grbAgregarUsuario.Controls.Add(lblApellido);
             grbAgregarUsuario.Controls.Add(txtNombre);
             grbAgregarUsuario.Controls.Add(lblNombre);
-            grbAgregarUsuario.Location = new Point(257, 76);
+            grbAgregarUsuario.Location = new Point(246, 42);
             grbAgregarUsuario.Name = "grbAgregarUsuario";
             grbAgregarUsuario.Size = new Size(839, 547);
             grbAgregarUsuario.TabIndex = 14;
@@ -269,13 +269,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1331, 929);
+            ClientSize = new Size(1126, 637);
             Controls.Add(pictureBox1);
             Controls.Add(grbAgregarUsuario);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormRegistrarCliente";
-            Text = "FormRegistrarCliente";
+            Text = "Registar usuario";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             grbAgregarUsuario.ResumeLayout(false);
             grbAgregarUsuario.PerformLayout();
