@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,17 @@ namespace Modelo.VentaModelo
 {
     public class VentaWebService
     {
-        private string idCliente, idUsuario, idProducto;
-        private int cantidad, estado;
 
-        public string IdCliente { get => idCliente; set => idCliente = value; }
-        public string IdUsuario { get => idUsuario; set => idUsuario = value; }
-        public string IdProducto { get => idProducto; set => idProducto = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
+        private Guid _id;
+        private int _cantidad, estado;
+        private DateTime _fechaAlta;
+
+        public Guid Id { get => _id; set => _id = value; }
+        public int Cantidad { get => _cantidad; set => _cantidad = value; }
         public int Estado { get => estado; set => estado = value; }
+        public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
+
+        public string ComboDisplay { get => $"Id: {Id} - Cantidad:{Cantidad} - Estado: { Estado}- FechaDeVenta{FechaAlta}"; }
+
     }
 }

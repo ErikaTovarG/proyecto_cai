@@ -6,11 +6,55 @@ namespace FormPresentacion
 {
     public static class Validaciones
     {
+        public static string ValidaEmail(string email, string campo)
+        {
+            string error = "";
+            email = email.Trim();
+            if (string.IsNullOrEmpty(email))
+            {
+                error = ($"El dato ingresado en {campo}no puede estar vacío.\n");
+                return error;
+            }
+
+            // Divide el email en partes antes y después del símbolo '@'
+            string[] partes = email.Split('@');
+
+            // Verifica que haya exactamente una '@' en el email
+            if (partes.Length != 2)
+            {
+                error = ($"El dato ingresado en {campo} debe ser un email válido.\n");
+                return error;
+            }
+            if (string.IsNullOrEmpty(partes[0]) || string.IsNullOrEmpty(partes[1]))
+            {
+                error = ($"El dato ingresado en {campo} debe ser un email válido.\n");
+                return error;
+            }
+
+            // Verifica que la parte después del '@' contenga al menos un punto '.'
+            if (!partes[1].Contains("."))
+            {
+                error = ($"El dato ingresado en {campo} debe ser un email válido.\n");
+                return error;
+            }
+            return error;
+        }
+
+
+        public static string ValidaNumerico(string num, ref int salida, string campo)
+        {
+            string error = "";
+            if (!Int32.TryParse(num, out salida) || salida < 0)
+                error = ($"El dato ingresado en {campo} debe ser númerico y entero.\n");
+            return error;
+        }
+
+
         public static string ValDecimal(string num, ref double salida, string campo)
         {
             string error = "";
             if (!Double.TryParse(num, out salida) || salida < 0)
-                error = ($"El dato ingresado en {campo} debe ser númerico y entero.\n");
+                error = ($"El dato ingresado en {campo} debe ser numérico y decimal.\n");
             return error;
         }
         public static string ValidaVacio(string dato, string campo)

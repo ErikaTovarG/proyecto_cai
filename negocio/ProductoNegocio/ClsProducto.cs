@@ -55,6 +55,15 @@ namespace Negocio.ProductoNegocio
             ProductosDatos.BorrarProducto(idProducto, usuarioAdministrador);
         }
 
+
+        
+        public static void EditarProducto(ProductoWebServicePatch producto)
+        {
+            ProductosDatos.EditarProducto(producto);
+
+        }
+
+
         public static int PrecioUnitarioProducto(Guid id)
         {
             try

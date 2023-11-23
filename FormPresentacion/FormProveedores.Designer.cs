@@ -84,7 +84,7 @@
             btnLimpiarCmb.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarCmb.FlatStyle = FlatStyle.Flat;
             btnLimpiarCmb.Location = new Point(263, 384);
-            btnLimpiarCmb.Margin = new Padding(4, 4, 4, 4);
+            btnLimpiarCmb.Margin = new Padding(4);
             btnLimpiarCmb.Name = "btnLimpiarCmb";
             btnLimpiarCmb.Size = new Size(101, 30);
             btnLimpiarCmb.TabIndex = 20;
@@ -119,12 +119,13 @@
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Location = new Point(37, 384);
-            btnEditar.Margin = new Padding(4, 4, 4, 4);
+            btnEditar.Margin = new Padding(4);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(101, 30);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -135,7 +136,7 @@
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Location = new Point(154, 384);
-            btnEliminar.Margin = new Padding(4, 4, 4, 4);
+            btnEliminar.Margin = new Padding(4);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(101, 30);
             btnEliminar.TabIndex = 16;
@@ -230,7 +231,7 @@
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Location = new Point(110, 439);
-            btnLimpiar.Margin = new Padding(4, 4, 4, 4);
+            btnLimpiar.Margin = new Padding(4);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(101, 30);
             btnLimpiar.TabIndex = 11;
@@ -247,7 +248,7 @@
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
             btnListar.Location = new Point(51, 401);
-            btnListar.Margin = new Padding(4, 4, 4, 4);
+            btnListar.Margin = new Padding(4);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(101, 30);
             btnListar.TabIndex = 10;
@@ -264,7 +265,7 @@
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
             btnVerDetalle.Location = new Point(177, 401);
-            btnVerDetalle.Margin = new Padding(4, 4, 4, 4);
+            btnVerDetalle.Margin = new Padding(4);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.Size = new Size(101, 30);
             btnVerDetalle.TabIndex = 9;
@@ -281,7 +282,7 @@
             btnAgregarProveedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarProveedor.FlatStyle = FlatStyle.Flat;
             btnAgregarProveedor.Location = new Point(760, 24);
-            btnAgregarProveedor.Margin = new Padding(4, 4, 4, 4);
+            btnAgregarProveedor.Margin = new Padding(4);
             btnAgregarProveedor.Name = "btnAgregarProveedor";
             btnAgregarProveedor.Size = new Size(223, 30);
             btnAgregarProveedor.TabIndex = 23;
@@ -326,9 +327,9 @@
         private Button btnVerDetalle;
         private Button btnEditar;
         private Button btnEliminar;
-        private TextBox txtIDProveedor;
         private Label lblID;
         private Button btnLimpiarCmb;
         private Button btnAgregarProveedor;
+        public TextBox txtIDProveedor;
     }
 }
