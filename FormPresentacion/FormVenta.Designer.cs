@@ -83,7 +83,7 @@
             gbDevVenta.Location = new Point(161, 79);
             gbDevVenta.Name = "gbDevVenta";
             gbDevVenta.Size = new Size(649, 394);
-            gbDevVenta.TabIndex = 34;
+            gbDevVenta.TabIndex = 0;
             gbDevVenta.TabStop = false;
             gbDevVenta.Text = "Devolución venta por ID : ";
             gbDevVenta.Enter += gbDevVenta_Enter;

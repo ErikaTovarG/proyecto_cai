@@ -30,5 +30,6 @@ namespace Modelo.Cliente_Modelo
         public string Host { get => _host; set => _host = value; }
         public int Dni { get => _dni; set => _dni = value; }
 
+        public string ComboDisplay { get => $"{Nombre}-{Apellido}"; }
     }
 }

@@ -26,7 +26,7 @@ namespace AccesoDatos
             }
         }
 
-        public static void CrearUsuario(UsuarioModelo usuario)
+        public static void CrearUsuario(UsuarioWebServicePost usuario)
         {
             var jsonRequest = JsonConvert.SerializeObject(usuario);
 
@@ -34,11 +34,35 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(response.StatusCode.ToString());
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
             }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
+
         }
 
-        public static string Login(Login login)
+        public static void EliminarUsuario(UsuarioWebServiceDelete usuario)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(usuario);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
+
+
+        }
+            public static string Login(Login login)
         {
             var jsonRequest = JsonConvert.SerializeObject(login);
 
@@ -97,7 +121,22 @@ namespace AccesoDatos
             }
 
         }
-       
+        
+        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+        }
 
     }
 }

@@ -17,11 +17,6 @@ namespace FormPresentacion
             InitializeComponent();
         }
 
-        private void panelTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormVenta>();
@@ -30,11 +25,6 @@ namespace FormPresentacion
         private void btnReportesVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormReporteVendedor>();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
@@ -69,6 +59,11 @@ namespace FormPresentacion
             this.Hide();
         }
 
+        private void btnDevolucionVenta_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormDevolucionVenta>();
+        }
+
 
 
         //Metodo para abrir el formulario dentro del panel.
@@ -86,7 +81,7 @@ namespace FormPresentacion
                 panelFormularios.Controls.Add(formulario); //Agrego el formulario al panel de formularios 
                 panelFormularios.Tag = formulario; //Especifico la propiedad tag 
                 formulario.Show(); //muestro el formulario 
-               // formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
+                                   // formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
                 formulario.Dock = DockStyle.Fill; //acoplo al panel 
                 formulario.BringToFront(); //para traer al frente el formulario cuando hacemos click 
             }

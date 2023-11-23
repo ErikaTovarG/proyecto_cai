@@ -135,6 +135,7 @@
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -331,6 +332,7 @@
             btnReactivarUsuario.TabIndex = 22;
             btnReactivarUsuario.Text = "Reactivar usuario";
             btnReactivarUsuario.UseVisualStyleBackColor = false;
+            btnReactivarUsuario.Click += btnReactivarUsuario_Click_1;
             // 
             // btnUsuariosActivos
             // 
@@ -415,23 +417,16 @@
         #endregion
 
         private GroupBox grbDetalle;
-        private TextBox txtDNI;
         private Label lblDNI;
-        private TextBox txtUsuario;
         private Label lblUsuario;
-        private TextBox txtApellido;
         private Label lblApellido;
-        private TextBox txtNombre;
         private Label lblNombre;
-        private ListBox lstUsuarios;
         private Button btnVerDetalle;
         private Button btnListar;
         private Button btnLimpiar;
-        private TextBox txtHost;
         private Label lblHost;
         private Button btnEditar;
         private Button btnEliminar;
-        private TextBox txtIDUsuario;
         private Label lblID;
         private Button btnLimpiarDetalle;
         private Button btnAgregarUsuario;
@@ -440,5 +435,12 @@
         private ListBox lstUsuariosActivos;
         private GroupBox grbUsuariosActivos;
         private Button btnCambiarContraseña;
+        public TextBox txtIDUsuario;
+        public ListBox lstUsuarios;
+        public TextBox txtDNI;
+        public TextBox txtApellido;
+        public TextBox txtNombre;
+        public TextBox txtHost;
+        public TextBox txtUsuario;
     }
 }
