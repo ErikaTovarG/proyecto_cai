@@ -96,5 +96,10 @@ namespace FormPresentacion
         {
             AbrirFormulario<FormDevolucionVenta>();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteStockCritico>();
+        }
     }
 }

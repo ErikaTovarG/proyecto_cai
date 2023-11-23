@@ -62,7 +62,6 @@ namespace FormPresentacion
                 {
                     Guid idVenta = ((VentaWebService)lstVentasPorCliente.SelectedItem).Id;
                     ClsVenta.DevolucionVenta(idVenta.ToString());
-                    lstVentasPorCliente.Items.Remove(lstVentasPorCliente.SelectedItem);
                     MessageBox.Show("Devolución realizada correctamente.");
                 }
                 else MessageBox.Show("Por favor, seleccione una venta para realizar la devolución.");

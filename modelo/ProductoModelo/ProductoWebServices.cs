@@ -28,6 +28,6 @@ namespace Modelo.ProductoModelo
         //}
 
         public string ComboDisplay { get => $"{Nombre}"; }
-        public string ListarPorCategoria { get => $"Categoria: {IdCategoria} - Nombre: {Nombre}"; }
+        public string ListarPorCategoria { get => $"Categoria: {IdCategoria}/{Nombre}"; }
     }
 }

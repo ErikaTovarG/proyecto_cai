@@ -145,7 +145,7 @@
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Visible = false;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnDevoluciones
             // 
