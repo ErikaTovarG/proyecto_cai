@@ -46,6 +46,11 @@ namespace FormPresentacion
                 string emailProveedor = txtEmail.Text;
                 string cuitProveedor = txtCUIT.Text;
 
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtCUIT.Clear();
+                txtEmail.Clear();
+
 
                 //Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
                 string Usuario = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
