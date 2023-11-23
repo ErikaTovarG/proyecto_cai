@@ -90,11 +90,19 @@ namespace FormPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // crear un formulario en que le pida los datos a cambiar del idUsuario seleccionado. 
-            // "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-           //"idUsuario": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-           //"precio": 0,
-           //"stock": 0
+         
+
+            if (lstProveedores.SelectedItem != null && !string.IsNullOrEmpty(txtIDProveedor.Text))
+            {
+                AbrirFormulario<FormEditarProveedor>();
+                LimpiarCampos();
+                lstProveedores.DataSource = null;
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el detalle de un proveedor a editar.");
+            }
         }
     }
 }
