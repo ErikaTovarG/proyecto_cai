@@ -108,7 +108,7 @@ namespace Presentacion
             Console.WriteLine($"Nombre: {usuario.nombre}");
             Console.WriteLine($"DNI: {usuario.dni}");
             Console.WriteLine($"Host: {usuario.host}");
-            Console.WriteLine($"Usuario: {usuario.usuario}");
+            Console.WriteLine($"Usuario: {usuario.nombreUsuario}");
             Console.WriteLine(new string('*', 60));
         }
 

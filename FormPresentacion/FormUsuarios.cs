@@ -54,7 +54,7 @@ namespace FormPresentacion
                 txtHost.Text = usuario.host.ToString();
                 txtNombre.Text = usuario.nombre.ToString();
                 txtApellido.Text = usuario.apellido.ToString();
-                //txtUsuario.Text = usuario.usuario.ToString();
+                txtUsuario.Text = usuario.nombreUsuario.ToString();
             }
         }
 
