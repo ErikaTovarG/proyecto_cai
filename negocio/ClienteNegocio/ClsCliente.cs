@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modelo.Switch;
+using Modelo.ClienteModelo;
 
 namespace Negocio.ClienteNegocio
 {
@@ -15,30 +16,10 @@ namespace Negocio.ClienteNegocio
 
         static List<Cliente> listaClientes = new List<Cliente>();
 
-        //¿Qué valores se deben modificar del proveedor?
-        public static bool ModificarCliente(int dni, string nuevaDireccion,string nuevoTelefono,string nuevoEmail)
+       
+        public static void ModificarCliente(ClienteWebServicePatch cliente)
         {
-            //prueba
-            Activo activo = new Activo();
-            Cliente cliente1 = new Cliente(Guid.NewGuid(), Guid.NewGuid(), "Facu", "Cairo", "Donato alvarez 510","4-581-5873", "facu@facu.com", Convert.ToDateTime("15/10/2023"), Convert.ToDateTime("15/10/2023"), Convert.ToDateTime("15/10/2023"), "1", 123456,activo);
-            listaClientes.Add(cliente1);
-
-            bool flag = false;
-            Cliente clienteEncontrado = buscarClientePorDni(dni);
-            if (clienteEncontrado != null)
-            {
-                clienteEncontrado.Direccion = nuevaDireccion;
-                clienteEncontrado.Telefono = nuevoTelefono; 
-                clienteEncontrado.Email= nuevoEmail;
-                //asi se coloca estado??
-                clienteEncontrado.Estado= new Activo();
-                flag = true;
-            }
-            else
-            {
-                Console.WriteLine("\nError: no existe ningún Cliente con el DNI: {0} \n", dni);
-            }
-            return flag;
+            ClientesDatos.EditarCliente(cliente);
         }
 
         public static Cliente buscarClientePorDni(int dni)

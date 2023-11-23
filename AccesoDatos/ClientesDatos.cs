@@ -1,6 +1,8 @@
 ﻿using AccesoDatos.Utilidades;
 using Modelo.Cliente_Modelo;
+using Modelo.ClienteModelo;
 using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -62,6 +64,21 @@ namespace AccesoDatos
             }
 
         }
+
+
+        public static void EditarCliente(ClienteWebServicePatch cliente)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(cliente);
+
+            HttpResponseMessage response = WebHelper.Patch("Cliente/PatchCliente", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            
+        }
+
 
     }
 }

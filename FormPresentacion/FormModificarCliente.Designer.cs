@@ -140,7 +140,6 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Enabled = false;
             txtDireccion.Location = new Point(313, 63);
             txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Name = "txtDireccion";
@@ -158,6 +157,7 @@
             // 
             // txtHost
             // 
+            txtHost.Enabled = false;
             txtHost.Location = new Point(313, 222);
             txtHost.Margin = new Padding(3, 2, 3, 2);
             txtHost.Name = "txtHost";
@@ -175,6 +175,7 @@
             // 
             // txtFechaNacimiento
             // 
+            txtFechaNacimiento.Enabled = false;
             txtFechaNacimiento.Location = new Point(313, 166);
             txtFechaNacimiento.Margin = new Padding(3, 2, 3, 2);
             txtFechaNacimiento.Name = "txtFechaNacimiento";
@@ -261,6 +262,7 @@
             // 
             // txtDni
             // 
+            txtDni.Enabled = false;
             txtDni.Location = new Point(37, 280);
             txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
@@ -295,6 +297,7 @@
             // 
             // txtApellido
             // 
+            txtApellido.Enabled = false;
             txtApellido.Location = new Point(37, 166);
             txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
@@ -312,6 +315,7 @@
             // 
             // txtNombre
             // 
+            txtNombre.Enabled = false;
             txtNombre.Location = new Point(37, 112);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
@@ -349,6 +353,7 @@
             Controls.Add(lstClientes);
             Name = "FormModificarCliente";
             Text = "FormModificarCliente";
+            Load += FormModificarCliente_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             ResumeLayout(false);
@@ -381,5 +386,6 @@
         private Label label4;
         private TextBox txtTelefono;
         private Label label5;
+        private ComboBox comboBox1;
     }
 }
