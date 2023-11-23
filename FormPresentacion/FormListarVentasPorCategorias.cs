@@ -16,6 +16,8 @@ using Negocio.UsuarioLogNegocio;
 using Negocio.Venta;
 using Modelo.ProductoModelo;
 using Negocio.ProductoNegocio;
+using Modelo.Cliente_Modelo;
+using Negocio.ClienteNegocio;
 
 namespace FormPresentacion
 {
@@ -28,47 +30,41 @@ namespace FormPresentacion
 
         private void btnVentaProdCat_Click(object sender, EventArgs e)
         {
-            masVentasDetalle.DataSource = null;
 
-            string errores = Validaciones.ValidaVacio(txtIdCliente.Text, "Cliente Buscado");
+            masVentasDetalle.Rows.Clear();
 
-            if (errores == "")
+            string cliente = cmbClientes.SelectedValue.ToString();
+
+            List<VentaWebService> ventasWebServices = ClsVenta.ListarVentasPorCliente(Guid.Parse(cliente));
+            var ventasOrdenadas = ventasWebServices.OrderByDescending(v => v.Cantidad).ToList();
+
+            foreach (var venta in ventasOrdenadas)
             {
-                string cliente = txtIdCliente.Text;
+                int n = masVentasDetalle.Rows.Add();
 
-                List<VentaWebService> ventasWebServices = ClsVenta.ListarVentasPorCliente(Guid.Parse(cliente));
-                var ventasOrdenadas = ventasWebServices.OrderByDescending(v => v.Cantidad).ToList();
-
-                foreach (var venta in ventasOrdenadas)
-                {
-                    int n = masVentasDetalle.Rows.Add();
-
-                    masVentasDetalle.Rows[n].Cells[0].Value = venta.Id;
-                    masVentasDetalle.Rows[n].Cells[1].Value = venta.Cantidad;
-                    masVentasDetalle.Rows[n].Cells[2].Value = venta.Estado;
-                    masVentasDetalle.Rows[n].Cells[3].Value = venta.FechaAlta;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                masVentasDetalle.Rows[n].Cells[0].Value = venta.Id;
+                masVentasDetalle.Rows[n].Cells[1].Value = venta.Cantidad;
+                masVentasDetalle.Rows[n].Cells[2].Value = venta.Estado;
+                masVentasDetalle.Rows[n].Cells[3].Value = venta.FechaAlta;
             }
 
+        }
+
+        private void CargarListaClientes()
+        {
+            List<ClienteWebServices> lstClientes = ClsCliente.ListarClientes();
+            cmbClientes.DataSource = null;
+            cmbClientes.DataSource = lstClientes;
+            cmbClientes.DisplayMember = "ComboDisplay";
+            cmbClientes.ValueMember = "Id";
         }
 
         private void FormListarVentasPorCategorias_Load(object sender, EventArgs e)
         {
-
+            CargarListaClientes();
         }
 
-        private void txtIdCliente_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void masVentasDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
     }
 
 }

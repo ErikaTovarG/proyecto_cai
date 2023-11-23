@@ -127,7 +127,7 @@
             btnDevolucionVenta.TabIndex = 14;
             btnDevolucionVenta.Text = "Devolucion venta";
             btnDevolucionVenta.UseVisualStyleBackColor = true;
-            btnDevolucionVenta.Click += btnDevolucionVenta_Click;
+            
             // 
             // button1
             // 

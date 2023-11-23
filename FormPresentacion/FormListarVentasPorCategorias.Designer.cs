@@ -31,12 +31,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnVentaProdCat = new Button();
-            txtIdCliente = new TextBox();
             masVentasDetalle = new DataGridView();
             ventaId = new DataGridViewTextBoxColumn();
             ventaCantidad = new DataGridViewTextBoxColumn();
             ventaEstado = new DataGridViewTextBoxColumn();
             ventaFechaA = new DataGridViewTextBoxColumn();
+            cmbClientes = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)masVentasDetalle).BeginInit();
             SuspendLayout();
             // 
@@ -57,15 +57,6 @@
             btnVentaProdCat.UseVisualStyleBackColor = false;
             btnVentaProdCat.Click += btnVentaProdCat_Click;
             // 
-            // txtIdCliente
-            // 
-            txtIdCliente.Location = new Point(398, 350);
-            txtIdCliente.Margin = new Padding(3, 2, 3, 2);
-            txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(148, 23);
-            txtIdCliente.TabIndex = 12;
-            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
-            // 
             // masVentasDetalle
             // 
             masVentasDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,7 +71,7 @@
             masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle1;
             masVentasDetalle.Enabled = false;
             masVentasDetalle.EnableHeadersVisualStyles = false;
-            masVentasDetalle.Location = new Point(86, 23);
+            masVentasDetalle.Location = new Point(56, 26);
             masVentasDetalle.Name = "masVentasDetalle";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -91,14 +82,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             masVentasDetalle.RowTemplate.Height = 25;
-            masVentasDetalle.Size = new Size(614, 283);
+            masVentasDetalle.Size = new Size(644, 283);
             masVentasDetalle.TabIndex = 40;
-            masVentasDetalle.CellContentClick += masVentasDetalle_CellContentClick;
             // 
             // ventaId
             // 
             ventaId.HeaderText = "ID Cliente";
             ventaId.Name = "ventaId";
+            ventaId.Width = 200;
             // 
             // ventaCantidad
             // 
@@ -114,30 +105,39 @@
             // 
             ventaFechaA.HeaderText = "Fecha Alta";
             ventaFechaA.Name = "ventaFechaA";
+            ventaFechaA.Width = 200;
+            // 
+            // cmbClientes
+            // 
+            cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbClientes.FormattingEnabled = true;
+            cmbClientes.Location = new Point(396, 345);
+            cmbClientes.Name = "cmbClientes";
+            cmbClientes.Size = new Size(185, 23);
+            cmbClientes.TabIndex = 79;
             // 
             // FormListarVentasPorCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbClientes);
             Controls.Add(masVentasDetalle);
-            Controls.Add(txtIdCliente);
             Controls.Add(btnVentaProdCat);
             Name = "FormListarVentasPorCategorias";
             Text = "FormListarVentasPorCategorias";
             Load += FormListarVentasPorCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)masVentasDetalle).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Button btnVentaProdCat;
-        public TextBox txtIdCliente;
         private DataGridView masVentasDetalle;
         private DataGridViewTextBoxColumn ventaId;
         private DataGridViewTextBoxColumn ventaCantidad;
         private DataGridViewTextBoxColumn ventaEstado;
         private DataGridViewTextBoxColumn ventaFechaA;
+        private ComboBox cmbClientes;
     }
 }
