@@ -351,6 +351,7 @@
             btnUsuariosActivos.TabIndex = 23;
             btnUsuariosActivos.Text = "Listar usuarios activos";
             btnUsuariosActivos.UseVisualStyleBackColor = false;
+            btnUsuariosActivos.Click += btnUsuariosActivos_Click;
             // 
             // lstUsuariosActivos
             // 

@@ -20,5 +20,10 @@ namespace Modelo.ProveedorModelo
         public string Cuit { get => _cuit; set => _cuit = value; }
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public DateTime? FechaBaja { get; set; }
+
+        public override string ToString()
+        {
+            return $"Nombre: {_nombre}\nApellido: {_apellido}\nEmail: {_email}\nCUIT: {_cuit}";
+        }
     }
 }
