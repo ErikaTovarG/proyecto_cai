@@ -34,10 +34,32 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(response.StatusCode.ToString());
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
             }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
+
         }
 
+        public static void EliminarUsuario(UsuarioWebServiceDelete usuario)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(usuario);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                //throw new Exception(response.StatusCode.ToString());
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Usuario agregado exitosamente.");
+            }
+        }
         public static string Login(Login login)
         {
             var jsonRequest = JsonConvert.SerializeObject(login);
@@ -46,14 +68,16 @@ namespace AccesoDatos
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Verifique los datos ingresados");
+                //throw new Exception(response.StatusCode.ToString());
+                return null;
+            }
+            else
+            {
+                var reader = new StreamReader(response.Content.ReadAsStream());
+                String respuesta = reader.ReadToEnd();
+                return respuesta;
             }
 
-            var reader = new StreamReader(response.Content.ReadAsStream());
-
-            String respuesta = reader.ReadToEnd();
-
-            return respuesta;
         }
 
         public static string CambiarContraseña(string nombreUsuario, string contraseña, string contraseñaNueva)
@@ -95,7 +119,37 @@ namespace AccesoDatos
             }
 
         }
-       
+
+        public static void ReactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.Patch("Usuario/ReactivarUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+        }
+        public static void InactivarUsuario(string idUsuario, string idUsuarioMaster)
+        {
+            Dictionary<String, String> map = new Dictionary<String, String>();
+            map.Add("id", idUsuario);
+            map.Add("idUsuario", idUsuarioMaster);
+
+            var jsonRequest = JsonConvert.SerializeObject(map);
+
+            HttpResponseMessage response = WebHelper.DeleteConBody("Usuario/BajaUsuario", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Verifique los datos ingresados");
+            }
+        }
 
     }
 }

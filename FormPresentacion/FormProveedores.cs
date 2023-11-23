@@ -91,6 +91,18 @@ namespace FormPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
+
+            if (lstProveedores.SelectedItem != null && !string.IsNullOrEmpty(txtIDProveedor.Text))
+            {
+                AbrirFormulario<FormEditarProveedor>();
+                LimpiarCampos();
+                lstProveedores.DataSource = null;
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el detalle de un proveedor a editar.");
+            }
         }
     }
 }

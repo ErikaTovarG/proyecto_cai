@@ -91,18 +91,22 @@ namespace FormPresentacion
                 if (stock < stockLimite)
                 {
                     listaProductos2.Add(producto);
-                }    
+                }
             }
 
-            if(listaProductos2 != null)
+            if (listaProductos2 != null)
             {
                 foreach (var producto in listaProductos)
                 {
                     formOtro.AgregarProductoALista(producto.ToString());
                 }
-                    formOtro.ShowDialog();
+                formOtro.ShowDialog();
             }
         }
 
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteStockCritico>();
+        }
     }
 }

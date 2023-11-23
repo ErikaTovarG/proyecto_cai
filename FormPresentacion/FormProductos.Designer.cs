@@ -83,7 +83,7 @@
             grbDetalle.Controls.Add(lblID);
             grbDetalle.Location = new Point(371, 27);
             grbDetalle.Name = "grbDetalle";
-            grbDetalle.Size = new Size(421, 445);
+            grbDetalle.Size = new Size(408, 445);
             grbDetalle.TabIndex = 3;
             grbDetalle.TabStop = false;
             grbDetalle.Text = "Detalle del producto";
@@ -97,7 +97,7 @@
             btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiarDetalle.FlatStyle = FlatStyle.Flat;
             btnLimpiarDetalle.Location = new Point(274, 381);
-            btnLimpiarDetalle.Margin = new Padding(5);
+            btnLimpiarDetalle.Margin = new Padding(5, 5, 5, 5);
             btnLimpiarDetalle.Name = "btnLimpiarDetalle";
             btnLimpiarDetalle.Size = new Size(115, 40);
             btnLimpiarDetalle.TabIndex = 18;
@@ -130,12 +130,13 @@
             btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Location = new Point(24, 381);
-            btnEditar.Margin = new Padding(5);
+            btnEditar.Margin = new Padding(5, 5, 5, 5);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(115, 40);
             btnEditar.TabIndex = 15;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -146,7 +147,7 @@
             btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Location = new Point(149, 381);
-            btnEliminar.Margin = new Padding(5);
+            btnEliminar.Margin = new Padding(5, 5, 5, 5);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(115, 40);
             btnEliminar.TabIndex = 14;
@@ -228,7 +229,7 @@
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Location = new Point(131, 589);
-            btnLimpiar.Margin = new Padding(5);
+            btnLimpiar.Margin = new Padding(5, 5, 5, 5);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(115, 40);
             btnLimpiar.TabIndex = 14;
@@ -245,7 +246,7 @@
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
             btnListar.Location = new Point(63, 539);
-            btnListar.Margin = new Padding(5);
+            btnListar.Margin = new Padding(5, 5, 5, 5);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(115, 40);
             btnListar.TabIndex = 13;
@@ -262,7 +263,7 @@
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
             btnVerDetalle.Location = new Point(207, 539);
-            btnVerDetalle.Margin = new Padding(5);
+            btnVerDetalle.Margin = new Padding(5, 5, 5, 5);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.Size = new Size(115, 40);
             btnVerDetalle.TabIndex = 12;
@@ -279,7 +280,7 @@
             btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregarProducto.FlatStyle = FlatStyle.Flat;
             btnAgregarProducto.Location = new Point(843, 37);
-            btnAgregarProducto.Margin = new Padding(5);
+            btnAgregarProducto.Margin = new Padding(5, 5, 5, 5);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(255, 40);
             btnAgregarProducto.TabIndex = 22;
@@ -293,9 +294,9 @@
             grbListaPorCategoria.Controls.Add(btnLimpiarCategoria);
             grbListaPorCategoria.Controls.Add(lstProductosCategoria);
             grbListaPorCategoria.Controls.Add(cmbCategoria);
-            grbListaPorCategoria.Location = new Point(822, 100);
+            grbListaPorCategoria.Location = new Point(785, 100);
             grbListaPorCategoria.Name = "grbListaPorCategoria";
-            grbListaPorCategoria.Size = new Size(302, 487);
+            grbListaPorCategoria.Size = new Size(339, 479);
             grbListaPorCategoria.TabIndex = 23;
             grbListaPorCategoria.TabStop = false;
             grbListaPorCategoria.Text = "Listado por categoria";
@@ -309,7 +310,7 @@
             btnListarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListarCategoria.FlatStyle = FlatStyle.Flat;
             btnListarCategoria.Location = new Point(22, 75);
-            btnListarCategoria.Margin = new Padding(5);
+            btnListarCategoria.Margin = new Padding(5, 5, 5, 5);
             btnListarCategoria.Name = "btnListarCategoria";
             btnListarCategoria.Size = new Size(78, 35);
             btnListarCategoria.TabIndex = 24;
@@ -326,7 +327,7 @@
             btnLimpiarCategoria.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnLimpiarCategoria.FlatStyle = FlatStyle.Flat;
             btnLimpiarCategoria.Location = new Point(105, 75);
-            btnLimpiarCategoria.Margin = new Padding(5);
+            btnLimpiarCategoria.Margin = new Padding(5, 5, 5, 5);
             btnLimpiarCategoria.Name = "btnLimpiarCategoria";
             btnLimpiarCategoria.Size = new Size(78, 35);
             btnLimpiarCategoria.TabIndex = 21;
@@ -340,7 +341,7 @@
             lstProductosCategoria.ItemHeight = 20;
             lstProductosCategoria.Location = new Point(22, 116);
             lstProductosCategoria.Name = "lstProductosCategoria";
-            lstProductosCategoria.Size = new Size(255, 344);
+            lstProductosCategoria.Size = new Size(299, 324);
             lstProductosCategoria.TabIndex = 20;
             // 
             // cmbCategoria
@@ -377,7 +378,6 @@
         private GroupBox grpLista;
         private ListBox lstProductos;
         private GroupBox grbDetalle;
-        private TextBox txtIDproducto;
         private Label lblID;
         private TextBox txtPrecio;
         private Label lblPrecio;
@@ -399,5 +399,6 @@
         private Button btnLimpiarCategoria;
         private ListBox lstProductosCategoria;
         private ComboBox cmbCategoria;
+        public TextBox txtIDproducto;
     }
 }

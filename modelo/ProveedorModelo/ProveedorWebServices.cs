@@ -20,7 +20,7 @@ namespace Modelo.ProveedorModelo
         
         public override string ToString()
         {
-            return string.Format($"* {Nombre} - {Apellido}.");
+            return string.Format($" Nombre: {Nombre}\n - Apellido: {Apellido}");
         }
     }
 }

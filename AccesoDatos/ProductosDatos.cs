@@ -1,6 +1,8 @@
 ﻿using AccesoDatos.Utilidades;
+using Modelo.Producto;
 using Modelo.ProductoModelo;
 using Modelo.UsuarioModelo;
+using Modelo.VentaModelo;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -23,8 +25,8 @@ namespace AccesoDatos
             else
             {
                 var contentstream = response.Content.ReadAsStringAsync().Result;
-                List<ProductoWebServices> listadousuarios = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
-                return listadousuarios;
+                List<ProductoWebServices> Listado = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
+                return Listado;
 
             }
         }
@@ -42,7 +44,6 @@ namespace AccesoDatos
                 var contentstream = response.Content.ReadAsStringAsync().Result;
                 List<ProductoWebServices> listadousuarios = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
                 return listadousuarios;
-
             }
         }
 
@@ -74,6 +75,22 @@ namespace AccesoDatos
             }
 
         }
+
+       
+        public static void EditarProducto(ProductoWebServicePatch producto)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(producto);
+
+            HttpResponseMessage response = WebHelper.Patch("Producto/ModificarProducto", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+
+        }
+
+
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos.Utilidades;
+using Modelo.ProductoModelo;
 using Modelo.Proveedor;
 using Modelo.ProveedorModelo;
 using Newtonsoft.Json;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace AccesoDatos
 {
@@ -62,6 +64,23 @@ namespace AccesoDatos
                 throw new Exception("Verifique los datos ingresados");
             }
 
+        }
+
+        //modificar producto con swagger
+        public static void EditarProveedor(ProveedorWebservicePatch proveedor)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(proveedor);
+
+            HttpResponseMessage response = WebHelper.Patch("Proveedor/ModificarProveedor", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Proveedor modificado.");
+            }
         }
 
 

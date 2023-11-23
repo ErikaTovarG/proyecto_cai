@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Modelo.ProductoModelo;
+using Modelo.ProveedorModelo;
 using Modelo.UsuarioModelo;
 
 
@@ -153,21 +154,53 @@ namespace Negocio.UsuarioLogNegocio
             return false;
         }
 
-        public static String Login(Login login)
+        public static string Login(Login login)
         {
-            String idUsuario = UsuarioDatos.Login(login);
+            string idUsuario = UsuarioDatos.Login(login);
             return idUsuario;
         }
 
-        public static List<UsuarioWebServices> ListarUsuarios(Guid idUsuario)
+        public static List<UsuarioWebServices> ListarUsuarios()
         {
+            Guid idUsuario = Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969");
             return UsuarioDatos.Listarusuarios(idUsuario);
+        }
+
+        
+        public static void ReactivarUsuario(string idUsuario)
+        {
+            string UsuarioAdmin = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            UsuarioDatos.ReactivarUsuario(idUsuario, UsuarioAdmin);
         }
 
 
         public static void CrearUsuario(UsuarioWebServicePost usuario)
         {
             UsuarioDatos.CrearUsuario(usuario);
+        }
+
+
+        public static void EliminarUsuario(UsuarioWebServiceDelete usuario)
+        {
+            UsuarioDatos.EliminarUsuario(usuario);
+        }
+        public static string BuscoPorUsuario(string usuario)
+        {
+            UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
+            return usuarioEncontrado.id.ToString();
+        }
+        public static string BuscoPorUsuarioParaActivar(string usuario)
+        {
+            string devolver;
+            UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
+            if(usuarioEncontrado == null) devolver = "";
+            else devolver = usuarioEncontrado.id.ToString();
+            return devolver;
+        }
+        public static void InactivarUsuario(string idUsuario)
+        {
+            string idUsuarioMaster = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
+            UsuarioDatos.InactivarUsuario(idUsuario, idUsuarioMaster);
         }
 
     }

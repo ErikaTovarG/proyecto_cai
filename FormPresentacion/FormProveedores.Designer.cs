@@ -327,9 +327,9 @@
         private Button btnVerDetalle;
         private Button btnEditar;
         private Button btnEliminar;
-        private TextBox txtIDProveedor;
         private Label lblID;
         private Button btnLimpiarCmb;
         private Button btnAgregarProveedor;
+        public TextBox txtIDProveedor;
     }
 }

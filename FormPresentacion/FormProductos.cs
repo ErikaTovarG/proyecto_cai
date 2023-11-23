@@ -28,6 +28,7 @@ namespace FormPresentacion
         {
             List<ProductoWebServices> productoWebServices = ClsProducto.ListarProductos();
             lstProductos.DataSource = productoWebServices;
+            lstProductos.DisplayMember = "ComboDisplay";
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -139,5 +140,24 @@ namespace FormPresentacion
             txtCategoria.Clear();
             txtIDproducto.Clear();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //se abre si la lista de productos no está vacía y si seleccinó un detalle
+
+            if (lstProductos.SelectedItem != null && !string.IsNullOrEmpty(txtIDproducto.Text))
+            {
+                AbrirFormulario<FormEditarProducto>();
+                LimpiarCampos();
+                lstProductos.DataSource = null;
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el detalle de un producto a editar.");
+            }
+        }
+
+
     }
 }

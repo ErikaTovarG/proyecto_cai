@@ -44,5 +44,10 @@ namespace FormPresentacion
         private void lblIdVenta_Click(object sender, EventArgs e)
         {
         }
+
+        private void gbDevVenta_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

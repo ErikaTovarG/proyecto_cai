@@ -1,6 +1,10 @@
-﻿using Modelo.UsuarioModelo;
+﻿using Modelo.ProveedorModelo;
+using Modelo.UsuarioModelo;
 using Negocio.UsuarioLogNegocio;
 using Newtonsoft.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
+using Microsoft.VisualBasic.Logging;
 
 namespace FormPresentacion
 {
@@ -13,8 +17,11 @@ namespace FormPresentacion
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios(Guid.Parse("D347CE99-DB8D-4542-AA97-FC9F3CCE6969"));
+            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
             lstUsuarios.DataSource = usuariosWebServices;
+            lstUsuarios.DisplayMember = "ComboDisplay";
+            lstUsuarios.ValueMember = "Id";
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -35,7 +42,19 @@ namespace FormPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormAlertaEliminarUsuario>();
+            if (lstUsuarios.SelectedItem != null && (!string.IsNullOrEmpty(txtIDUsuario.Text) && !string.IsNullOrEmpty(txtDNI.Text) && !string.IsNullOrEmpty(txtHost.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text)))
+            {
+                AbrirFormulario<FormAlertaEliminarUsuario>();
+                LimpiarCampos();
+                lstUsuarios.DataSource = null;
+                lstUsuarios.Items.Remove(lstUsuarios.SelectedItem);
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el detalle de un usuario a eliminar.");
+            }
+
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
@@ -54,11 +73,95 @@ namespace FormPresentacion
                 txtHost.Text = usuario.host.ToString();
                 txtNombre.Text = usuario.nombre.ToString();
                 txtApellido.Text = usuario.apellido.ToString();
-                //txtUsuario.Text = usuario.usuario.ToString();
+                txtUsuario.Text = usuario.nombreUsuario.ToString();
             }
         }
+        private void btnReactivarUsuario_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuarioCambioEstado.Text;
+                string error = Validaciones.ValidaVacio(usuario, "Nombre de Usuario");
 
-        private void AbrirFormulario<T>() where T : Form, new()
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el 'Nombre de Usuario' del usuario a reactivar.");
+                else
+                {
+                    string idUsuario = ClsUsuario.BuscoPorUsuarioParaActivar(usuario);
+                    if (!string.IsNullOrEmpty(idUsuario))
+                    {
+                        ClsUsuario.ReactivarUsuario(idUsuario);
+                        MessageBox.Show("Se reactivo el usuario correctamente");
+                        txtUsuarioCambioEstado.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra el usuario para reactivar");
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void btnInhabiliarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuarioCambioEstado.Text;
+                string error = Validaciones.ValidaVacio(usuario, "Nombre de Usuario");
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Se requiere el 'Nombre de Usuario' del usuario a Inactivar.");
+                else
+                {
+                    string usuarioEncontrado = ClsUsuario.BuscoPorUsuario(txtUsuarioCambioEstado.Text);
+                    if (!string.IsNullOrEmpty(usuarioEncontrado))
+                    {
+                        ClsUsuario.InactivarUsuario(usuarioEncontrado.ToString());
+                        MessageBox.Show("Se inactivo el usuario correctamente");
+                        txtUsuarioCambioEstado.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra el usuario para inactivar");
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
+            
+        }
+        public void LimpiarCampos()
+        {
+            txtIDUsuario.Clear();
+            txtDNI.Clear();
+            txtHost.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+        }
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //no está el endóint para editar parcialmente un usuario. 
+
+        }
+
+        private void btnUsuariosActivos_Click(object sender, EventArgs e)
+        {
+            
+           List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
+
+            lstUsuariosActivos.DataSource = usuariosWebServices;
+            lstUsuariosActivos.DisplayMember = "ComboDisplay";
+            lstUsuariosActivos.ValueMember = "Id";
+
+            
+        }
+
+       
+
+        public void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();
             form.TopLevel = true;
@@ -66,5 +169,6 @@ namespace FormPresentacion
             form.Dock = DockStyle.Fill;
             form.BringToFront();
         }
+
     }
 }

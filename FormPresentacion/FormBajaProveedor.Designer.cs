@@ -29,74 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBajaProveedor));
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            txtIDProveedor = new TextBox();
+            lblIDProveedor = new Label();
+            btnEliminar = new Button();
             SuspendLayout();
             // 
-            // textBox3
+            // txtIDProveedor
             // 
-            textBox3.Location = new Point(162, 244);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(392, 27);
-            textBox3.TabIndex = 11;
+            txtIDProveedor.Location = new Point(142, 84);
+            txtIDProveedor.Margin = new Padding(3, 2, 3, 2);
+            txtIDProveedor.Name = "txtIDProveedor";
+            txtIDProveedor.Size = new Size(344, 23);
+            txtIDProveedor.TabIndex = 7;
             // 
-            // label3
+            // lblIDProveedor
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(162, 221);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 10;
-            label3.Text = "label3";
+            lblIDProveedor.AutoSize = true;
+            lblIDProveedor.Location = new Point(142, 67);
+            lblIDProveedor.Name = "lblIDProveedor";
+            lblIDProveedor.Size = new Size(116, 15);
+            lblIDProveedor.TabIndex = 6;
+            lblIDProveedor.Text = "Ingrese ID proveedor";
             // 
-            // textBox2
+            // btnEliminar
             // 
-            textBox2.Location = new Point(162, 176);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(392, 27);
-            textBox2.TabIndex = 9;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(162, 153);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 8;
-            label2.Text = "label2";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(162, 112);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(392, 27);
-            textBox1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(162, 89);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 6;
-            label1.Text = "label1";
+            btnEliminar.BackColor = Color.DarkGray;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Location = new Point(142, 132);
+            btnEliminar.Margin = new Padding(4);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(101, 30);
+            btnEliminar.TabIndex = 11;
+            btnEliminar.Text = "Aceptar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // FormBajaProveedor
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1147, 650);
-            Controls.Add(textBox3);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(1004, 488);
+            Controls.Add(btnEliminar);
+            Controls.Add(txtIDProveedor);
+            Controls.Add(lblIDProveedor);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormBajaProveedor";
             Text = "Baja Proveedor";
             ResumeLayout(false);
@@ -104,12 +85,8 @@
         }
 
         #endregion
-
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtIDProveedor;
+        private Label lblIDProveedor;
+        private Button btnEliminar;
     }
 }

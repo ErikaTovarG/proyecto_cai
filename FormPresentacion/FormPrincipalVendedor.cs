@@ -17,11 +17,6 @@ namespace FormPresentacion
             InitializeComponent();
         }
 
-        private void panelTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormVenta>();
@@ -30,11 +25,6 @@ namespace FormPresentacion
         private void btnReportesVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormReporteVendedor>();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
@@ -57,6 +47,11 @@ namespace FormPresentacion
             AbrirFormulario<FormReporteVendedor>();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormVentaCliente>();
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             FormPrincipalVendedor formVendedor = new FormPrincipalVendedor();
@@ -68,6 +63,25 @@ namespace FormPresentacion
         {
             AbrirFormulario<FormModificarCliente>();
         }
+
+
+        private void btnMasVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasPorCategorias>();
+        }
+
+        private void btnVentasEstado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasVendedorEstado>();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormMaximaVentaCliente>();
+        }
+
+
+
 
         //Metodo para abrir el formulario dentro del panel.
         //<> esto indica que el metodo es generico () sin parametros y con restricciones 
@@ -84,7 +98,7 @@ namespace FormPresentacion
                 panelFormularios.Controls.Add(formulario); //Agrego el formulario al panel de formularios 
                 panelFormularios.Tag = formulario; //Especifico la propiedad tag 
                 formulario.Show(); //muestro el formulario 
-                formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
+                                   // formulario.FormBorderStyle = FormBorderStyle.None; //Quito el borde a los formularios
                 formulario.Dock = DockStyle.Fill; //acoplo al panel 
                 formulario.BringToFront(); //para traer al frente el formulario cuando hacemos click 
             }

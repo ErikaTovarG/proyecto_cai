@@ -31,141 +31,99 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenta));
             gbDevVenta = new GroupBox();
-            tbFecha = new TextBox();
-            label1 = new Label();
-            tbEmpresa = new TextBox();
-            lblEmpresa = new Label();
-            btnEliminar = new Button();
-            btnEditar = new Button();
-            dgvDatosCliente = new DataGridView();
-            idCliente = new DataGridViewTextBoxColumn();
-            DNI = new DataGridViewTextBoxColumn();
-            nomCliente = new DataGridViewTextBoxColumn();
-            direCliente = new DataGridViewTextBoxColumn();
-            Contacto = new DataGridViewTextBoxColumn();
-            label3 = new Label();
             lblPromocion = new Label();
-            dgvPromo = new DataGridView();
-            nomPromocion = new DataGridViewTextBoxColumn();
-            monDescuento = new DataGridViewTextBoxColumn();
-            lblDetalle = new Label();
+            txbFechaComprobante = new TextBox();
+            btnEliminarVenta = new Button();
+            dataGridView3 = new DataGridView();
+            idCliente = new DataGridViewTextBoxColumn();
+            nomCliente = new DataGridViewTextBoxColumn();
             tbTotalPagado = new TextBox();
-            lblTotal = new Label();
-            dgvDetalle = new DataGridView();
+            dataGridView1 = new DataGridView();
             idProducto = new DataGridViewTextBoxColumn();
             desProducto = new DataGridViewTextBoxColumn();
             cant = new DataGridViewTextBoxColumn();
             mUnitario = new DataGridViewTextBoxColumn();
             mTotal = new DataGridViewTextBoxColumn();
+            label3 = new Label();
+            lblDetalle = new Label();
+            label2 = new Label();
+            label1 = new Label();
             tboxIdVenta = new TextBox();
             btnBuscarVentaporIdVenta = new Button();
             lblnroFactura = new Label();
+            dataGridView2 = new DataGridView();
+            nomPromocion = new DataGridViewTextBoxColumn();
+            monDescuento = new DataGridViewTextBoxColumn();
+            txbtotalPagar = new TextBox();
+            lblTotalVendido = new Label();
             gbDevVenta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvDatosCliente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPromo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvDetalle).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // gbDevVenta
             // 
-            gbDevVenta.Controls.Add(tbFecha);
-            gbDevVenta.Controls.Add(label1);
-            gbDevVenta.Controls.Add(tbEmpresa);
-            gbDevVenta.Controls.Add(lblEmpresa);
-            gbDevVenta.Controls.Add(btnEliminar);
-            gbDevVenta.Controls.Add(btnEditar);
-            gbDevVenta.Controls.Add(dgvDatosCliente);
-            gbDevVenta.Controls.Add(label3);
             gbDevVenta.Controls.Add(lblPromocion);
-            gbDevVenta.Controls.Add(dgvPromo);
-            gbDevVenta.Controls.Add(lblDetalle);
+            gbDevVenta.Controls.Add(txbFechaComprobante);
+            gbDevVenta.Controls.Add(btnEliminarVenta);
+            gbDevVenta.Controls.Add(dataGridView3);
             gbDevVenta.Controls.Add(tbTotalPagado);
-            gbDevVenta.Controls.Add(lblTotal);
-            gbDevVenta.Controls.Add(dgvDetalle);
+            gbDevVenta.Controls.Add(dataGridView1);
+            gbDevVenta.Controls.Add(label3);
+            gbDevVenta.Controls.Add(lblDetalle);
+            gbDevVenta.Controls.Add(label2);
+            gbDevVenta.Controls.Add(label1);
             gbDevVenta.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            gbDevVenta.Location = new Point(46, 72);
+            gbDevVenta.Location = new Point(161, 79);
             gbDevVenta.Name = "gbDevVenta";
-            gbDevVenta.Size = new Size(593, 477);
-            gbDevVenta.TabIndex = 34;
+            gbDevVenta.Size = new Size(649, 394);
+            gbDevVenta.TabIndex = 0;
             gbDevVenta.TabStop = false;
-            gbDevVenta.Text = "   Devolución:   ";
+            gbDevVenta.Text = "Devolución venta por ID : ";
+            gbDevVenta.Enter += gbDevVenta_Enter;
             // 
-            // tbFecha
+            // lblPromocion
             // 
-            tbFecha.Enabled = false;
-            tbFecha.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            tbFecha.Location = new Point(420, 31);
-            tbFecha.Margin = new Padding(3, 2, 3, 2);
-            tbFecha.Name = "tbFecha";
-            tbFecha.Size = new Size(144, 25);
-            tbFecha.TabIndex = 42;
+            lblPromocion.AutoSize = true;
+            lblPromocion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPromocion.Location = new Point(48, 300);
+            lblPromocion.Name = "lblPromocion";
+            lblPromocion.Size = new Size(70, 15);
+            lblPromocion.TabIndex = 46;
+            lblPromocion.Text = "Promocion:";
             // 
-            // label1
+            // txbFechaComprobante
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(311, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 15);
-            label1.TabIndex = 41;
-            label1.Text = "Fecha Operación: ";
+            txbFechaComprobante.Enabled = false;
+            txbFechaComprobante.Location = new Point(501, 42);
+            txbFechaComprobante.Name = "txbFechaComprobante";
+            txbFechaComprobante.Size = new Size(112, 23);
+            txbFechaComprobante.TabIndex = 49;
             // 
-            // tbEmpresa
+            // btnEliminarVenta
             // 
-            tbEmpresa.Enabled = false;
-            tbEmpresa.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            tbEmpresa.Location = new Point(134, 31);
-            tbEmpresa.Margin = new Padding(3, 2, 3, 2);
-            tbEmpresa.Name = "tbEmpresa";
-            tbEmpresa.Size = new Size(144, 25);
-            tbEmpresa.TabIndex = 40;
+            btnEliminarVenta.BackColor = Color.DarkGray;
+            btnEliminarVenta.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
+            btnEliminarVenta.FlatAppearance.CheckedBackColor = Color.Black;
+            btnEliminarVenta.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnEliminarVenta.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
+            btnEliminarVenta.FlatStyle = FlatStyle.Flat;
+            btnEliminarVenta.Location = new Point(486, 460);
+            btnEliminarVenta.Margin = new Padding(4);
+            btnEliminarVenta.Name = "btnEliminarVenta";
+            btnEliminarVenta.Size = new Size(89, 26);
+            btnEliminarVenta.TabIndex = 35;
+            btnEliminarVenta.Text = "Eliminar";
+            btnEliminarVenta.UseVisualStyleBackColor = false;
+            btnEliminarVenta.Click += btnRegistrar_Click;
             // 
-            // lblEmpresa
-            // 
-            lblEmpresa.AutoSize = true;
-            lblEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmpresa.Location = new Point(25, 36);
-            lblEmpresa.Name = "lblEmpresa";
-            lblEmpresa.Size = new Size(109, 15);
-            lblEmpresa.TabIndex = 39;
-            lblEmpresa.Text = "Nombre Empresa: ";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.DarkGray;
-            btnEliminar.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.FlatAppearance.CheckedBackColor = Color.Black;
-            btnEliminar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(488, 435);
-            btnEliminar.Margin = new Padding(4);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(89, 26);
-            btnEliminar.TabIndex = 35;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnRegistrar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.DarkGray;
-            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
-            btnEditar.FlatAppearance.CheckedBackColor = Color.Black;
-            btnEditar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(388, 435);
-            btnEditar.Margin = new Padding(4);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(89, 26);
-            btnEditar.TabIndex = 36;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // dgvDatosCliente
+            // dataGridView3
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -174,9 +132,9 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvDatosCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvDatosCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatosCliente.Columns.AddRange(new DataGridViewColumn[] { idCliente, DNI, nomCliente, direCliente, Contacto });
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { idCliente, nomCliente });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -184,10 +142,11 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvDatosCliente.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvDatosCliente.Enabled = false;
-            dgvDatosCliente.Location = new Point(22, 215);
-            dgvDatosCliente.Name = "dgvDatosCliente";
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView3.Enabled = false;
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.Location = new Point(48, 78);
+            dataGridView3.Name = "dataGridView3";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -195,118 +154,66 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvDatosCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvDatosCliente.RowTemplate.Height = 25;
-            dgvDatosCliente.Size = new Size(544, 64);
-            dgvDatosCliente.TabIndex = 38;
+            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView3.RowTemplate.Height = 25;
+            dataGridView3.Size = new Size(241, 56);
+            dataGridView3.TabIndex = 48;
             // 
             // idCliente
             // 
             idCliente.HeaderText = "ID Cliente";
             idCliente.Name = "idCliente";
             // 
-            // DNI
-            // 
-            DNI.HeaderText = "DNI";
-            DNI.Name = "DNI";
-            // 
             // nomCliente
             // 
-            nomCliente.HeaderText = "Nombre Completo";
+            nomCliente.HeaderText = "Nombre";
             nomCliente.Name = "nomCliente";
-            // 
-            // direCliente
-            // 
-            direCliente.HeaderText = "Dirección";
-            direCliente.Name = "direCliente";
-            // 
-            // Contacto
-            // 
-            Contacto.HeaderText = "Contacto";
-            Contacto.Name = "Contacto";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(22, 193);
-            label3.Name = "label3";
-            label3.Size = new Size(106, 15);
-            label3.TabIndex = 37;
-            label3.Text = "Datos del cliente: ";
-            // 
-            // lblPromocion
-            // 
-            lblPromocion.AutoSize = true;
-            lblPromocion.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPromocion.Location = new Point(22, 290);
-            lblPromocion.Name = "lblPromocion";
-            lblPromocion.Size = new Size(70, 15);
-            lblPromocion.TabIndex = 30;
-            lblPromocion.Text = "Promocion:";
-            // 
-            // dgvPromo
-            // 
-            dgvPromo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPromo.Columns.AddRange(new DataGridViewColumn[] { nomPromocion, monDescuento });
-            dgvPromo.Enabled = false;
-            dgvPromo.Location = new Point(22, 312);
-            dgvPromo.Name = "dgvPromo";
-            dgvPromo.RowTemplate.Height = 25;
-            dgvPromo.Size = new Size(229, 77);
-            dgvPromo.TabIndex = 29;
-            // 
-            // nomPromocion
-            // 
-            nomPromocion.HeaderText = "Nombre promoción";
-            nomPromocion.Name = "nomPromocion";
-            // 
-            // monDescuento
-            // 
-            monDescuento.HeaderText = "Monto descuento";
-            monDescuento.Name = "monDescuento";
-            // 
-            // lblDetalle
-            // 
-            lblDetalle.AutoSize = true;
-            lblDetalle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDetalle.Location = new Point(25, 82);
-            lblDetalle.Name = "lblDetalle";
-            lblDetalle.Size = new Size(50, 15);
-            lblDetalle.TabIndex = 27;
-            lblDetalle.Text = "Detalle:";
             // 
             // tbTotalPagado
             // 
             tbTotalPagado.Enabled = false;
             tbTotalPagado.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            tbTotalPagado.Location = new Point(453, 391);
+            tbTotalPagado.Location = new Point(451, 416);
             tbTotalPagado.Margin = new Padding(3, 2, 3, 2);
             tbTotalPagado.Name = "tbTotalPagado";
             tbTotalPagado.Size = new Size(124, 25);
             tbTotalPagado.TabIndex = 26;
             // 
-            // lblTotal
+            // dataGridView1
             // 
-            lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotal.Location = new Point(351, 394);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(106, 19);
-            lblTotal.TabIndex = 25;
-            lblTotal.Text = "Total pagado: ";
-            lblTotal.Click += lblTotalVendido_Click;
-            // 
-            // dgvDetalle
-            // 
-            dgvDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetalle.Columns.AddRange(new DataGridViewColumn[] { idProducto, desProducto, cant, mUnitario, mTotal });
-            dgvDetalle.Enabled = false;
-            dgvDetalle.Location = new Point(25, 104);
-            dgvDetalle.Name = "dgvDetalle";
-            dgvDetalle.RowTemplate.Height = 25;
-            dgvDetalle.Size = new Size(541, 78);
-            dgvDetalle.TabIndex = 23;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, desProducto, cant, mUnitario, mTotal });
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView1.Enabled = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.Location = new Point(47, 155);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(544, 58);
+            dataGridView1.TabIndex = 39;
             // 
             // idProducto
             // 
@@ -333,13 +240,53 @@
             mTotal.HeaderText = "Monto total";
             mTotal.Name = "mTotal";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(48, 59);
+            label3.Name = "label3";
+            label3.Size = new Size(106, 15);
+            label3.TabIndex = 47;
+            label3.Text = "Datos del cliente: ";
+            // 
+            // lblDetalle
+            // 
+            lblDetalle.AutoSize = true;
+            lblDetalle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDetalle.Location = new Point(48, 137);
+            lblDetalle.Name = "lblDetalle";
+            lblDetalle.Size = new Size(53, 15);
+            lblDetalle.TabIndex = 42;
+            lblDetalle.Text = "Detalle: ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(501, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 15);
+            label2.TabIndex = 45;
+            label2.Text = "Fecha operacion: ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(48, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(162, 25);
+            label1.TabIndex = 43;
+            label1.Text = "ElectroHogar S.A.";
+            // 
             // tboxIdVenta
             // 
             tboxIdVenta.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            tboxIdVenta.Location = new Point(64, 37);
+            tboxIdVenta.Location = new Point(161, 37);
             tboxIdVenta.Margin = new Padding(3, 2, 3, 2);
             tboxIdVenta.Name = "tboxIdVenta";
-            tboxIdVenta.Size = new Size(144, 25);
+            tboxIdVenta.Size = new Size(129, 25);
             tboxIdVenta.TabIndex = 33;
             tboxIdVenta.TextChanged += tboxIdVenta_TextChanged;
             // 
@@ -351,10 +298,10 @@
             btnBuscarVentaporIdVenta.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnBuscarVentaporIdVenta.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnBuscarVentaporIdVenta.FlatStyle = FlatStyle.Flat;
-            btnBuscarVentaporIdVenta.Location = new Point(215, 37);
+            btnBuscarVentaporIdVenta.Location = new Point(297, 37);
             btnBuscarVentaporIdVenta.Margin = new Padding(4);
             btnBuscarVentaporIdVenta.Name = "btnBuscarVentaporIdVenta";
-            btnBuscarVentaporIdVenta.Size = new Size(62, 25);
+            btnBuscarVentaporIdVenta.Size = new Size(54, 25);
             btnBuscarVentaporIdVenta.TabIndex = 37;
             btnBuscarVentaporIdVenta.Text = "Buscar";
             btnBuscarVentaporIdVenta.UseVisualStyleBackColor = false;
@@ -363,18 +310,63 @@
             // 
             lblnroFactura.AutoSize = true;
             lblnroFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblnroFactura.Location = new Point(63, 20);
+            lblnroFactura.Location = new Point(160, 20);
             lblnroFactura.Name = "lblnroFactura";
-            lblnroFactura.Size = new Size(75, 15);
+            lblnroFactura.Size = new Size(55, 15);
             lblnroFactura.TabIndex = 38;
-            lblnroFactura.Text = "Nro. Factura";
+            lblnroFactura.Text = "ID Venta";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { nomPromocion, monDescuento });
+            dataGridView2.Enabled = false;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.Location = new Point(209, 397);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(243, 60);
+            dataGridView2.TabIndex = 44;
+            // 
+            // nomPromocion
+            // 
+            nomPromocion.HeaderText = "Nombre promoción";
+            nomPromocion.Name = "nomPromocion";
+            // 
+            // monDescuento
+            // 
+            monDescuento.HeaderText = "Monto descuento";
+            monDescuento.Name = "monDescuento";
+            // 
+            // txbtotalPagar
+            // 
+            txbtotalPagar.Enabled = false;
+            txbtotalPagar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txbtotalPagar.Location = new Point(643, 432);
+            txbtotalPagar.Margin = new Padding(3, 2, 3, 2);
+            txbtotalPagar.Name = "txbtotalPagar";
+            txbtotalPagar.Size = new Size(124, 25);
+            txbtotalPagar.TabIndex = 41;
+            // 
+            // lblTotalVendido
+            // 
+            lblTotalVendido.AutoSize = true;
+            lblTotalVendido.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotalVendido.Location = new Point(643, 409);
+            lblTotalVendido.Name = "lblTotalVendido";
+            lblTotalVendido.Size = new Size(106, 19);
+            lblTotalVendido.TabIndex = 40;
+            lblTotalVendido.Text = "Total pagado: ";
             // 
             // FormVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(686, 567);
+            ClientSize = new Size(985, 478);
+            Controls.Add(dataGridView2);
+            Controls.Add(txbtotalPagar);
+            Controls.Add(lblTotalVendido);
             Controls.Add(lblnroFactura);
             Controls.Add(btnBuscarVentaporIdVenta);
             Controls.Add(tboxIdVenta);
@@ -387,9 +379,9 @@
             Load += FormVenta_Load;
             gbDevVenta.ResumeLayout(false);
             gbDevVenta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvDatosCliente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPromo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,33 +390,29 @@
 
         private GroupBox gbDevVenta;
         private TextBox tboxIdVenta;
-        private Label lblPromocion;
-        private DataGridView dgvPromo;
-        private DataGridViewTextBoxColumn nomPromocion;
-        private DataGridViewTextBoxColumn monDescuento;
-        private Label lblDetalle;
         private TextBox tbTotalPagado;
-        private Label lblTotal;
-        private DataGridView dgvDetalle;
-        private Button btnEliminar;
-        private Button btnEditar;
-        private DataGridView dgvDatosCliente;
+        private Button btnEliminarVenta;
+        private Button btnBuscarVentaporIdVenta;
+        private Label lblnroFactura;
+        private TextBox txbFechaComprobante;
+        private DataGridView dataGridView3;
         private DataGridViewTextBoxColumn idCliente;
-        private DataGridViewTextBoxColumn DNI;
         private DataGridViewTextBoxColumn nomCliente;
-        private DataGridViewTextBoxColumn direCliente;
-        private DataGridViewTextBoxColumn Contacto;
-        private Label label3;
+        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn idProducto;
         private DataGridViewTextBoxColumn desProducto;
         private DataGridViewTextBoxColumn cant;
         private DataGridViewTextBoxColumn mUnitario;
         private DataGridViewTextBoxColumn mTotal;
-        private TextBox tbFecha;
+        private Label label3;
+        private Label lblDetalle;
+        private Label label2;
         private Label label1;
-        private TextBox tbEmpresa;
-        private Label lblEmpresa;
-        private Button btnBuscarVentaporIdVenta;
-        private Label lblnroFactura;
+        private Label lblPromocion;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn nomPromocion;
+        private DataGridViewTextBoxColumn monDescuento;
+        private TextBox txbtotalPagar;
+        private Label lblTotalVendido;
     }
 }

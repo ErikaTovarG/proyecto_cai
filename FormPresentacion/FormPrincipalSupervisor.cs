@@ -91,5 +91,15 @@ namespace FormPresentacion
                 formOtro.ShowDialog();
             }
         }
+
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormDevolucionVenta>();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormReporteStockCritico>();
+        }
     }
 }

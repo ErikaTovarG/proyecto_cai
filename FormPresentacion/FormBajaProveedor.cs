@@ -16,5 +16,17 @@ namespace FormPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(txtIDProveedor.Text == null)
+            {
+                MessageBox.Show("No puede estar vacio");
+            }
+            else
+            {
+
+            }
+        }
     }
 }

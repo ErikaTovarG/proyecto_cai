@@ -145,7 +145,7 @@
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Visible = false;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnDevoluciones
             // 
@@ -160,7 +160,7 @@
             btnDevoluciones.TabIndex = 4;
             btnDevoluciones.Text = "Devoluciones";
             btnDevoluciones.UseVisualStyleBackColor = true;
-            btnDevoluciones.Visible = false;
+            btnDevoluciones.Click += btnDevoluciones_Click;
             // 
             // panelFormularios
             // 
