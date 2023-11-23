@@ -60,6 +60,22 @@ namespace FormPresentacion
         }
 
 
+        private void btnMasVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasPorCategorias>();
+        }
+
+        private void btnVentasEstado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasVendedorEstado>();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormMaximaVentaCliente>();
+        }
+
+
 
 
         //Metodo para abrir el formulario dentro del panel.
