@@ -479,6 +479,7 @@
             // 
             // txbMonTot
             // 
+            txbMonTot.Enabled = false;
             txbMonTot.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txbMonTot.Location = new Point(19, 422);
             txbMonTot.Name = "txbMonTot";
@@ -487,6 +488,7 @@
             // 
             // txbMonUni
             // 
+            txbMonUni.Enabled = false;
             txbMonUni.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txbMonUni.Location = new Point(17, 347);
             txbMonUni.Name = "txbMonUni";

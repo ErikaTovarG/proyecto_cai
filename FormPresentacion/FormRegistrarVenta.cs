@@ -249,11 +249,12 @@ namespace FormPresentacion
                         MessageBox.Show("No hay stock sufiente para realizar esta venta.\n\nContactese con su supervisor.");
                     }
                 }
-            }catch (Exception error)
+            }
+            catch (Exception error)
             {
                 MessageBox.Show($"El detalle debe estar completo para realizar una venta. {error.Message}");
             }
-            
+
         }
 
         private void cmbPromo_SelectedIndexChanged(object sender, EventArgs e)
