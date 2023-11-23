@@ -6,6 +6,7 @@ using Modelo.ProductoModelo;
 using System.Data;
 using Modelo.Proveedor;
 using Modelo.ProveedorModelo;
+using System.Collections.Generic;
 
 namespace Negocio.ProductoNegocio
 {
@@ -54,10 +55,78 @@ namespace Negocio.ProductoNegocio
             ProductosDatos.BorrarProducto(idProducto, usuarioAdministrador);
         }
 
+
         
         public static void EditarProducto(ProductoWebServicePatch producto)
         {
             ProductosDatos.EditarProducto(producto);
+
+        }
+
+
+        public static int PrecioUnitarioProducto(Guid id)
+        {
+            try
+            {
+                ProductoWebServices productoEncontrado = ListarProductos().Find(p => p.Id == id);
+                if (productoEncontrado != null)
+                {
+                    return productoEncontrado.Precio;
+                }
+                else
+                {
+                    throw new Exception("Producto no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener el precio unitario: {ex.Message}");
+                return 0; 
+            }
+        }
+        public static bool SinStock(Guid id)
+        {
+            try
+            {
+                ProductoWebServices productoEncontrado = ListarProductos().Find(p => p.Id == id);
+                if (productoEncontrado.Stock == 0)
+                {
+                    return true;
+                }
+                return false; 
+                //throw new Exception("Producto sin stock");
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
+        }
+        public static bool StockBajo(Guid id)
+        {
+            try
+            {
+                ProductoWebServices producto = ListarProductos().Find(p => p.Id == id);
+                double stock = producto.Stock;
+                double stockLimite = 0.25 * stock;
+                if (stock < stockLimite)
+                {
+                    return true;
+                }
+                return false;
+                throw new Exception("Producto sin stock");
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool ConsultaStock(Guid id, string cant)
+        {
+            ProductoWebServices producto = ListarProductos().Find(p => p.Id == id);
+            if(producto.Stock > Convert.ToInt32(cant)) return true;
+            return false;
         }
     }
 }

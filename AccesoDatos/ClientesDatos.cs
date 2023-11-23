@@ -14,7 +14,7 @@ namespace AccesoDatos
     {
         public static List<ClienteWebServices> ListarClientes()
         {
-            HttpResponseMessage response = WebHelper.Get("Cliente/GetCliente");
+            HttpResponseMessage response = WebHelper.Get("Cliente/GetClientes");
 
             if (!response.IsSuccessStatusCode)
             {

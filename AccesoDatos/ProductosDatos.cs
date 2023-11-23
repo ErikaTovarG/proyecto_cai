@@ -25,8 +25,8 @@ namespace AccesoDatos
             else
             {
                 var contentstream = response.Content.ReadAsStringAsync().Result;
-                List<ProductoWebServices> listadousuarios = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
-                return listadousuarios;
+                List<ProductoWebServices> Listado = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
+                return Listado;
 
             }
         }
