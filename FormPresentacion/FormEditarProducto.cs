@@ -56,6 +56,12 @@ namespace FormPresentacion
             txtNuevoPrecio.Clear();
             txtNuevoStock.Clear();
         }
+
+        private void FormEditarProducto_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void AbrirFormulario<T>() where T : Form, new()
         {
             T form = new T();

@@ -166,6 +166,7 @@
             Name = "FormEditarProducto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormEditarProducto";
+            Load += FormEditarProducto_Load;
             grbAgregarUsuario.ResumeLayout(false);
             grbAgregarUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

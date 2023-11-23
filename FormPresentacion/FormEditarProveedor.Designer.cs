@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarProveedor));
             pictureBox1 = new PictureBox();
             grbEditarProveedor = new GroupBox();
+            txtNuevoCuit = new TextBox();
+            label1 = new Label();
+            txtNuevoEmail = new TextBox();
+            label2 = new Label();
             btnEditarProveedor = new Button();
             btnLimpiarCampos = new Button();
             btnCancelar = new Button();
@@ -38,10 +42,6 @@
             lblApellido = new Label();
             txtNuevoNombre = new TextBox();
             lblNombre = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             grbEditarProveedor.SuspendLayout();
             SuspendLayout();
@@ -59,9 +59,9 @@
             // 
             // grbEditarProveedor
             // 
-            grbEditarProveedor.Controls.Add(textBox1);
+            grbEditarProveedor.Controls.Add(txtNuevoCuit);
             grbEditarProveedor.Controls.Add(label1);
-            grbEditarProveedor.Controls.Add(textBox2);
+            grbEditarProveedor.Controls.Add(txtNuevoEmail);
             grbEditarProveedor.Controls.Add(label2);
             grbEditarProveedor.Controls.Add(btnEditarProveedor);
             grbEditarProveedor.Controls.Add(btnLimpiarCampos);
@@ -78,6 +78,40 @@
             grbEditarProveedor.TabIndex = 16;
             grbEditarProveedor.TabStop = false;
             grbEditarProveedor.Text = "Editar proveedor";
+            // 
+            // txtNuevoCuit
+            // 
+            txtNuevoCuit.Location = new Point(210, 99);
+            txtNuevoCuit.Margin = new Padding(3, 2, 3, 2);
+            txtNuevoCuit.Name = "txtNuevoCuit";
+            txtNuevoCuit.Size = new Size(148, 23);
+            txtNuevoCuit.TabIndex = 39;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(210, 81);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 15);
+            label1.TabIndex = 38;
+            label1.Text = "Nuevo Nro. Cuit:";
+            // 
+            // txtNuevoEmail
+            // 
+            txtNuevoEmail.Location = new Point(210, 49);
+            txtNuevoEmail.Margin = new Padding(3, 2, 3, 2);
+            txtNuevoEmail.Name = "txtNuevoEmail";
+            txtNuevoEmail.Size = new Size(148, 23);
+            txtNuevoEmail.TabIndex = 37;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(210, 29);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 15);
+            label2.TabIndex = 36;
+            label2.Text = "Nuevo email:";
             // 
             // btnEditarProveedor
             // 
@@ -164,40 +198,6 @@
             lblNombre.TabIndex = 10;
             lblNombre.Text = "Nuevo nombre:";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(210, 99);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(148, 23);
-            textBox1.TabIndex = 39;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(210, 81);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 15);
-            label1.TabIndex = 38;
-            label1.Text = "Nuevo Nro. Cuit:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(210, 49);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(148, 23);
-            textBox2.TabIndex = 37;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(210, 29);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 15);
-            label2.TabIndex = 36;
-            label2.Text = "Nuevo email:";
-            // 
             // FormEditarProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,9 +226,9 @@
         private Label lblApellido;
         public TextBox txtNuevoNombre;
         private Label lblNombre;
-        public TextBox textBox1;
+        public TextBox txtNuevoCuit;
         private Label label1;
-        public TextBox textBox2;
+        public TextBox txtNuevoEmail;
         private Label label2;
     }
 }

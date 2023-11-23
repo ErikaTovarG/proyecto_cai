@@ -44,7 +44,6 @@ namespace AccesoDatos
                 var contentstream = response.Content.ReadAsStringAsync().Result;
                 List<ProductoWebServices> listadousuarios = JsonConvert.DeserializeObject<List<ProductoWebServices>>(contentstream);
                 return listadousuarios;
-
             }
         }
 
@@ -77,7 +76,7 @@ namespace AccesoDatos
 
         }
 
-        //modificar producto con swagger
+       
         public static void EditarProducto(ProductoWebServicePatch producto)
         {
             var jsonRequest = JsonConvert.SerializeObject(producto);
@@ -88,10 +87,7 @@ namespace AccesoDatos
             {
                 Console.WriteLine(response.StatusCode.ToString());
             }
-            else
-            {
-                Console.WriteLine("Producto modificado.");
-            }
+
         }
 
 

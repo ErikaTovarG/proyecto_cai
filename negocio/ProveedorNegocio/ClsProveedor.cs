@@ -73,6 +73,11 @@ namespace Negocio.ProveedorNegocio
             return flag;
         }
 
+        public static void EditarProveedor(ProveedorWebservicePatch proveedor)
+        {
+            ProveedoresDatos.EditarProveedor(proveedor);
+        }
+
         public static Proveedor BuscarProveedorporCUIT(int cuit)
         {
             return listaProveedores.Find(proveedor => proveedor.CUIT == cuit);

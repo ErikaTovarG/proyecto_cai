@@ -90,7 +90,7 @@ namespace FormPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-         
+
 
             if (lstProveedores.SelectedItem != null && !string.IsNullOrEmpty(txtIDProveedor.Text))
             {
