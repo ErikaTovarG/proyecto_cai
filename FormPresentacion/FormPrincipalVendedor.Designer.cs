@@ -32,6 +32,7 @@
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
+            btnVentasEstado = new Button();
             btnMasVentas = new Button();
             btnDevolucionVenta = new Button();
             button1 = new Button();
@@ -44,7 +45,7 @@
             panelTitulo = new Panel();
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
-            btnVentasEstado = new Button();
+            button2 = new Button();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             panelMenu.BackColor = Color.Teal;
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
+            panelMenu.Controls.Add(button2);
             panelMenu.Controls.Add(btnVentasEstado);
             panelMenu.Controls.Add(btnMasVentas);
             panelMenu.Controls.Add(btnDevolucionVenta);
@@ -96,6 +98,22 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(219, 523);
             panelMenu.TabIndex = 5;
+            // 
+            // btnVentasEstado
+            // 
+            btnVentasEstado.FlatAppearance.BorderSize = 0;
+            btnVentasEstado.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnVentasEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnVentasEstado.FlatStyle = FlatStyle.Flat;
+            btnVentasEstado.ForeColor = Color.Gainsboro;
+            btnVentasEstado.Location = new Point(1, 386);
+            btnVentasEstado.Margin = new Padding(3, 2, 3, 2);
+            btnVentasEstado.Name = "btnVentasEstado";
+            btnVentasEstado.Size = new Size(216, 35);
+            btnVentasEstado.TabIndex = 16;
+            btnVentasEstado.Text = "Reporte Ventas Estados";
+            btnVentasEstado.UseVisualStyleBackColor = true;
+            btnVentasEstado.Click += btnVentasEstado_Click;
             // 
             // btnMasVentas
             // 
@@ -127,7 +145,6 @@
             btnDevolucionVenta.TabIndex = 14;
             btnDevolucionVenta.Text = "Devolucion venta";
             btnDevolucionVenta.UseVisualStyleBackColor = true;
-            
             // 
             // button1
             // 
@@ -269,21 +286,21 @@
             btnCerrar.TabStop = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // btnVentasEstado
+            // button2
             // 
-            btnVentasEstado.FlatAppearance.BorderSize = 0;
-            btnVentasEstado.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnVentasEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnVentasEstado.FlatStyle = FlatStyle.Flat;
-            btnVentasEstado.ForeColor = Color.Gainsboro;
-            btnVentasEstado.Location = new Point(1, 386);
-            btnVentasEstado.Margin = new Padding(3, 2, 3, 2);
-            btnVentasEstado.Name = "btnVentasEstado";
-            btnVentasEstado.Size = new Size(216, 35);
-            btnVentasEstado.TabIndex = 16;
-            btnVentasEstado.Text = "Reporte Ventas Estados";
-            btnVentasEstado.UseVisualStyleBackColor = true;
-            btnVentasEstado.Click += btnVentasEstado_Click;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.Gainsboro;
+            button2.Location = new Point(-4, 425);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(216, 35);
+            button2.TabIndex = 17;
+            button2.Text = "Reporte Maxima Venta Cliente";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // FormPrincipalVendedor
             // 
@@ -326,5 +343,6 @@
         private Button btnDevolucionVenta;
         private Button btnMasVentas;
         private Button btnVentasEstado;
+        private Button button2;
     }
 }
