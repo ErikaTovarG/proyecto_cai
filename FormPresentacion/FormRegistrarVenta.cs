@@ -102,8 +102,9 @@ namespace FormPresentacion
                     {
                         double porcen = descuento / 100;
                         int cantidad = (int)cmbCantidad.SelectedItem;
-                        double subtotal = (precioUnitario * cantidad) * porcen;
-                        double total = precioUnitario - subtotal;
+                        double subtotal = precioUnitario * cantidad;
+                        double descuentoAplicar = (precioUnitario * cantidad) * porcen;
+                        double total = subtotal - descuentoAplicar;
                         txbMonTot.Text = total.ToString();
                     }
                     else
@@ -126,7 +127,7 @@ namespace FormPresentacion
             int n = dtaGriewDetalle.Rows.Add();
             //Se coloca la informacion 
             dtaGriewDetalle.Rows[n].Cells[0].Value = cmbProducto.SelectedValue.ToString();
-            dtaGriewDetalle.Rows[n].Cells[1].Value = cmbProducto.SelectedItem.ToString();
+            dtaGriewDetalle.Rows[n].Cells[1].Value = ((ProductoWebServices)cmbProducto.SelectedItem)?.Nombre;
             dtaGriewDetalle.Rows[n].Cells[2].Value = cmbCantidad.SelectedItem;
             dtaGriewDetalle.Rows[n].Cells[3].Value = txbMonUni.Text;
             dtaGriewDetalle.Rows[n].Cells[4].Value = txbMonTot.Text;
@@ -196,63 +197,63 @@ namespace FormPresentacion
             if (n != -1)
             {
                 dtaGriewDetalle.Rows.RemoveAt(n);
-                dtaGriewPromocion.Rows.RemoveAt(n);
             }
         }
 
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
-            string idProducto = dtaGriewDetalle.Rows[n].Cells[0].Value.ToString();
-            string idCliente = cmbClientes.SelectedValue.ToString();
-            string cantidad = dtaGriewDetalle.Rows[n].Cells[2].Value.ToString();
-            string Usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
-            string categoria = cmbCategoria.SelectedValue.ToString();
-            string errores = "";
-
-            bool flag = ClsProducto.SinStock(Guid.Parse(idProducto));
-            if (!flag) MessageBox.Show("El producto no cuenta con stock.");
-            else
+            try
             {
-                bool flag2 = ClsProducto.StockBajo(Guid.Parse(idProducto));
-                if (flag) MessageBox.Show("El producto cuenta con un 25% de stock.\n\nAvise a su supervisor");
-                bool hayStock = ClsProducto.ConsultaStock(Guid.Parse(idProducto), cantidad);
-                if (hayStock)
+                string idProducto = dtaGriewDetalle.Rows[n].Cells[0].Value.ToString();
+                string idCliente = cmbClientes.SelectedValue.ToString();
+                string cantidad = dtaGriewDetalle.Rows[n].Cells[2].Value.ToString();
+                string Usuario = "5482745b-d0c0-4401-9603-17d07d9014e7";
+                string categoria = cmbCategoria.SelectedValue.ToString();
+                string errores = "";
+
+                bool flag = ClsProducto.SinStock(Guid.Parse(idProducto));
+                if (!flag) MessageBox.Show("El producto no cuenta con stock.");
+                else
                 {
-
-                    //if (cmbCategoria.SelectedValue.ToString() == "Electro Hogar")
-                    //{
-                    errores += Validaciones.ValidaVacio(idProducto, "idProducto");
-                    errores += Validaciones.ValidaVacio(idCliente, "idCliente");
-                    errores += Validaciones.ValidaVacio(cantidad, "Cantidad");
-
-                    if (!string.IsNullOrEmpty(errores))
+                    bool flag2 = ClsProducto.StockBajo(Guid.Parse(idProducto));
+                    if (flag) MessageBox.Show("El producto cuenta con un 25% de stock.\n\nAvise a su supervisor");
+                    bool hayStock = ClsProducto.ConsultaStock(Guid.Parse(idProducto), cantidad);
+                    if (hayStock)
                     {
-                        MessageBox.Show("Error", errores);
+                        errores += Validaciones.ValidaVacio(idProducto, "idProducto");
+                        errores += Validaciones.ValidaVacio(idCliente, "idCliente");
+                        errores += Validaciones.ValidaVacio(cantidad, "Cantidad");
+
+                        if (!string.IsNullOrEmpty(errores))
+                        {
+                            MessageBox.Show("Error", errores);
+                        }
+                        else
+                        {
+                            VentaWebServicePost venta = new VentaWebServicePost();
+                            venta.IdCliente = idCliente;
+                            venta.IdProducto = idProducto;
+                            venta.IdUsuario = Usuario;
+                            venta.Cantidad = Convert.ToInt32(cantidad);
+                            ClsVenta.CrearVenta(venta);
+                            MessageBox.Show("Se ha creado la venta correctamente.");
+                            limpiarCampos();
+                            txbtotalPagar.Clear();
+                            cmbClientes.SelectedIndex = 0;
+                            dtaGriewDetalle.Rows.Clear();
+                        }
                     }
                     else
                     {
-                        VentaWebServicePost venta = new VentaWebServicePost();
-                        venta.IdCliente = idCliente;
-                        venta.IdProducto = idProducto;
-                        venta.IdUsuario = Usuario;
-                        venta.Cantidad = Convert.ToInt32(cantidad);
-                        ClsVenta.CrearVenta(venta);
-                        MessageBox.Show("Se ha creado la venta correctamente.");
-                        limpiarCampos();
-                        txbtotalPagar.Clear();
-                        cmbClientes.SelectedIndex = 0;
-                        dtaGriewDetalle.Rows.Clear();
+                        MessageBox.Show("No hay stock sufiente para realizar esta venta.\n\nContactese con su supervisor.");
                     }
-
-                    //}
                 }
-                else
-                {
-                    MessageBox.Show("No hay stock sufiente para realizar esta venta.\n\nContactese con su supervisor.");
-                }
+            }catch (Exception error)
+            {
+                MessageBox.Show($"El detalle debe estar completo para realizar una venta. {error.Message}");
             }
+            
         }
 
         private void cmbPromo_SelectedIndexChanged(object sender, EventArgs e)
