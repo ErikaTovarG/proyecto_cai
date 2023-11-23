@@ -59,10 +59,6 @@ namespace FormPresentacion
             this.Hide();
         }
 
-        private void btnDevolucionVenta_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormDevolucionVenta>();
-        }
 
 
 

@@ -161,6 +161,7 @@
             btnDevoluciones.Text = "Devoluciones";
             btnDevoluciones.UseVisualStyleBackColor = true;
             btnDevoluciones.Visible = false;
+            btnDevoluciones.Click += btnDevoluciones_Click;
             // 
             // panelFormularios
             // 

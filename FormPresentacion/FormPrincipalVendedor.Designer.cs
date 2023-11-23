@@ -42,7 +42,6 @@
             panelTitulo = new Panel();
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
-            btnDevolucionVenta = new Button();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
@@ -76,7 +75,6 @@
             // 
             panelMenu.BackColor = Color.Teal;
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
-            panelMenu.Controls.Add(btnDevolucionVenta);
             panelMenu.Controls.Add(button1);
             panelMenu.Controls.Add(btnInicio);
             panelMenu.Controls.Add(btnReporteVendedor);
@@ -97,7 +95,7 @@
             button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Gainsboro;
-            button1.Location = new Point(1, 358);
+            button1.Location = new Point(-1, 309);
             button1.Name = "button1";
             button1.Size = new Size(247, 47);
             button1.TabIndex = 13;
@@ -128,7 +126,7 @@
             btnReporteVendedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnReporteVendedor.FlatStyle = FlatStyle.Flat;
             btnReporteVendedor.ForeColor = Color.Gainsboro;
-            btnReporteVendedor.Location = new Point(1, 410);
+            btnReporteVendedor.Location = new Point(-1, 361);
             btnReporteVendedor.Name = "btnReporteVendedor";
             btnReporteVendedor.Size = new Size(247, 47);
             btnReporteVendedor.TabIndex = 11;
@@ -178,7 +176,7 @@
             btnVentas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.ForeColor = Color.Gainsboro;
-            btnVentas.Location = new Point(1, 306);
+            btnVentas.Location = new Point(-1, 257);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(247, 47);
             btnVentas.TabIndex = 6;
@@ -221,21 +219,6 @@
             btnCerrar.TabStop = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // btnDevolucionVenta
-            // 
-            btnDevolucionVenta.FlatAppearance.BorderSize = 0;
-            btnDevolucionVenta.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnDevolucionVenta.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnDevolucionVenta.FlatStyle = FlatStyle.Flat;
-            btnDevolucionVenta.ForeColor = Color.Gainsboro;
-            btnDevolucionVenta.Location = new Point(3, 257);
-            btnDevolucionVenta.Name = "btnDevolucionVenta";
-            btnDevolucionVenta.Size = new Size(247, 47);
-            btnDevolucionVenta.TabIndex = 14;
-            btnDevolucionVenta.Text = "Devolucion venta";
-            btnDevolucionVenta.UseVisualStyleBackColor = true;
-            btnDevolucionVenta.Click += btnDevolucionVenta_Click;
-            // 
             // FormPrincipalVendedor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -275,6 +258,5 @@
         private Button btnReporteVendedor;
         private Button btnInicio;
         private Button button1;
-        private Button btnDevolucionVenta;
     }
 }
