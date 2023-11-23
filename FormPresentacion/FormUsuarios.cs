@@ -18,6 +18,9 @@ namespace FormPresentacion
         {
             List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
             lstUsuarios.DataSource = usuariosWebServices;
+            lstUsuarios.DisplayMember = "ComboDisplay";
+            lstUsuarios.ValueMember = "Id";
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

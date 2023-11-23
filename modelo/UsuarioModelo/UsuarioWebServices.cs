@@ -11,7 +11,7 @@ namespace Modelo.UsuarioModelo
     public class UsuarioWebServices
     {
         private Guid _id;
-        private string _nombre, _apellido,_usuario;
+        private string _nombre, _apellido, _usuario;
 
         private int _host, _dni;
         public Guid id { get => _id; set => _id = value; }
@@ -25,10 +25,16 @@ namespace Modelo.UsuarioModelo
         {
 
         }
+        private string hostAdevolver { get => hostSeleccionado(host); }
+        public string ComboDisplay { get => $"{nombre} {apellido} -{hostAdevolver}"; }
+        private string hostSeleccionado (int host) 
+        {
+            string devolver;
+            if (host == 1) devolver = "Vendedor";
+            else if (host == 2) devolver = "Supervisor";
+            else devolver = "Administrador";
 
-        //public override string ToString()
-        //{
-        //    return string.Format($"* {dni} - {nombre} - {apellido}.");
-        //}
+            return devolver;
+        }
     }
 }

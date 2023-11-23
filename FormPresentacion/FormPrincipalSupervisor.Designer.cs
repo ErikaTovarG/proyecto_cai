@@ -160,7 +160,6 @@
             btnDevoluciones.TabIndex = 4;
             btnDevoluciones.Text = "Devoluciones";
             btnDevoluciones.UseVisualStyleBackColor = true;
-            btnDevoluciones.Visible = false;
             btnDevoluciones.Click += btnDevoluciones_Click;
             // 
             // panelFormularios
