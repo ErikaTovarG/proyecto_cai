@@ -1,6 +1,6 @@
 ﻿namespace FormPresentacion
 {
-    partial class FormListarVentasPorCategorias
+    partial class FormListarVentasVendedorEstado
     {
         /// <summary>
         /// Required designer variable.
@@ -30,46 +30,21 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            btnVentaProdCat = new Button();
-            txtIdCliente = new TextBox();
-            masVentasDetalle = new DataGridView();
+            ventasEstado = new DataGridView();
             ventaId = new DataGridViewTextBoxColumn();
             ventaCantidad = new DataGridViewTextBoxColumn();
             ventaEstado = new DataGridViewTextBoxColumn();
             ventaFechaA = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)masVentasDetalle).BeginInit();
+            btnVentaEstado = new Button();
+            cmbEstado = new ComboBox();
+            cmbClientes = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)ventasEstado).BeginInit();
             SuspendLayout();
             // 
-            // btnVentaProdCat
+            // ventasEstado
             // 
-            btnVentaProdCat.BackColor = Color.DarkGray;
-            btnVentaProdCat.FlatAppearance.BorderSize = 0;
-            btnVentaProdCat.FlatAppearance.CheckedBackColor = Color.Black;
-            btnVentaProdCat.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnVentaProdCat.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btnVentaProdCat.FlatStyle = FlatStyle.Flat;
-            btnVentaProdCat.Location = new Point(228, 345);
-            btnVentaProdCat.Margin = new Padding(4);
-            btnVentaProdCat.Name = "btnVentaProdCat";
-            btnVentaProdCat.Size = new Size(101, 30);
-            btnVentaProdCat.TabIndex = 7;
-            btnVentaProdCat.Text = "Listar";
-            btnVentaProdCat.UseVisualStyleBackColor = false;
-            btnVentaProdCat.Click += btnVentaProdCat_Click;
-            // 
-            // txtIdCliente
-            // 
-            txtIdCliente.Location = new Point(398, 350);
-            txtIdCliente.Margin = new Padding(3, 2, 3, 2);
-            txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(148, 23);
-            txtIdCliente.TabIndex = 12;
-            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
-            // 
-            // masVentasDetalle
-            // 
-            masVentasDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            masVentasDetalle.Columns.AddRange(new DataGridViewColumn[] { ventaId, ventaCantidad, ventaEstado, ventaFechaA });
+            ventasEstado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ventasEstado.Columns.AddRange(new DataGridViewColumn[] { ventaId, ventaCantidad, ventaEstado, ventaFechaA });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -77,11 +52,11 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle1;
-            masVentasDetalle.Enabled = false;
-            masVentasDetalle.EnableHeadersVisualStyles = false;
-            masVentasDetalle.Location = new Point(86, 23);
-            masVentasDetalle.Name = "masVentasDetalle";
+            ventasEstado.DefaultCellStyle = dataGridViewCellStyle1;
+            ventasEstado.Enabled = false;
+            ventasEstado.EnableHeadersVisualStyles = false;
+            ventasEstado.Location = new Point(93, 49);
+            ventasEstado.Name = "ventasEstado";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -89,16 +64,16 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            masVentasDetalle.RowTemplate.Height = 25;
-            masVentasDetalle.Size = new Size(614, 283);
-            masVentasDetalle.TabIndex = 40;
-            masVentasDetalle.CellContentClick += masVentasDetalle_CellContentClick;
+            ventasEstado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            ventasEstado.RowTemplate.Height = 25;
+            ventasEstado.Size = new Size(642, 283);
+            ventasEstado.TabIndex = 43;
             // 
             // ventaId
             // 
             ventaId.HeaderText = "ID Cliente";
             ventaId.Name = "ventaId";
+            ventaId.Width = 200;
             // 
             // ventaCantidad
             // 
@@ -114,30 +89,68 @@
             // 
             ventaFechaA.HeaderText = "Fecha Alta";
             ventaFechaA.Name = "ventaFechaA";
+            ventaFechaA.Width = 200;
             // 
-            // FormListarVentasPorCategorias
+            // btnVentaEstado
+            // 
+            btnVentaEstado.BackColor = Color.DarkGray;
+            btnVentaEstado.FlatAppearance.BorderSize = 0;
+            btnVentaEstado.FlatAppearance.CheckedBackColor = Color.Black;
+            btnVentaEstado.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnVentaEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnVentaEstado.FlatStyle = FlatStyle.Flat;
+            btnVentaEstado.Location = new Point(103, 362);
+            btnVentaEstado.Margin = new Padding(4);
+            btnVentaEstado.Name = "btnVentaEstado";
+            btnVentaEstado.Size = new Size(101, 30);
+            btnVentaEstado.TabIndex = 41;
+            btnVentaEstado.Text = "Listar";
+            btnVentaEstado.UseVisualStyleBackColor = false;
+            btnVentaEstado.Click += btnVentaEstado_Click;
+            // 
+            // cmbEstado
+            // 
+            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstado.FormattingEnabled = true;
+            cmbEstado.Location = new Point(522, 369);
+            cmbEstado.Name = "cmbEstado";
+            cmbEstado.Size = new Size(185, 23);
+            cmbEstado.TabIndex = 77;
+            // 
+            // cmbClientes
+            // 
+            cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbClientes.FormattingEnabled = true;
+            cmbClientes.Location = new Point(284, 367);
+            cmbClientes.Name = "cmbClientes";
+            cmbClientes.Size = new Size(185, 23);
+            cmbClientes.TabIndex = 78;
+            // 
+            // FormListarVentasVendedorEstado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(masVentasDetalle);
-            Controls.Add(txtIdCliente);
-            Controls.Add(btnVentaProdCat);
-            Name = "FormListarVentasPorCategorias";
-            Text = "FormListarVentasPorCategorias";
-            Load += FormListarVentasPorCategorias_Load;
-            ((System.ComponentModel.ISupportInitialize)masVentasDetalle).EndInit();
+            Controls.Add(cmbClientes);
+            Controls.Add(cmbEstado);
+            Controls.Add(ventasEstado);
+            Controls.Add(btnVentaEstado);
+            Name = "FormListarVentasVendedorEstado";
+            Text = "Reporte de Ventas Por Cliente / Estado";
+            Load += FormListarVentasVendedorEstado_Load;
+            ((System.ComponentModel.ISupportInitialize)ventasEstado).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Button btnVentaProdCat;
-        public TextBox txtIdCliente;
-        private DataGridView masVentasDetalle;
+
+        private DataGridView ventasEstado;
         private DataGridViewTextBoxColumn ventaId;
         private DataGridViewTextBoxColumn ventaCantidad;
         private DataGridViewTextBoxColumn ventaEstado;
         private DataGridViewTextBoxColumn ventaFechaA;
+        private Button btnVentaEstado;
+        private ComboBox cmbEstado;
+        private ComboBox cmbClientes;
     }
 }
