@@ -21,8 +21,8 @@ namespace FormPresentacion
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();           
-            lstProveedores.DataSource= proveedorWebServices;                
+            List<ProveedorWebServices> proveedorWebServices = ClsProveedor.ListarProveedores();
+            lstProveedores.DataSource = proveedorWebServices;
         }
 
         private void btnLimpiarCmb_Click(object sender, EventArgs e)
@@ -86,6 +86,15 @@ namespace FormPresentacion
             txtCuit.Clear();
             txtIDProveedor.Clear();
             txtEmail.Clear();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // crear un formulario en que le pida los datos a cambiar del idUsuario seleccionado. 
+            // "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+           //"idUsuario": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+           //"precio": 0,
+           //"stock": 0
         }
     }
 }

@@ -53,6 +53,12 @@ namespace Negocio.ProductoNegocio
             string usuarioAdministrador = "D347CE99-DB8D-4542-AA97-FC9F3CCE6969";
             ProductosDatos.BorrarProducto(idProducto, usuarioAdministrador);
         }
+
+        
+        public static void EditarProducto(ProductoWebServicePatch producto)
+        {
+            ProductosDatos.EditarProducto(producto);
+        }
     }
 }
 

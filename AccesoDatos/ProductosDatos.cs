@@ -1,6 +1,8 @@
 ﻿using AccesoDatos.Utilidades;
+using Modelo.Producto;
 using Modelo.ProductoModelo;
 using Modelo.UsuarioModelo;
+using Modelo.VentaModelo;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -74,6 +76,25 @@ namespace AccesoDatos
             }
 
         }
+
+        //modificar producto con swagger
+        public static void EditarProducto(ProductoWebServicePatch producto)
+        {
+            var jsonRequest = JsonConvert.SerializeObject(producto);
+
+            HttpResponseMessage response = WebHelper.Patch("Producto/ModificarProducto", jsonRequest);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Producto modificado.");
+            }
+        }
+
+
 
     }
 }

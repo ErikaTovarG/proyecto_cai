@@ -6,11 +6,20 @@ namespace FormPresentacion
 {
     public static class Validaciones
     {
+        public static string ValidaNumerico(string num, ref int salida, string campo)
+        {
+            string error = "";
+            if (!Int32.TryParse(num, out salida) || salida < 0)
+                error = ($"El dato ingresado en {campo} debe ser númerico y entero.\n");
+            return error;
+        }
+
+
         public static string ValDecimal(string num, ref double salida, string campo)
         {
             string error = "";
             if (!Double.TryParse(num, out salida) || salida < 0)
-                error = ($"El dato ingresado en {campo} debe ser númerico y entero.\n");
+                error = ($"El dato ingresado en {campo} debe ser numérico y decimal.\n");
             return error;
         }
         public static string ValidaVacio(string dato, string campo)
