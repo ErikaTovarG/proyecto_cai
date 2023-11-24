@@ -34,7 +34,7 @@ namespace FormPresentacion
 
             if (!string.IsNullOrEmpty(errores))
             {
-                MessageBox.Show("Error", errores);
+                MessageBox.Show(errores, "Error");
             }
             else
             {
