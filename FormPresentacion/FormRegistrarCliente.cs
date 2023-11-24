@@ -37,9 +37,10 @@ namespace FormPresentacion
                 string direccion = txtDireccion.Text;
                 string telefono = txtTelefono.Text;
                 string email = txtEmail.Text;
-                DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+                string fechaNacimiento = txtFechaNacimiento.Text;
                 string host = txtHost.Text;
                 int salida = 0;
+                DateTime salidaFecha= DateTime.Now;
                 string errores = "";
                 errores += Validaciones.ValidaVacio(nombre, "Nombre");
                 errores += Validaciones.ValidaVacio(apellido, "Apellido");
@@ -47,9 +48,12 @@ namespace FormPresentacion
                 errores += Validaciones.ValidaVacio(telefono, "Telefono");
                 errores += Validaciones.ValidaVacio(email, "Email");
                 errores += Validaciones.ValidaNumerico(dni, ref salida, "DNI");
-
+                errores += Validaciones.ValidaFechaNacimiento(fechaNacimiento, ref salidaFecha);
+                //MessageBox.Show(errores);
                 if (!string.IsNullOrEmpty(errores))
-                    MessageBox.Show(errores);
+                {
+                    MessageBox.Show(errores, "Errores");
+                }
                 else
                 {
                     ClienteWebServicesPost ClienteAgregar = new ClienteWebServicesPost();
@@ -60,14 +64,17 @@ namespace FormPresentacion
                     ClienteAgregar.Direccion = direccion;
                     ClienteAgregar.Telefono = telefono;
                     ClienteAgregar.Email = email;
-                    ClienteAgregar.FechaNacimiento = fechaNacimiento;
+                    ClienteAgregar.FechaNacimiento = salidaFecha;
                     ClienteAgregar.Host = host;
                     ClsCliente.CrearCliente(ClienteAgregar);
                     MessageBox.Show("Se creo el cliente exitosamente");
                     LimpiarCampos();
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"El detalle debe estar completo para realizar un cliente. {ex.Message}");
+            }
         }
 
         private void LimpiarCampos()
@@ -80,7 +87,7 @@ namespace FormPresentacion
             txtEmail.Clear();
             txtFechaNacimiento.Clear();
             txtHost.Clear();
-   
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -90,7 +97,7 @@ namespace FormPresentacion
 
         private void txtFechaNacimiento_TextChanged(object sender, EventArgs e)
         {
-          
+
             if (DateTime.TryParseExact(txtFechaNacimiento.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fecha))
             {
                 txtFechaNacimiento.Text = fecha.ToString("yyyy-MM-dd");

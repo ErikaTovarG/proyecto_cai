@@ -194,10 +194,17 @@ namespace FormPresentacion
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (n != -1)
+            try
             {
-                dtaGriewDetalle.Rows.RemoveAt(n);
+                if (n != -1)
+                {
+                    dtaGriewDetalle.Rows.RemoveAt(n);
+                }
+            }catch(Exception er)
+            {
+                MessageBox.Show($"Sin contenido para borrar. {er.Message}");
             }
+            
         }
 
 
@@ -213,7 +220,7 @@ namespace FormPresentacion
                 string errores = "";
 
                 bool flag = ClsProducto.SinStock(Guid.Parse(idProducto));
-                if (!flag) MessageBox.Show("El producto no cuenta con stock.");
+                if (flag) MessageBox.Show("El producto no cuenta con stock.");
                 else
                 {
                     bool flag2 = ClsProducto.StockBajo(Guid.Parse(idProducto));

@@ -186,8 +186,18 @@ namespace Negocio.UsuarioLogNegocio
         }
         public static string BuscoPorUsuario(string usuario)
         {
+            string retornar = "";
             UsuarioWebServices usuarioEncontrado = ListarUsuarios().Find(p => p.nombreUsuario == usuario);
-            return usuarioEncontrado.id.ToString();
+            if(usuarioEncontrado == null)
+            {
+                retornar = "";
+            }
+            else
+            {
+                retornar = usuarioEncontrado.id.ToString();
+            }
+            return retornar;
+                
         }
         public static string BuscoPorUsuarioParaActivar(string usuario)
         {

@@ -353,7 +353,6 @@
             Controls.Add(lstClientes);
             Name = "FormModificarCliente";
             Text = "Modificacion Datos Clientes";
-            Load += FormModificarCliente_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
             ResumeLayout(false);

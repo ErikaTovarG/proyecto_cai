@@ -80,7 +80,7 @@ namespace FormPresentacion
             //Si no hay errores, creo el usuario en swagger y llamo al método con la ruta POST
             if (!string.IsNullOrEmpty(listaErrores))
             {
-                MessageBox.Show("Error", listaErrores);
+                MessageBox.Show(listaErrores, "Error");
             }
             else
             {

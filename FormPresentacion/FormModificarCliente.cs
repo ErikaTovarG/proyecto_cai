@@ -63,7 +63,10 @@ namespace FormPresentacion
 
         private void btnLimpiarCmb_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
+        }
+        private void Limpiar()
+        {
             txtNombre.Clear();
             txtApellido.Clear();
             txtEmail.Clear();
@@ -73,7 +76,6 @@ namespace FormPresentacion
             txtFechaNacimiento.Clear();
             txtIDCliente.Clear();
             txtHost.Clear();
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -103,16 +105,10 @@ namespace FormPresentacion
                 clienteModificar.Telefono = txtTelefono.Text;
                 ClsCliente.ModificarCliente(clienteModificar);
                 MessageBox.Show("Se ha creado la venta correctamente.");
-
+                lstClientes.DataSource = null;
+                lstClientes.Items.Clear();
+                Limpiar();
             }
-
-        }
-
-
-
-
-        private void FormModificarCliente_Load(object sender, EventArgs e)
-        {
 
         }
     }
