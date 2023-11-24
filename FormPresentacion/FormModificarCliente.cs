@@ -82,7 +82,7 @@ namespace FormPresentacion
             string direccion = txtDireccion.Text;
             string telefono = txtTelefono.Text;
             string email = txtEmail.Text;
-   
+
 
             string errores = "";
 
@@ -99,8 +99,8 @@ namespace FormPresentacion
                 ClienteWebServicePatch clienteModificar = new ClienteWebServicePatch();
                 clienteModificar.Id = Guid.Parse(txtIDCliente.Text);
                 clienteModificar.Direccion = txtDireccion.Text;
-                clienteModificar.Email=txtEmail.Text;   
-                clienteModificar.Telefono=txtTelefono.Text; 
+                clienteModificar.Email = txtEmail.Text;
+                clienteModificar.Telefono = txtTelefono.Text;
                 ClsCliente.ModificarCliente(clienteModificar);
                 MessageBox.Show("Se ha creado la venta correctamente.");
 
@@ -113,7 +113,7 @@ namespace FormPresentacion
 
         private void FormModificarCliente_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

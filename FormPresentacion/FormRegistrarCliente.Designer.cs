@@ -58,9 +58,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(32, 42);
+            pictureBox1.Location = new Point(28, 32);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 149);
+            pictureBox1.Size = new Size(131, 112);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
@@ -86,35 +87,40 @@
             grbAgregarUsuario.Controls.Add(lblApellido);
             grbAgregarUsuario.Controls.Add(txtNombre);
             grbAgregarUsuario.Controls.Add(lblNombre);
-            grbAgregarUsuario.Location = new Point(246, 42);
+            grbAgregarUsuario.Location = new Point(215, 32);
+            grbAgregarUsuario.Margin = new Padding(3, 2, 3, 2);
             grbAgregarUsuario.Name = "grbAgregarUsuario";
-            grbAgregarUsuario.Size = new Size(839, 547);
+            grbAgregarUsuario.Padding = new Padding(3, 2, 3, 2);
+            grbAgregarUsuario.Size = new Size(734, 410);
             grbAgregarUsuario.TabIndex = 14;
             grbAgregarUsuario.TabStop = false;
             grbAgregarUsuario.Text = "Registar nuevo Clientes";
             // 
             // txtHost
             // 
-            txtHost.Location = new Point(438, 59);
+            txtHost.Location = new Point(382, 163);
+            txtHost.Margin = new Padding(3, 2, 3, 2);
             txtHost.Name = "txtHost";
-            txtHost.Size = new Size(150, 27);
+            txtHost.Size = new Size(132, 23);
             txtHost.TabIndex = 34;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(438, 151);
+            pictureBox2.Location = new Point(383, 202);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(150, 149);
+            pictureBox2.Size = new Size(131, 112);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 14;
             pictureBox2.TabStop = false;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(46, 269);
+            txtTelefono.Location = new Point(40, 210);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(318, 27);
+            txtTelefono.Size = new Size(279, 23);
             txtTelefono.TabIndex = 33;
             // 
             // btnAgregar
@@ -125,10 +131,10 @@
             btnAgregar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Location = new Point(187, 451);
-            btnAgregar.Margin = new Padding(5);
+            btnAgregar.Location = new Point(138, 361);
+            btnAgregar.Margin = new Padding(4, 4, 4, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(115, 40);
+            btnAgregar.Size = new Size(101, 30);
             btnAgregar.TabIndex = 32;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -142,10 +148,10 @@
             btnCancelar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Location = new Point(438, 451);
-            btnCancelar.Margin = new Padding(5);
+            btnCancelar.Location = new Point(382, 361);
+            btnCancelar.Margin = new Padding(4, 4, 4, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(115, 40);
+            btnCancelar.Size = new Size(101, 30);
             btnCancelar.TabIndex = 31;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -153,127 +159,132 @@
             // 
             // txtFechaNacimiento
             // 
-            txtFechaNacimiento.Location = new Point(46, 376);
+            txtFechaNacimiento.Location = new Point(382, 115);
+            txtFechaNacimiento.Margin = new Padding(3, 2, 3, 2);
             txtFechaNacimiento.Name = "txtFechaNacimiento";
-            txtFechaNacimiento.Size = new Size(318, 27);
+            txtFechaNacimiento.Size = new Size(132, 23);
             txtFechaNacimiento.TabIndex = 30;
             // 
             // lblFechaNacimiento
             // 
             lblFechaNacimiento.AutoSize = true;
-            lblFechaNacimiento.Location = new Point(46, 352);
+            lblFechaNacimiento.Location = new Point(382, 97);
             lblFechaNacimiento.Name = "lblFechaNacimiento";
-            lblFechaNacimiento.Size = new Size(125, 20);
+            lblFechaNacimiento.Size = new Size(101, 15);
             lblFechaNacimiento.TabIndex = 29;
             lblFechaNacimiento.Text = "Fecha nacimiento";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(46, 323);
+            txtEmail.Location = new Point(40, 253);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(318, 27);
+            txtEmail.Size = new Size(279, 23);
             txtEmail.TabIndex = 26;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(46, 299);
+            lblEmail.Location = new Point(40, 235);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
+            lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 25;
             lblEmail.Text = "Email";
             // 
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(46, 245);
+            lblTelefono.Location = new Point(40, 192);
             lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(67, 20);
+            lblTelefono.Size = new Size(52, 15);
             lblTelefono.TabIndex = 23;
             lblTelefono.Text = "Telefono";
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(46, 217);
+            txtDireccion.Location = new Point(40, 163);
+            txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(318, 27);
+            txtDireccion.Size = new Size(279, 23);
             txtDireccion.TabIndex = 22;
             // 
             // lblDireccion
             // 
             lblDireccion.AutoSize = true;
-            lblDireccion.Location = new Point(46, 193);
+            lblDireccion.Location = new Point(40, 145);
             lblDireccion.Name = "lblDireccion";
-            lblDireccion.Size = new Size(72, 20);
+            lblDireccion.Size = new Size(57, 15);
             lblDireccion.TabIndex = 21;
             lblDireccion.Text = "Dirección";
             // 
             // lblHost
             // 
             lblHost.AutoSize = true;
-            lblHost.Location = new Point(438, 33);
+            lblHost.Location = new Point(382, 144);
             lblHost.Name = "lblHost";
-            lblHost.Size = new Size(40, 20);
+            lblHost.Size = new Size(32, 15);
             lblHost.TabIndex = 18;
             lblHost.Text = "Host";
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(46, 164);
+            txtDNI.Location = new Point(383, 65);
+            txtDNI.Margin = new Padding(3, 2, 3, 2);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(318, 27);
+            txtDNI.Size = new Size(131, 23);
             txtDNI.TabIndex = 17;
             // 
             // lblDNI
             // 
             lblDNI.AutoSize = true;
-            lblDNI.Location = new Point(46, 140);
+            lblDNI.Location = new Point(383, 47);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(35, 20);
+            lblDNI.Size = new Size(27, 15);
             lblDNI.TabIndex = 16;
             lblDNI.Text = "DNI";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(46, 111);
+            txtApellido.Location = new Point(40, 115);
+            txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(318, 27);
+            txtApellido.Size = new Size(279, 23);
             txtApellido.TabIndex = 13;
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(46, 87);
+            lblApellido.Location = new Point(40, 97);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(66, 20);
+            lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 12;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(46, 59);
+            txtNombre.Location = new Point(40, 65);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(318, 27);
+            txtNombre.Size = new Size(279, 23);
             txtNombre.TabIndex = 11;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(46, 33);
+            lblNombre.Location = new Point(40, 46);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(64, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 10;
             lblNombre.Text = "Nombre";
             // 
             // FormRegistrarCliente
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1126, 637);
+            ClientSize = new Size(985, 478);
             Controls.Add(pictureBox1);
             Controls.Add(grbAgregarUsuario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormRegistrarCliente";
             Text = "Registar usuario";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

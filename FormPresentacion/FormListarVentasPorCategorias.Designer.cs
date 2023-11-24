@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             btnVentaProdCat = new Button();
             masVentasDetalle = new DataGridView();
             ventaId = new DataGridViewTextBoxColumn();
@@ -37,6 +37,7 @@
             ventaEstado = new DataGridViewTextBoxColumn();
             ventaFechaA = new DataGridViewTextBoxColumn();
             cmbClientes = new ComboBox();
+            lblCliente = new Label();
             ((System.ComponentModel.ISupportInitialize)masVentasDetalle).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             btnVentaProdCat.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVentaProdCat.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVentaProdCat.FlatStyle = FlatStyle.Flat;
-            btnVentaProdCat.Location = new Point(228, 345);
+            btnVentaProdCat.Location = new Point(56, 345);
             btnVentaProdCat.Margin = new Padding(4);
             btnVentaProdCat.Name = "btnVentaProdCat";
             btnVentaProdCat.Size = new Size(101, 30);
@@ -61,26 +62,26 @@
             // 
             masVentasDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             masVentasDetalle.Columns.AddRange(new DataGridViewColumn[] { ventaId, ventaCantidad, ventaEstado, ventaFechaA });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle5;
             masVentasDetalle.Enabled = false;
             masVentasDetalle.EnableHeadersVisualStyles = false;
             masVentasDetalle.Location = new Point(56, 26);
             masVentasDetalle.Name = "masVentasDetalle";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             masVentasDetalle.RowTemplate.Height = 25;
             masVentasDetalle.Size = new Size(644, 283);
             masVentasDetalle.TabIndex = 40;
@@ -111,24 +112,35 @@
             // 
             cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClientes.FormattingEnabled = true;
-            cmbClientes.Location = new Point(396, 345);
+            cmbClientes.Location = new Point(515, 352);
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(185, 23);
             cmbClientes.TabIndex = 79;
+            // 
+            // lblCliente
+            // 
+            lblCliente.AutoSize = true;
+            lblCliente.Location = new Point(457, 360);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(52, 15);
+            lblCliente.TabIndex = 85;
+            lblCliente.Text = "Clientes:";
             // 
             // FormListarVentasPorCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblCliente);
             Controls.Add(cmbClientes);
             Controls.Add(masVentasDetalle);
             Controls.Add(btnVentaProdCat);
             Name = "FormListarVentasPorCategorias";
-            Text = "FormListarVentasPorCategorias";
+            Text = "Maximas Ventas por Cliente";
             Load += FormListarVentasPorCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)masVentasDetalle).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -139,5 +151,6 @@
         private DataGridViewTextBoxColumn ventaEstado;
         private DataGridViewTextBoxColumn ventaFechaA;
         private ComboBox cmbClientes;
+        private Label lblCliente;
     }
 }

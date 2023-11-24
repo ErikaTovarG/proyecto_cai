@@ -38,7 +38,8 @@ namespace FormPresentacion
                 masVentasDetalle.Rows[n].Cells[2].Value = ventasOrdenadas.Estado;
                 masVentasDetalle.Rows[n].Cells[3].Value = ventasOrdenadas.FechaAlta;
             }
-            else {
+            else
+            {
                 MessageBox.Show("No se le realizo venta a ese Cliente");
             }
 
@@ -64,6 +65,6 @@ namespace FormPresentacion
             cmbClientes.ValueMember = "Id";
         }
 
-       
+
     }
 }

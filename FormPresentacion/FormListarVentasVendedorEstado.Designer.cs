@@ -38,6 +38,8 @@
             btnVentaEstado = new Button();
             cmbEstado = new ComboBox();
             cmbClientes = new ComboBox();
+            lblCliente = new Label();
+            lblEstado = new Label();
             ((System.ComponentModel.ISupportInitialize)ventasEstado).BeginInit();
             SuspendLayout();
             // 
@@ -99,7 +101,7 @@
             btnVentaEstado.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVentaEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVentaEstado.FlatStyle = FlatStyle.Flat;
-            btnVentaEstado.Location = new Point(103, 362);
+            btnVentaEstado.Location = new Point(93, 362);
             btnVentaEstado.Margin = new Padding(4);
             btnVentaEstado.Name = "btnVentaEstado";
             btnVentaEstado.Size = new Size(101, 30);
@@ -112,7 +114,7 @@
             // 
             cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstado.FormattingEnabled = true;
-            cmbEstado.Location = new Point(522, 369);
+            cmbEstado.Location = new Point(550, 369);
             cmbEstado.Name = "cmbEstado";
             cmbEstado.Size = new Size(185, 23);
             cmbEstado.TabIndex = 77;
@@ -121,16 +123,36 @@
             // 
             cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClientes.FormattingEnabled = true;
-            cmbClientes.Location = new Point(284, 367);
+            cmbClientes.Location = new Point(284, 369);
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(185, 23);
             cmbClientes.TabIndex = 78;
+            // 
+            // lblCliente
+            // 
+            lblCliente.AutoSize = true;
+            lblCliente.Location = new Point(226, 377);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(52, 15);
+            lblCliente.TabIndex = 85;
+            lblCliente.Text = "Clientes:";
+            // 
+            // lblEstado
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(499, 377);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(45, 15);
+            lblEstado.TabIndex = 86;
+            lblEstado.Text = "Estado:";
             // 
             // FormListarVentasVendedorEstado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblEstado);
+            Controls.Add(lblCliente);
             Controls.Add(cmbClientes);
             Controls.Add(cmbEstado);
             Controls.Add(ventasEstado);
@@ -140,6 +162,7 @@
             Load += FormListarVentasVendedorEstado_Load;
             ((System.ComponentModel.ISupportInitialize)ventasEstado).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -152,5 +175,7 @@
         private Button btnVentaEstado;
         private ComboBox cmbEstado;
         private ComboBox cmbClientes;
+        private Label lblCliente;
+        private Label lblEstado;
     }
 }

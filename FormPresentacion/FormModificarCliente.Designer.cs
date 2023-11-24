@@ -64,7 +64,7 @@
             btnLimpiar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnLimpiar.FlatStyle = FlatStyle.Flat;
-            btnLimpiar.Location = new Point(116, 470);
+            btnLimpiar.Location = new Point(112, 445);
             btnLimpiar.Margin = new Padding(4);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(101, 30);
@@ -81,7 +81,7 @@
             btnListar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnListar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnListar.FlatStyle = FlatStyle.Flat;
-            btnListar.Location = new Point(57, 432);
+            btnListar.Location = new Point(53, 407);
             btnListar.Margin = new Padding(4);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(101, 30);
@@ -98,7 +98,7 @@
             btnVerDetalle.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             btnVerDetalle.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnVerDetalle.FlatStyle = FlatStyle.Flat;
-            btnVerDetalle.Location = new Point(183, 432);
+            btnVerDetalle.Location = new Point(179, 407);
             btnVerDetalle.Margin = new Padding(4);
             btnVerDetalle.Name = "btnVerDetalle";
             btnVerDetalle.Size = new Size(101, 30);
@@ -129,7 +129,7 @@
             grbDetalle.Controls.Add(lblApellido);
             grbDetalle.Controls.Add(txtNombre);
             grbDetalle.Controls.Add(lblNombre);
-            grbDetalle.Location = new Point(335, 48);
+            grbDetalle.Location = new Point(331, 23);
             grbDetalle.Margin = new Padding(3, 2, 3, 2);
             grbDetalle.Name = "grbDetalle";
             grbDetalle.Padding = new Padding(3, 2, 3, 2);
@@ -149,7 +149,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(313, 37);
+            label1.Location = new Point(313, 46);
             label1.Name = "label1";
             label1.Size = new Size(57, 15);
             label1.TabIndex = 29;
@@ -167,7 +167,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(313, 196);
+            label3.Location = new Point(313, 205);
             label3.Name = "label3";
             label3.Size = new Size(32, 15);
             label3.TabIndex = 25;
@@ -176,16 +176,16 @@
             // txtFechaNacimiento
             // 
             txtFechaNacimiento.Enabled = false;
-            txtFechaNacimiento.Location = new Point(313, 166);
+            txtFechaNacimiento.Location = new Point(37, 222);
             txtFechaNacimiento.Margin = new Padding(3, 2, 3, 2);
             txtFechaNacimiento.Name = "txtFechaNacimiento";
-            txtFechaNacimiento.Size = new Size(242, 23);
+            txtFechaNacimiento.Size = new Size(251, 23);
             txtFechaNacimiento.TabIndex = 24;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(313, 141);
+            label4.Location = new Point(37, 205);
             label4.Name = "label4";
             label4.Size = new Size(103, 15);
             label4.TabIndex = 23;
@@ -202,7 +202,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(313, 87);
+            label5.Location = new Point(313, 95);
             label5.Name = "label5";
             label5.Size = new Size(52, 15);
             label5.TabIndex = 21;
@@ -237,7 +237,7 @@
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(37, 37);
+            lblID.Location = new Point(37, 46);
             lblID.Name = "lblID";
             lblID.Size = new Size(18, 15);
             lblID.TabIndex = 18;
@@ -263,7 +263,7 @@
             // txtDni
             // 
             txtDni.Enabled = false;
-            txtDni.Location = new Point(37, 280);
+            txtDni.Location = new Point(37, 272);
             txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(251, 23);
@@ -280,16 +280,16 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(37, 222);
+            txtEmail.Location = new Point(313, 166);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(251, 23);
+            txtEmail.Size = new Size(242, 23);
             txtEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(37, 196);
+            lblEmail.Location = new Point(313, 149);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 4;
@@ -307,7 +307,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(37, 141);
+            lblApellido.Location = new Point(37, 149);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 2;
@@ -325,7 +325,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(37, 87);
+            lblNombre.Location = new Point(37, 95);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 0;
@@ -335,7 +335,7 @@
             // 
             lstClientes.FormattingEnabled = true;
             lstClientes.ItemHeight = 15;
-            lstClientes.Location = new Point(38, 48);
+            lstClientes.Location = new Point(34, 23);
             lstClientes.Margin = new Padding(3, 2, 3, 2);
             lstClientes.Name = "lstClientes";
             lstClientes.Size = new Size(265, 379);
@@ -352,7 +352,7 @@
             Controls.Add(grbDetalle);
             Controls.Add(lstClientes);
             Name = "FormModificarCliente";
-            Text = "FormModificarCliente";
+            Text = "Modificacion Datos Clientes";
             Load += FormModificarCliente_Load;
             grbDetalle.ResumeLayout(false);
             grbDetalle.PerformLayout();
