@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace FormPresentacion
         public FormRegistrarCliente()
         {
             InitializeComponent();
-            txtFechaNacimiento.Text = string.Format("yyyy-MM-dd");
+            //txtFechaNacimiento.Text = string.Format("yyyy-MM-dd");
+            txtFechaNacimiento.TextChanged += txtFechaNacimiento_TextChanged;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -45,7 +47,6 @@ namespace FormPresentacion
                 errores += Validaciones.ValidaVacio(telefono, "Telefono");
                 errores += Validaciones.ValidaVacio(email, "Email");
                 errores += Validaciones.ValidaNumerico(dni, ref salida, "DNI");
-
 
                 if (!string.IsNullOrEmpty(errores))
                     MessageBox.Show(errores);
@@ -79,12 +80,22 @@ namespace FormPresentacion
             txtEmail.Clear();
             txtFechaNacimiento.Clear();
             txtHost.Clear();
-            //cmbHost.SelectedIndex = 0;
+   
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void txtFechaNacimiento_TextChanged(object sender, EventArgs e)
+        {
+          
+            if (DateTime.TryParseExact(txtFechaNacimiento.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fecha))
+            {
+                txtFechaNacimiento.Text = fecha.ToString("yyyy-MM-dd");
+            }
+        }
+
     }
 }

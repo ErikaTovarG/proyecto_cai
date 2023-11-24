@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnVentaProdCat = new Button();
             masVentasDetalle = new DataGridView();
+            cmbClientes = new ComboBox();
+            lblCliente = new Label();
             ventaId = new DataGridViewTextBoxColumn();
             ventaCantidad = new DataGridViewTextBoxColumn();
             ventaEstado = new DataGridViewTextBoxColumn();
             ventaFechaA = new DataGridViewTextBoxColumn();
-            cmbClientes = new ComboBox();
-            lblCliente = new Label();
             ((System.ComponentModel.ISupportInitialize)masVentasDetalle).BeginInit();
             SuspendLayout();
             // 
@@ -62,51 +62,29 @@
             // 
             masVentasDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             masVentasDetalle.Columns.AddRange(new DataGridViewColumn[] { ventaId, ventaCantidad, ventaEstado, ventaFechaA });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            masVentasDetalle.DefaultCellStyle = dataGridViewCellStyle1;
             masVentasDetalle.Enabled = false;
             masVentasDetalle.EnableHeadersVisualStyles = false;
             masVentasDetalle.Location = new Point(56, 26);
             masVentasDetalle.Name = "masVentasDetalle";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            masVentasDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             masVentasDetalle.RowTemplate.Height = 25;
             masVentasDetalle.Size = new Size(644, 283);
             masVentasDetalle.TabIndex = 40;
-            // 
-            // ventaId
-            // 
-            ventaId.HeaderText = "ID Cliente";
-            ventaId.Name = "ventaId";
-            ventaId.Width = 200;
-            // 
-            // ventaCantidad
-            // 
-            ventaCantidad.HeaderText = "Cantidad";
-            ventaCantidad.Name = "ventaCantidad";
-            // 
-            // ventaEstado
-            // 
-            ventaEstado.HeaderText = "Estado";
-            ventaEstado.Name = "ventaEstado";
-            // 
-            // ventaFechaA
-            // 
-            ventaFechaA.HeaderText = "Fecha Alta";
-            ventaFechaA.Name = "ventaFechaA";
-            ventaFechaA.Width = 200;
             // 
             // cmbClientes
             // 
@@ -125,6 +103,28 @@
             lblCliente.Size = new Size(52, 15);
             lblCliente.TabIndex = 85;
             lblCliente.Text = "Clientes:";
+            // 
+            // ventaId
+            // 
+            ventaId.HeaderText = "ID Venta";
+            ventaId.Name = "ventaId";
+            ventaId.Width = 200;
+            // 
+            // ventaCantidad
+            // 
+            ventaCantidad.HeaderText = "Cantidad";
+            ventaCantidad.Name = "ventaCantidad";
+            // 
+            // ventaEstado
+            // 
+            ventaEstado.HeaderText = "Estado";
+            ventaEstado.Name = "ventaEstado";
+            // 
+            // ventaFechaA
+            // 
+            ventaFechaA.HeaderText = "Fecha Alta";
+            ventaFechaA.Name = "ventaFechaA";
+            ventaFechaA.Width = 200;
             // 
             // FormListarVentasPorCategorias
             // 

@@ -31,15 +31,15 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             ventasEstado = new DataGridView();
-            ventaId = new DataGridViewTextBoxColumn();
-            ventaCantidad = new DataGridViewTextBoxColumn();
-            ventaEstado = new DataGridViewTextBoxColumn();
-            ventaFechaA = new DataGridViewTextBoxColumn();
             btnVentaEstado = new Button();
             cmbEstado = new ComboBox();
             cmbClientes = new ComboBox();
             lblCliente = new Label();
             lblEstado = new Label();
+            ventaId = new DataGridViewTextBoxColumn();
+            ventaCantidad = new DataGridViewTextBoxColumn();
+            ventaEstado = new DataGridViewTextBoxColumn();
+            ventaFechaA = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ventasEstado).BeginInit();
             SuspendLayout();
             // 
@@ -70,28 +70,6 @@
             ventasEstado.RowTemplate.Height = 25;
             ventasEstado.Size = new Size(642, 283);
             ventasEstado.TabIndex = 43;
-            // 
-            // ventaId
-            // 
-            ventaId.HeaderText = "ID Cliente";
-            ventaId.Name = "ventaId";
-            ventaId.Width = 200;
-            // 
-            // ventaCantidad
-            // 
-            ventaCantidad.HeaderText = "Cantidad";
-            ventaCantidad.Name = "ventaCantidad";
-            // 
-            // ventaEstado
-            // 
-            ventaEstado.HeaderText = "Estado";
-            ventaEstado.Name = "ventaEstado";
-            // 
-            // ventaFechaA
-            // 
-            ventaFechaA.HeaderText = "Fecha Alta";
-            ventaFechaA.Name = "ventaFechaA";
-            ventaFechaA.Width = 200;
             // 
             // btnVentaEstado
             // 
@@ -146,6 +124,28 @@
             lblEstado.TabIndex = 86;
             lblEstado.Text = "Estado:";
             // 
+            // ventaId
+            // 
+            ventaId.HeaderText = "ID Venta";
+            ventaId.Name = "ventaId";
+            ventaId.Width = 200;
+            // 
+            // ventaCantidad
+            // 
+            ventaCantidad.HeaderText = "Cantidad";
+            ventaCantidad.Name = "ventaCantidad";
+            // 
+            // ventaEstado
+            // 
+            ventaEstado.HeaderText = "Estado";
+            ventaEstado.Name = "ventaEstado";
+            // 
+            // ventaFechaA
+            // 
+            ventaFechaA.HeaderText = "Fecha Alta";
+            ventaFechaA.Name = "ventaFechaA";
+            ventaFechaA.Width = 200;
+            // 
             // FormListarVentasVendedorEstado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,14 +168,14 @@
         #endregion
 
         private DataGridView ventasEstado;
-        private DataGridViewTextBoxColumn ventaId;
-        private DataGridViewTextBoxColumn ventaCantidad;
-        private DataGridViewTextBoxColumn ventaEstado;
-        private DataGridViewTextBoxColumn ventaFechaA;
         private Button btnVentaEstado;
         private ComboBox cmbEstado;
         private ComboBox cmbClientes;
         private Label lblCliente;
         private Label lblEstado;
+        private DataGridViewTextBoxColumn ventaId;
+        private DataGridViewTextBoxColumn ventaCantidad;
+        private DataGridViewTextBoxColumn ventaEstado;
+        private DataGridViewTextBoxColumn ventaFechaA;
     }
 }
