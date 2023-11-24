@@ -125,8 +125,8 @@ namespace FormPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-            
-            
+
+
         }
         public void LimpiarCampos()
         {
@@ -149,17 +149,17 @@ namespace FormPresentacion
 
         private void btnUsuariosActivos_Click(object sender, EventArgs e)
         {
-            
-           List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
+
+            List<UsuarioWebServices> usuariosWebServices = ClsUsuario.ListarUsuarios();
 
             lstUsuariosActivos.DataSource = usuariosWebServices;
             lstUsuariosActivos.DisplayMember = "ComboDisplay";
             lstUsuariosActivos.ValueMember = "Id";
 
-            
+
         }
 
-       
+
 
         public void AbrirFormulario<T>() where T : Form, new()
         {
