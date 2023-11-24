@@ -33,6 +33,9 @@
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
             panelMenu = new Panel();
+            button2 = new Button();
+            btnVentasEstado = new Button();
+            btnMasVentas = new Button();
             lblUser = new Label();
             pictureBox2 = new PictureBox();
             btnProductos = new Button();
@@ -86,6 +89,9 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.Teal;
+            panelMenu.Controls.Add(button2);
+            panelMenu.Controls.Add(btnVentasEstado);
+            panelMenu.Controls.Add(btnMasVentas);
             panelMenu.Controls.Add(lblUser);
             panelMenu.Controls.Add(pictureBox2);
             panelMenu.Controls.Add(btnProductos);
@@ -96,6 +102,51 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(250, 697);
             panelMenu.TabIndex = 2;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.Gainsboro;
+            button2.Location = new Point(3, 482);
+            button2.Name = "button2";
+            button2.Size = new Size(247, 47);
+            button2.TabIndex = 19;
+            button2.Text = "Reporte Maxima Venta Cliente";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // btnVentasEstado
+            // 
+            btnVentasEstado.FlatAppearance.BorderSize = 0;
+            btnVentasEstado.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnVentasEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnVentasEstado.FlatStyle = FlatStyle.Flat;
+            btnVentasEstado.ForeColor = Color.Gainsboro;
+            btnVentasEstado.Location = new Point(3, 429);
+            btnVentasEstado.Name = "btnVentasEstado";
+            btnVentasEstado.Size = new Size(247, 47);
+            btnVentasEstado.TabIndex = 18;
+            btnVentasEstado.Text = "Reporte Ventas Estados";
+            btnVentasEstado.UseVisualStyleBackColor = true;
+            btnVentasEstado.Click += btnVentasEstado_Click;
+            // 
+            // btnMasVentas
+            // 
+            btnMasVentas.FlatAppearance.BorderSize = 0;
+            btnMasVentas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnMasVentas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnMasVentas.FlatStyle = FlatStyle.Flat;
+            btnMasVentas.ForeColor = Color.Gainsboro;
+            btnMasVentas.Location = new Point(3, 380);
+            btnMasVentas.Name = "btnMasVentas";
+            btnMasVentas.Size = new Size(247, 47);
+            btnMasVentas.TabIndex = 16;
+            btnMasVentas.Text = "Reporte Mayores Ventas";
+            btnMasVentas.UseVisualStyleBackColor = true;
+            btnMasVentas.Click += btnMasVentas_Click;
             // 
             // lblUser
             // 
@@ -216,5 +267,8 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label lblUser;
+        private Button btnMasVentas;
+        private Button button2;
+        private Button btnVentasEstado;
     }
 }

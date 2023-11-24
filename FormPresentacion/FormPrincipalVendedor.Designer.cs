@@ -32,10 +32,10 @@
             panelFormularios = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu = new Panel();
+            btnRegistarCliente = new Button();
             btnModificarCliente = new Button();
             button2 = new Button();
             btnVentasEstado = new Button();
-            btnMasVentas = new Button();
             btnInicio = new Button();
             btnRegistrarVenta = new Button();
             lblVendedor = new Label();
@@ -43,7 +43,6 @@
             panelTitulo = new Panel();
             btnMinimizar = new PictureBox();
             btnCerrar = new PictureBox();
-            btnRegistarCliente = new Button();
             panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
@@ -81,7 +80,6 @@
             panelMenu.Controls.Add(btnModificarCliente);
             panelMenu.Controls.Add(button2);
             panelMenu.Controls.Add(btnVentasEstado);
-            panelMenu.Controls.Add(btnMasVentas);
             panelMenu.Controls.Add(btnInicio);
             panelMenu.Controls.Add(btnRegistrarVenta);
             panelMenu.Controls.Add(lblVendedor);
@@ -91,6 +89,21 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(250, 698);
             panelMenu.TabIndex = 5;
+            // 
+            // btnRegistarCliente
+            // 
+            btnRegistarCliente.FlatAppearance.BorderSize = 0;
+            btnRegistarCliente.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnRegistarCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnRegistarCliente.FlatStyle = FlatStyle.Flat;
+            btnRegistarCliente.ForeColor = Color.Gainsboro;
+            btnRegistarCliente.Location = new Point(3, 209);
+            btnRegistarCliente.Name = "btnRegistarCliente";
+            btnRegistarCliente.Size = new Size(247, 47);
+            btnRegistarCliente.TabIndex = 18;
+            btnRegistarCliente.Text = "Registrar cliente";
+            btnRegistarCliente.UseVisualStyleBackColor = true;
+            btnRegistarCliente.Click += btnRegistarCliente_Click;
             // 
             // btnModificarCliente
             // 
@@ -114,7 +127,7 @@
             button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = Color.Gainsboro;
-            button2.Location = new Point(-1, 474);
+            button2.Location = new Point(0, 421);
             button2.Name = "button2";
             button2.Size = new Size(247, 47);
             button2.TabIndex = 17;
@@ -129,28 +142,13 @@
             btnVentasEstado.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnVentasEstado.FlatStyle = FlatStyle.Flat;
             btnVentasEstado.ForeColor = Color.Gainsboro;
-            btnVentasEstado.Location = new Point(2, 421);
+            btnVentasEstado.Location = new Point(3, 368);
             btnVentasEstado.Name = "btnVentasEstado";
             btnVentasEstado.Size = new Size(247, 47);
             btnVentasEstado.TabIndex = 16;
             btnVentasEstado.Text = "Reporte Ventas Estados";
             btnVentasEstado.UseVisualStyleBackColor = true;
             btnVentasEstado.Click += btnVentasEstado_Click;
-            // 
-            // btnMasVentas
-            // 
-            btnMasVentas.FlatAppearance.BorderSize = 0;
-            btnMasVentas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnMasVentas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnMasVentas.FlatStyle = FlatStyle.Flat;
-            btnMasVentas.ForeColor = Color.Gainsboro;
-            btnMasVentas.Location = new Point(-1, 368);
-            btnMasVentas.Name = "btnMasVentas";
-            btnMasVentas.Size = new Size(247, 47);
-            btnMasVentas.TabIndex = 15;
-            btnMasVentas.Text = "Reporte Mayores Ventas";
-            btnMasVentas.UseVisualStyleBackColor = true;
-            btnMasVentas.Click += btnMasVentas_Click;
             // 
             // btnInicio
             // 
@@ -238,21 +236,6 @@
             btnCerrar.TabStop = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // btnRegistarCliente
-            // 
-            btnRegistarCliente.FlatAppearance.BorderSize = 0;
-            btnRegistarCliente.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnRegistarCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnRegistarCliente.FlatStyle = FlatStyle.Flat;
-            btnRegistarCliente.ForeColor = Color.Gainsboro;
-            btnRegistarCliente.Location = new Point(3, 209);
-            btnRegistarCliente.Name = "btnRegistarCliente";
-            btnRegistarCliente.Size = new Size(247, 47);
-            btnRegistarCliente.TabIndex = 18;
-            btnRegistarCliente.Text = "Registrar cliente";
-            btnRegistarCliente.UseVisualStyleBackColor = true;
-            btnRegistarCliente.Click += btnRegistarCliente_Click;
-            // 
             // FormPrincipalVendedor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -290,7 +273,6 @@
         private Button btnRegistrarVenta;
         private Button btnInicio;
         private Button btnModificarCliente;
-        private Button btnMasVentas;
         private Button btnVentasEstado;
         private Button button2;
         private Button btnRegistarCliente;

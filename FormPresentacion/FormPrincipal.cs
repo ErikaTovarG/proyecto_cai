@@ -108,5 +108,20 @@ namespace FormPresentacion
         {
             AbrirFormulario<FormReporteStockCritico>();
         }
+
+        private void btnMasVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasPorCategorias>();
+        }
+
+        private void btnVentasEstado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormListarVentasVendedorEstado>();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormMaximaVentaCliente>();
+        }
     }
 }
