@@ -203,6 +203,11 @@ namespace Negocio.UsuarioLogNegocio
             UsuarioDatos.InactivarUsuario(idUsuario, idUsuarioMaster);
         }
 
+        public static void ModificarContrasea (string nombreUsuario, string contraseña, string contraseñaNueva)
+        {
+            UsuarioDatos.CambiarContraseña(nombreUsuario, contraseña, contraseñaNueva);
+        }
+
     }
 }
 
